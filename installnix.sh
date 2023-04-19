@@ -8,6 +8,10 @@ DISK=/dev/sda
 # Set the passphrase for the encryption
 PASSPHRASE="secret"
 
+# Wipe anything that was left behind
+echo "WARNING: wiping ${DISK}"
+wipefs --all --force ${DISK}*
+
 # Create the EFI partition
 echo "Creating EFI partition..."
 parted -s $DISK mklabel gpt
