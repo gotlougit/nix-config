@@ -34,12 +34,7 @@
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/sda1";
-      fsType = "vfat";
-    };
-
-  # Enable firmware and use nonfree software
+# Enable firmware and use nonfree software
   hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
