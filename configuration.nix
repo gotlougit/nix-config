@@ -18,21 +18,18 @@
 
   fileSystems."/home" =
     {
-      device = "/dev/disk/by-label/root";
       options = [ "subvol=home" "compress=zstd" "noatime" ];
       fsType = "btrfs";
     };
 
   fileSystems."/nix" =
     {
-      device = "/dev/disk/by-label/root";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
       fsType = "btrfs";
     };
 
   fileSystems."/persist" =
     {
-      device = "/dev/disk/by-label/root";
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
       fsType = "btrfs";
     };
