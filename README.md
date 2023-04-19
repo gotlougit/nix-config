@@ -21,3 +21,7 @@ Nice-to-haves:
 - Manage many program configurations using home manager and Nix; this will require a time investment on my part to figure out how to gradually do so
 
 Most of these will be my personal preferences
+
+## Credits
+
+[mt-caret's blog on such a setup](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html), which I merely tried to automate into one single shell script and some Nix configurations of my own
