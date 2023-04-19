@@ -61,6 +61,7 @@ mount -o subvol=persist,compress=zstd,noatime /dev/mapper/cryptroot /mnt/persist
 # don't forget this!
 mkdir /mnt/boot
 mount $BOOTPART /mnt/boot
+mkdir /mnt/boot/efi
 
 # Generate a basic NixOS configuration
 nixos-generate-config --root /mnt
