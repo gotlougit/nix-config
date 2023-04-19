@@ -11,16 +11,16 @@ PASSPHRASE="secret"
 # Create the EFI partition
 echo "Creating EFI partition..."
 parted -s $DISK mklabel gpt
-parted -s $DISK mkpart primary fat32 1MiB 512MiB
+parted -s $DISK mkpart primary fat32 1MiB 1024MiB
 parted -s $DISK set 1 esp on
 
 # Create the swap partition
 echo "Creating swap partition..."
-parted -s $DISK mkpart primary linux-swap 512MiB 16.5GB
+parted -s $DISK mkpart primary linux-swap 1024Mib 17GB
 
 # Create the Btrfs partition with Zstd compression enabled
 echo "Creating btrfs partition..."
-parted -s $DISK mkpart primary 16.5GB 100%
+parted -s $DISK mkpart primary 17GB 100%
 
 # Encrypt the root partition using LUKS
 echo -n "$PASSPHRASE" | cryptsetup luksFormat ${DISK}3
