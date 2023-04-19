@@ -41,16 +41,16 @@ btrfs subvolume create /mnt/persist
 btrfs subvolume snapshot -r /mnt/root /mnt/root-blank
 
 # Mount the subvolumes with appropriate options
-mount -o subvol=root,compress=zstd,noatime /dev/mapper/cryptroot/mnt
+mount -o subvol=root,compress=zstd,noatime /dev/mapper/cryptroot /mnt
 
 mkdir /mnt/home
-mount -o subvol=home,compress=zstd,noatime /dev/mapper/cryptroot/mnt/home
+mount -o subvol=home,compress=zstd,noatime /dev/mapper/cryptroot /mnt/home
 
 mkdir /mnt/nix
-mount -o subvol=nix,compress=zstd,noatime /dev/mapper/cryptroot/mnt/nix
+mount -o subvol=nix,compress=zstd,noatime /dev/mapper/cryptroot /mnt/nix
 
 mkdir /mnt/persist
-mount -o subvol=persist,compress=zstd,noatime /dev/mapper/cryptroot/mnt/persist
+mount -o subvol=persist,compress=zstd,noatime /dev/mapper/cryptroot /mnt/persist
 
 # don't forget this!
 mkdir /mnt/boot
