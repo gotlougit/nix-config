@@ -4,6 +4,9 @@
 
 # Set the device name of the disk to install on
 DISK=/dev/sda
+BOOTPART=${DISK}1
+SWAPPART=${DISK}2
+DATAPART=${DISK}3
 
 # Set the passphrase for the encryption
 PASSPHRASE="secret"
@@ -27,14 +30,13 @@ echo "Creating btrfs partition..."
 parted -s $DISK mkpart primary 17GB 100%
 
 # Encrypt the root partition using LUKS
-echo -n "$PASSPHRASE" | cryptsetup luksFormat ${DISK}3
-echo -n "$PASSPHRASE" | cryptsetup luksOpen ${DISK}3 cryptroot
+echo -n "$PASSPHRASE" | cryptsetup luksFormat $DATAPART
+echo -n "$PASSPHRASE" | cryptsetup luksOpen $DATAPART cryptroot
 
 # Format the partitions
 mkfs.btrfs -L nixos /dev/mapper/cryptroot
-mkswap -L swap ${DISK}2
-swapon ${DISK}2
-mkfs.fat -F 32 -n boot ${DISK}1
+mkswap -L swap $SWAPPART
+mkfs.fat -F 32 -n boot $BOOTPART
 
 # Create subvolumes for nixos and home
 mount -t btrfs /dev/mapper/cryptroot /mnt
@@ -58,7 +60,7 @@ mount -o subvol=persist,compress=zstd,noatime /dev/mapper/cryptroot /mnt/persist
 
 # don't forget this!
 mkdir /mnt/boot
-mount ${DISK}1 /mnt/boot
+mount $BOOTPART /mnt/boot
 
 # Generate a basic NixOS configuration
 nixos-generate-config --root /mnt
