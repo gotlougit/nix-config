@@ -5,8 +5,7 @@
 # Set the device name of the disk to install on
 DISK=/dev/sda
 BOOTPART=${DISK}1
-SWAPPART=${DISK}2
-DATAPART=${DISK}3
+DATAPART=${DISK}2
 
 # Set the passphrase for the encryption
 PASSPHRASE="secret"
@@ -16,30 +15,33 @@ echo "WARNING: wiping ${DISK}"
 wipefs --all --force ${DISK}*
 
 # Create the EFI partition
-echo "Creating EFI partition..."
-parted -s $DISK mklabel gpt
-parted -s $DISK mkpart primary fat32 1MiB 1024MiB
-parted -s $DISK set 1 esp on
-
-# Create the swap partition
-echo "Creating swap partition..."
-parted -s $DISK mkpart primary linux-swap 1024MiB 17GB
-
-# Create the Btrfs partition with Zstd compression enabled
-echo "Creating btrfs partition..."
-parted -s $DISK mkpart primary 17GB 100%
+echo "Creating EFI partition and LVM partition..."
+parted -a opt --script "${DISK}" \
+    mklabel gpt \
+    mkpart primary fat32 0% 1024MiB \
+    mkpart primary 1024MiB 100% \
+    set 1 esp on \
+    name 1 boot \
+    set 2 lvm on \
+    name 2 root
 
 # Encrypt the root partition using LUKS
 echo -n "$PASSPHRASE" | cryptsetup luksFormat $DATAPART
 echo -n "$PASSPHRASE" | cryptsetup luksOpen $DATAPART cryptroot
 
+# Create logical volume off of LUKS encryption
+pvcreate /dev/mapper/cryptroot
+vgcreate vg /dev/mapper/cryptroot
+lvcreate -L 4G -n swap vg
+lvcreate -l '100%FREE' -n root vg
+
 # Format the partitions
-mkfs.btrfs -L nixos /dev/mapper/cryptroot
-mkswap -L swap $SWAPPART
+mkfs.btrfs -L root /dev/vg/root
+mkswap -L swap /dev/vg/swap
 mkfs.fat -F 32 -n boot $BOOTPART
 
 # Create subvolumes for nixos and home
-mount -t btrfs /dev/mapper/cryptroot /mnt
+mount -t btrfs /dev/disk/by-label/root /mnt
 btrfs subvolume create /mnt/root
 btrfs subvolume create /mnt/home
 btrfs subvolume create /mnt/nix
@@ -60,7 +62,7 @@ mount -o subvol=persist,compress=zstd,noatime /dev/mapper/cryptroot /mnt/persist
 
 # don't forget this!
 mkdir /mnt/boot
-mount $BOOTPART /mnt/boot
+mount /dev/disk/by-label/boot /mnt/boot
 
 # Generate a basic NixOS configuration
 nixos-generate-config --root /mnt
