@@ -14,6 +14,8 @@ It will:
 
 - Add users to the system
 
+- Configure a 16GB swap partition
+
 Nice-to-haves:
 
 - Erase root partition and reconstruct system from first boot based on the data of a few persistent directories (a-la [erase your darlings](https://grahamc.com/blog/erase-your-darlings))
