@@ -12,12 +12,9 @@
 
   # Configure filesystem manually
   fileSystems."/" =
-    { device = "/dev/mapper/cryptroot";
-      fsType = "btrfs";
+    {
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
-
-  boot.initrd.luks.devices."cryptroot".device = "/dev/sda3";
 
   fileSystems."/home" =
     { device = "/dev/mapper/cryptroot";
