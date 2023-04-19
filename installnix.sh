@@ -16,7 +16,7 @@ parted -s $DISK set 1 esp on
 
 # Create the swap partition
 echo "Creating swap partition..."
-parted -s $DISK mkpart primary linux-swap 1024Mib 17GB
+parted -s $DISK mkpart primary linux-swap 1024MiB 17GB
 
 # Create the Btrfs partition with Zstd compression enabled
 echo "Creating btrfs partition..."
