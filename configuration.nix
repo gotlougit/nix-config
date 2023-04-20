@@ -169,7 +169,7 @@
         firefox # Just plain Firefox
         ark # KDE archiving program
         arc-theme # Preferred theme for KDE
-        bear # Generate autocomplete for large projects
+        chiaki # PS4 Remote Play client
         filelight # View disk usage in pie chart form
         ghidra # Decompiler
         inkscape # Vector images
@@ -182,8 +182,11 @@
         otpclient # TOTP client
         pcsxr # PS1 emulator
         pcsx2 # PS2 emulator
+        qbittorrent # Best torrent client
         rpcs3 # PS3 emulator
         rhythmbox # Preferred music player
+        signal-desktop # Secure and easy messaging
+        steam # Games client
         tor-browser-bundle-bin # Needs no intro
         telegram-desktop # Telegram desktop client
         vlc # Easiest media player
@@ -200,8 +203,9 @@
     android-tools # adb, fastboot etc
     aria # download manager
     bandwhich # view what programs are making network requests
+    bear # Generate autocomplete for large projects
     curl # no intro needed
-    chiaki # PS4 Remote Play client
+    cloudflare-warp # A good quality VPN
     ffmpeg # Swiss Army Knife of
     flatpak # Used to isolate certain programs
     gocryptfs # For plasma-vault
