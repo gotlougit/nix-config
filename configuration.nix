@@ -194,7 +194,6 @@ in
         legendary-gl # Epic Games Store client
         libreoffice-qt # Document editor
         mangohud # Overlay while playing games
-        unstable.mullvad-browser # Hardened Firefox
         otpclient # TOTP client
         pcsxr # PS1 emulator
         pcsx2 # PS2 emulator
@@ -231,6 +230,7 @@ in
     glances # htop alternative
     hut # Sourcehut CLI
     kdeconnect-kde # KDE Connect
+    unstable.mullvad-browser # Hardened Firefox
     neofetch # Nice startup screen for terminal
     pandoc # Convert docs
     picard # Tag music files
