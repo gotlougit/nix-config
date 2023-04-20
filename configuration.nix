@@ -202,8 +202,8 @@ in
         rhythmbox # Preferred music player
         signal-desktop # Secure and easy messaging
         steam # Games client
+        tdesktop # Telegram desktop client
         tor-browser-bundle-bin # Needs no intro
-        telegram-desktop # Telegram desktop client
         vlc # Easiest media player
         wl-clipboard # CLI util for copying and pasting in Wayland
     ];
@@ -230,7 +230,6 @@ in
     glances # htop alternative
     hut # Sourcehut CLI
     kdeconnect-kde # KDE Connect
-    unstable.mullvad-browser # Hardened Firefox
     neofetch # Nice startup screen for terminal
     pandoc # Convert docs
     picard # Tag music files
@@ -245,6 +244,9 @@ in
     wget # Another, simpler download manager
     winePackages.stagingFull # Latest Wine to run Windows programs
     wireshark # View real time network traffic across multiple interfaces
+
+    # Packages that have to be installed via unstable
+    unstable.mullvad-browser # Hardened Firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
