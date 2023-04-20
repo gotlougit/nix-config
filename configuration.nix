@@ -236,6 +236,32 @@
     enableSSHSupport = true;
   };
 
+  # Set useful shell aliases
+  programs.bash.shellAliases = {
+      vi = "nvim";
+      open = "xdg-open";
+  }
+
+  # Set session variables
+  environment.sessionVariables = rec {
+    XDG_CACHE_HOME  = "$HOME/.cache";
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME   = "$HOME/.local/share";
+    XDG_STATE_HOME  = "$HOME/.local/state";
+
+    # Not officially in the specification
+    XDG_BIN_HOME    = "$HOME/.local/bin";
+    PATH = [
+      "${XDG_BIN_HOME}"
+    ];
+
+   LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
+   GIT_ASKPASS = "/usr/bin/ksshaskpass";
+   GTK_THEME = "Arc-Dark";
+   EDITOR = "nvim";
+   GTK_USE_PORTAL = 1;
+  };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
