@@ -42,7 +42,7 @@ in
   hardware.enableAllFirmware = true;
   # Add support to add packages from nixpkgs
   nixpkgs.config = {
-    config.allowUnfree = true;
+    allowUnfree = true;
     packageOverrides = pkgs: {
         unstable = import unstableTarball {
         config = config.nixpkgs.config;
