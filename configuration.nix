@@ -34,9 +34,13 @@
       fsType = "btrfs";
     };
 
-# Enable firmware and use nonfree software
+  # Enable firmware and use nonfree software
   hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
+
+  # Enable virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
 
   # Use the systemd-boot bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -266,7 +270,16 @@
   };
 
   # List services that you want to enable:
-
+  systemd.packages = [pkgs.cloudflare-warp, pkgs.tailscale, pkgs.vnstat];
+  # Enable warp-svc to allow connections to the Cloudflare VPN
+  systemd.services.warp-svc = {
+    after = [ "network-online.target", "dnscrypt-proxy.target" ];
+    wantedBy = [ "multi-user.target" ];
+  };
+  # Enable vnstatd to monitor total net usage
+  services.vnstat.enable = true;
+  # Enable tailscaled to be able to connect to mesh network
+  services.tailscale.enable = true;
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
