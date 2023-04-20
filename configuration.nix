@@ -98,8 +98,11 @@ in
       };
     };
 
-    systemd.services.dnscrypt-proxy2.serviceConfig = {
-      StateDirectory = "dnscrypt-proxy";
+    systemd.services.dnscrypt-proxy2 {
+        after = [ "systemd-sysusers.target" ];
+        before = [ "sysinit.target" "network.target" "nss-lookup.target" "shutdown.target" ];
+        wantedBy = [ "multi-user.target" ];
+        serviceConfig.StateDirectory = "dnscrypt-proxy";
     };
 
   # Set your time zone.
