@@ -11,10 +11,6 @@
 
   nixpkgs.config = {
     allowUnfree = true; # Allow proprietary software
-    packageOverrides = pkgs: {
-        # Switch to unstable channel
-        pkgs = import <nixos-unstable> { inherit pkgs; };
-    };
   };
 
 
@@ -42,7 +38,6 @@
       fsType = "btrfs";
     };
 
-  # Enable firmware and use nonfree software
   hardware.enableAllFirmware = true;
 
   # Enable virtualization
