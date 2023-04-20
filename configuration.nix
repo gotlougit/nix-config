@@ -165,18 +165,67 @@
     # TODO: make this even more comprehensive
     # Add whatever you want
     packages = with pkgs; [
-      firefox
-      rhythmbox
+        nixpkgs.ark
+        nixpkgs.arc-theme
+        nixpkgs.bear
+        nixpkgs.filelight
+        nixpkgs.ghidra
+        nixpkgs.inkscape
+        nixpkgs.krita
+        nixpkgs.keepassxc
+        nixpkgs.legendary-gl
+        nixpkgs.libreoffice-qt
+        nixpkgs.mangohud
+        nixpkgs.mullvad-browser
+        nixpkgs.otpclient
+        nixpkgs.pcsxr
+        nixpkgs.pcsx2
+        nixpkgs.rpcs3
+        rhythmbox
+        nixpkgs.tor-browser-bundle-bin
+        nixpkgs.telegram-desktop
+        nixpkgs.vlc
+        nixpkgs.wl-clipboard
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  # This mainly has CLI tools and stuff that likely won't work as a user install
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
+    nixpkgs.tldr
+    nixpkgs.android-tools
+    nixpkgs.aria
+    nixpkgs.bandwhich
     curl
-    git
+    nixpkgs.llvmPackages_15.clang-unwrapped
+    nixpkgs.clang-tools_15
+    nixpkgs.ffmpeg
+    nixpkgs.flatpak
+    nixpkgs.go
+    nixpkgs.gocryptfs
+    nixpkgs.gh
+    nixpkgs.gcc
+    nixpkgs.gdb
+    gitFull
+    nixpkgs.glances
+    nixpkgs.hut
+    nixpkgs.kdeconnect-kde
+    nixpkgs.neofetch
+    nixpkgs.pandoc
+    nixpkgs.plasma-vault
+    nixpkgs.postgresql_15
+    nixpkgs.rr
+    nixpkgs.radeontop
+    nixpkgs.syncthing
+    nixpkgs.tailscale
+    nixpkgs.virt-manager
+    nixpkgs.vnstat
+    wget
+    nixpkgs.winePackages.stagingFull
+    nixpkgs.wireshark
+    nixpkgs.zig
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
