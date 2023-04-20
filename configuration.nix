@@ -229,7 +229,7 @@ in
     gitFull # For git-send-email
     glances # htop alternative
     hut # Sourcehut CLI
-    kdeconnect-kde # KDE Connect
+    libsForQt5.kdeconnect-kde # KDE Connect
     neofetch # Nice startup screen for terminal
     pandoc # Convert docs
     picard # Tag music files
