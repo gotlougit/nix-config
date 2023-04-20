@@ -3,7 +3,11 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-{ pkgs ? import <nixpkgs> {} }:
+let
+  unstableTarball =
+    fetchTarball
+      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -36,7 +40,15 @@
 
   # Enable firmware and use nonfree software
   hardware.enableAllFirmware = true;
-  nixpkgs.config.allowUnfree = true;
+  # Add support to add packages from nixpkgs
+  nixpkgs.config = {
+    config.allowUnfree = true;
+    packageOverrides = pkgs: {
+        unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
 
   # Enable virtualization
   virtualisation.libvirtd.enable = true;
@@ -182,7 +194,7 @@
         legendary-gl # Epic Games Store client
         libreoffice-qt # Document editor
         mangohud # Overlay while playing games
-        nixpkgs.mullvad-browser # Hardened Firefox
+        unstable.mullvad-browser # Hardened Firefox
         otpclient # TOTP client
         pcsxr # PS1 emulator
         pcsx2 # PS2 emulator
