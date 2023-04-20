@@ -29,16 +29,21 @@ parted -s $DISK mkpart primary linux-swap 1024MiB 17GB
 echo "Creating btrfs partition..."
 parted -s $DISK mkpart primary 17GB 100%
 
+echo "Encrypting root partition..."
 # Encrypt the root partition using LUKS
 echo -n "$PASSPHRASE" | cryptsetup luksFormat $DATAPART
 echo -n "$PASSPHRASE" | cryptsetup luksOpen $DATAPART cryptroot
 
 # Format the partitions
+echo "Formatting encrypted / as btrfs..."
 mkfs.btrfs -L nixos /dev/mapper/cryptroot
+echo "Formatting swap partition..."
 mkswap -L swap $SWAPPART
+echo "Formatting boot partition..."
 mkfs.fat -F 32 -n boot $BOOTPART
 
 # Create subvolumes for nixos and home
+echo "Creating btrfs subvolumes..."
 mount -t btrfs /dev/mapper/cryptroot /mnt
 btrfs subvolume create /mnt/root
 btrfs subvolume create /mnt/home
@@ -46,6 +51,7 @@ btrfs subvolume create /mnt/nix
 btrfs subvolume create /mnt/persist
 btrfs subvolume snapshot -r /mnt/root /mnt/root-blank
 
+echo "Mounting the filesystem to /mnt..."
 # Mount the subvolumes with appropriate options
 mount -o subvol=root,compress=zstd,noatime /dev/mapper/cryptroot /mnt
 
@@ -59,9 +65,11 @@ mkdir /mnt/persist
 mount -o subvol=persist,compress=zstd,noatime /dev/mapper/cryptroot /mnt/persist
 
 # don't forget this!
+echo "Mounting /boot..."
 mkdir /mnt/boot
 mount $BOOTPART /mnt/boot
 
 # Generate a basic NixOS configuration
+echo "Generating config..."
 nixos-generate-config --root /mnt
 echo "Done, paste in configuration.nix now"
