@@ -98,7 +98,7 @@ in
       };
     };
 
-    systemd.services.dnscrypt-proxy2 {
+    systemd.services.dnscrypt-proxy2 = {
         after = [ "systemd-sysusers.target" ];
         before = [ "sysinit.target" "network.target" "nss-lookup.target" "shutdown.target" ];
         wantedBy = [ "multi-user.target" ];
