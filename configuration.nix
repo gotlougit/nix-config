@@ -250,7 +250,7 @@
   }
 
   # Set session variables
-  environment.sessionVariables = rec {
+  environment.variables = {
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME   = "$HOME/.local/share";
@@ -258,15 +258,12 @@
 
     # Not officially in the specification
     XDG_BIN_HOME    = "$HOME/.local/bin";
-    PATH = [
-      "${XDG_BIN_HOME}"
-    ];
 
-   LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
-   GIT_ASKPASS = "/usr/bin/ksshaskpass";
-   GTK_THEME = "Arc-Dark";
-   EDITOR = "nvim";
-   GTK_USE_PORTAL = 1;
+    LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
+    GIT_ASKPASS = "/usr/bin/ksshaskpass";
+    GTK_THEME = "Arc-Dark";
+    EDITOR = "nvim";
+    GTK_USE_PORTAL = 1;
   };
 
   # List services that you want to enable:
