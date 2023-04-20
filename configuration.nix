@@ -157,10 +157,10 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
-  users.users.testuser = {
+  users.users.gotlou = {
     isNormalUser = true;
     # CHANGE THIS ASAP
-    initialPassword = "testuser";
+    initialPassword = "gotlou";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     # TODO: make this even more comprehensive
     # Add whatever you want
