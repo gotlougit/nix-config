@@ -166,6 +166,7 @@
     # Add whatever you want
     # I mainly add GUI programs in here
     packages = with pkgs; [
+        firefox # Just plain Firefox
         ark # KDE archiving program
         arc-theme # Preferred theme for KDE
         bear # Generate autocomplete for large projects
