@@ -164,6 +164,7 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     # TODO: make this even more comprehensive
     # Add whatever you want
+    # I mainly add GUI programs in here
     packages = with pkgs; [
         ark # KDE archiving program
         arc-theme # Preferred theme for KDE
@@ -199,6 +200,7 @@
     aria # download manager
     bandwhich # view what programs are making network requests
     curl # no intro needed
+    chiaki # PS4 Remote Play client
     ffmpeg # Swiss Army Knife of
     flatpak # Used to isolate certain programs
     gocryptfs # For plasma-vault
@@ -210,6 +212,7 @@
     kdeconnect-kde # KDE Connect
     neofetch # Nice startup screen for terminal
     pandoc # Convert docs
+    picard # Tag music files
     plasma-vault # Encrypted folders in KDE
     postgresql_15 # Database
     rr # Record and replay while debugging
