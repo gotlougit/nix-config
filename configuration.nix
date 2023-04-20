@@ -3,16 +3,20 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-let
-  unstableTarball =
-    fetchTarball
-      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+
+  nixpkgs.config = {
+    allowUnfree = true; # Allow proprietary software
+    packageOverrides = pkgs: {
+        # Switch to unstable channel
+        pkgs = import <nixos-unstable> { inherit pkgs; };
+    };
+  };
+
 
   # Configure filesystem manually
   fileSystems."/" =
@@ -40,15 +44,6 @@ in
 
   # Enable firmware and use nonfree software
   hardware.enableAllFirmware = true;
-  # Add support to add packages from nixpkgs
-  nixpkgs.config = {
-    allowUnfree = true;
-    packageOverrides = pkgs: {
-        unstable = import unstableTarball {
-        config = config.nixpkgs.config;
-      };
-    };
-  };
 
   # Enable virtualization
   virtualisation.libvirtd.enable = true;
@@ -118,8 +113,11 @@ in
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.autorun = true;
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.xserver.libinput.enable = true;
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -169,10 +167,6 @@ in
     }
      ];
    };
-
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
