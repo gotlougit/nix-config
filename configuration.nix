@@ -165,27 +165,27 @@
     # TODO: make this even more comprehensive
     # Add whatever you want
     packages = with pkgs; [
-        nixpkgs.ark
-        nixpkgs.arc-theme
-        nixpkgs.bear
-        nixpkgs.filelight
-        nixpkgs.ghidra
-        nixpkgs.inkscape
-        nixpkgs.krita
-        nixpkgs.keepassxc
-        nixpkgs.legendary-gl
-        nixpkgs.libreoffice-qt
-        nixpkgs.mangohud
-        nixpkgs.mullvad-browser
-        nixpkgs.otpclient
-        nixpkgs.pcsxr
-        nixpkgs.pcsx2
-        nixpkgs.rpcs3
-        rhythmbox
-        nixpkgs.tor-browser-bundle-bin
-        nixpkgs.telegram-desktop
-        nixpkgs.vlc
-        nixpkgs.wl-clipboard
+        ark # KDE archiving program
+        arc-theme # Preferred theme for KDE
+        bear # Generate autocomplete for large projects
+        filelight # View disk usage in pie chart form
+        ghidra # Decompiler
+        inkscape # Vector images
+        krita # Raster image editor
+        keepassxc # Password manager
+        legendary-gl # Epic Games Store client
+        libreoffice-qt # Document editor
+        mangohud # Overlay while playing games
+        mullvad-browser # Hardened Firefox
+        otpclient # TOTP client
+        pcsxr # PS1 emulator
+        pcsx2 # PS2 emulator
+        rpcs3 # PS3 emulator
+        rhythmbox # Preferred music player
+        tor-browser-bundle-bin # Needs no intro
+        telegram-desktop # Telegram desktop client
+        vlc # Easiest media player
+        wl-clipboard # CLI util for copying and pasting in Wayland
     ];
   };
 
@@ -194,33 +194,33 @@
   # This mainly has CLI tools and stuff that likely won't work as a user install
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    nixpkgs.tldr
-    nixpkgs.android-tools
-    nixpkgs.aria
-    nixpkgs.bandwhich
-    curl
-    nixpkgs.ffmpeg
-    nixpkgs.flatpak
-    nixpkgs.gocryptfs
-    nixpkgs.gh
-    nixpkgs.gdb
-    gitFull
-    nixpkgs.glances
-    nixpkgs.hut
-    nixpkgs.kdeconnect-kde
-    nixpkgs.neofetch
-    nixpkgs.pandoc
-    nixpkgs.plasma-vault
-    nixpkgs.postgresql_15
-    nixpkgs.rr
-    nixpkgs.radeontop
-    nixpkgs.syncthing
-    nixpkgs.tailscale
-    nixpkgs.virt-manager
-    nixpkgs.vnstat
-    wget
-    nixpkgs.winePackages.stagingFull
-    nixpkgs.wireshark
+    tealdeer # Rust implementation of tldr
+    android-tools # adb, fastboot etc
+    aria # download manager
+    bandwhich # view what programs are making network requests
+    curl # no intro needed
+    ffmpeg # Swiss Army Knife of
+    flatpak # Used to isolate certain programs
+    gocryptfs # For plasma-vault
+    gh # Github CLI
+    gdb
+    gitFull # For git-send-email
+    glances # htop alternative
+    hut # Sourcehut CLI
+    kdeconnect-kde # KDE Connect
+    neofetch # Nice startup screen for terminal
+    pandoc # Convert docs
+    plasma-vault # Encrypted folders in KDE
+    postgresql_15 # Database
+    rr # Record and replay while debugging
+    radeontop # AMD GPU monitoring
+    syncthing # Sync all files
+    tailscale # Create a mesh network
+    virt-manager # Easy KVM based VMs
+    vnstat # View total data usage
+    wget # Another, simpler download manager
+    winePackages.stagingFull # Latest Wine to run Windows programs
+    wireshark # View real time network traffic across multiple interfaces
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
