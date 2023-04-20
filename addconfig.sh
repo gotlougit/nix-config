@@ -4,7 +4,9 @@
 
 # It is a separate script right now in order to better test the script and decouple it from having to run the partitioning steps again.
 
+echo "Getting latest revision of configuration.nix from GitHub..."
 curl -LO https://raw.githubusercontent.com/gotlougit/nix-config/main/configuration.nix
+echo "Copying config to the mounted system..."
 cp configuration.nix /mnt/etc/nixos/configuration.nix
 
 echo "Copied configuration to right path"
