@@ -246,7 +246,8 @@ in
     wireshark # View real time network traffic across multiple interfaces
 
     # Packages that have to be installed via unstable
-    unstable.mullvad-browser # Hardened Firefox
+    # TODO: fix mullvad browser install
+    # unstable.mullvad-browser # Hardened Firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -273,11 +274,13 @@ in
     # Not officially in the specification
     XDG_BIN_HOME    = "$HOME/.local/bin";
 
-    LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
+    # TODO: maybe figure out if this is required or not
+    # LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
     GIT_ASKPASS = "/usr/bin/ksshaskpass";
     GTK_THEME = "Arc-Dark";
     EDITOR = "nvim";
-    GTK_USE_PORTAL = 1;
+    # TODO: fix setting GTK_USE_PORTAL
+    #GTK_USE_PORTAL = 1;
   };
 
   # List services that you want to enable:
