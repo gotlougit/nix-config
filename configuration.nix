@@ -199,14 +199,10 @@
     nixpkgs.aria
     nixpkgs.bandwhich
     curl
-    nixpkgs.llvmPackages_15.clang-unwrapped
-    nixpkgs.clang-tools_15
     nixpkgs.ffmpeg
     nixpkgs.flatpak
-    nixpkgs.go
     nixpkgs.gocryptfs
     nixpkgs.gh
-    nixpkgs.gcc
     nixpkgs.gdb
     gitFull
     nixpkgs.glances
@@ -225,7 +221,6 @@
     wget
     nixpkgs.winePackages.stagingFull
     nixpkgs.wireshark
-    nixpkgs.zig
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
