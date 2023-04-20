@@ -3,7 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+{ pkgs ? import <nixpkgs> {} }:
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -182,7 +182,7 @@
         legendary-gl # Epic Games Store client
         libreoffice-qt # Document editor
         mangohud # Overlay while playing games
-        mullvad-browser # Hardened Firefox
+        nixpkgs.mullvad-browser # Hardened Firefox
         otpclient # TOTP client
         pcsxr # PS1 emulator
         pcsx2 # PS2 emulator
@@ -247,7 +247,7 @@
   programs.bash.shellAliases = {
       vi = "nvim";
       open = "xdg-open";
-  }
+  };
 
   # Set session variables
   environment.variables = {
@@ -267,10 +267,10 @@
   };
 
   # List services that you want to enable:
-  systemd.packages = [pkgs.cloudflare-warp, pkgs.tailscale, pkgs.vnstat];
   # Enable warp-svc to allow connections to the Cloudflare VPN
   systemd.services.warp-svc = {
-    after = [ "network-online.target", "dnscrypt-proxy.target" ];
+    enable = true;
+    after = [ "network-online.target"  "dnscrypt-proxy.target" ];
     wantedBy = [ "multi-user.target" ];
   };
   # Enable vnstatd to monitor total net usage
