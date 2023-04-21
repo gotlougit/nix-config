@@ -72,8 +72,6 @@ mount $BOOTPART /mnt/boot
 # Generate a basic NixOS configuration
 echo "Generating config..."
 nixos-generate-config --root /mnt
-echo "Downloading addconfig.sh to automatically copy configuration to new system..."
-curl -LO https://raw.githubusercontent.com/gotlougit/nix-config/main/addconfig.sh
 echo "Done, shifting to addconfig.sh"
 echo "---------"
 echo ""
