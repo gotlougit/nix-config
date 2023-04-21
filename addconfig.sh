@@ -31,7 +31,7 @@ cp flake.lock /mnt/etc/nixos/flake.lock
 echo "Copied configuration to right path"
 
 # Enable nix flake
-echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
 nix flake update
 
 echo "Please run 'sudo nixos-install' to start the installer"
