@@ -14,14 +14,17 @@
   outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: {
     # Define a system called "nixos"
     nixosConfigurations."kratos" = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
+      let
+        system = "x86_64-linux";
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+      in {
+        modules = [
+          nixos-hardware.nixosModules.thinkpad-e14-amd
+          ./configuration.nix
+        ];
       };
-      modules = [
-        nixos-hardware.nixosModules.thinkpad-e14-amd
-        ./configuration.nix
-      ];
     };
 
     # You can define many systems in one Flake file.
