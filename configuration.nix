@@ -99,12 +99,12 @@
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkbOptions in tty.
-  # };
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "us";
+    useXkbConfig = true; # use xkbOptions in tty.
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -115,11 +115,7 @@
   services.xserver.libinput.enable = true;
 
   # Configure keymap in X11
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = {
-  #   "eurosign:e";
-  #   "caps:escape" # map caps to escape.
-  # };
+  services.xserver.layout = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
