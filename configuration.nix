@@ -170,7 +170,7 @@
     isNormalUser = true;
     # CHANGE THIS ASAP
     initialPassword = "gotlou";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" ];
     # TODO: make this even more comprehensive
     # Add whatever you want
     # I mainly add GUI programs in here
