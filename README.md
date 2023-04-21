@@ -68,6 +68,8 @@ to configure 1GB swap instead of 16GB
 
 - You should then run `sudo nixos-install` and if all goes right, you can then reboot into a fresh NixOS install!
 
+Note: I use my Thinkpad E14 AMD's config from [nix-hardware](https://github.com/NixOS/nixos-hardware), if you have a different machine, you should use the generated `hardware-configuration.nix` instead. More instructions for this will be posted here.
+
 ## Credits
 
 - [mt-caret's blog on such a setup](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html), which I merely tried to automate into one single shell script and some Nix configurations of my own
