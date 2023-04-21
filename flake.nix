@@ -6,14 +6,17 @@
   inputs = {
     # Nixpkgs, NixOS's official repo
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # Directly pull hardware info from NixOS repos
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   # Output config, or config for NixOS system
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: {
     # Define a system called "nixos"
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."kratos" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        nixos-hardware.nixosModules.thinkpad-e14-amd
         ./configuration.nix
       ];
     };
