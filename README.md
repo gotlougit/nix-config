@@ -32,7 +32,7 @@ Since it is a bit difficult to find a comprehensive NixOS tutorial, I'll give yo
 
 - Boot into NixOS live CD
 
-- Get git: `nix-env -iA git`
+- Get git: `nix-env -iA nixos.git`
 
 - Clone this repo with git:
 
