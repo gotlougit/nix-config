@@ -15,6 +15,9 @@
     # Define a system called "nixos"
     nixosConfigurations."kratos" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+      };
       modules = [
         nixos-hardware.nixosModules.thinkpad-e14-amd
         ./configuration.nix
