@@ -46,14 +46,9 @@
 
   # Use the systemd-boot bootloader.
   # TODO: try to get systemd-boot to work
-  #boot.loader.systemd-boot.enable = true;
-  #boot.loader.efi.canTouchEfiVariables = true;
-  #boot.loader.efi.efiSysMountPoint = "/boot";
-
-  # Temporarily use GRUB
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.device = "nodev";
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot";
 
   # Use latest Linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
