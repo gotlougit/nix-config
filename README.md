@@ -28,4 +28,4 @@ Most of these will be my personal preferences
 
 - [mt-caret's blog on such a setup](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html), which I merely tried to automate into one single shell script and some Nix configurations of my own
 
-- [DZone's article on NixOS](https://dzone.com/articles/nixos-native-flake-deployment-with-luks-and-lvm) helped set up LVM and LUKS properly with encrypted swap
+- [Lan Tian's Intro to Flakes](https://lantian.pub/en/article/modify-website/nixos-initial-config-flake-deploy.lantian/) helped migrate the repo to flakes
