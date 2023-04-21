@@ -6,13 +6,15 @@ It will:
 
 - Auto-partition a btrfs + LUKS encrypted system with UEFI boot, with zstd compression
 
+WARNING: this is designed for a system with ONLY NixOS! It WILL wipe any and all previous partition info on the drive you select! You may or may NOT be able to recover the stored data!
+
 - Configure systemd-boot
 
 - Configure DNS resolving using dnscrypt-proxy2
 
 - Add various packages that will be useful for the user
 
-- Add users to the system
+- Add a user to the system
 
 - Configure a 16GB swap partition
 
@@ -23,6 +25,48 @@ Nice-to-haves:
 - Manage many program configurations using home manager and Nix; this will require a time investment on my part to figure out how to gradually do so
 
 Most of these will be my personal preferences
+
+## Usage
+
+Since it is a bit difficult to find a comprehensive NixOS tutorial, I'll give you some of the steps needed to use this repo:
+
+- Boot into NixOS live CD
+
+- Get git: `nix-env -iA git`
+
+- Clone this repo with git:
+
+`git clone https://github.com/gotlougit/nix-config`
+
+or
+
+`git clone https://git.sr.ht/~gotlou/nix-config`
+
+- `cd nix-config`
+
+- Now, the first script to run is `installnix.sh`. It mainly deals with partitioning and setting up the NixOS install with a `configuration.nix`
+
+You have to CHANGE the following values based on your hardware:
+
+    - DISK: this is the variable which tells the script which drive to install NixOS on
+
+    - BOOTPART: the partition to install /boot on.
+
+    - SWAPPART: the partition to install swap on.
+
+    - DATAPART: the partition to install / on.
+
+    - PASSPHRASE: the password you use to encrypt your drive with. Make this a good password so that it is hard to brute-force or guess it
+
+Note: for a VM install, you should probably run
+
+`sed -i s/17/2/g installnix.sh`
+
+to configure 1GB swap instead of 16GB
+
+- After doing so, run `sudo bash installnix.sh`. It will do all the steps by itself, and hopefully should partition and run `addconfig.sh`, which copies over the \*.nix files by itself into the right locations.
+
+- You should then run `sudo nixos-install` and if all goes right, you can then reboot into a fresh NixOS install!
 
 ## Credits
 
