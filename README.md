@@ -24,45 +24,17 @@ Most of these will be my personal preferences
 
 Since it is a bit difficult to find a comprehensive NixOS tutorial, I'll give you some of the steps needed to use this repo:
 
-- Boot into NixOS live CD
+- Download NixOS from [the official website](https://nixos.org)
 
-- Get git: `nix-env -iA nixos.git`
+- Install it as usual (but take care to setup btrfs file system with encryption)
 
-- Clone this repo with git:
+- Reboot into your shiny, new NixOS install
 
-`git clone https://github.com/gotlougit/nix-config`
+- Paste in [configuration.nix](https://raw.githubusercontent.com/gotlougit/nix-config/main/configuration.nix) into `/etc/nixos/`
 
-or
+- Run `sudo nixos-rebuild switch` to get my system
 
-`git clone https://git.sr.ht/~gotlou/nix-config`
-
-- `cd nix-config`
-
-- Now, the first script to run is `installnix.sh`. It mainly deals with partitioning and setting up the NixOS install with a `configuration.nix`
-
-You have to CHANGE the following values based on your hardware:
-
-    - DISK: this is the variable which tells the script which drive to install NixOS on
-
-    - BOOTPART: the partition to install /boot on.
-
-    - SWAPPART: the partition to install swap on.
-
-    - DATAPART: the partition to install / on.
-
-    - PASSPHRASE: the password you use to encrypt your drive with. Make this a good password so that it is hard to brute-force or guess it
-
-Note: for a VM install, you should probably run
-
-`sed -i s/17/2/g installnix.sh`
-
-to configure 1GB swap instead of 16GB
-
-- After doing so, run `sudo bash installnix.sh`. It will do all the steps by itself, and hopefully should partition and run `addconfig.sh`, which copies over the \*.nix files by itself into the right locations.
-
-- You should then run `sudo nixos-install` and if all goes right, you can then reboot into a fresh NixOS install!
-
-Note: I use my Thinkpad E14 AMD's config from [nix-hardware](https://github.com/NixOS/nixos-hardware), if you have a different machine, you should use the generated `hardware-configuration.nix` instead. More instructions for this will be posted here.
+Note: the other files in this repo were to automate this installation step, however it doesn't work and I don't advise anyone to use them.
 
 ## Credits
 
