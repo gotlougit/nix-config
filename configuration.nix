@@ -18,7 +18,10 @@
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
   };
-  
+ 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+
   # Setup networking
   networking = {
     hostName = "kratos"; # Define your hostname.
@@ -55,7 +58,7 @@
       };
 
       # Ideally add one or two more here
-      server_names = [ "mullvad-adblock-doh" "quad9-dnscrypt-ip4-nofilter-ecs-pri" "cloudflare"];
+      server_names = [ "cloudflare" "mullvad-adblock-doh" "quad9-dnscrypt-ip4-nofilter-ecs-pri" ];
       };
     };
 
@@ -138,6 +141,8 @@
 	thunderbird # Email client
         ark # KDE archiving program
         arc-theme # Preferred theme for KDE
+        arc-icon-theme # Preferred theme for KDE
+        arc-kde-theme # Preferred theme for KDE
         chiaki # PS4 Remote Play client
         filelight # View disk usage in pie chart form
         ghidra # Decompiler
@@ -161,6 +166,8 @@
         wl-clipboard # CLI util for copying and pasting in Wayland
 
 	# Development Stuff
+	gcc
+	pkg-config
 	glibc
 	glibc_multi
 	binutils
@@ -212,10 +219,6 @@
     wget # Another, simpler download manager
     winePackages.stagingFull # Latest Wine to run Windows programs
     wireshark # View real time network traffic across multiple interfaces
-
-    # Packages that have to be installed via unstable
-    # TODO: fix mullvad browser install
-    # unstable.mullvad-browser # Hardened Firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
