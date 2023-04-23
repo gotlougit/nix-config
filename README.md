@@ -4,10 +4,6 @@ This repo aims to create as much an automated, reproducible install of NixOS as 
 
 It will:
 
-- Auto-partition a btrfs + LUKS encrypted system with UEFI boot, with zstd compression
-
-WARNING: this is designed for a system with ONLY NixOS! It WILL wipe any and all previous partition info on the drive you select! You may or may NOT be able to recover the stored data!
-
 - Configure systemd-boot
 
 - Configure DNS resolving using dnscrypt-proxy2
@@ -15,8 +11,6 @@ WARNING: this is designed for a system with ONLY NixOS! It WILL wipe any and all
 - Add various packages that will be useful for the user
 
 - Add a user to the system
-
-- Configure a 16GB swap partition
 
 Nice-to-haves:
 
