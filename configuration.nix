@@ -179,6 +179,8 @@
 	nodePackages_latest.pyright
 	gopls
 	nodePackages_latest.coc-tsserver
+	python310
+	python310Packages.pip
     ];
   };
 
@@ -257,7 +259,11 @@
   # List services that you want to enable:
   # Enable warp-svc to allow connections to the Cloudflare VPN
   systemd.packages = [ pkgs.cloudflare-warp pkgs.syncthing ];
-  systemd.services.warp-svc.enable = true;
+  systemd.services.warp-svc = {
+    enable = true;
+    after = [ "network-online.target" "systemd-resolved.service" ];
+    wantedBy = [ "multi-user.target" ];
+  };
   # Enable syncthing
   systemd.services.syncthing.enable = true;
   # Enable vnstatd to monitor total net usage
