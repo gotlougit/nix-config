@@ -6,54 +6,19 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      #./hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
-
-  nixpkgs.config = {
-    allowUnfree = true; # Allow proprietary software
-  };
-
-
-  # Configure filesystem manually
-  fileSystems."/" =
-    {
-      options = [ "subvol=root" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/home" =
-    {
-      options = [ "subvol=home" "compress=zstd" "noatime" ];
-      fsType = "btrfs";
-    };
-
-  fileSystems."/nix" =
-    {
-      options = [ "subvol=nix" "compress=zstd" "noatime" ];
-      fsType = "btrfs";
-    };
-
-  fileSystems."/persist" =
-    {
-      options = [ "subvol=persist" "compress=zstd" "noatime" ];
-      fsType = "btrfs";
-    };
-
-  hardware.enableAllFirmware = true;
-
-  # Enable virtualization
-  virtualisation.libvirtd.enable = true;
-  programs.dconf.enable = true;
 
   # Use the systemd-boot bootloader.
   # TODO: try to get systemd-boot to work
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 20;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot";
-
-  # Use latest Linux Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.supportedFilesystems = [ "btrfs" ];
-
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+  
   # Setup networking
   networking = {
     hostName = "kratos"; # Define your hostname.
@@ -65,6 +30,11 @@
     networkmanager.dns = "none";
     # TODO: figure out firewall rules
     firewall.enable = false;
+  };
+
+  # Enable zstd compression
+  fileSystems."/" = {
+    options = [ "compress=zstd" "noatime" ];
   };
 
   # Disable resolved, we won't be using it
@@ -85,22 +55,25 @@
       };
 
       # Ideally add one or two more here
-      server_names = ["cloudflare"];
+      server_names = [ "mullvad-adblock-doh" "quad9-dnscrypt-ip4-nofilter-ecs-pri" "cloudflare"];
       };
-    };
-
-    systemd.services.dnscrypt-proxy2 = {
-        after = [ "systemd-sysusers.target" ];
-        before = [ "sysinit.target" "network.target" "nss-lookup.target" "shutdown.target" ];
-        wantedBy = [ "multi-user.target" ];
-        serviceConfig.StateDirectory = "dnscrypt-proxy";
     };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
+  nixpkgs.config.allowUnfree = true; # Allow proprietary software
+  hardware.enableAllFirmware = true;
+
+  # Enable virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
+  
+  # Use latest Linux Kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = [ "btrfs" ];
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_IN";
   console = {
     font = "Lat2-Terminus16";
     useXkbConfig = true; # use xkbOptions in tty.
@@ -119,6 +92,11 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Enable flakes
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
 
   # Enable sound.
   sound.enable = true;
@@ -150,13 +128,14 @@
   users.users.gotlou = {
     isNormalUser = true;
     # CHANGE THIS ASAP
-    initialPassword = "gotlou";
+    initialPassword = "hellofriend";
     extraGroups = [ "wheel" "networkmanager" ];
     # TODO: make this even more comprehensive
     # Add whatever you want
     # I mainly add GUI programs in here
     packages = with pkgs; [
         firefox # Just plain Firefox
+	thunderbird # Email client
         ark # KDE archiving program
         arc-theme # Preferred theme for KDE
         chiaki # PS4 Remote Play client
@@ -180,6 +159,19 @@
         tor-browser-bundle-bin # Needs no intro
         vlc # Easiest media player
         wl-clipboard # CLI util for copying and pasting in Wayland
+
+	# Development Stuff
+	glibc
+	glibc_multi
+	binutils
+	libgccjit
+	llvmPackages_15.libclang
+	zig
+	rustup
+	go
+	nodePackages_latest.pyright
+	gopls
+	nodePackages_latest.coc-tsserver
     ];
   };
 
@@ -194,7 +186,9 @@
     bandwhich # view what programs are making network requests
     bear # Generate autocomplete for large projects
     curl # no intro needed
+    dig # for DNS testing
     cloudflare-warp # A good quality VPN
+    file # To show type of file
     ffmpeg # Swiss Army Knife of
     flatpak # Used to isolate certain programs
     gocryptfs # For plasma-vault
@@ -259,11 +253,10 @@
 
   # List services that you want to enable:
   # Enable warp-svc to allow connections to the Cloudflare VPN
-  systemd.services.warp-svc = {
-    enable = true;
-    after = [ "network-online.target"  "dnscrypt-proxy.target" ];
-    wantedBy = [ "multi-user.target" ];
-  };
+  systemd.packages = [ pkgs.cloudflare-warp pkgs.syncthing ];
+  systemd.services.warp-svc.enable = true;
+  # Enable syncthing
+  systemd.services.syncthing.enable = true;
   # Enable vnstatd to monitor total net usage
   services.vnstat.enable = true;
   # Enable tailscaled to be able to connect to mesh network
