@@ -158,6 +158,7 @@
         qbittorrent # Best torrent client
         rpcs3 # PS3 emulator
         rhythmbox # Preferred music player
+	songrec # Shazam on Linux
         signal-desktop # Secure and easy messaging
         steam # Games client
         tdesktop # Telegram desktop client
