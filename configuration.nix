@@ -211,6 +211,7 @@
     neofetch # Nice startup screen for terminal
     pandoc # Convert docs
     picard # Tag music files
+    poppler_utils # PDF conversion and misc utils
     plasma-vault # Encrypted folders in KDE
     postgresql_15 # Database
     rr # Record and replay while debugging
