@@ -180,7 +180,7 @@
 	nodePackages_latest.pyright
 	gopls
 	nodePackages_latest.coc-tsserver
-	python310
+	python310Full
 	python310Packages.pip
     ];
   };
