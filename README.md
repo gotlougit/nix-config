@@ -18,6 +18,8 @@ Nice-to-haves:
 
 - Manage many program configurations using home manager and Nix; this will require a time investment on my part to figure out how to gradually do so
 
+- Automate secure boot setup
+
 Most of these will be my personal preferences
 
 ## Usage
@@ -33,8 +35,6 @@ Since it is a bit difficult to find a comprehensive NixOS tutorial, I'll give yo
 - Paste in [configuration.nix](https://raw.githubusercontent.com/gotlougit/nix-config/main/configuration.nix) into `/etc/nixos/`
 
 - Run `sudo nixos-rebuild switch` to get my system
-
-Note: the other files in this repo were to automate this installation step, however it doesn't work and I don't advise anyone to use them.
 
 ## Credits
 
