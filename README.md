@@ -32,9 +32,11 @@ Since it is a bit difficult to find a comprehensive NixOS tutorial, I'll give yo
 
 - Reboot into your shiny, new NixOS install
 
-- Paste in [configuration.nix](https://raw.githubusercontent.com/gotlougit/nix-config/main/configuration.nix) into `/etc/nixos/`
+- Run
 
-- Run `sudo nixos-rebuild switch` to get my system
+`curl -O https://raw.githubusercontent.com/gotlougit/nix-config/main/bootstrap.sh && sudo bash bootstrap.sh`
+
+This will automatically get the latest configuration from this repo, apply it and build the system. This will take some time to get the packages from the NixOS cache, so feel free to get a coffee break!
 
 ## Credits
 
