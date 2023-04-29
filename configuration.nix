@@ -234,6 +234,7 @@
     tailscale # Create a mesh network
     virt-manager # Easy KVM based VMs
     vnstat # View total data usage
+    vulkan-tools # Manage vulkan
     wget # Another, simpler download manager
     winePackages.stagingFull # Latest Wine to run Windows programs
     wireshark # View real time network traffic across multiple interfaces
