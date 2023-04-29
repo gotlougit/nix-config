@@ -33,8 +33,8 @@
     pkgs.driversi686Linux.amdvlk
   ];
 
-# Force radv
-environment.variables.AMD_VULKAN_ICD = "RADV";
+  # Force radv
+  environment.variables.AMD_VULKAN_ICD = "RADV";
 
   # Setup networking
   networking = {
