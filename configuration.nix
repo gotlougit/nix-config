@@ -175,6 +175,7 @@
 	songrec # Shazam on Linux
         signal-desktop # Secure and easy messaging
         steam # Games client
+	steam-run # Required for Steam
         tdesktop # Telegram desktop client
         tor-browser-bundle-bin # Needs no intro
         vlc # Easiest media player
