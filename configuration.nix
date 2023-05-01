@@ -174,8 +174,6 @@
         rhythmbox # Preferred music player
 	songrec # Shazam on Linux
         signal-desktop # Secure and easy messaging
-        steam # Games client
-	steam-run # Required for Steam
         tdesktop # Telegram desktop client
         tor-browser-bundle-bin # Needs no intro
         vlc # Easiest media player
@@ -240,6 +238,8 @@
     winePackages.stagingFull # Latest Wine to run Windows programs
     wireshark # View real time network traffic across multiple interfaces
   ];
+
+  programs.steam.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
