@@ -182,6 +182,7 @@
 	# Development Stuff
 	gcc
 	pkg-config
+	gnumake
 	glibc
 	glibc_multi
 	binutils
