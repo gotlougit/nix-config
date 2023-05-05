@@ -38,6 +38,12 @@ Since it is a bit difficult to find a comprehensive NixOS tutorial, I'll give yo
 
 This will automatically get the latest configuration from this repo, apply it and build the system. This will take some time to get the packages from the NixOS cache, so feel free to get a coffee break!
 
+- Reboot ideally, then change your password
+
+- Use home-manager to manage your config files
+
+- Run `syncthing --reset-database` to force rescan the Syncthing files
+
 ## Credits
 
 - [mt-caret's blog on such a setup](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html), which I merely tried to automate into one single shell script and some Nix configurations of my own
