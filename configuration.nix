@@ -207,6 +207,7 @@
     tealdeer # Rust implementation of tldr
     android-tools # adb, fastboot etc
     aria # download manager
+    aspell # CLI spell check
     bandwhich # view what programs are making network requests
     bear # Generate autocomplete for large projects
     curl # no intro needed
@@ -232,6 +233,7 @@
     radeontop # AMD GPU monitoring
     syncthing # Sync all files
     tailscale # Create a mesh network
+    trash-cli # Send file to trash instead of permanently deleting
     unrar # Useful for decompressing
     virt-manager # Easy KVM based VMs
     vnstat # View total data usage
