@@ -49,3 +49,5 @@ This will automatically get the latest configuration from this repo, apply it an
 - [mt-caret's blog on such a setup](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html), which I merely tried to automate into one single shell script and some Nix configurations of my own
 
 - [Lan Tian's Intro to Flakes](https://lantian.pub/en/article/modify-website/nixos-initial-config-flake-deploy.lantian/) helped migrate the repo to flakes
+
+- [Config used for neovim](https://github.com/brainfucksec/neovim-lua)
