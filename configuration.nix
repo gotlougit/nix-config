@@ -231,6 +231,7 @@
     radeontop # AMD GPU monitoring
     syncthing # Sync all files
     tailscale # Create a mesh network
+    unrar # Useful for decompressing
     virt-manager # Easy KVM based VMs
     vnstat # View total data usage
     vulkan-tools # Manage vulkan
