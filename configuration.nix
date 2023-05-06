@@ -190,6 +190,7 @@
 	llvmPackages_15.libclang
 	zig
 	rustup
+	rust-analyzer
 	go
 	nodePackages_latest.pyright
 	gopls
