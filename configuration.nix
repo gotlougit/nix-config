@@ -276,7 +276,7 @@
     # TODO: maybe figure out if this is required or not
     # LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
     GIT_ASKPASS = "/usr/bin/ksshaskpass";
-    GTK_THEME = "Arc-Dark";
+    GTK_THEME = "Arc:dark";
     EDITOR = "nvim";
     # TODO: fix setting GTK_USE_PORTAL
     #GTK_USE_PORTAL = 1;
