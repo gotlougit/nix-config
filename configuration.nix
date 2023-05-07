@@ -18,6 +18,7 @@
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
   };
+  boot.initrd.systemd.enable = true;
  
   # Enable bluetooth
   hardware.bluetooth.enable = true;
