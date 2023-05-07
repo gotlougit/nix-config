@@ -157,6 +157,7 @@
         arc-theme # Preferred theme for KDE
         arc-icon-theme # Preferred theme for KDE
         arc-kde-theme # Preferred theme for KDE
+	bottles # Easily manage Wine prefixes
         chiaki # PS4 Remote Play client
         filelight # View disk usage in pie chart form
         ghidra # Decompiler
