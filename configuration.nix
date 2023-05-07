@@ -158,6 +158,7 @@
         arc-theme # Preferred theme for KDE
         arc-icon-theme # Preferred theme for KDE
         arc-kde-theme # Preferred theme for KDE
+	gnome.adwaita-icon-theme  # GTK apps default icons
 	bottles # Easily manage Wine prefixes
         chiaki # PS4 Remote Play client
         filelight # View disk usage in pie chart form
