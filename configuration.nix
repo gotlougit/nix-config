@@ -195,6 +195,8 @@
 	rustup
 	rust-analyzer
 	go
+	nodejs
+	tree-sitter
 	nodePackages_latest.pyright
 	gopls
 	nodePackages_latest.coc-tsserver
