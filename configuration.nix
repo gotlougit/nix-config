@@ -246,6 +246,7 @@
     vulkan-tools # Manage vulkan
     wget # Another, simpler download manager
     winePackages.stagingFull # Latest Wine to run Windows programs
+    whois # Useful utility
     wireshark # View real time network traffic across multiple interfaces
   ];
 
