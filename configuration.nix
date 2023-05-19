@@ -38,8 +38,9 @@ in
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
   };
-  boot.initrd.systemd.enable = false;
- 
+  boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.emergencyAccess = true;
+
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   # Enable hardware acceleration
@@ -72,23 +73,28 @@ in
 
   # Enable zstd compression and some erase your darlings shenanigans
   fileSystems."/" = {
-    options = [ "subvol=dummy-root" "compress=zstd" "noatime" ];
+    device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
+    fsType = "btrfs";
+    options = [ "subvol=@/dummy-root" "compress=zstd" "noatime" ];
+    neededForBoot = true;
   };
   # Explicitly define paths for these folders
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
     fsType = "btrfs";
     options = [ "subvol=@home" "compress=zstd" "noatime" ];
+    neededForBoot = true;
   };
   fileSystems."/persist" = {
     device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
     fsType = "btrfs";
-    options = [ "subvol=persist" "compress=zstd" "noatime" ];
+    options = [ "subvol=@/persist" "compress=zstd" "noatime" ];
+    neededForBoot = true;
   };
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
     fsType = "btrfs";
-    options = [ "subvol=nix-subvol" "compress=zstd" "noatime" ];
+    neededForBoot = true;
   };
 
   # Disable resolved, we won't be using it
@@ -180,6 +186,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
   users.mutableUsers = false;
+  users.users.root.initialPassword = "hi";
   users.users.gotlou = {
     isNormalUser = true;
     # CHANGE THIS ASAP
