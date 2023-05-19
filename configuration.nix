@@ -89,7 +89,7 @@ in
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
     fsType = "btrfs";
-    options = [ "compress=zstd" "noatime" ];
+    options = [ "subvol=nix-subvol" "compress=zstd" "noatime" ];
   };
 
   # Disable resolved, we won't be using it
