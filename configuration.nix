@@ -3,11 +3,32 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
+let
+  impermanence = builtins.fetchTarball "https://github.com/nix-community/impermanence/archive/master.tar.gz";
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # Impermanence
+      "${impermanence}/nixos.nix"
     ];
+
+  # Files and folders that are saved by Impermanence from deletion
+  # Symlinks will be created automatically at boot
+  environment.persistence."/persist/system" = {
+    directories = [
+      "/etc/nixos"
+      "/etc/NetworkManager"
+      "/var/log"
+      "/var/lib"
+      "/etc/adjtime"
+    ];
+    files = [
+      "/etc/machine-id"
+      "/etc/shadow"
+    ];
+  };
 
   # Use the systemd-boot bootloader.
   # TODO: try to get systemd-boot to work
@@ -50,8 +71,24 @@
     firewall.enable = false;
   };
 
-  # Enable zstd compression
+  # Enable zstd compression and some erase your darlings shenanigans
   fileSystems."/" = {
+    options = [ "subvol=dummy-root" "compress=zstd" "noatime" ];
+  };
+  # Explicitly define paths for these folders
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
+    fsType = "btrfs";
+    options = [ "subvol=@home" "compress=zstd" "noatime" ];
+  };
+  fileSystems."/persist" = {
+    device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
+    fsType = "btrfs";
+    options = [ "subvol=persist" "compress=zstd" "noatime" ];
+  };
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
+    fsType = "btrfs";
     options = [ "compress=zstd" "noatime" ];
   };
 
@@ -143,6 +180,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
+  users.mutableUsers = false;
   users.users.gotlou = {
     isNormalUser = true;
     # CHANGE THIS ASAP

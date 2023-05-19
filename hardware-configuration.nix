@@ -16,7 +16,6 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
     };
 
   boot.initrd.luks.devices."luks-61c73084-7559-4248-8c55-b1b9b5c6d200".device = "/dev/disk/by-uuid/61c73084-7559-4248-8c55-b1b9b5c6d200";
