@@ -160,6 +160,7 @@
         arc-kde-theme # Preferred theme for KDE
 	gnome.adwaita-icon-theme  # GTK apps default icons
 	bottles # Easily manage Wine prefixes
+	cemu # Wii U emulator
         chiaki # PS4 Remote Play client
         filelight # View disk usage in pie chart form
         ghidra # Decompiler
