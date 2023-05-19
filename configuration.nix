@@ -22,7 +22,6 @@ in
       "/etc/NetworkManager"
       "/var/log"
       "/var/lib"
-      "/etc/adjtime"
     ];
     files = [
       "/etc/machine-id"
@@ -33,13 +32,13 @@ in
   # Use the systemd-boot bootloader.
   # TODO: try to get systemd-boot to work
   boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 3;
+  boot.loader.systemd-boot.configurationLimit = 20;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
   };
-  boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.enable = false;
  
   # Enable bluetooth
   hardware.bluetooth.enable = true;
