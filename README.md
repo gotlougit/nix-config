@@ -30,6 +30,8 @@ Since it is a bit difficult to find a comprehensive NixOS tutorial, I'll give yo
 
 - Install it as usual (but take care to setup btrfs file system with encryption)
 
+Optionally, use the `installnix.sh` script: it WILL erase your entire partition table, so BEWARE!!!
+
 - Reboot into your shiny, new NixOS install
 
 - Run
@@ -40,7 +42,7 @@ This will automatically get the latest configuration from this repo, apply it an
 
 - Reboot ideally, then change your password
 
-- Use home-manager to manage your config files
+- Use Impermanence to manage your config files
 
 - Run `syncthing --reset-database` to force rescan the Syncthing files
 
