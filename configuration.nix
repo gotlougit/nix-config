@@ -34,7 +34,6 @@ in
       "/home/gotlou/.config/hut"
       "/home/gotlou/.config/nvim"
       "/home/gotlou/.ssh"
-      "/home/gotlou/.gnupg"
       "/home/gotlou/.local/share/kwalletd"
       "/home/gotlou/.local/share/dolphin"
     ];
@@ -139,9 +138,14 @@ in
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable flakes
   nix = {
+    # Enable flakes
     settings.experimental-features = [ "nix-command" "flakes" ];
+    # Garbage collect generations older than 7 days
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 7d";
+    };
   };
 
   # Enable sound.
