@@ -34,6 +34,7 @@ in
       "/home/gotlou/.config/hut"
       "/home/gotlou/.config/nvim"
       "/home/gotlou/.config/neofetch"
+      "/home/gotlou/.config/syncthing"
       "/home/gotlou/.ssh"
       "/home/gotlou/.local/share/kwalletd"
       "/home/gotlou/.local/share/dolphin"
