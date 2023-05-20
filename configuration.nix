@@ -24,10 +24,25 @@ in
       "/var/lib"
     ];
     files = [
-      "/etc/machine-id"
-      "/etc/shadow"
+      #"/etc/machine-id"
+      #"/etc/shadow"
     ];
   };
+  environment.persistence."/persist/dotfiles/home/gotlou" = {
+    directories = [
+      "/home/gotlou/.config/gh"
+      "/home/gotlou/.config/hut"
+      "/home/gotlou/.config/nvim"
+      "/home/gotlou/.ssh"
+      "/home/gotlou/.gnupg"
+      "/home/gotlou/.local/share/kwalletd"
+      "/home/gotlou/.local/share/dolphin"
+    ];
+    files = [
+      "/home/gotlou/.gitconfig"
+    ];
+  };
+
 
   # Use the systemd-boot bootloader.
   # TODO: try to get systemd-boot to work
@@ -35,9 +50,6 @@ in
   boot.loader.systemd-boot.configurationLimit = 20;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
   boot.initrd.systemd.enable = true;
   boot.initrd.systemd.emergencyAccess = true;
 
@@ -69,32 +81,6 @@ in
     networkmanager.dns = "none";
     # TODO: figure out firewall rules
     firewall.enable = false;
-  };
-
-  # Enable zstd compression and some erase your darlings shenanigans
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
-    fsType = "btrfs";
-    options = [ "subvol=@/dummy-root" "compress=zstd" "noatime" ];
-    neededForBoot = true;
-  };
-  # Explicitly define paths for these folders
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
-    fsType = "btrfs";
-    options = [ "subvol=@home" "compress=zstd" "noatime" ];
-    neededForBoot = true;
-  };
-  fileSystems."/persist" = {
-    device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
-    fsType = "btrfs";
-    options = [ "subvol=@/persist" "compress=zstd" "noatime" ];
-    neededForBoot = true;
-  };
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
-    fsType = "btrfs";
-    neededForBoot = true;
   };
 
   # Disable resolved, we won't be using it
@@ -186,7 +172,6 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
   users.mutableUsers = false;
-  users.users.root.initialPassword = "hi";
   users.users.gotlou = {
     isNormalUser = true;
     # CHANGE THIS ASAP
@@ -214,6 +199,7 @@ in
         legendary-gl # Epic Games Store client
         libreoffice-qt # Document editor
         mangohud # Overlay while playing games
+    	mullvad-browser # Browser for private browsing
         otpclient # TOTP client
         pcsxr # PS1 emulator
         pcsx2 # PS2 emulator

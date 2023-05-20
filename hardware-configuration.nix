@@ -8,21 +8,47 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "uas" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  fileSystems."/boot/efi" = {
+    device = "/dev/disk/by-uuid/1046-8921";
+    fsType = "vfat";
+  };
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d03dc8e5-aca7-4674-b86a-1705898ab693";
-      fsType = "btrfs";
+    { device = "none";
+      fsType = "tmpfs";
+      options = [ "defaults" "size=1G" "mode=755" ];
+    };
+  
+  fileSystems."/tmp" =
+    { device = "none";
+      fsType = "tmpfs";
+      options = [ "defaults" "size=5G" "mode=755" ];
     };
 
-  boot.initrd.luks.devices."luks-61c73084-7559-4248-8c55-b1b9b5c6d200".device = "/dev/disk/by-uuid/61c73084-7559-4248-8c55-b1b9b5c6d200";
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/434e510a-b269-4f83-a0b6-0a8532a8ff07";
 
-  fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/240A-7727";
-      fsType = "vfat";
+  fileSystems."/home" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "noatime" "subvol=home" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "noatime" "subvol=nix" ];
+    };
+
+  fileSystems."/persist" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "noatime" "subvol=persist" ];
+      neededForBoot = true;
     };
 
   swapDevices = [ ];
