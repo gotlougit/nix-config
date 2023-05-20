@@ -33,9 +33,11 @@ in
       "/home/gotlou/.config/gh"
       "/home/gotlou/.config/hut"
       "/home/gotlou/.config/nvim"
+      "/home/gotlou/.config/neofetch"
       "/home/gotlou/.ssh"
       "/home/gotlou/.local/share/kwalletd"
       "/home/gotlou/.local/share/dolphin"
+      "/home/gotlou/.local/share/rhythmbox"
     ];
     files = [
       "/home/gotlou/.gitconfig"
