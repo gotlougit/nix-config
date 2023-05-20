@@ -38,6 +38,9 @@ in
       "/home/gotlou/.local/share/kwalletd"
       "/home/gotlou/.local/share/dolphin"
       "/home/gotlou/.local/share/rhythmbox"
+      "/home/gotlou/.mullvad"
+      "/home/gotlou/.mozilla"
+      "/home/gotlou/.thunderbird"
     ];
     files = [
       "/home/gotlou/.gitconfig"
