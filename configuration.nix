@@ -41,6 +41,7 @@ in
       "/home/gotlou/.mullvad"
       "/home/gotlou/.mozilla"
       "/home/gotlou/.thunderbird"
+      "/home/gotlou/.config/Signal"
     ];
     files = [
       "/home/gotlou/.gitconfig"
