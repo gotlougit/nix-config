@@ -272,6 +272,7 @@ in
     glances # htop alternative
     hut # Sourcehut CLI
     libsForQt5.kdeconnect-kde # KDE Connect
+    lm_sensors # For temperatures and fan speeds
     neofetch # Nice startup screen for terminal
     pandoc # Convert docs
     picard # Tag music files
