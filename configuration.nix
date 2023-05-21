@@ -23,9 +23,6 @@ in
       "/var/log/cloudflare-warp"
       "/var/log/libvirt"
       "/var/log/private"
-      "/var/log/dnscrypt-proxy"
-      "/var/log/btmp"
-      "/var/log/wtmp"
       "/var/lib"
     ];
     files = [
@@ -33,7 +30,7 @@ in
       #"/etc/shadow"
     ];
   };
-  environment.persistence."/persist/dotfiles/home/gotlou" = {
+  environment.persistence."/persist/dotfiles" = {
     directories = [
       "/home/gotlou/.config/gh"
       "/home/gotlou/.config/hut"
