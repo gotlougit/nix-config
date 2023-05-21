@@ -20,7 +20,12 @@ in
     directories = [
       "/etc/nixos"
       "/etc/NetworkManager"
-      "/var/log"
+      "/var/log/cloudflare-warp"
+      "/var/log/libvirt"
+      "/var/log/private"
+      "/var/log/dnscrypt-proxy"
+      "/var/log/btmp"
+      "/var/log/wtmp"
       "/var/lib"
     ];
     files = [
