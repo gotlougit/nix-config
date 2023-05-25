@@ -294,6 +294,7 @@ in
     winePackages.stagingFull # Latest Wine to run Windows programs
     whois # Useful utility
     wireshark # View real time network traffic across multiple interfaces
+    yt-dlp # Useful video download utility
   ];
 
   programs.steam.enable = true;
