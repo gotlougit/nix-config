@@ -294,6 +294,7 @@ in
     winePackages.stagingFull # Latest Wine to run Windows programs
     whois # Useful utility
     wireshark # View real time network traffic across multiple interfaces
+    wireguard-tools # Use kernel Wireguard
     yt-dlp # Useful video download utility
   ];
 
