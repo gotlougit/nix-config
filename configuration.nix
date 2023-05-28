@@ -257,7 +257,7 @@ in
     tealdeer # Rust implementation of tldr
     android-tools # adb, fastboot etc
     aria # download manager
-    az # Microsoft Azure CLI
+    azure-cli # Microsoft Azure CLI
     aspell # CLI spell check
     bandwhich # view what programs are making network requests
     bear # Generate autocomplete for large projects
