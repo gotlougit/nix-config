@@ -228,12 +228,14 @@ in
 
 	# Development Stuff
 	gcc
+	gcc-unwrapped.lib
 	pkg-config
 	gnumake
 	glibc
 	glibc_multi
 	binutils
 	libgccjit
+	libstdcxx5
 	llvmPackages_15.libclang
 	zig
 	rustup
