@@ -313,7 +313,7 @@ in
 
   # Set useful shell aliases
   programs.bash.shellAliases = {
-      vi = "nvim";
+      vi = "steam-run nvim";
       open = "xdg-open";
   };
 
