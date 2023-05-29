@@ -247,6 +247,8 @@ in
 	gopls
 	nodePackages_latest.coc-tsserver
 	python310Full
+	tk
+	python310Packages.tkinter
 	python310Packages.pip
     ];
   };
