@@ -195,14 +195,14 @@ in
     # I mainly add GUI programs in here
     packages = with pkgs; [
         firefox # Just plain Firefox
-	thunderbird # Email client
+	      thunderbird # Email client
         ark # KDE archiving program
         arc-theme # Preferred theme for KDE
         arc-icon-theme # Preferred theme for KDE
         arc-kde-theme # Preferred theme for KDE
-	gnome.adwaita-icon-theme  # GTK apps default icons
-	bottles # Easily manage Wine prefixes
-	cemu # Wii U emulator
+      	gnome.adwaita-icon-theme  # GTK apps default icons
+      	bottles # Easily manage Wine prefixes
+      	cemu # Wii U emulator
         chiaki # PS4 Remote Play client
         filelight # View disk usage in pie chart form
         ghidra # Decompiler
@@ -212,44 +212,45 @@ in
         legendary-gl # Epic Games Store client
         libreoffice-qt # Document editor
         mangohud # Overlay while playing games
-    	mullvad-browser # Browser for private browsing
+    	  mullvad-browser # Browser for private browsing
         otpclient # TOTP client
         pcsxr # PS1 emulator
         pcsx2 # PS2 emulator
         qbittorrent # Best torrent client
         rpcs3 # PS3 emulator
         rhythmbox # Preferred music player
-	songrec # Shazam on Linux
+	      songrec # Shazam on Linux
         signal-desktop # Secure and easy messaging
         tdesktop # Telegram desktop client
         tor-browser-bundle-bin # Needs no intro
         vlc # Easiest media player
         wl-clipboard # CLI util for copying and pasting in Wayland
 
-	# Development Stuff
-	gcc
-	gcc-unwrapped.lib
-	pkg-config
-	gnumake
-	glibc
-	glibc_multi
-	binutils
-	libgccjit
-	libstdcxx5
-	llvmPackages_15.libclang
-	zig
-	rustup
-	rust-analyzer
-	go
-	nodejs
-	tree-sitter
-	nodePackages_latest.pyright
-	gopls
-	nodePackages_latest.coc-tsserver
-	python310Full
-	tk
-	python310Packages.tkinter
-	python310Packages.pip
+      	# Development Stuff
+      	gcc
+      	gcc-unwrapped.lib
+      	pkg-config
+      	gnumake
+      	glibc
+      	glibc_multi
+      	binutils
+      	libgccjit
+      	libstdcxx5
+      	llvmPackages_15.libclang
+      	zig
+      	rustup
+      	rust-analyzer
+      	go
+      	nodejs
+      	tree-sitter
+      	nodePackages_latest.pyright
+        python310Packages.python-lsp-server
+      	gopls
+      	nodePackages_latest.coc-tsserver
+      	python310Full
+      	tk
+      	python310Packages.tkinter
+      	python310Packages.pip
     ];
   };
 
@@ -278,6 +279,7 @@ in
     gitFull # For git-send-email
     glances # htop alternative
     hut # Sourcehut CLI
+	  helix # New Rust-based modal editor
     libsForQt5.kdeconnect-kde # KDE Connect
     lm_sensors # For temperatures and fan speeds
     neofetch # Nice startup screen for terminal
