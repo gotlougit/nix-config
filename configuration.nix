@@ -6,8 +6,10 @@
 let
   impermanence = builtins.fetchTarball
     "https://github.com/nix-community/impermanence/archive/master.tar.gz";
-in {
-  imports = [ # Include the results of the hardware scan.
+in
+{
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     # Impermanence
     "${impermanence}/nixos.nix"
