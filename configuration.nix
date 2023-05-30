@@ -4,15 +4,14 @@
 
 { config, pkgs, ... }:
 let
-  impermanence = builtins.fetchTarball "https://github.com/nix-community/impermanence/archive/master.tar.gz";
-in
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      # Impermanence
-      "${impermanence}/nixos.nix"
-    ];
+  impermanence = builtins.fetchTarball
+    "https://github.com/nix-community/impermanence/archive/master.tar.gz";
+in {
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    # Impermanence
+    "${impermanence}/nixos.nix"
+  ];
 
   # Files and folders that are saved by Impermanence from deletion
   # Symlinks will be created automatically at boot
@@ -46,11 +45,8 @@ in
       "/home/gotlou/.thunderbird"
       "/home/gotlou/.config/Signal"
     ];
-    files = [
-      "/home/gotlou/.gitconfig"
-    ];
+    files = [ "/home/gotlou/.gitconfig" ];
   };
-
 
   # Use the systemd-boot bootloader.
   # TODO: try to get systemd-boot to work
@@ -66,14 +62,10 @@ in
   # Enable hardware acceleration
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
-  hardware.opengl.extraPackages = [
-    pkgs.amdvlk
-  ];
+  hardware.opengl.extraPackages = [ pkgs.amdvlk ];
 
   # To enable Vulkan support for 32-bit applications, also add:
-  hardware.opengl.extraPackages32 = [
-    pkgs.driversi686Linux.amdvlk
-  ];
+  hardware.opengl.extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
 
   # Force radv
   environment.variables.AMD_VULKAN_ICD = "RADV";
@@ -81,7 +73,8 @@ in
   # Setup networking
   networking = {
     hostName = "kratos"; # Define your hostname.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    networkmanager.enable =
+      true; # Easiest to use and most distros use this by default.
     nameservers = [ "127.0.0.1" "::1" ];
     # If using dhcpcd:
     dhcpcd.extraConfig = "nohook resolv.conf";
@@ -105,13 +98,18 @@ in
           "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
         ];
         cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
-        minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
+        minisign_key =
+          "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
       };
 
       # Ideally add one or two more here
-      server_names = [ "cloudflare" "mullvad-adblock-doh" "quad9-dnscrypt-ip4-nofilter-ecs-pri" ];
-      };
+      server_names = [
+        "cloudflare"
+        "mullvad-adblock-doh"
+        "quad9-dnscrypt-ip4-nofilter-ecs-pri"
+      ];
     };
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -122,7 +120,7 @@ in
   # Enable virtualization
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
-  
+
   # Use latest Linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "btrfs" ];
@@ -172,14 +170,8 @@ in
   # Some WirePlumber stuff to handle bluetooth correctly
   services.pipewire.wireplumber.enable = true;
   environment.etc = {
-	"wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-		bluez_monitor.properties = {
-			["bluez5.enable-sbc-xq"] = true,
-			["bluez5.enable-msbc"] = true,
-			["bluez5.enable-hw-volume"] = true,
-			["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-		}
-	'';
+    "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text =
+      "	bluez_monitor.properties = {\n		[\"bluez5.enable-sbc-xq\"] = true,\n		[\"bluez5.enable-msbc\"] = true,\n		[\"bluez5.enable-hw-volume\"] = true,\n		[\"bluez5.headset-roles\"] = \"[ hsp_hs hsp_ag hfp_hf hfp_ag ]\"\n	}\n";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -194,64 +186,64 @@ in
     # Add whatever you want
     # I mainly add GUI programs in here
     packages = with pkgs; [
-        firefox # Just plain Firefox
-	      thunderbird # Email client
-        ark # KDE archiving program
-        arc-theme # Preferred theme for KDE
-        arc-icon-theme # Preferred theme for KDE
-        arc-kde-theme # Preferred theme for KDE
-      	gnome.adwaita-icon-theme  # GTK apps default icons
-      	bottles # Easily manage Wine prefixes
-      	cemu # Wii U emulator
-        chiaki # PS4 Remote Play client
-        filelight # View disk usage in pie chart form
-        ghidra # Decompiler
-        inkscape # Vector images
-        krita # Raster image editor
-        keepassxc # Password manager
-        legendary-gl # Epic Games Store client
-        libreoffice-qt # Document editor
-        mangohud # Overlay while playing games
-    	  mullvad-browser # Browser for private browsing
- 	nixfmt # Format nix code effectively
-        otpclient # TOTP client
-        pcsxr # PS1 emulator
-        pcsx2 # PS2 emulator
-        qbittorrent # Best torrent client
-        rpcs3 # PS3 emulator
-        rhythmbox # Preferred music player
-	      songrec # Shazam on Linux
-        signal-desktop # Secure and easy messaging
-        tdesktop # Telegram desktop client
-        tor-browser-bundle-bin # Needs no intro
-        vlc # Easiest media player
-        wl-clipboard # CLI util for copying and pasting in Wayland
+      firefox # Just plain Firefox
+      thunderbird # Email client
+      ark # KDE archiving program
+      arc-theme # Preferred theme for KDE
+      arc-icon-theme # Preferred theme for KDE
+      arc-kde-theme # Preferred theme for KDE
+      gnome.adwaita-icon-theme # GTK apps default icons
+      bottles # Easily manage Wine prefixes
+      cemu # Wii U emulator
+      chiaki # PS4 Remote Play client
+      filelight # View disk usage in pie chart form
+      ghidra # Decompiler
+      inkscape # Vector images
+      krita # Raster image editor
+      keepassxc # Password manager
+      legendary-gl # Epic Games Store client
+      libreoffice-qt # Document editor
+      mangohud # Overlay while playing games
+      mullvad-browser # Browser for private browsing
+      nixfmt # Format nix code effectively
+      otpclient # TOTP client
+      pcsxr # PS1 emulator
+      pcsx2 # PS2 emulator
+      qbittorrent # Best torrent client
+      rpcs3 # PS3 emulator
+      rhythmbox # Preferred music player
+      songrec # Shazam on Linux
+      signal-desktop # Secure and easy messaging
+      tdesktop # Telegram desktop client
+      tor-browser-bundle-bin # Needs no intro
+      vlc # Easiest media player
+      wl-clipboard # CLI util for copying and pasting in Wayland
 
-      	# Development Stuff
-      	gcc
-      	gcc-unwrapped.lib
-      	pkg-config
-      	gnumake
-      	glibc
-      	glibc_multi
-      	binutils
-      	libgccjit
-      	libstdcxx5
-      	llvmPackages_15.libclang
-      	zig
-      	rustup
-      	rust-analyzer
-      	go
-      	nodejs
-      	tree-sitter
-      	nodePackages_latest.pyright
-        python310Packages.python-lsp-server
-      	gopls
-      	nodePackages_latest.coc-tsserver
-      	python310Full
-      	tk
-      	python310Packages.tkinter
-      	python310Packages.pip
+      # Development Stuff
+      gcc
+      gcc-unwrapped.lib
+      pkg-config
+      gnumake
+      glibc
+      glibc_multi
+      binutils
+      libgccjit
+      libstdcxx5
+      llvmPackages_15.libclang
+      zig
+      rustup
+      rust-analyzer
+      go
+      nodejs
+      tree-sitter
+      nodePackages_latest.pyright
+      python310Packages.python-lsp-server
+      gopls
+      nodePackages_latest.coc-tsserver
+      python310Full
+      tk
+      python310Packages.tkinter
+      python310Packages.pip
     ];
   };
 
@@ -280,7 +272,7 @@ in
     gitFull # For git-send-email
     glances # htop alternative
     hut # Sourcehut CLI
-	  helix # New Rust-based modal editor
+    helix # New Rust-based modal editor
     libsForQt5.kdeconnect-kde # KDE Connect
     lm_sensors # For temperatures and fan speeds
     neofetch # Nice startup screen for terminal
@@ -318,19 +310,19 @@ in
 
   # Set useful shell aliases
   programs.bash.shellAliases = {
-      vi = "steam-run nvim";
-      open = "xdg-open";
+    vi = "steam-run nvim";
+    open = "xdg-open";
   };
 
   # Set session variables
   environment.variables = {
-    XDG_CACHE_HOME  = "$HOME/.cache";
+    XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME   = "$HOME/.local/share";
-    XDG_STATE_HOME  = "$HOME/.local/state";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_STATE_HOME = "$HOME/.local/state";
 
     # Not officially in the specification
-    XDG_BIN_HOME    = "$HOME/.local/bin";
+    XDG_BIN_HOME = "$HOME/.local/bin";
 
     # TODO: maybe figure out if this is required or not
     # LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
