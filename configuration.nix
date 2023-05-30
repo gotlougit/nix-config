@@ -266,7 +266,7 @@ in
     dig # for DNS testing
     cloudflare-warp # A good quality VPN
     file # To show type of file
-    ffmpeg # Swiss Army Knife of
+    ffmpeg # Multimedia Swiss Army Knife
     flatpak # Used to isolate certain programs
     gocryptfs # For plasma-vault
     gh # Github CLI
