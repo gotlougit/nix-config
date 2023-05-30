@@ -46,6 +46,7 @@ in
       "/home/gotlou/.mozilla"
       "/home/gotlou/.thunderbird"
       "/home/gotlou/.config/Signal"
+      "/home/gotlou/.config/helix"
     ];
     files = [ "/home/gotlou/.gitconfig" ];
   };
