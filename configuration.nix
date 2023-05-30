@@ -205,7 +205,7 @@ in {
       libreoffice-qt # Document editor
       mangohud # Overlay while playing games
       mullvad-browser # Browser for private browsing
-      nixfmt # Format nix code effectively
+      nixpkgs-fmt # Format nix code effectively
       otpclient # TOTP client
       pcsxr # PS1 emulator
       pcsx2 # PS2 emulator
