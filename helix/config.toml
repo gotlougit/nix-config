@@ -1,0 +1,27 @@
+theme = "custom-theme"
+
+[editor]
+color-modes = true
+rulers = [80]
+
+[editor.lsp]
+enable = true
+display-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.normal]
+H = "goto_line_start"
+L = "goto_line_end"
+G = "goto_last_line"
