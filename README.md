@@ -12,15 +12,17 @@ It will:
 
 - Add a user to the system
 
-Nice-to-haves:
-
 - Erase root partition and reconstruct system from first boot based on the data of a few persistent directories (a-la [erase your darlings](https://grahamc.com/blog/erase-your-darlings))
+
+Nice-to-haves:
 
 - Manage many program configurations using home manager and Nix; this will require a time investment on my part to figure out how to gradually do so
 
 - Automate secure boot setup
 
 Most of these will be my personal preferences
+
+It also houses my NeoVim and Helix configs, as well as any non-sensitive configs I deem good enough to post online
 
 ## Usage
 
