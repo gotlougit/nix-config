@@ -238,6 +238,7 @@ in
       rust-analyzer
       go
       nodejs
+      nil
       tree-sitter
       nodePackages_latest.pyright
       python310Packages.python-lsp-server
@@ -289,6 +290,7 @@ in
     syncthing # Sync all files
     tailscale # Create a mesh network
     trash-cli # Send file to trash instead of permanently deleting
+    tor # The Onion Router
     unrar # Useful for decompressing
     virt-manager # Easy KVM based VMs
     vnstat # View total data usage
