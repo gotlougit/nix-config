@@ -237,6 +237,7 @@ in
       zig
       rustup
       rust-analyzer
+      riff
       go
       nodejs
       nil
