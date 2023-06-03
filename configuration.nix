@@ -267,6 +267,7 @@ in
     compsize # View btrfs compression info
     curl # no intro needed
     dig # for DNS testing
+    direnv # Effortless dev environments
     cloudflare-warp # A good quality VPN
     file # To show type of file
     ffmpeg # Multimedia Swiss Army Knife
