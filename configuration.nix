@@ -384,6 +384,18 @@
           operand = "process.path";
           data = "${lib.getBin pkgs.systemd}/lib/systemd/dnscrypt-proxy2";
         };
+      syncthing = {
+        name = "syncthing";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type ="simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${lib.getBin pkgs.systemd}/lib/systemd/syncthing";
+          };
+        };
       };
     };
   };
