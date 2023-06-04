@@ -311,8 +311,9 @@
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
+    enableSSHSupport = false;
   };
+  programs.ssh.startAgent = true;
 
   # Set useful shell aliases
   programs.bash.shellAliases = {
