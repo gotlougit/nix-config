@@ -429,7 +429,7 @@
           type ="simple";
           sensitive = false;
           operand = "process.path";
-          data = "${pkgs.tailscale}/bin/.tailscale-wrapped";
+          data = "${pkgs.tailscale}/bin/tailscaled";
           };
         };
       };
