@@ -382,7 +382,7 @@
           type ="simple";
           sensitive = false;
           operand = "process.path";
-          data = "${lib.getBin pkgs.systemd}/lib/systemd/dnscrypt-proxy2";
+          data = "${lib.getBin pkgs.dnscrypt-proxy2}/bin/dnscrypt-proxy";
         };
       syncthing = {
         name = "syncthing";
