@@ -2,8 +2,9 @@
   description = "NixOS configuration";
 
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
+  inputs.impermanence.url = "github:nix-community/impermanence";
 
-  outputs = inputs @ { self, nixpkgs }:
+  outputs = inputs @ { self, nixpkgs, impermanence }:
     let system = "x86_64-linux"; in {
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
