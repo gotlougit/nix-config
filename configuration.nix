@@ -363,6 +363,8 @@
   # Enable firmware updates
   services.fwupd.enable = true;
 
+  # OpenSnitch stuff
+  systemd.user.services.opensnitch-ui.enable = true;
   services.opensnitch = {
     enable = true;
     rules = {
