@@ -319,6 +319,11 @@
     vi = "hx";
     open = "xdg-open";
   };
+  # Hook direnv
+  programs.bash.interactiveShellInit = ''
+    neofetch
+    eval "$(direnv hook bash)"
+  '';
 
   # Set session variables
   environment.variables = {
