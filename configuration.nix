@@ -272,7 +272,6 @@ in
     cloudflare-warp # A good quality VPN
     file # To show type of file
     ffmpeg # Multimedia Swiss Army Knife
-    flatpak # Used to isolate certain programs
     gocryptfs # For plasma-vault
     gh # Github CLI
     gdb
@@ -360,8 +359,6 @@ in
   services.openssh.enable = true;
   # Enable firmware updates
   services.fwupd.enable = true;
-  # Enable flatpak service
-  services.flatpak.enable = true;
 
   # AppArmor Stuff
   security.apparmor.enable = true;
