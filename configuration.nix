@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 {
   imports = [
     # Include the results of the hardware scan.
@@ -279,6 +279,8 @@
     libsForQt5.kdeconnect-kde # KDE Connect
     lm_sensors # For temperatures and fan speeds
     neofetch # Nice startup screen for terminal
+    opensnitch # Application firewall
+    opensnitch-ui # Application firewall UI
     pandoc # Convert docs
     picard # Tag music files
     poppler_utils # PDF conversion and misc utils
@@ -355,6 +357,36 @@
   services.openssh.enable = true;
   # Enable firmware updates
   services.fwupd.enable = true;
+
+  services.opensnitch = {
+    enable = true;
+    rules = {
+      systemd-timesyncd = {
+        name = "systemd-timesyncd";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type ="simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
+        };
+      };
+      dnscrypt-proxy2 = {
+        name = "dnscrypt-proxy2";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type ="simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${lib.getBin pkgs.systemd}/lib/systemd/dnscrypt-proxy2";
+        };
+      };
+    };
+  };
 
   # AppArmor Stuff
   security.apparmor = {
