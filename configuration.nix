@@ -285,6 +285,7 @@
     picard # Tag music files
     poppler_utils # PDF conversion and misc utils
     plasma-vault # Encrypted folders in KDE
+    pinentry # Enter gpg password securely
     postgresql_15 # Database
     rr # Record and replay while debugging
     radeontop # AMD GPU monitoring
@@ -488,11 +489,13 @@
         owner @{HOME}/.ssh/config r,
         owner @{HOME}/.ssh/known_hosts r,
         owner @{HOME}/.ssh/*.pub r,
-        owner @{HOME}/.gnupg/{,**} rwlk,
+        deny @{HOME}/.gnupg/private-keys-v1.d/{,**} rwlk,
+        owner @{HOME}/.gnupg/{,**} rw,
         owner @{HOME}/.rustup/{,**} rwlkix,
         owner @{HOME}/.cargo/{,**} rwlkix,
         /proc/** r,
         owner /run/user/*/ssh-agent rw,
+        owner /run/user/*/gnupg/{,**} rw,
       }
     '';
   };
