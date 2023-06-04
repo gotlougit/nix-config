@@ -279,6 +279,7 @@
     libsForQt5.kdeconnect-kde # KDE Connect
     lm_sensors # For temperatures and fan speeds
     neofetch # Nice startup screen for terminal
+    nix-direnv # Direnv + Nix
     opensnitch # Application firewall
     opensnitch-ui # Application firewall UI
     pandoc # Convert docs
@@ -312,8 +313,9 @@
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
+    enableSSHSupport = false;
   };
+  programs.ssh.startAgent = true;
 
   # Set useful shell aliases
   programs.bash.shellAliases = {
