@@ -368,6 +368,19 @@
   services.fwupd.enable = true;
 
   # OpenSnitch stuff
+  systemd.services.opensnitch-ui = {
+    description = "OpenSnitch UI";
+    after = [ "graphical-session-pre.target" ];
+    wantedBy = [ "graphical-session.target" ];
+
+    serviceConfig = {
+      #Environment = "PATH=${config.home.profileDirectory}/bin";
+      ExecStart = "${pkgs.opensnitch-ui}/bin/opensnitch-ui";
+      Restart = "on-failure";
+    };
+
+    #Install = { WantedBy = [ "graphical-session.target" ]; };
+  };
   services.opensnitch = {
     enable = true;
     rules = {
