@@ -312,9 +312,8 @@
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = false;
+    enableSSHSupport = true;
   };
-  programs.ssh.startAgent = true;
 
   # Set useful shell aliases
   programs.bash.shellAliases = {
@@ -431,7 +430,7 @@
           type ="simple";
           sensitive = false;
           operand = "process.path";
-          data = "${pkgs.NetworkManager}/bin/NetworkManager";
+          data = "${pkgs.networkmanager}/bin/NetworkManager";
           };
         };
       syncthing = {
