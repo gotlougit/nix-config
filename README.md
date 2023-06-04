@@ -52,6 +52,10 @@ This will automatically get the latest configuration from this repo, apply it an
 
 - Run `syncthing --reset-database` to force rescan the Syncthing files
 
+- For setting up a dev environment with isolated file access, you can place the contents of `dev-shell` inside wherever you code (I have source code in `~/Code` for example)
+ and swap out the paths wherever you see them accordingly
+
+
 ## Credits
 
 - [mt-caret's blog on such a setup](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html), which I merely tried to automate into one single shell script and some Nix configurations of my own
