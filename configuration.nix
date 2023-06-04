@@ -404,6 +404,7 @@
           operand = "process.path";
           data = "${lib.getBin pkgs.dnscrypt-proxy2}/bin/dnscrypt-proxy";
         };
+      };
       syncthing = {
         name = "syncthing";
         enabled = true;
@@ -416,20 +417,7 @@
           data = "${pkgs.syncthing}/bin/syncthing";
           };
         };
-      tailscale = {
-        name = "tailscale";
-        enabled = true;
-        action = "allow";
-        duration = "always";
-        operator = {
-          type ="simple";
-          sensitive = false;
-          operand = "process.path";
-          data = "${pkgs.tailscale}/bin/tailscaled";
-          };
-        };
       };
-    };
   };
 
   # AppArmor Stuff
