@@ -368,7 +368,8 @@
   services.fwupd.enable = true;
 
   # OpenSnitch stuff
-  systemd.services.opensnitch-ui = {
+  systemd.user.services."opensnitch-ui" = {
+    enable = true;
     description = "OpenSnitch UI";
     after = [ "graphical-session-pre.target" ];
     wantedBy = [ "graphical-session.target" ];
