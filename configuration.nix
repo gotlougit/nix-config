@@ -53,7 +53,6 @@ in
   };
 
   # Use the systemd-boot bootloader.
-  # TODO: try to get systemd-boot to work
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 20;
   boot.loader.efi.canTouchEfiVariables = true;
