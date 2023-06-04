@@ -471,6 +471,8 @@
         owner @{HOME}/Code/{,**} rwl,
         owner @{HOME}/.ssh/known_hosts r,
         owner @{HOME}/.ssh/*.pub r,
+        owner @{HOME}/.rustup r,
+        owner @{HOME}/.cargo rwlk,
         /proc/** r,
         owner /run/user/*/ssh-agent rw,
       }
