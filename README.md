@@ -55,6 +55,7 @@ This will automatically get the latest configuration from this repo, apply it an
 - For setting up a dev environment with isolated file access, you can place the contents of `dev-shell` inside wherever you code (I have source code in `~/Code` for example)
  and swap out the paths wherever you see them accordingly
 
+Note: this is still a WIP and may not prevent all attacks, the profile itself is being worked on a bit to have a decent balance of usability and security, although the current config is more private than no profile at all
 
 ## Credits
 
