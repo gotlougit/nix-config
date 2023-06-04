@@ -259,6 +259,7 @@ in
     gparted
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     tealdeer # Rust implementation of tldr
+    apparmor-profiles # Enable AppArmor in NixOS
     android-tools # adb, fastboot etc
     aria # download manager
     azure-cli # Microsoft Azure CLI
@@ -362,6 +363,9 @@ in
   services.fwupd.enable = true;
   # Enable flatpak service
   services.flatpak.enable = true;
+
+  # AppArmor Stuff
+  security.apparmor.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
