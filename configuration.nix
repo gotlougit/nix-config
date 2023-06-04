@@ -414,7 +414,7 @@
           type ="simple";
           sensitive = false;
           operand = "process.path";
-          data = "${pkgs.nsncd-unstable}/bin/nsncd";
+          data = "${lib.getBin pkgs.nsncd}/bin/nsncd";
           };
         };
       syncthing = {
