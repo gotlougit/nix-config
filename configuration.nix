@@ -322,7 +322,7 @@
     vi = "hx";
     open = "xdg-open";
     switch-config = "sudo nixos-rebuild switch --flake /home/gotlou/Code/nixos#kratos";
-    update-config = "nix flake update /home/gotlou/Code/nixos && sudo nixos-rebuild switch --flake /home/gotlou/Code/nixos#kratos";
+    update-config = "sudo nix flake update /home/gotlou/Code/nixos && sudo nixos-rebuild switch --flake /home/gotlou/Code/nixos#kratos";
     switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/Code/nixos#kratos";
   };
   # Hook direnv
