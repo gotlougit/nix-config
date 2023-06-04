@@ -422,6 +422,18 @@
           data = "${lib.getBin pkgs.nsncd}/bin/nsncd";
           };
         };
+      NetworkManager = {
+        name = "NetworkManager";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type ="simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${pkgs.NetworkManager}/bin/NetworkManager";
+          };
+        };
       syncthing = {
         name = "syncthing";
         enabled = true;
