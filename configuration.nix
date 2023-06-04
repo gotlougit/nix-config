@@ -353,7 +353,11 @@
     wantedBy = [ "multi-user.target" ];
   };
   # Enable syncthing
-  systemd.user.services.syncthing.enable = true;
+  services.syncthing = {
+    enable = true;
+    user = "gotlou";
+    dataDir = "/home/gotlou/.config/syncthing";
+  };
   # Enable vnstatd to monitor total net usage
   services.vnstat.enable = true;
   # Enable tailscaled to be able to connect to mesh network
@@ -364,7 +368,6 @@
   services.fwupd.enable = true;
 
   # OpenSnitch stuff
-  systemd.user.services.opensnitch-ui.enable = true;
   services.opensnitch = {
     enable = true;
     rules = {
