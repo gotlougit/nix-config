@@ -318,7 +318,7 @@ in
 
   # Set useful shell aliases
   programs.bash.shellAliases = {
-    vi = "steam-run nvim";
+    vi = "hx";
     open = "xdg-open";
   };
 
@@ -336,7 +336,7 @@ in
     # LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
     GIT_ASKPASS = "/usr/bin/ksshaskpass";
     GTK_THEME = "Arc:dark";
-    EDITOR = "nvim";
+    EDITOR = "hx";
     # TODO: fix setting GTK_USE_PORTAL
     #GTK_USE_PORTAL = 1;
   };
