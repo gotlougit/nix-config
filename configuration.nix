@@ -493,7 +493,8 @@
         owner @{HOME}/.gnupg/{,**} rw,
         owner @{HOME}/.rustup/{,**} rwlkix,
         owner @{HOME}/.cargo/{,**} rwlkix,
-        /proc/** r,
+        /proc/{,**} r,
+        /proc/self/{,**} rw,
         owner /run/user/*/ssh-agent rw,
         owner /run/user/*/gnupg/{,**} rw,
       }
