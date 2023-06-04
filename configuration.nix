@@ -486,7 +486,7 @@
         owner @{HOME}/Code/{,**} rwlkix,
         owner @{HOME}/.ssh/known_hosts r,
         owner @{HOME}/.gitconfig r,
-        owner @{HOME}/.ssh/{,**} r,
+        owner @{HOME}/.ssh/*.pub r,
         owner @{HOME}/.gnupg/{,**} rwlk,
         owner @{HOME}/.rustup/{,**} rwlkix,
         owner @{HOME}/.cargo/{,**} rwlkix,
