@@ -393,7 +393,7 @@
           type ="simple";
           sensitive = false;
           operand = "process.path";
-          data = "${lib.getBin pkgs.syncthing}/bin/syncthing";
+          data = "${pkgs.syncthing}/bin/syncthing";
           };
         };
       tailscale = {
@@ -405,7 +405,7 @@
           type ="simple";
           sensitive = false;
           operand = "process.path";
-          data = "${lib.getBin pkgs.tailscale}/bin/.tailscale-wrapped";
+          data = "${pkgs.tailscale}/bin/.tailscale-wrapped";
           };
         };
       };
