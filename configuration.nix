@@ -361,7 +361,61 @@ in
   services.fwupd.enable = true;
 
   # AppArmor Stuff
-  security.apparmor.enable = true;
+  security.apparmor = {
+    enable = true;
+    policies.firefox.profile = ''
+        include <tunables/global>
+        profile firefox {
+          include <abstractions/base>
+          include <abstractions/audio>
+          include <abstractions/fonts>
+          include <abstractions/dri-common>
+          include <abstractions/dri-enumerate>
+          include <abstractions/mesa>
+          include <abstractions/wayland>
+          include <abstractions/video>
+          include <abstractions/dconf>
+          /nix/store/** rix,
+          /etc/resolv.conf r,
+          owner /dev/shm/wayland.mozilla.ipc.* rw,
+          @{run}/udev/data/+pci:[0-9]* r,
+          @{sys}/devices/pci[0-9]*/[0-9]*/**/[0-9]*/ r,
+          @{sys}/devices/pci[0-9]*/**/drm/{,**} r,
+          @{sys}/devices/pci[0-9]*/**/{irq,resource,revision,config,uevent,class} r,
+          @{sys}/devices/ r,
+          @{sys}/bus/pci/devices/ r,
+          @{sys}/devices/system/cpu/present r,
+          @{sys}/devices/system/cpu/cpufreq/policy[0-9]*/cpuinfo_max_freq r,
+          @{sys}/devices/system/cpu/cpu[0-9]*/cache/index[0-9]*/size r,
+          owner /run/user/*/dconf/ w,
+          owner /run/user/*/dconf/user rw,
+          # Firefox profiles, cache
+          deny owner @{HOME}/* rwlk,
+          owner @{HOME}/.mozilla/{,**} rwlk,
+          owner @{HOME}/.cache/mozilla/{,**} rwlk,
+          owner @{HOME}/Downloads rwlk,
+      }
+    '';
+    policies.dev.profile = ''
+      include <tunables/global>
+      profile dev {
+        include <abstractions/base>
+        /nix/store/** rix,
+        /etc/resolv.conf r,
+        /dev/console rw,
+        /dev/tty     rw,
+        /tmp/{,**} rw,
+        owner @{HOME}/.config/{,**} rwlk,
+        owner @{HOME}/.local/{,**} rwlk,
+        owner /run/user/*/{,**} rwlk,
+        owner @{HOME}/Code/{,**} rwl,
+        owner @{HOME}/.ssh/known_hosts r,
+        owner @{HOME}/.ssh/*.pub r,
+        /proc/** r,
+        owner /run/user/*/ssh-agent rw,
+      }
+    '';
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
