@@ -405,6 +405,18 @@
           data = "${lib.getBin pkgs.dnscrypt-proxy2}/bin/dnscrypt-proxy";
         };
       };
+      nsncd = {
+        name = "nsncd";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type ="simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${pkgs.nsncd-unstable}/bin/nsncd";
+          };
+        };
       syncthing = {
         name = "syncthing";
         enabled = true;
@@ -461,18 +473,22 @@
       profile dev {
         include <abstractions/base>
         /nix/store/** rix,
+        /etc/profiles/per-user/{,**} rwlkix,
         /etc/resolv.conf r,
         /dev/console rw,
         /dev/tty     rw,
         /tmp/{,**} rw,
         owner @{HOME}/.config/{,**} rwlk,
+        owner @{HOME}/.cache/{,**} rwlk,
         owner @{HOME}/.local/{,**} rwlk,
         owner /run/user/*/{,**} rwlk,
-        owner @{HOME}/Code/{,**} rwl,
+        owner @{HOME}/Code/{,**} rwlkix,
         owner @{HOME}/.ssh/known_hosts r,
-        owner @{HOME}/.ssh/*.pub r,
-        owner @{HOME}/.rustup r,
-        owner @{HOME}/.cargo rwlk,
+        owner @{HOME}/.gitconfig r,
+        owner @{HOME}/.ssh/{,**} r,
+        owner @{HOME}/.gnupg/{,**} rwlk,
+        owner @{HOME}/.rustup/{,**} rwlkix,
+        owner @{HOME}/.cargo/{,**} rwlkix,
         /proc/** r,
         owner /run/user/*/ssh-agent rw,
       }
