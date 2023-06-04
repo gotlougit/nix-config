@@ -14,6 +14,10 @@ It will:
 
 - Erase root partition and reconstruct system from first boot based on the data of a few persistent directories (a-la [erase your darlings](https://grahamc.com/blog/erase-your-darlings))
 
+- Set up a dev shell which severely restricts personal files and private SSH/GPG keys from any processes running under the ~/Code directory
+
+- Add [OpenSnitch](https://github.com/evilsocket/opensnitch) to manage applications making network requests with some sane whitelists
+
 Nice-to-haves:
 
 - Manage many program configurations using home manager and Nix; this will require a time investment on my part to figure out how to gradually do so
