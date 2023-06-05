@@ -276,6 +276,7 @@
     glances # htop alternative
     hut # Sourcehut CLI
     helix # New Rust-based modal editor
+    jq # JSON manipulator
     lazygit # Nice wrapper around git to maintain sanity
     libsForQt5.kdeconnect-kde # KDE Connect
     lm_sensors # For temperatures and fan speeds
