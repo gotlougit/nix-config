@@ -23,8 +23,6 @@
       "/var/lib"
     ];
     files = [
-      #"/etc/machine-id"
-      #"/etc/shadow"
     ];
   };
   environment.persistence."/persist/dotfiles" = {
