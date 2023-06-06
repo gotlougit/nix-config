@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
     # Impermanence
     inputs.impermanence.nixosModules.impermanence
-    inputs.code-sandbox
+    inputs.code-sandbox.packages."x86_64-linux".default
   ];
 
   # Files and folders that are saved by Impermanence from deletion
