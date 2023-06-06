@@ -5,7 +5,7 @@
   inputs.impermanence.url = "github:nix-community/impermanence";
   inputs.code-sandbox.url = "git+https://git.sr.ht/~gotlou/code-sandbox";
 
-  outputs = inputs @ { self, nixpkgs, impermanence }:
+  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox }:
     let system = "x86_64-linux"; in {
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
