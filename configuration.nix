@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     # Impermanence
     inputs.impermanence.nixosModules.impermanence
+    inputs.impermanence.nixosModules.code-sandbox
   ];
 
   # Files and folders that are saved by Impermanence from deletion
@@ -262,6 +263,7 @@
     bubblewrap # Sandboxing utility
     compsize # View btrfs compression info
     curl # no intro needed
+    code-sandbox
     dig # for DNS testing
     direnv # Effortless dev environment setup
     cloudflare-warp # A good quality VPN
