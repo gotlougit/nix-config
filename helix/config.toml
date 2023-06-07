@@ -7,7 +7,7 @@ rulers = [80]
 [editor.lsp]
 enable = true
 display-messages = true
-display-inlay-hints = true
+display-inlay-hints = false
 
 [editor.cursor-shape]
 insert = "bar"
