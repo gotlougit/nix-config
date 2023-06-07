@@ -42,7 +42,7 @@ Optionally, use the `installnix.sh` script: it WILL erase your entire partition 
 
 - Run
 
-`curl -O https://raw.githubusercontent.com/gotlougit/nix-config/main/bootstrap.sh && sudo bash bootstrap.sh`
+`sudo nixos-rebuild switch --flake github:gotlougit/nix-config#kratos`
 
 This will automatically get the latest configuration from this repo, apply it and build the system. This will take some time to get the packages from the NixOS cache, so feel free to get a coffee break!
 
