@@ -6,7 +6,14 @@
   inputs.code-sandbox.url = "git+https://git.sr.ht/~gotlou/code-sandbox";
 
   outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox }:
-    let system = "x86_64-linux"; in {
+    let
+      system = "x86_64-linux"; 
+    in {
+      nixpkgs.config.packageOverrides = pkgs: {
+        code-sandbox = import (builtins.fetchGit "git+https://git.sr.ht/~gotlou/code-sandbox") {
+          inherit pkgs;
+        };
+      };
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           inherit system;
