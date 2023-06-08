@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1686200854,
-        "narHash": "sha256-LsKf+rtmj8v+F72dj8fEiO1eMFgN5CZjI7zY/qa072k=",
+        "lastModified": 1686208401,
+        "narHash": "sha256-DXaO9yAUubnpYEvjFDg1E2/p8LfQAyBIOQQjobQLRwc=",
         "ref": "refs/heads/main",
-        "rev": "d7067af921de0f183508e1ce6618dd263752c932",
-        "revCount": 18,
+        "rev": "15a2942b2028d6218e72ca60504e094ce971f281",
+        "revCount": 21,
         "type": "git",
         "url": "https://git.sr.ht/~gotlou/code-sandbox"
       },

@@ -217,6 +217,11 @@
       vlc # Easiest media player
       wl-clipboard # CLI util for copying and pasting in Wayland
 
+      (writeShellScriptBin "mullvad-browser" ''
+      #!/usr/bin/env bash
+      exec mullvad-browser-sandbox
+      '')
+
       # Development Stuff
       shellcheck
       gcc
