@@ -286,6 +286,7 @@
     nix-direnv # Direnv + Nix
     opensnitch # Application firewall
     opensnitch-ui # Application firewall UI
+    obfs4 # Pluggable transport for tor
     pandoc # Convert docs
     picard # Tag music files
     poppler_utils # PDF conversion and misc utils
@@ -295,6 +296,7 @@
     rr # Record and replay while debugging
     radeontop # AMD GPU monitoring
     syncthing # Sync all files
+    snowflake # Pluggable transport for tor
     tailscale # Create a mesh network
     trash-cli # Send file to trash instead of permanently deleting
     tor # The Onion Router
