@@ -183,6 +183,7 @@
     # Add whatever you want
     # I mainly add GUI programs in here
     packages = with pkgs; [
+      inputs.code-sandbox.packages.x86_64-linux.default # Installs sandboxes
       firefox # Just plain Firefox
       thunderbird # Email client
       ark # KDE archiving program
@@ -261,7 +262,6 @@
     bear # Generate autocomplete for large projects
     compsize # View btrfs compression info
     curl # no intro needed
-    inputs.code-sandbox.packages.x86_64-linux.default # Installs sandboxes
     dig # for DNS testing
     direnv # Effortless dev environment setup
     cloudflare-warp # A good quality VPN
