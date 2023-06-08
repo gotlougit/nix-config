@@ -259,7 +259,6 @@
     aspell # CLI spell check
     bandwhich # view what programs are making network requests
     bear # Generate autocomplete for large projects
-    bubblewrap # Sandboxing utility
     compsize # View btrfs compression info
     curl # no intro needed
     inputs.code-sandbox.packages.x86_64-linux.default # Installs sandboxes
@@ -291,7 +290,6 @@
     postgresql_15 # Database
     rr # Record and replay while debugging
     radeontop # AMD GPU monitoring
-    slirp4netns
     syncthing # Sync all files
     tailscale # Create a mesh network
     trash-cli # Send file to trash instead of permanently deleting
