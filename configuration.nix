@@ -228,7 +228,7 @@
       libstdcxx5
       llvmPackages_15.libclang
       zig
-      rustup
+      rustup # Use rustup since I may need to cross compile
       rust-analyzer
       go
       nodejs
