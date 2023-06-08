@@ -328,7 +328,7 @@
     switch-config = "sudo nixos-rebuild switch --flake /home/gotlou/Code/nixos#kratos";
     update-config = "sudo nix flake update /home/gotlou/Code/nixos && sudo nixos-rebuild switch --flake /home/gotlou/Code/nixos#kratos";
     switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/Code/nixos#kratos";
-    mullvad-browser = "mullvad-browser-sandbox";
+    #mullvad-browser = "mullvad-browser-sandbox";
   };
   # Hook direnv
   programs.bash.interactiveShellInit = ''
