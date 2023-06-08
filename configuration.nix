@@ -252,6 +252,8 @@
   # $ nix search wget
   # This mainly has CLI tools and stuff that likely won't work as a user install
   environment.systemPackages = with pkgs; [
+    bubblewrap
+    slirp4netns
     gparted
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     tealdeer # Rust implementation of tldr
