@@ -237,6 +237,7 @@
       tree-sitter
       nodePackages_latest.pyright
       python310Packages.python-lsp-server
+      nodePackages.bash-language-server
       gopls
       nodePackages_latest.coc-tsserver
       python310Full
