@@ -262,7 +262,7 @@
     bubblewrap # Sandboxing utility
     compsize # View btrfs compression info
     curl # no intro needed
-    inputs.code-sandbox.packages.x86_64-linux.default
+    inputs.code-sandbox.packages.x86_64-linux.default # Installs sandboxes
     dig # for DNS testing
     direnv # Effortless dev environment setup
     cloudflare-warp # A good quality VPN
@@ -326,6 +326,7 @@
     switch-config = "sudo nixos-rebuild switch --flake /home/gotlou/Code/nixos#kratos";
     update-config = "sudo nix flake update /home/gotlou/Code/nixos && sudo nixos-rebuild switch --flake /home/gotlou/Code/nixos#kratos";
     switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/Code/nixos#kratos";
+    mullvad-browser = "mullvad-browser-sandbox";
   };
   # Hook direnv
   programs.bash.interactiveShellInit = ''
