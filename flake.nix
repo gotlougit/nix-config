@@ -9,6 +9,7 @@
     let
       system = "x86_64-linux"; 
     in {
+      nixpkgs.overlays = [ (import <nixpkgs> {}).mullvad-overlay ];
       nixpkgs.config.packageOverrides = pkgs: {
         code-sandbox = import (builtins.fetchGit "git+https://git.sr.ht/~gotlou/code-sandbox") {
           inherit pkgs;
