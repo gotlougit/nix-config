@@ -456,35 +456,6 @@
   # AppArmor Stuff
   security.apparmor = {
     enable = true;
-    policies.dev.profile = ''
-      include <tunables/global>
-      profile dev {
-        include <abstractions/base>
-        /nix/store/** rix,
-        /etc/profiles/per-user/{,**} rwlkix,
-        /etc/resolv.conf r,
-        /dev/console rw,
-        /dev/tty     rw,
-        /tmp/{,**} rw,
-        owner @{HOME}/.config/{,**} rwlk,
-        owner @{HOME}/.cache/{,**} rwlk,
-        owner @{HOME}/.local/{,**} rwlk,
-        owner /run/user/*/{,**} rwlk,
-        owner @{HOME}/Code/{,**} rwlkix,
-        owner @{HOME}/.gitconfig r,
-        owner @{HOME}/.ssh/config r,
-        owner @{HOME}/.ssh/known_hosts r,
-        owner @{HOME}/.ssh/*.pub r,
-        deny @{HOME}/.gnupg/private-keys-v1.d/{,**} rwlk,
-        owner @{HOME}/.gnupg/{,**} rw,
-        owner @{HOME}/.rustup/{,**} rwlkix,
-        owner @{HOME}/.cargo/{,**} rwlkix,
-        /proc/{,**} r,
-        /proc/self/{,**} rw,
-        owner /run/user/*/ssh-agent rw,
-        owner /run/user/*/gnupg/{,**} rw,
-      }
-    '';
   };
 
   # Copy the NixOS configuration file and link it from the resulting system
