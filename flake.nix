@@ -10,7 +10,7 @@
       system = "x86_64-linux"; 
     in {
       nixpkgs.config.packageOverrides = pkgs: {
-        code-sandbox = import (builtins.fetchGit "git+https://git.sr.ht/~gotlou/code-sandbox") {
+        code-sandbox = import (inputs.code-sandbox) {
           inherit pkgs;
         };
       };
