@@ -127,6 +127,8 @@
       dns_enabled = true;
     };
   };
+  virtualisation.lxd.enable = true;
+  virtualisation.waydroid.enable = true;
   programs.dconf.enable = true;
 
   # Use latest Linux Kernel
