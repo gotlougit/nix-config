@@ -80,7 +80,7 @@
     # If using NetworkManager:
     networkmanager.dns = "none";
     # TODO: figure out firewall rules
-    firewall.enable = false;
+    firewall.enable = true;
   };
 
   # Disable resolved, we won't be using it
