@@ -15,7 +15,6 @@
   # Symlinks will be created automatically at boot
   environment.persistence."/persist/system" = {
     directories = [
-      "/etc/nixos"
       "/etc/NetworkManager"
       "/var/log/cloudflare-warp"
       "/var/log/libvirt"
