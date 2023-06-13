@@ -35,6 +35,7 @@
       "/home/gotlou/.config/PCSX2"
       "/home/gotlou/.pcsxr"
       "/home/gotlou/.ssh"
+      "/home/gotlou/.leetcode"
       "/home/gotlou/.local/share/kwalletd"
       "/home/gotlou/.local/share/dolphin"
       "/home/gotlou/.local/share/rhythmbox"
