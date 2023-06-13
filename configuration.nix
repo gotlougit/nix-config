@@ -235,6 +235,7 @@
       wl-clipboard # CLI util for copying and pasting in Wayland
 
       # Development Stuff
+      leetcode-cli
       shellcheck
       gcc
       gcc-unwrapped.lib
