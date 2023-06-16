@@ -137,7 +137,7 @@
 
   # Use latest Linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.supportedFilesystems = [ "btrfs" ];
+  boot.supportedFilesystems = [ "btrfs" "ntfs" ];
   # Select internationalisation properties.
   i18n.defaultLocale = "en_IN";
   console = {
