@@ -236,6 +236,8 @@
       wl-clipboard # CLI util for copying and pasting in Wayland
 
       # Development Stuff
+      openssl.dev
+      sqlite.dev
       leetcode-cli
       shellcheck
       gcc
