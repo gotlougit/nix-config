@@ -352,10 +352,14 @@
   programs.bash.shellAliases = {
     vi = "hx";
     open = "xdg-open";
-    switch-config = "sudo nixos-rebuild switch --flake /home/gotlou/Code/nixos#kratos";
-    update-config = "sudo nix flake update /home/gotlou/Code/nixos && sudo nixos-rebuild switch --flake /home/gotlou/Code/nixos#kratos";
-    switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/Code/nixos#kratos";
+    switch-config = "sudo nixos-rebuild switch --flake /home/gotlou/nixos#kratos";
+    update-config = "sudo nix flake update /home/gotlou/nixos && sudo nixos-rebuild switch --flake /home/gotlou/nixos#kratos";
+    switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/nixos#kratos";
     mullvad-browser = "mullvad-browser-sandbox";
+    make = "build-sandbox make";
+    gcc = "build-sandbox gcc";
+    rustc = "build-sandbox rustc";
+    "g++" = "build-sandbox g++";
   };
   # Hook direnv
   programs.bash.interactiveShellInit = ''
