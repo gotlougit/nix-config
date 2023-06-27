@@ -82,6 +82,8 @@
     networkmanager.dns = "none";
     # TODO: figure out firewall rules
     firewall.enable = true;
+    firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+    firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
   };
 
   # Disable resolved, we won't be using it
