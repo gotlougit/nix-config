@@ -308,6 +308,8 @@
     lazygit # Nice wrapper around git to maintain sanity
     libsForQt5.kdeconnect-kde # KDE Connect
     lm_sensors # For temperatures and fan speeds
+    man-pages
+    man-pages-posix # Provide more man docs for syscalls etc
     neofetch # Nice startup screen for terminal
     nix-direnv # Direnv + Nix
     opensnitch # Application firewall
@@ -339,6 +341,9 @@
     yt-dlp # Useful video download utility
   ];
 
+  # Enable library and dev documentation
+  documentation.dev.enable = true;
+  
   programs.steam.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
