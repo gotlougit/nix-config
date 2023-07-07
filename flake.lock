@@ -7,15 +7,15 @@
       "locked": {
         "lastModified": 1688128324,
         "narHash": "sha256-Dz/atq1c3uRObSkcNSKJqtvhWnw8Yh87pa5wNDgqLbM=",
-        "ref": "refs/heads/main",
+        "owner": "~gotlou",
+        "repo": "code-sandbox",
         "rev": "546f48838a5561b48df7b648542570e4478df65f",
-        "revCount": 33,
-        "type": "git",
-        "url": "https://git.sr.ht/~gotlou/code-sandbox"
+        "type": "sourcehut"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.sr.ht/~gotlou/code-sandbox"
+        "owner": "~gotlou",
+        "repo": "code-sandbox",
+        "type": "sourcehut"
       }
     },
     "impermanence": {
@@ -51,11 +51,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1688500189,
-        "narHash": "sha256-djYYiY4lzJOlXOnTHytH6BUugrxHDZjuGxTSrU4gt4M=",
+        "lastModified": 1688590700,
+        "narHash": "sha256-ZF055rIUP89cVwiLpG5xkJzx00gEuuGFF60Bs/LM3wc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "78419edadf0fabbe5618643bd850b2f2198ed060",
+        "rev": "f292b4964cb71f9dfbbd30dc9f511d6165cd109b",
         "type": "github"
       },
       "original": {
