@@ -258,6 +258,7 @@
       zig
       rustup # Use rustup since I may need to cross compile
       rust-analyzer
+      rusty-man
       go
       mold
       nodejs
