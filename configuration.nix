@@ -49,6 +49,11 @@
     files = [ "/home/gotlou/.gitconfig" ];
   };
 
+  # Persist path for nix-direnv
+  environment.pathsToLink = [
+    "/persist/nix-direnv"
+  ];
+
   # Use the systemd-boot bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 20;
@@ -172,9 +177,6 @@
       # Enable flakes
       experimental-features = [ "nix-command" "flakes" ];
     };
-    environment.pathsToLink = [
-      "/persist/nix-direnv"
-    ];
     # Garbage collect generations older than 7 days
     gc = {
       automatic = true;
