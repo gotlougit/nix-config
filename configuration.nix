@@ -172,6 +172,9 @@
       # Enable flakes
       experimental-features = [ "nix-command" "flakes" ];
     };
+    environment.pathsToLink = [
+      "/persist/nix-direnv"
+    ];
     # Garbage collect generations older than 7 days
     gc = {
       automatic = true;
@@ -382,6 +385,7 @@
   # Hook direnv
   programs.bash.interactiveShellInit = ''
     neofetch
+    source /run/current-system/sw/share/nix-direnv/direnvrc
     eval "$(direnv hook bash)"
   '';
 
