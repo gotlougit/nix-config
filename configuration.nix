@@ -271,7 +271,6 @@
       rustup # Use rustup since I may need to cross compile
       rust-analyzer
       go
-      mold
       nodejs
       nil
       tree-sitter
