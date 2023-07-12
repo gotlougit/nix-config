@@ -15,9 +15,6 @@
             inherit pkgs;
           };
         };
-        shell = nixpkgs.mkShell.override {
-          stdenv = nixpkgs.stdenvAdapters.useMoldLinker nixpkgs.stdenv;
-        };
       };
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
