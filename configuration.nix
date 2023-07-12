@@ -117,6 +117,10 @@
   time.timeZone = "Asia/Kolkata";
 
   nixpkgs.config.allowUnfree = true; # Allow proprietary software
+  # Support flakes
+  nixpkgs.overlays = [
+    (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; } )
+  ];
   hardware.enableAllFirmware = true;
 
   # Enable virtualization
@@ -162,8 +166,12 @@
   services.printing.enable = true;
 
   nix = {
-    # Enable flakes
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings = {
+      keep-outputs = true;
+      keep-derivations = true;
+      # Enable flakes
+      experimental-features = [ "nix-command" "flakes" ];
+    };
     # Garbage collect generations older than 7 days
     gc = {
       automatic = true;
