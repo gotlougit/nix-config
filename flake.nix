@@ -9,9 +9,14 @@
     let
       system = "x86_64-linux"; 
     in {
-      nixpkgs.config.packageOverrides = pkgs: {
-        code-sandbox = import (inputs.code-sandbox) {
-          inherit pkgs;
+      nixpkgs.config = {
+        packageOverrides = pkgs: {
+          code-sandbox = import (inputs.code-sandbox) {
+            inherit pkgs;
+          };
+        };
+        shell = nixpkgs.mkShell.override {
+          stdenv = nixpkgs.stdenvAdapters.useMoldLinker nixpkgs.stdenv;
         };
       };
       nixosConfigurations = {
