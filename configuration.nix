@@ -267,7 +267,6 @@
       libgccjit
       libstdcxx5
       llvmPackages_15.libclang
-      llvmPackages.bintools # Used to get lld
       zig
       rustup # Use rustup since I may need to cross compile
       rust-analyzer
