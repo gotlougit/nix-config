@@ -268,6 +268,7 @@
       libgccjit
       libstdcxx5
       llvmPackages_15.libclang
+      lua-language-server
       zig
       rustup # Use rustup since I may need to cross compile
       rust-analyzer
