@@ -2,4 +2,4 @@ inherits = "onedark"
 "ui" = {bg = "black"}
 
 [palette]
-black = "#232627"
+black = "#000000"
