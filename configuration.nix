@@ -317,7 +317,7 @@
     gh # Github CLI
     gdb
     gitFull # For git-send-email
-    glances # htop alternative
+    htop
     hut # Sourcehut CLI
     helix # New Rust-based modal editor
     jq # JSON manipulator
