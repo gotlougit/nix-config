@@ -10,7 +10,6 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 config.keys = {
-  -- This will create a new split and run the `top` program inside it
   {
     -- Split vertical
     key = '(',
