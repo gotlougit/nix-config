@@ -9,6 +9,13 @@ local config = {}
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
+
+-- Enable scroll bar
+config.enable_scroll_bar = true;
+
+-- Disable all default keyboard shortcuts to avoid conflict
+-- config.disable_default_key_bindings = true;
+
 config.keys = {
   {
     -- Split vertical
@@ -48,8 +55,8 @@ config.keys = {
   },
   {
     -- Close a pane forcefully
-    key = 'W',
-    mods = 'SHIFT',
+    key = 'Q',
+    mods = 'CTRL|SHIFT',
     action = wezterm.action.CloseCurrentPane { confirm = false; },
   }
 }
