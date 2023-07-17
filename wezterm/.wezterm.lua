@@ -29,6 +29,30 @@ config.keys = {
       size = { Percent = 50 },
     },
   },
+  {
+    -- Cycle through tabs
+    key = 'Tab',
+    mods = 'SHIFT',
+    action = wezterm.action.ActivateTabRelative(1),
+  },
+  {
+    -- Cycle through panes
+    key = 'Tab',
+    mods = 'CTRL',
+    action = wezterm.action.ActivatePaneDirection 'Next',
+  },
+  {
+    -- Cycle through panes in reverse
+    key = 'Tab',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.ActivatePaneDirection 'Prev',
+  },
+  {
+    -- Close a pane forcefully
+    key = 'W',
+    mods = 'SHIFT',
+    action = wezterm.action.CloseCurrentPane { confirm = false; },
+  }
 }
 
 -- and finally, return the configuration to wezterm
