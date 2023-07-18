@@ -223,6 +223,7 @@
       arc-icon-theme # Preferred theme for KDE
       arc-kde-theme # Preferred theme for KDE
       gnome.adwaita-icon-theme # GTK apps default icons
+      blesh # Opinionated config for bash
       bottles # Easily manage Wine prefixes
       cemu # Wii U emulator
       chiaki # PS4 Remote Play client
@@ -388,6 +389,7 @@
   programs.bash.interactiveShellInit = ''
     neofetch
     source /run/current-system/sw/share/nix-direnv/direnvrc
+    source $(blesh-share)/ble.sh
     eval "$(direnv hook bash)"
   '';
 
