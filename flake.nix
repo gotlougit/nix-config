@@ -24,6 +24,7 @@
             ./impermanence.nix
             ./hardware-configuration.nix
             ./configuration.nix
+            ./user.nix
           ];
         };
       };
