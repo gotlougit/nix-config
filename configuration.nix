@@ -164,7 +164,6 @@
     bat # cat
     difftastic # diff
     dog # dig
-    dust # du
     skim # fzf
     hexyl # hexdump
     exa # ls
@@ -197,7 +196,6 @@
     cat = "bat";
     diff = "difftastic";
     dig = "dog";
-    du = "dust";
     fzf = "sk";
     ls = "exa";
     grep = "rg";
