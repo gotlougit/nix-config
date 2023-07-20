@@ -53,16 +53,6 @@
       wezterm # GPU accelerated terminal emulator written in Rust
       wl-clipboard # CLI util for copying and pasting in Wayland
 
-      # Rust replacements
-      bat # cat
-      difftastic # diff
-      dog # dig
-      dust # du
-      skim # fzf
-      hexyl # hexdump
-      exa # ls
-      ripgrep # grep
-
       # Development Stuff
       pkgconfig
       openssl.dev
