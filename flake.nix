@@ -25,6 +25,7 @@
             ./hardware-configuration.nix
             ./configuration.nix
             ./user.nix
+            ./services.nix
           ];
         };
       };
