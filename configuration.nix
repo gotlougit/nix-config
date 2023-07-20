@@ -159,6 +159,17 @@
     wireshark # View real time network traffic across multiple interfaces
     wireguard-tools # Use kernel Wireguard
     yt-dlp # Useful video download utility
+
+    # Rust replacements
+    bat # cat
+    difftastic # diff
+    dog # dig
+    dust # du
+    skim # fzf
+    hexyl # hexdump
+    exa # ls
+    ripgrep # grep
+
   ];
 
   # Enable library and dev documentation
