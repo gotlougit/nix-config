@@ -27,6 +27,7 @@
             ./user.nix
             ./services.nix
             ./opensnitch.nix
+            ./networking.nix
           ];
         };
       };
