@@ -163,7 +163,6 @@
     # Rust replacements
     bat # cat
     difftastic # diff
-    dog # dig
     skim # fzf
     hexyl # hexdump
     exa # ls
@@ -195,7 +194,6 @@
     mullvad-browser = "mullvad-browser-sandbox";
     cat = "bat";
     diff = "difftastic";
-    dig = "dog";
     fzf = "sk";
     ls = "exa";
     grep = "rg";
