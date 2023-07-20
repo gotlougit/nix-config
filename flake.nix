@@ -21,6 +21,7 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
+            ./impermanence.nix
             ./hardware-configuration.nix
             ./configuration.nix
           ];
