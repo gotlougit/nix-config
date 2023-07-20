@@ -194,6 +194,13 @@
     update-config = "sudo nix flake update /home/gotlou/nixos && sudo nixos-rebuild switch --flake /home/gotlou/nixos#kratos";
     switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/nixos#kratos";
     mullvad-browser = "mullvad-browser-sandbox";
+    cat = "bat";
+    diff = "difftastic";
+    dig = "dog";
+    du = "dust";
+    fzf = "sk";
+    ls = "exa";
+    grep = "rg";
   };
   # Hook direnv
   programs.bash.interactiveShellInit = ''
