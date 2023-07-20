@@ -193,7 +193,7 @@
     switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/nixos#kratos";
     mullvad-browser = "mullvad-browser-sandbox";
     cat = "bat";
-    diff = "difftastic";
+    diff = "difft";
     fzf = "sk";
     ls = "exa";
     grep = "rg";
