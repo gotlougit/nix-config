@@ -32,6 +32,7 @@
     htop
     hut # Sourcehut CLI
     helix # New Rust-based modal editor
+    img2pdf # Useful utility
     jq # JSON manipulator
     lazygit # Nice wrapper around git to maintain sanity
     libsForQt5.kdeconnect-kde # KDE Connect
