@@ -145,6 +145,7 @@
     GIT_ASKPASS = "/usr/bin/ksshaskpass";
     GTK_THEME = "Arc:dark";
     EDITOR = "hx";
+    PAGER = "bat";
     # TODO: fix setting GTK_USE_PORTAL
     #GTK_USE_PORTAL = 1;
   };
