@@ -41,7 +41,6 @@
     man-pages-posix # Provide more man docs for syscalls etc
     neofetch # Nice startup screen for terminal
     nix-direnv # Direnv + Nix
-    ocrmypdf
     opensnitch # Application firewall
     opensnitch-ui # Application firewall UI
     obfs4 # Pluggable transport for tor
