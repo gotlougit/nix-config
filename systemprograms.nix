@@ -53,6 +53,7 @@
     radeontop # AMD GPU monitoring
     syncthing # Sync all files
     snowflake # Pluggable transport for tor
+    sqlite # No intro needed
     tailscale # Create a mesh network
     tetex # LaTEX related tooling
     trash-cli # Send file to trash instead of permanently deleting
