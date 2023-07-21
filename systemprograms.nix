@@ -44,6 +44,7 @@
     opensnitch # Application firewall
     opensnitch-ui # Application firewall UI
     obfs4 # Pluggable transport for tor
+    parallel # Parallelize many shell commands
     pandoc # Convert docs
     picard # Tag music files
     poppler_utils # PDF conversion and misc utils
