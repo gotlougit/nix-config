@@ -30,6 +30,7 @@
       filelight # View disk usage in pie chart form
       frida-tools # For Android reverse engineering
       ghidra # Decompiler
+      gImageReader # OCR PDFs and images easily
       inkscape # Vector images
       krita # Raster image editor
       keepassxc # Password manager
