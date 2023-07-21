@@ -28,6 +28,7 @@
             ./services.nix
             ./opensnitch.nix
             ./networking.nix
+            ./systemprograms.nix
           ];
         };
       };
