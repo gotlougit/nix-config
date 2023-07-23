@@ -56,6 +56,7 @@
     radeontop # AMD GPU monitoring
     syncthing # Sync all files
     snowflake # Pluggable transport for tor
+    socat # Socket cat
     sqlite # No intro needed
     tailscale # Create a mesh network
     tetex # LaTEX related tooling
