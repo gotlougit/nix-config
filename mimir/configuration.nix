@@ -1,6 +1,7 @@
 { pkgs, config, lib, ... }:
 {
   services.openssh.enable = true;
+  services.tailscale.enable = true;
   networking.hostName = "pi";
   users = {
     users.myUsername = {
