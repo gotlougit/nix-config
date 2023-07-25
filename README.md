@@ -64,6 +64,10 @@ There is also a config for a server running on a Raspberry Pi (nicknamed "mimir"
 For this, it is recommended to build the image directly on a different computer and
 directly flash the generated image onto an SD card. 
 
+You can do this by running:
+
+`nix build github:gotlougit/nix-config.#images.mimir`
+
 ## Credits
 
 - [mt-caret's blog on such a setup](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html), which I merely tried to automate into one single shell script and some Nix configurations of my own
