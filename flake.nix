@@ -32,6 +32,7 @@
             ./kratos/opensnitch.nix
             ./kratos/networking.nix
             ./kratos/systemprograms.nix
+            ./kratos/shell.nix
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
