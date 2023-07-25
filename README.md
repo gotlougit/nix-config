@@ -57,6 +57,13 @@ This will automatically get the latest configuration from this repo, apply it an
 
 Note: this is still a WIP and may not prevent all attacks, the profile itself is being worked on a bit to have a decent balance of usability and security, although the current config is more private than no profile at all
 
+## Raspberry Pi server config
+
+There is also a config for a server running on a Raspberry Pi (nicknamed "mimir")
+
+For this, it is recommended to build the image directly on a different computer and
+directly flash the generated image onto an SD card. 
+
 ## Credits
 
 - [mt-caret's blog on such a setup](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html), which I merely tried to automate into one single shell script and some Nix configurations of my own
@@ -64,3 +71,5 @@ Note: this is still a WIP and may not prevent all attacks, the profile itself is
 - [Lan Tian's Intro to Flakes](https://lantian.pub/en/article/modify-website/nixos-initial-config-flake-deploy.lantian/) helped migrate the repo to flakes
 
 - [Config used for neovim](https://github.com/brainfucksec/neovim-lua)
+
+- [Example config used as starting point for Raspberry Pi setup](https://github.com/MatthewCroughan/raspberrypi-nixos-example/)
