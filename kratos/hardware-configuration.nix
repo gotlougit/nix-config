@@ -27,7 +27,7 @@
   fileSystems."/tmp" =
     { device = "none";
       fsType = "tmpfs";
-      options = [ "defaults" "size=5G" "mode=755" ];
+      options = [ "defaults" "size=8G" "mode=755" ];
     };
 
   boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/434e510a-b269-4f83-a0b6-0a8532a8ff07";
