@@ -66,7 +66,7 @@ directly flash the generated image onto an SD card.
 
 You can do this by running:
 
-`nix build github:gotlougit/nix-config.#images.mimir`
+`nix build github:gotlougit/nix-config#images.mimir`
 
 ## Credits
 
