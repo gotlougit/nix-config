@@ -19,6 +19,11 @@
       nixpkgs.config = {
         packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs;
       };
+      images = {
+        mimir = (self.nixosConfigurations.mimir.extendModules {
+          modules = [ "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix" ];
+        }).config.system.build.sdImage;
+      };
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           inherit system;
