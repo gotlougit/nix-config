@@ -43,6 +43,7 @@
             ./mimir/configuration.nix
             ./mimir/systemprograms.nix
             ./kratos/shell.nix
+            ./kratos/networking.nix
           ];
         };
       };

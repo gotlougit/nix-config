@@ -5,7 +5,6 @@
 
   # Setup networking
   networking = {
-    hostName = "kratos"; # Define your hostname.
     networkmanager.enable =
       true; # Easiest to use and most distros use this by default.
     nameservers = [ "127.0.0.1" "::1" ];
@@ -15,8 +14,6 @@
     networkmanager.dns = "none";
     # TODO: figure out firewall rules
     firewall.enable = true;
-    firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
-    firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
   };
 
   # Disable resolved, we won't be using it
