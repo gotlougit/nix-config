@@ -38,6 +38,9 @@
           system = aarch64System;
           specialArgs = { inherit inputs; };
           modules = [
+            ./mimir/base.nix
+            ./mimir/configuration.nix
+            ./mimir/systemprograms.nix
           ];
         };
       };
