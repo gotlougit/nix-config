@@ -42,6 +42,7 @@
             ./mimir/base.nix
             ./mimir/configuration.nix
             ./mimir/systemprograms.nix
+            ./kratos/shell.nix
           ];
         };
       };
