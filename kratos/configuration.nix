@@ -38,6 +38,8 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.initrd.systemd.enable = true;
   boot.initrd.systemd.emergencyAccess = true;
+  # Allow emulation of aarch64 for building mimir images
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
