@@ -7,30 +7,40 @@
 
   outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox }:
     let
-      system = "x86_64-linux"; 
+      system = "x86_64-linux";
+      aarch64System = "aarch64-linux";
+
+      code-sandbox-override = pkgs: {
+        code-sandbox = import (inputs.code-sandbox) {
+          inherit pkgs;
+        };
+      };
     in {
       nixpkgs.config = {
-        packageOverrides = pkgs: {
-          code-sandbox = import (inputs.code-sandbox) {
-            inherit pkgs;
-          };
-        };
+        packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs;
       };
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./impermanence.nix
-            ./hardware-configuration.nix
-            ./configuration.nix
-            ./user.nix
-            ./services.nix
-            ./opensnitch.nix
-            ./networking.nix
-            ./systemprograms.nix
+            ./kratos/impermanence.nix
+            ./kratos/hardware-configuration.nix
+            ./kratos/configuration.nix
+            ./kratos/user.nix
+            ./kratos/services.nix
+            ./kratos/opensnitch.nix
+            ./kratos/networking.nix
+            ./kratos/systemprograms.nix
+          ];
+        };
+        mimir = nixpkgs.lib.nixosSystem {
+          system = aarch64System;
+          specialArgs = { inherit inputs; };
+          modules = [
           ];
         };
       };
     };
 }
+
