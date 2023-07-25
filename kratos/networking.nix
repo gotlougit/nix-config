@@ -5,8 +5,6 @@
 
   # Setup networking
   networking = {
-    networkmanager.enable =
-      true; # Easiest to use and most distros use this by default.
     nameservers = [ "127.0.0.1" "::1" ];
     # If using dhcpcd:
     dhcpcd.extraConfig = "nohook resolv.conf";
