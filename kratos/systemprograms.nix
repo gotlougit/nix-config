@@ -30,6 +30,7 @@
     gh # Github CLI
     gdb
     gitFull # For git-send-email
+    guerrilla # Temp email CLI client
     htop
     hut # Sourcehut CLI
     helix # New Rust-based modal editor
@@ -37,6 +38,7 @@
     jq # JSON manipulator
     lazygit # Nice wrapper around git to maintain sanity
     libsForQt5.kdeconnect-kde # KDE Connect
+    linux-firmware
     lm_sensors # For temperatures and fan speeds
     man-pages
     man-pages-posix # Provide more man docs for syscalls etc
