@@ -10,6 +10,7 @@
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
 
+      pkgs = import nixpkgs { inherit system; overlays = [ (import ./overlays/overlay.nix) ]; };
       code-sandbox-override = pkgs: {
         code-sandbox = import (inputs.code-sandbox) {
           inherit pkgs;
@@ -18,7 +19,6 @@
     in {
       nixpkgs.config = {
         packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs;
-        pkgs = import nixpkgs { inherit system; overlays = [ (import ./overlays/overlay.nix) ]; };
       };
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
@@ -28,7 +28,7 @@
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs; inherit pkgs; };
           modules = [
             ./kratos/impermanence.nix
             ./kratos/hardware-configuration.nix
@@ -43,7 +43,7 @@
         };
         mimir = nixpkgs.lib.nixosSystem {
           system = aarch64System;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs; inherit pkgs; };
           modules = [
             ./mimir/base.nix
             ./mimir/configuration.nix
