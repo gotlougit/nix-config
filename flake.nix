@@ -7,11 +7,6 @@
 
   outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox }:
     let
-      overlays = [
-        (self: super: {
-          guerrilla = self.callPackage ./overlays/guerrilla.nix {};
-        })
-      ];
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
 
@@ -22,7 +17,7 @@
       };
     in {
       nixpkgs.config = {
-        packageOverrides = pkgs: (overlays[0].overridePackages (if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs));
+        packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs;
         allowUnfree = true;
       };
       images = {
