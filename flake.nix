@@ -9,7 +9,7 @@
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
-
+      overlay = import ./overlays/overlay.nix;
       code-sandbox-override = pkgs: {
         code-sandbox = import (inputs.code-sandbox) {
           inherit pkgs;
@@ -17,7 +17,7 @@
       };
     in {
       nixpkgs.config = {
-        packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs;
+        packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override overlay pkgs else overlay pkgs;
         allowUnfree = true;
       };
       images = {
