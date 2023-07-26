@@ -18,6 +18,7 @@
     in {
       nixpkgs.config = {
         packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs;
+        pkgs = import nixpkgs { inherit system; overlays = [ (import ./overlays/overlay.nix) ]; };
       };
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
