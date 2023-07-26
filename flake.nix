@@ -19,6 +19,7 @@
     in {
       nixpkgs.config = {
         packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs;
+        allowUnfree = true;
       };
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
