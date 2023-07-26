@@ -30,6 +30,7 @@
     gh # Github CLI
     gdb
     gitFull # For git-send-email
+    guerrilla # Temp email generator from CLI
     htop
     hut # Sourcehut CLI
     helix # New Rust-based modal editor
