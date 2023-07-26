@@ -7,10 +7,14 @@
 
   outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox }:
     let
+      overlays = [
+        (self: super: {
+          guerrilla = self.callPackage ./overlays/guerrilla.nix {};
+        })
+      ];
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
 
-      pkgs = import nixpkgs { inherit system; overlays = [ (import ./overlays/overlay.nix) ]; };
       code-sandbox-override = pkgs: {
         code-sandbox = import (inputs.code-sandbox) {
           inherit pkgs;
@@ -18,7 +22,7 @@
       };
     in {
       nixpkgs.config = {
-        packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs;
+        packageOverrides = pkgs: (overlays[0].overridePackages (if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs));
         allowUnfree = true;
       };
       images = {
@@ -29,7 +33,7 @@
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; inherit pkgs; };
+          specialArgs = { inherit inputs; };
           modules = [
             ./kratos/impermanence.nix
             ./kratos/hardware-configuration.nix
@@ -44,7 +48,7 @@
         };
         mimir = nixpkgs.lib.nixosSystem {
           system = aarch64System;
-          specialArgs = { inherit inputs; inherit pkgs; };
+          specialArgs = { inherit inputs; };
           modules = [
             ./mimir/base.nix
             ./mimir/configuration.nix
