@@ -9,16 +9,14 @@
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
-      code-sandbox-override = pkgs: {
-        code-sandbox = import (inputs.code-sandbox) {
-          inherit pkgs;
-        };
-      };
     in {
       nixpkgs.config = {
-        packageOverrides = pkgs: if pkgs.lib.equalLists pkgs.system.system "x86_64-linux" then code-sandbox-override pkgs else pkgs;
         allowUnfree = true;
       };
+      nixpkgs.overlays = [
+        import (inputs.code-sandbox)
+        import ./overlays/guerrilla.nix
+      ];
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
           modules = [ "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix" ];
