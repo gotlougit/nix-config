@@ -15,7 +15,6 @@
       };
       nixpkgs.overlays = [
         import (inputs.code-sandbox)
-        import ./overlays/guerrilla.nix
       ];
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
