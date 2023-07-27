@@ -40,6 +40,7 @@
     lm_sensors # For temperatures and fan speeds
     man-pages
     man-pages-posix # Provide more man docs for syscalls etc
+    meek # Pluggable transport for tor
     neofetch # Nice startup screen for terminal
     nix-direnv # Direnv + Nix
     opensnitch # Application firewall
