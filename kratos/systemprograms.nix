@@ -81,7 +81,7 @@
     hexyl # hexdump
     exa # ls
     ripgrep # grep
-
+    loc # cloc
   ];
 
 }

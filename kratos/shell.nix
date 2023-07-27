@@ -13,6 +13,7 @@
     fzf = "sk";
     ls = "exa";
     grep = "rg";
+    cloc = "loc";
   };
   # Hook direnv
   programs.bash.interactiveShellInit = ''
