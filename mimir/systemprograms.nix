@@ -6,8 +6,6 @@
   environment.systemPackages = with pkgs; [
     tealdeer # Rust implementation of tldr
     aria # download manager
-    bandwhich # view what programs are making network requests
-    compsize # View btrfs compression info
     curl # no intro needed
     dig # for DNS testing
     file # To show type of file
@@ -21,16 +19,11 @@
     neofetch # Nice startup screen for terminal
     parallel # Parallelize many shell commands
     rustscan # Faster replacement for nmap
-    syncthing # Sync all files
-    socat # Socket cat
-    sqlite # No intro needed
     tailscale # Create a mesh network
-    tetex # LaTEX related tooling
     tor # The Onion Router
     unrar # Useful for decompressing
     vnstat # View total data usage
     wget # Another, simpler download manager
-    whois # Useful utility
     yt-dlp # Useful video download utility
 
     # Rust replacements
