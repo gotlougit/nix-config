@@ -116,7 +116,7 @@
     enable = true;
     enableSSHSupport = false;
   };
-  programs.ssh.startAgent = true;
+  programs.ssh.startAgent = false;
 
   # List services that you want to enable:
   # Enable warp-svc to allow connections to the Cloudflare VPN
