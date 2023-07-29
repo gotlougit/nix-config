@@ -18,6 +18,7 @@
   };
   environment.persistence."/persist/dotfiles" = {
     directories = [
+      "/home/gotlou/.config/Chiaki"
       "/home/gotlou/.config/gh"
       "/home/gotlou/.config/hut"
       "/home/gotlou/.config/nvim"
