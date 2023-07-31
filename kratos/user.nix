@@ -47,6 +47,7 @@
       rhythmbox # Preferred music player
       songrec # Shazam on Linux
       signal-desktop # Secure and easy messaging
+      steam # Cross platform games store
       tdesktop # Telegram desktop client
       tor-browser-bundle-bin # Needs no intro
       vlc # Easiest media player
