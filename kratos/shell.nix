@@ -14,7 +14,6 @@
     ls = "exa";
     grep = "rg";
     cloc = "loc";
-    rm = "rip";
   };
   # Hook direnv
   programs.bash.interactiveShellInit = ''
