@@ -9,6 +9,7 @@
     minijail-tools
     slirp4netns
     gparted
+    steam-run
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     tealdeer # Rust implementation of tldr
     apparmor-profiles # Enable AppArmor in NixOS
