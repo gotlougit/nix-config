@@ -34,7 +34,7 @@
     hexyl # hexdump
     exa # ls
     ripgrep # grep
-
+    rip # rm
   ];
 
 }
