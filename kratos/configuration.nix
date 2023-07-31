@@ -126,8 +126,6 @@
     after = [ "network-online.target" "systemd-resolved.service" ];
     wantedBy = [ "multi-user.target" ];
   };
-  # Enable syncthing
-  services.syncthing.enable = true;
   # Enable vnstatd to monitor total net usage
   services.vnstat.enable = true;
   # Enable tailscaled to be able to connect to mesh network
