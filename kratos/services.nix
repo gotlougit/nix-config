@@ -1,4 +1,4 @@
-{ ...}:
+{ pkgs, ... }:
 {
   imports = [
   ];
@@ -8,8 +8,20 @@
   services.xserver.autorun = true;
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+  # Set wayland as default
+  services.xserver.displayManager.defaultSession = "plasmawayland";
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
+
+  # Remove some KDE defaults that are never needed
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    oxygen
+    khelpcenter
+    konsole
+    plasma-browser-integration
+    elisa
+    baloo
+  ];
 
   # Configure keymap in X11
   services.xserver.layout = "us";
