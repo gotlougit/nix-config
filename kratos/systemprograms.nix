@@ -83,7 +83,7 @@
     exa # ls
     ripgrep # grep
     loc # cloc
-    rip # rm
+    rm-improved # rm
   ];
 
 }
