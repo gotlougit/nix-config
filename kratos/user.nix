@@ -89,5 +89,5 @@
       python310Packages.pip
     ];
   };
-
+  programs.steam.enable = true;
 }
