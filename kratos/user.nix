@@ -55,7 +55,7 @@
       wl-clipboard # CLI util for copying and pasting in Wayland
 
       # Development Stuff
-      android-studio-stable
+      android-studio
       pkgconfig
       openssl.dev
       sqlite.dev
