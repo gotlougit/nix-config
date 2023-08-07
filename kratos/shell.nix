@@ -40,6 +40,8 @@
     GTK_THEME = "Arc:dark";
     EDITOR = "hx";
     PAGER = "bat";
+    GDK_SCALE=1;
+
     # TODO: fix setting GTK_USE_PORTAL
     #GTK_USE_PORTAL = 1;
   };
