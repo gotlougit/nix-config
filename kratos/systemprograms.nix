@@ -34,6 +34,7 @@
     htop
     hut # Sourcehut CLI
     helix # New Rust-based modal editor
+    hspell # Spelling utility
     img2pdf # Useful utility
     jq # JSON manipulator
     lazygit # Nice wrapper around git to maintain sanity
