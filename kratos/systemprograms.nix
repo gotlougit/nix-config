@@ -20,6 +20,7 @@
     bandwhich # view what programs are making network requests
     bear # Generate autocomplete for large projects
     blesh # Bash made smarter
+    cargo-rr # rr + cargo
     compsize # View btrfs compression info
     curl # no intro needed
     dig # for DNS testing

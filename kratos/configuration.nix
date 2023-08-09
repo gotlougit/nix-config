@@ -40,6 +40,8 @@
   boot.initrd.systemd.emergencyAccess = true;
   # Allow emulation of aarch64 for building mimir images
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  # For rr to work nicely
+  boot.kernel.sysctl."kernel.perf_event_paranoid" = 1;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
