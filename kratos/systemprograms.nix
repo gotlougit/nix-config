@@ -15,7 +15,6 @@
     apparmor-profiles # Enable AppArmor in NixOS
     android-tools # adb, fastboot etc
     aria # download manager
-    azure-cli # Microsoft Azure CLI
     aspell # CLI spell check
     bandwhich # view what programs are making network requests
     bear # Generate autocomplete for large projects
