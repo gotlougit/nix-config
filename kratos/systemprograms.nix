@@ -88,4 +88,15 @@
     rm-improved # rm
   ];
 
+  programs.direnv = {
+    package = pkgs.direnv;
+    silent = false;
+    persistDerivations = true;
+    loadInNixShell = true;
+    direnvrcExtra = "";
+    nix-direnv = {
+      enable = true;
+      package = pkgs.nix-direnv;
+    };
+  };
 }
