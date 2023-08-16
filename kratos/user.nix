@@ -36,6 +36,7 @@
       legendary-gl # Epic Games Store client
       libreoffice-qt # Document editor
       libsForQt5.ksshaskpass # Ask password in GUI from CLI
+      libsForQt5.bismuth # Tiling mode for KWin
       mangohud # Overlay while playing games
       mullvad-browser # Browser for private browsing
       nixpkgs-fmt # Format nix code effectively
