@@ -1,0 +1,7 @@
+[[language]]
+name = "html"
+language-server = { command = "html-languageserver", args = ["--stdio"], config = { provideFormatter = true } }
+
+[[language]]
+name = "css"
+language-server = { command = "css-languageserver", args = ["--stdio"], config = { provideFormatter = true } }
