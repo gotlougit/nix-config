@@ -72,8 +72,10 @@
       llvmPackages_15.libclang
       lua-language-server
       zig
-      rustup # Use rustup since I may need to cross compile
+      rustc
       rust-analyzer
+      cargo
+      rustfmt
       go
       nodejs
       nil
