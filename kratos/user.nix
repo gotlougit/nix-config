@@ -81,6 +81,9 @@
       nodePackages_latest.pyright
       python310Packages.python-lsp-server
       nodePackages.bash-language-server
+      nodePackages.vscode-html-languageserver-bin
+      nodePackages_latest.vscode-css-languageserver-bin
+      nodePackages.typescript-language-server
       gopls
       nodePackages_latest.coc-tsserver
       python310Full
