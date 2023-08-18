@@ -13,6 +13,9 @@ end
 -- Enable scroll bar
 config.enable_scroll_bar = true;
 
+-- Disable tab bar
+config.enable_tab_bar = false;
+
 -- Disable all default keyboard shortcuts to avoid conflict
 -- config.disable_default_key_bindings = true;
 
