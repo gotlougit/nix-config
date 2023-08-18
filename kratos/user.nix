@@ -75,6 +75,7 @@
       rustc
       rust-analyzer
       cargo
+      clippy
       rustfmt
       go
       nodejs
