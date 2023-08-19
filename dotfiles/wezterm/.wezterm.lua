@@ -17,7 +17,7 @@ config.enable_scroll_bar = true;
 config.enable_tab_bar = false;
 
 -- Disable all default keyboard shortcuts to avoid conflict
--- config.disable_default_key_bindings = true;
+config.disable_default_key_bindings = true;
 
 config.keys = {
   {
