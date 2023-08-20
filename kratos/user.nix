@@ -26,6 +26,7 @@
       bottles # Easily manage Wine prefixes
       cemu # Wii U emulator
       chiaki # PS4 Remote Play client
+      discordo # CLI Discord client
       filelight # View disk usage in pie chart form
       frida-tools # For Android reverse engineering
       ghidra # Decompiler
