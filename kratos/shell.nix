@@ -19,7 +19,6 @@
   programs.bash.interactiveShellInit = ''
     neofetch
     source $(blesh-share)/ble.sh
-    source /run/current-system/sw/share/nix-direnv/direnvrc
     eval "$(direnv hook bash)"
   '';
 
