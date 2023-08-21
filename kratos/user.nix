@@ -31,6 +31,7 @@
       frida-tools # For Android reverse engineering
       ghidra # Decompiler
       gImageReader # OCR PDFs and images easily
+      guerrilla
       gomuks # CLI Matrix client
       inkscape # Vector images
       krita # Raster image editor
