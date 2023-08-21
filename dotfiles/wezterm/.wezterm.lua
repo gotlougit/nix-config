@@ -10,6 +10,9 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+-- Use WebGPU
+config.front_end = "WebGpu";
+
 -- Enable scroll bar
 config.enable_scroll_bar = true;
 
