@@ -20,6 +20,11 @@ config.enable_tab_bar = false;
 config.disable_default_key_bindings = true;
 
 config.keys = {
+  -- paste from the clipboard
+  { key = 'V', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
+
+  -- paste from the primary selection
+  { key = 'V', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'PrimarySelection' },
   {
     -- Split vertical
     key = '(',
