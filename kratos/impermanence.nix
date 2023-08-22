@@ -30,6 +30,7 @@
       "/home/gotlou/.ssh"
       "/home/gotlou/.leetcode"
       "/home/gotlou/.local/share/kwalletd"
+      "/home/gotlou/.local/share/tor-browser/TorBrowser"
       "/home/gotlou/.local/share/dolphin"
       "/home/gotlou/.local/share/rhythmbox"
       "/home/gotlou/.mullvad"
