@@ -40,7 +40,10 @@
       "/home/gotlou/.config/helix"
       "/home/gotlou/.config/lazygit"
     ];
-    files = [ "/home/gotlou/.gitconfig" ];
+    files = [ 
+      "/home/gotlou/.gitconfig" 
+      "/home/gotlou/.globalgitignore" 
+    ];
   };
 
   # Persist path for nix-direnv
