@@ -58,6 +58,8 @@
     rr # Record and replay while debugging
     rustscan # Faster replacement for nmap
     radeontop # AMD GPU monitoring
+    sequoia # Rust reimplementation of PGP
+    sequoia-chameleon-gnupg # Drop-in opinionated GPG replacement
     syncthing # Sync all files
     snowflake # Pluggable transport for tor
     socat # Socket cat
