@@ -54,7 +54,6 @@
     pinentry # Enter gpg password securely
     postgresql_15 # Database
     rr # Record and replay while debugging
-    rustscan # Faster replacement for nmap
     radeontop # AMD GPU monitoring
     syncthing # Sync all files
     snowflake # Pluggable transport for tor
