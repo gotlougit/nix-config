@@ -4,13 +4,13 @@
   ];
   # This mainly has CLI tools and stuff that likely won't work as a user install
   environment.systemPackages = with pkgs; [
-    bubblewrap
+    bubblewrap # Tried and tested user namespace based sandboxes
     minijail
     minijail-tools
-    slirp4netns
-    gparted
-    steam-run
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    slirp4netns # Create userspace networking device
+    gparted # *The* GUI for partitioning drives
+    steam-run # Create traditional FHS for non-Nix packaged software to run in
+    neovim # Classic editor around as a backup
     tealdeer # Rust implementation of tldr
     apparmor-profiles # Enable AppArmor in NixOS
     android-tools # adb, fastboot etc
@@ -29,10 +29,10 @@
     ffmpeg # Multimedia Swiss Army Knife
     gocryptfs # For plasma-vault
     gh # Github CLI
-    gdb
+    gdb # Underrated development tool
     gitFull # For git-send-email
-    gnupg
-    htop
+    gnupg # Manage PGP keys
+    htop # Classic system monitoring tool
     hut # Sourcehut CLI
     helix # New Rust-based modal editor
     hspell # Spelling utility
@@ -41,7 +41,7 @@
     lazygit # Nice wrapper around git to maintain sanity
     libsForQt5.kdeconnect-kde # KDE Connect
     lm_sensors # For temperatures and fan speeds
-    man-pages
+    man-pages # Add more man pages
     man-pages-posix # Provide more man docs for syscalls etc
     meek # Pluggable transport for tor
     neofetch # Nice startup screen for terminal
