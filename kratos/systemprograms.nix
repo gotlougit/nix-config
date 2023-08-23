@@ -5,8 +5,6 @@
   # This mainly has CLI tools and stuff that likely won't work as a user install
   environment.systemPackages = with pkgs; [
     bubblewrap # Tried and tested user namespace based sandboxes
-    minijail
-    minijail-tools
     slirp4netns # Create userspace networking device
     gparted # *The* GUI for partitioning drives
     steam-run # Create traditional FHS for non-Nix packaged software to run in
