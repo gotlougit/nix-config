@@ -11,6 +11,7 @@
     neovim # Classic editor around as a backup
     tealdeer # Rust implementation of tldr
     apparmor-profiles # Enable AppArmor in NixOS
+    age # A sane encrytion/decryption tool made for mortals
     android-tools # adb, fastboot etc
     aria # download manager
     aspell # CLI spell check
