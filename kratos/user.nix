@@ -5,12 +5,9 @@
 
   # specify which sops file to use for the secrets
   sops.defaultSopsFile = ../secrets/secrets.yaml;
-  # Set ownership and permissions
-  sops.secrets."secrets.yaml".mode = "0440";
+  sops.age.keyFile = "../keys.txt"; # must have no password!
   # We can now use sops for storing user login passwords
-  sops.secrets."secrets.yaml".neededForUsers = true;
-  # The password
-  sops.secrets.password = {};
+  sops.secrets.password.neededForUsers = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
