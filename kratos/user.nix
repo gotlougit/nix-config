@@ -1,16 +1,25 @@
-{ inputs, pkgs, ...}:
+{ config, inputs, pkgs, ...}:
 {
   imports = [
   ];
 
+  # specify which sops file to use for the secrets
+  sops.defaultSopsFile = ../secrets/secrets.yaml;
+  # Set ownership and permissions
+  sops.secrets."secrets.yaml".mode = "0440";
+  # We can now use sops for storing user login passwords
+  sops.secrets."secrets.yaml".neededForUsers = true;
+  # The password
+  sops.secrets.password = {};
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
+
   users.mutableUsers = false;
   users.users.gotlou = {
     isNormalUser = true;
-    # CHANGE THIS ASAP
-    initialPassword = "hellofriend";
-    extraGroups = [ "wheel" "networkmanager" ];
+    passwordFile = config.sops.secrets.password.path;
+    extraGroups = [ "wheel" "networkmanager" config.users.groups.keys.name ];
     # TODO: make this even more comprehensive
     # Add whatever you want
     # I mainly add GUI programs in here
