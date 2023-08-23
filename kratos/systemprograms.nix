@@ -64,6 +64,7 @@
     tetex # LaTEX related tooling
     tor # The Onion Router
     unrar # Useful for decompressing
+    unzip # Useful for decompressing ZIP files
     virt-manager # Easy KVM based VMs
     vnstat # View total data usage
     vulkan-tools # Manage vulkan
@@ -73,6 +74,7 @@
     wireshark # View real time network traffic across multiple interfaces
     wireguard-tools # Use kernel Wireguard
     yt-dlp # Useful video download utility
+    zip # Create ZIP files from CLI
 
     # Rust replacements
     bat # cat
