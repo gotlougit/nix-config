@@ -43,6 +43,7 @@
     meek # Pluggable transport for tor
     neofetch # Nice startup screen for terminal
     nix-direnv # Direnv + Nix
+    nmap # Classic network exploration utility
     opensnitch # Application firewall
     opensnitch-ui # Application firewall UI
     obfs4 # Pluggable transport for tor
