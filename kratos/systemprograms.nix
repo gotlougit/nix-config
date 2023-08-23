@@ -60,6 +60,9 @@
     snowflake # Pluggable transport for tor
     socat # Socket cat
     sqlite # No intro needed
+    sequoia-sq # Rust reimplementation of OpenPGP
+    sequoia-sqv # Rust reimplementation to verify OpenPGP signatures
+    sequoia-chameleon-gnupg # Sequoia based drop-in gpg replacement
     tailscale # Create a mesh network
     tetex # LaTEX related tooling
     tor # The Onion Router
