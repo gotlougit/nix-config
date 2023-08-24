@@ -4,8 +4,6 @@
   ];
   # This mainly has CLI tools and stuff that likely won't work as a user install
   environment.systemPackages = with pkgs; [
-    bubblewrap # Tried and tested user namespace based sandboxes
-    slirp4netns # Create userspace networking device
     gparted # *The* GUI for partitioning drives
     steam-run # Create traditional FHS for non-Nix packaged software to run in
     neovim # Classic editor around as a backup
