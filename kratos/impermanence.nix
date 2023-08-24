@@ -33,6 +33,7 @@
       "/home/gotlou/.local/share/tor-browser/TorBrowser"
       "/home/gotlou/.local/share/dolphin"
       "/home/gotlou/.local/share/rhythmbox"
+      "/home/gotlou/.local/share/plasma-vault"
       "/home/gotlou/.mullvad"
       "/home/gotlou/.mozilla"
       "/home/gotlou/.thunderbird"
