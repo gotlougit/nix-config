@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1692806730,
-        "narHash": "sha256-ZXyL1Rc6AY3tE3rR5vWK+BpRZ7xbG7zPLMqVGHsZhkw=",
+        "lastModified": 1692861503,
+        "narHash": "sha256-WxVjJiaLXOtY9kBK0NLahrpgMJLNTwM7Oqs4fIAPF4k=",
         "owner": "~gotlou",
         "repo": "code-sandbox",
-        "rev": "58fa1669c29b06264ce1c506c6a15bf2813472df",
+        "rev": "b52f4dfbec6ad64f2a118b0f6f447a9dcce8a62c",
         "type": "sourcehut"
       },
       "original": {
