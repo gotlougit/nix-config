@@ -26,6 +26,7 @@
       "/home/gotlou/.config/syncthing"
       "/home/gotlou/.config/rpcs3"
       "/home/gotlou/.config/PCSX2"
+      "/home/gotlou/.config/sshield"
       "/home/gotlou/.pcsxr"
       "/home/gotlou/.ssh"
       "/home/gotlou/.leetcode"
