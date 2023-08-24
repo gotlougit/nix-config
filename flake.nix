@@ -5,7 +5,7 @@
   inputs.impermanence.url = "github:nix-community/impermanence";
   inputs.code-sandbox.url = "sourcehut:~gotlou/code-sandbox";
 
-  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, sops-nix }:
+  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
