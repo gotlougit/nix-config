@@ -3,6 +3,7 @@ theme = "custom-theme"
 [editor]
 color-modes = true
 rulers = [80]
+auto-save = true
 
 [editor.lsp]
 enable = true
