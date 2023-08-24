@@ -17,7 +17,6 @@
           pkgs.clippy
           pkgs.rust-analyzer
           pkgs.cargo-rr
-          pkgs.rust-gdb
           pkgs.tree-sitter
         ];
       };
