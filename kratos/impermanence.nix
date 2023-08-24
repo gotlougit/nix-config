@@ -18,7 +18,9 @@
   };
   environment.persistence."/persist/dotfiles" = {
     directories = [
+      "/home/gotlou/.cache/gomuks"
       "/home/gotlou/.config/Chiaki"
+      "/home/gotlou/.config/gomuks"
       "/home/gotlou/.config/gh"
       "/home/gotlou/.config/hut"
       "/home/gotlou/.config/nvim"
@@ -32,6 +34,7 @@
       "/home/gotlou/.ssh"
       "/home/gotlou/.leetcode"
       "/home/gotlou/.local/share/kwalletd"
+      "/home/gotlou/.local/share/gomuks"
       "/home/gotlou/.local/share/tor-browser/TorBrowser"
       "/home/gotlou/.local/share/dolphin"
       "/home/gotlou/.local/share/rhythmbox"
