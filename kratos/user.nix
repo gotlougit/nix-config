@@ -3,19 +3,13 @@
   imports = [
   ];
 
-  # specify which sops file to use for the secrets
-  sops.defaultSopsFile = ../secrets/secrets.yaml;
-  sops.age.keyFile = "../keys.txt"; # must have no password!
-  # We can now use sops for storing user login passwords
-  sops.secrets.password.neededForUsers = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
 
   users.mutableUsers = false;
   users.users.gotlou = {
     isNormalUser = true;
-    passwordFile = config.sops.secrets.password.path;
+    hashedPassword = "$y$j9T$rw1wMForHIg1XuK9HWnCD0$j.19g/PKjzKFPgEF/X2.lMOLIrXLfgGAQ9m9zz85Bc5";
     extraGroups = [ "wheel" "networkmanager" config.users.groups.keys.name ];
     # TODO: make this even more comprehensive
     # Add whatever you want

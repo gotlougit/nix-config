@@ -3,7 +3,6 @@
 
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
   inputs.impermanence.url = "github:nix-community/impermanence";
-  inputs.sops-nix.url = "github:Mic92/sops-nix";
   inputs.code-sandbox.url = "sourcehut:~gotlou/code-sandbox";
 
   outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, sops-nix }:
@@ -36,7 +35,6 @@
             ./kratos/networking.nix
             ./kratos/systemprograms.nix
             ./kratos/shell.nix
-            inputs.sops-nix.nixosModules.sops
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
