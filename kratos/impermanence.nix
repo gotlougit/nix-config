@@ -27,6 +27,7 @@
       "/home/gotlou/.config/rpcs3"
       "/home/gotlou/.config/PCSX2"
       "/home/gotlou/.config/sshield"
+      "/home/gotlou/.config/kdeconnect"
       "/home/gotlou/.pcsxr"
       "/home/gotlou/.ssh"
       "/home/gotlou/.leetcode"
