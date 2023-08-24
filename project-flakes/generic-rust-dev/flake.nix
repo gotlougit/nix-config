@@ -11,6 +11,14 @@
           pkgs.pkgconfig
           pkgs.openssl.dev
           pkgs.sqlite.dev
+          pkgs.rustc
+          pkgs.cargo
+          pkgs.rustfmt
+          pkgs.clippy
+          pkgs.rust-analyzer
+          pkgs.cargo-rr
+          pkgs.rust-gdb
+          pkgs.tree-sitter
         ];
       };
     };
