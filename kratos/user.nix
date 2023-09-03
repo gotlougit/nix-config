@@ -16,6 +16,7 @@
     # I mainly add GUI programs in here
     packages = with pkgs; [
       inputs.code-sandbox.packages.x86_64-linux.default # Installs sandboxes
+      inputs.archiver.packages.x86_64-linux.default # Installs archiving script
       firefox # Just plain Firefox
       thunderbird # Email client
       ark # KDE archiving program

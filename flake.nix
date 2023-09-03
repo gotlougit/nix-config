@@ -4,8 +4,9 @@
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
   inputs.impermanence.url = "github:nix-community/impermanence";
   inputs.code-sandbox.url = "sourcehut:~gotlou/code-sandbox";
+  inputs.archiver.url = "sourcehut:~gotlou/archiveurl";
 
-  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox }:
+  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
@@ -15,6 +16,7 @@
       };
       nixpkgs.overlays = [
         import (inputs.code-sandbox)
+        import (inputs.archiver)
       ];
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
