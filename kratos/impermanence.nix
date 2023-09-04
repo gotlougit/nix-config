@@ -30,7 +30,7 @@
       "/home/gotlou/.config/PCSX2"
       "/home/gotlou/.config/sshield"
       "/home/gotlou/.config/kdeconnect"
-      "/home/gotlou/.pcsxr"
+      "/home/gotlou/.config/duckstation"
       "/home/gotlou/.ssh"
       "/home/gotlou/.leetcode"
       "/home/gotlou/.local/share/kwalletd"
