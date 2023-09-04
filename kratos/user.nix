@@ -44,7 +44,7 @@
       mullvad-browser # Browser for private browsing
       nixpkgs-fmt # Format nix code effectively
       otpclient # TOTP client
-      pcsxr # PS1 emulator
+      duckstation # PS1 emulator
       pcsx2 # PS2 emulator
       qbittorrent # Best torrent client
       rpcs3 # PS3 emulator
