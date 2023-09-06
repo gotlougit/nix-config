@@ -45,18 +45,6 @@
   programs.mtr.enable = true;
   programs.ssh.startAgent = false;
 
-  # List services that you want to enable:
-  # Enable vnstatd to monitor total net usage
-  services.vnstat.enable = true;
-  # Enable tailscaled to be able to connect to mesh network
-  services.tailscale.enable = true;
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  # Enable firmware updates
-  services.fwupd.enable = true;
-  # Enable AppArmor
-  security.apparmor.enable = true;
-
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
