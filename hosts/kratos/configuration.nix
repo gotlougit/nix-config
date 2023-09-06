@@ -7,10 +7,10 @@
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
-  nixpkgs.config.allowUnfree = true; # Allow proprietary software
-  # Support flakes
   nixpkgs.overlays = [
+    # Allow nix-direnv to use flakes
     (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; } )
+    # Import overlays
     (import ../../overlays/overlay.nix)
   ];
 
@@ -21,20 +21,6 @@
   console = {
     font = "Lat2-Terminus16";
     useXkbConfig = true; # use xkbOptions in tty.
-  };
-
-  nix = {
-    settings = {
-      keep-outputs = true;
-      keep-derivations = true;
-      # Enable flakes
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-    # Garbage collect generations older than 7 days
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 7d";
-    };
   };
 
   # Enable library and dev documentation

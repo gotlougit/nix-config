@@ -35,6 +35,7 @@
             ./hosts/kratos/user.nix
             ./hosts/kratos/desktop.nix
             ./hosts/kratos/sound.nix
+            ./hosts/shared/nix.nix
             ./hosts/shared/services/standard-services.nix
             ./hosts/shared/services/bluetooth.nix
             ./hosts/shared/services/opensnitch.nix
