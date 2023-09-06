@@ -4,9 +4,6 @@
 
 { ... }:
 {
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
-
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
@@ -57,11 +54,8 @@
   services.openssh.enable = true;
   # Enable firmware updates
   services.fwupd.enable = true;
-
-  # AppArmor Stuff
-  security.apparmor = {
-    enable = true;
-  };
+  # Enable AppArmor
+  security.apparmor.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
