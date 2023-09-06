@@ -9,7 +9,9 @@
   inputs.plasma-manager.inputs.home-manager.follows = "home-manager";
   inputs.impermanence.url = "github:nix-community/impermanence";
   inputs.code-sandbox.url = "sourcehut:~gotlou/code-sandbox";
+  inputs.code-sandbox.inputs.nixpkgs.follows = "nixpkgs";
   inputs.archiver.url = "sourcehut:~gotlou/archiveurl";
+  inputs.archiver.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager }:
     let
