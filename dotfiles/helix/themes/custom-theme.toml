@@ -1,5 +1,0 @@
-inherits = "onedark"
-"ui" = {bg = "black"}
-
-[palette]
-black = "#000000"
