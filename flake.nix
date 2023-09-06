@@ -2,11 +2,13 @@
   description = "NixOS configuration";
 
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
+  inputs.home-manager.url = "github:nix-community/home-manager";
+  inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
   inputs.impermanence.url = "github:nix-community/impermanence";
   inputs.code-sandbox.url = "sourcehut:~gotlou/code-sandbox";
   inputs.archiver.url = "sourcehut:~gotlou/archiveurl";
 
-  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver }:
+  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
@@ -28,6 +30,12 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.gotlou = import ./home/home.nix;
+            }
             ./hosts/kratos/impermanence.nix
             ./hosts/kratos/hardware-configuration.nix
             ./hosts/kratos/boot.nix
