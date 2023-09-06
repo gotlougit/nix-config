@@ -30,6 +30,7 @@
           modules = [
             ./hosts/kratos/impermanence.nix
             ./hosts/kratos/hardware-configuration.nix
+            ./hosts/kratos/boot.nix
             ./hosts/kratos/configuration.nix
             ./hosts/kratos/user.nix
             ./hosts/kratos/services.nix
