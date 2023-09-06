@@ -35,7 +35,6 @@
             ./hosts/kratos/user.nix
             ./hosts/kratos/desktop.nix
             ./hosts/kratos/sound.nix
-            ./hosts/kratos/services.nix
             ./hosts/shared/services/standard-services.nix
             ./hosts/shared/services/bluetooth.nix
             ./hosts/shared/services/opensnitch.nix
@@ -43,6 +42,7 @@
             ./hosts/shared/services/waydroid.nix
             ./hosts/shared/services/virt.nix
             ./hosts/shared/services/dns-resolver.nix
+            ./hosts/shared/services/oom.nix
             ./hosts/shared/networking.nix
             ./hosts/kratos/networking-kratos.nix
             ./hosts/kratos/systemprograms.nix
@@ -59,6 +59,7 @@
             ./hosts/shared/shell.nix
             ./hosts/shared/networking.nix
             ./hosts/shared/services/dns-resolver.nix
+            ./hosts/shared/services/oom.nix
           ];
         };
       };
