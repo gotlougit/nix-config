@@ -77,7 +77,7 @@
 
   # List services that you want to enable:
   # Enable warp-svc to allow connections to the Cloudflare VPN
-  systemd.packages = [ pkgs.cloudflare-warp pkgs.syncthing ];
+  systemd.packages = [ pkgs.cloudflare-warp ];
   systemd.services.warp-svc = {
     enable = true;
     after = [ ];
