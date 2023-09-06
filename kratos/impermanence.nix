@@ -52,9 +52,4 @@
     ];
   };
 
-  # Persist path for nix-direnv
-  environment.pathsToLink = [
-    "/persist/nix-direnv"
-  ];
-
 }
