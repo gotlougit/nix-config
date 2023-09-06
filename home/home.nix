@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./direnv.nix
     ./git.nix
     ./helix.nix
     ./plasma.nix
