@@ -40,6 +40,7 @@
             ./hosts/shared/services/warp.nix
             ./hosts/shared/services/waydroid.nix
             ./hosts/shared/services/virt.nix
+            ./hosts/shared/services/dns-resolver.nix
             ./hosts/shared/networking.nix
             ./hosts/kratos/networking-kratos.nix
             ./hosts/kratos/systemprograms.nix
@@ -55,6 +56,7 @@
             ./hosts/mimir/systemprograms.nix
             ./hosts/shared/shell.nix
             ./hosts/shared/networking.nix
+            ./hosts/shared/services/dns-resolver.nix
           ];
         };
       };
