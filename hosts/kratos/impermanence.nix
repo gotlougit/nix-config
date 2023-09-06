@@ -43,11 +43,11 @@
       "/home/gotlou/.mozilla"
       "/home/gotlou/.thunderbird"
       "/home/gotlou/.config/Signal"
-      "/home/gotlou/.config/helix"
+      # "/home/gotlou/.config/helix"
       "/home/gotlou/.config/lazygit"
     ];
     files = [ 
-      "/home/gotlou/.gitconfig" 
+      # "/home/gotlou/.gitconfig" 
       "/home/gotlou/.globalgitignore" 
     ];
   };
