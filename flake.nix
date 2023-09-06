@@ -33,6 +33,8 @@
             ./hosts/kratos/boot.nix
             ./hosts/kratos/configuration.nix
             ./hosts/kratos/user.nix
+            ./hosts/kratos/desktop.nix
+            ./hosts/kratos/sound.nix
             ./hosts/kratos/services.nix
             ./hosts/shared/services/standard-services.nix
             ./hosts/shared/services/bluetooth.nix
