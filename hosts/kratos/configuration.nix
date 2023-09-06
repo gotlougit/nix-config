@@ -4,19 +4,6 @@
 
 { pkgs, ... }:
 {
-  # kratos-specific rules for networking
-  networking.hostName = "kratos";
-  # Enable networkmanager
-  networking.networkmanager.enable = true;
-  # Randomize MAC address
-  networking.networkmanager.wifi.macAddress = "stable";
-  networking.networkmanager.ethernet.macAddress = "stable";
-  # Allow KDE connect
-  networking.firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
-  networking.firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
-  # Allow Syncthing
-  networking.firewall.allowedUDPPorts = [ 22000 ];
-
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   # Enable hardware acceleration
@@ -26,6 +13,7 @@
 
   # To enable Vulkan support for 32-bit applications, also add:
   hardware.opengl.extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+  hardware.enableAllFirmware = true;
 
   # Force radv
   environment.variables.AMD_VULKAN_ICD = "RADV";
@@ -39,7 +27,6 @@
     (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; } )
     (import ../../overlays/overlay.nix)
   ];
-  hardware.enableAllFirmware = true;
 
   # Enable virtualization
   virtualisation.libvirtd.enable = true;
@@ -59,10 +46,6 @@
   virtualisation.waydroid.enable = true;
   programs.dconf.enable = true;
 
-  # Use latest Linux Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "amd_pstate=active" ];
-  boot.supportedFilesystems = [ "btrfs" "ntfs" ];
   # Select internationalisation properties.
   i18n.defaultLocale = "en_IN";
   console = {

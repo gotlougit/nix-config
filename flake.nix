@@ -36,6 +36,7 @@
             ./hosts/kratos/services.nix
             ./hosts/kratos/opensnitch.nix
             ./hosts/shared/networking.nix
+            ./hosts/kratos/networking-kratos.nix
             ./hosts/kratos/systemprograms.nix
             ./hosts/shared/shell.nix
           ];

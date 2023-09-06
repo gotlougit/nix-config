@@ -1,4 +1,4 @@
-{...}:
+{ pkgs, ...}:
 
 {
   
@@ -15,5 +15,8 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   # For rr to work nicely
   boot.kernel.sysctl."kernel.perf_event_paranoid" = 1;
-
+  # Use latest Linux Kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "amd_pstate=active" ];
+  boot.supportedFilesystems = [ "btrfs" "ntfs" ];
 }
