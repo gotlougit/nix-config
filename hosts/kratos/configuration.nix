@@ -6,6 +6,8 @@
 {
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
+  # Set hostname
+  networking.hostName = "kratos";
 
   nixpkgs.overlays = [
     # Allow nix-direnv to use flakes

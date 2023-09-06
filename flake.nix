@@ -45,7 +45,6 @@
             ./hosts/shared/services/dns-resolver.nix
             ./hosts/shared/services/oom.nix
             ./hosts/shared/networking.nix
-            ./hosts/kratos/networking-kratos.nix
             ./hosts/kratos/systemprograms.nix
             ./hosts/shared/shell.nix
           ];
