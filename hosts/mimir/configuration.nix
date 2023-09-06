@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ ... }:
 {
   time.timeZone = "Asia/Kolkata";
   services.openssh.enable = true;
