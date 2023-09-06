@@ -36,7 +36,7 @@
       "/home/gotlou/.local/share/kwalletd"
       "/home/gotlou/.local/share/gomuks"
       "/home/gotlou/.local/share/tor-browser/TorBrowser"
-      "/home/gotlou/.local/share/dolphin"
+      # "/home/gotlou/.local/share/dolphin"
       "/home/gotlou/.local/share/rhythmbox"
       "/home/gotlou/.local/share/plasma-vault"
       "/home/gotlou/.mullvad"
