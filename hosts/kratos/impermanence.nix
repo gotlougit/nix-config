@@ -44,7 +44,7 @@
       "/home/gotlou/.thunderbird"
       "/home/gotlou/.config/Signal"
       # "/home/gotlou/.config/helix"
-      "/home/gotlou/.config/lazygit"
+      # "/home/gotlou/.config/lazygit"
     ];
     files = [ 
       # "/home/gotlou/.gitconfig" 
