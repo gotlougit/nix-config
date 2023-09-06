@@ -2,21 +2,10 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ ... }:
 {
   # Enable bluetooth
   hardware.bluetooth.enable = true;
-  # Enable hardware acceleration
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
-  hardware.opengl.extraPackages = [ pkgs.amdvlk ];
-
-  # To enable Vulkan support for 32-bit applications, also add:
-  hardware.opengl.extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
-  hardware.enableAllFirmware = true;
-
-  # Force radv
-  environment.variables.AMD_VULKAN_ICD = "RADV";
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -28,22 +17,6 @@
     (import ../../overlays/overlay.nix)
   ];
 
-  # Enable virtualization
-  virtualisation.libvirtd.enable = true;
-  # Enable podman
-  virtualisation.podman = {
-    enable = true;
-
-    # Create a `docker` alias for podman, to use it as a drop-in replacement
-    dockerCompat = true;
-
-    # Required for containers under podman-compose to be able to talk to each other.
-    defaultNetwork.settings = {
-      dns_enabled = true;
-    };
-  };
-  virtualisation.lxd.enable = true;
-  virtualisation.waydroid.enable = true;
   programs.dconf.enable = true;
 
   # Select internationalisation properties.

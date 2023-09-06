@@ -36,6 +36,8 @@
             ./hosts/kratos/services.nix
             ./hosts/shared/services/opensnitch.nix
             ./hosts/shared/services/warp.nix
+            ./hosts/shared/services/waydroid.nix
+            ./hosts/shared/services/virt.nix
             ./hosts/shared/networking.nix
             ./hosts/kratos/networking-kratos.nix
             ./hosts/kratos/systemprograms.nix
