@@ -36,7 +36,7 @@
     man-pages # Add more man pages
     man-pages-posix # Provide more man docs for syscalls etc
     meek # Pluggable transport for tor
-    neofetch # Nice startup screen for terminal
+    macchina # Nice startup screen for terminal
     nix-direnv # Direnv + Nix
     nmap # Classic network exploration utility
     opensnitch # Application firewall

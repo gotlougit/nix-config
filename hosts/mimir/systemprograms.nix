@@ -15,7 +15,7 @@
     lm_sensors # For temperatures and fan speeds
     man-pages
     man-pages-posix # Provide more man docs for syscalls etc
-    neofetch # Nice startup screen for terminal
+    macchina # Nice startup screen for terminal
     parallel # Parallelize many shell commands
     rustscan # Faster replacement for nmap
     tailscale # Create a mesh network

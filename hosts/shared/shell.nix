@@ -17,7 +17,7 @@
   };
   # Hook direnv
   programs.bash.interactiveShellInit = ''
-    neofetch
+    macchina
     source $(blesh-share)/ble.sh
     eval "$(direnv hook bash)"
   '';
