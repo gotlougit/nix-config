@@ -61,6 +61,8 @@
             ./hosts/shared/networking.nix
             ./hosts/shared/services/dns-resolver.nix
             ./hosts/shared/services/oom.nix
+            ./hosts/shared/services/standard-services.nix
+            ./hosts/shared/nix.nix
           ];
         };
       };

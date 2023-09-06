@@ -16,10 +16,4 @@
       grub.enable = lib.mkDefault false;
     };
   };
-  nix.settings = {
-    experimental-features = lib.mkDefault "nix-command flakes";
-    trusted-users = [ "root" "@wheel" ];
-  };
-  nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "22.11";
 }
