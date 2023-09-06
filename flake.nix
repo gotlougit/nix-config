@@ -28,26 +28,26 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./kratos/impermanence.nix
-            ./kratos/hardware-configuration.nix
-            ./kratos/configuration.nix
-            ./kratos/user.nix
-            ./kratos/services.nix
-            ./kratos/opensnitch.nix
-            ./kratos/networking.nix
-            ./kratos/systemprograms.nix
-            ./kratos/shell.nix
+            ./hosts/kratos/impermanence.nix
+            ./hosts/kratos/hardware-configuration.nix
+            ./hosts/kratos/configuration.nix
+            ./hosts/kratos/user.nix
+            ./hosts/kratos/services.nix
+            ./hosts/kratos/opensnitch.nix
+            ./hosts/kratos/networking.nix
+            ./hosts/kratos/systemprograms.nix
+            ./hosts/kratos/shell.nix
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
           system = aarch64System;
           specialArgs = { inherit inputs; };
           modules = [
-            ./mimir/base.nix
-            ./mimir/configuration.nix
-            ./mimir/systemprograms.nix
-            ./kratos/shell.nix
-            ./kratos/networking.nix
+            ./hosts/mimir/base.nix
+            ./hosts/mimir/configuration.nix
+            ./hosts/mimir/systemprograms.nix
+            ./hosts/kratos/shell.nix
+            ./hosts/kratos/networking.nix
           ];
         };
       };

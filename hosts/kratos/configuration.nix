@@ -68,7 +68,7 @@
   # Support flakes
   nixpkgs.overlays = [
     (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; } )
-    (import ../overlays/overlay.nix)
+    (import ../../overlays/overlay.nix)
   ];
   hardware.enableAllFirmware = true;
 
