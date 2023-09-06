@@ -1,7 +1,6 @@
 { pkgs, ...}:
 
 {
-  
   # Use the systemd-boot bootloader.
   boot.loader.systemd-boot.enable = true;
   # Save 20 generations just in case
@@ -17,6 +16,8 @@
   boot.kernel.sysctl."kernel.perf_event_paranoid" = 1;
   # Use latest Linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Use pstate to lower idle clocks even lower
   boot.kernelParams = [ "amd_pstate=active" ];
+  # Add more filesystems here as and when needed
   boot.supportedFilesystems = [ "btrfs" "ntfs" ];
 }
