@@ -11,7 +11,7 @@
 
   nixpkgs.overlays = [
     # Allow nix-direnv to use flakes
-    (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; } )
+    (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
     # Import overlays
     (import ../../overlays/overlay.nix)
   ];
@@ -27,7 +27,7 @@
 
   # Enable library and dev documentation
   documentation.dev.enable = true;
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;

@@ -12,13 +12,16 @@
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
-    in {
+    in
+    {
       nixpkgs.config = {
         allowUnfree = true;
       };
       nixpkgs.overlays = [
-        import (inputs.code-sandbox)
-        import (inputs.archiver)
+        import
+        (inputs.code-sandbox)
+        import
+        (inputs.archiver)
       ];
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {

@@ -1,4 +1,4 @@
-{ inputs, ...}:
+{ inputs, ... }:
 {
   imports = [
     inputs.impermanence.nixosModules.impermanence
@@ -46,9 +46,9 @@
       # "/home/gotlou/.config/helix"
       # "/home/gotlou/.config/lazygit"
     ];
-    files = [ 
+    files = [
       # "/home/gotlou/.gitconfig" 
-      "/home/gotlou/.globalgitignore" 
+      "/home/gotlou/.globalgitignore"
     ];
   };
 

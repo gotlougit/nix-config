@@ -1,3 +1,3 @@
 self: super: {
-  guerrilla = self.callPackage ./guerrilla.nix {};
+  guerrilla = self.callPackage ./guerrilla.nix { };
 }

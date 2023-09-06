@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-    # Enable warp-svc to allow connections to the Cloudflare VPN
-    systemd.packages = [ pkgs.cloudflare-warp ];
-    systemd.services.warp-svc = {
+  # Enable warp-svc to allow connections to the Cloudflare VPN
+  systemd.packages = [ pkgs.cloudflare-warp ];
+  systemd.services.warp-svc = {
     enable = true;
     after = [ ];
     wantedBy = [ "multi-user.target" ];
@@ -25,7 +25,7 @@
       # ProtectSystem = "full";
       RestrictNamespaces = true;
       RestrictRealtime = true;
-      CapabilityBoundingSet="~CAP_SYS_PTRACE";
+      CapabilityBoundingSet = "~CAP_SYS_PTRACE";
       # ProcSubset = "pid";
       # InaccessiblePaths = "/data";
     };

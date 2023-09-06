@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 # This contains GUI desktop specific services/configs
 {
   # Enable the X11 windowing system.
@@ -23,7 +23,7 @@
   ];
 
   # Disable baloo indexer
-  environment.etc."xdg/baloofilerc".source = (pkgs.formats.ini {}).generate "baloorc" {
+  environment.etc."xdg/baloofilerc".source = (pkgs.formats.ini { }).generate "baloorc" {
     "Basic Settings" = {
       "Indexing-Enabled" = false;
     };
@@ -31,8 +31,8 @@
 
   # Configure keymap in X11
   services.xserver.layout = "us";
-  
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
- 
+
 }

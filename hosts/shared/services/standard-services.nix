@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 
 {
   # Enable vnstatd to monitor total net usage

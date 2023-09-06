@@ -1,4 +1,4 @@
-{ ... }: 
+{ ... }:
 
 {
   programs.helix.enable = true;
@@ -12,7 +12,7 @@
     editor.lsp.enable = true;
     editor.lsp.display-messages = true;
     editor.lsp.display-inlay-hints = false;
-    
+
     editor.cursor-shape.insert = "bar";
 
     editor.statusline = {
@@ -35,5 +35,5 @@
     "ui" = { bg = "black"; };
     palette."black" = "#000000";
   };
-  
+
 }

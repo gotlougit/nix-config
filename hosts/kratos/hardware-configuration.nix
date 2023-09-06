@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "uas" "sd_mod" ];
@@ -19,13 +20,15 @@
   };
 
   fileSystems."/" =
-    { device = "none";
+    {
+      device = "none";
       fsType = "tmpfs";
       options = [ "defaults" "size=1G" "mode=755" ];
     };
-  
+
   fileSystems."/tmp" =
-    { device = "none";
+    {
+      device = "none";
       fsType = "tmpfs";
       options = [ "defaults" "size=8G" "mode=755" ];
     };
@@ -33,19 +36,22 @@
   boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/434e510a-b269-4f83-a0b6-0a8532a8ff07";
 
   fileSystems."/home" =
-    { device = "/dev/mapper/cryptroot";
+    {
+      device = "/dev/mapper/cryptroot";
       fsType = "btrfs";
       options = [ "compress=zstd" "noatime" "subvol=home" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/mapper/cryptroot";
+    {
+      device = "/dev/mapper/cryptroot";
       fsType = "btrfs";
       options = [ "compress=zstd" "noatime" "subvol=nix" ];
     };
 
   fileSystems."/persist" =
-    { device = "/dev/mapper/cryptroot";
+    {
+      device = "/dev/mapper/cryptroot";
       fsType = "btrfs";
       options = [ "compress=zstd" "noatime" "subvol=persist" ];
       neededForBoot = true;

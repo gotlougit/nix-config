@@ -1,4 +1,4 @@
-{ pkgs, lib, ...}:
+{ pkgs, lib, ... }:
 {
   imports = [
   ];
@@ -26,7 +26,7 @@
         action = "allow";
         duration = "always";
         operator = {
-          type ="simple";
+          type = "simple";
           sensitive = false;
           operand = "process.path";
           data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
@@ -38,7 +38,7 @@
         action = "allow";
         duration = "always";
         operator = {
-          type ="simple";
+          type = "simple";
           sensitive = false;
           operand = "process.path";
           data = "${lib.getBin pkgs.dnscrypt-proxy2}/bin/dnscrypt-proxy";
@@ -50,37 +50,37 @@
         action = "allow";
         duration = "always";
         operator = {
-          type ="simple";
+          type = "simple";
           sensitive = false;
           operand = "process.path";
           data = "${lib.getBin pkgs.nsncd}/bin/nsncd";
-          };
         };
+      };
       NetworkManager = {
         name = "NetworkManager";
         enabled = true;
         action = "allow";
         duration = "always";
         operator = {
-          type ="simple";
+          type = "simple";
           sensitive = false;
           operand = "process.path";
           data = "${pkgs.networkmanager}/bin/NetworkManager";
-          };
         };
+      };
       syncthing = {
         name = "syncthing";
         enabled = true;
         action = "allow";
         duration = "always";
         operator = {
-          type ="simple";
+          type = "simple";
           sensitive = false;
           operand = "process.path";
           data = "${pkgs.syncthing}/bin/syncthing";
-          };
         };
       };
+    };
   };
 
 }
