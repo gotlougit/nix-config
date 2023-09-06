@@ -18,15 +18,15 @@ It will:
 
 - Add [OpenSnitch](https://github.com/evilsocket/opensnitch) to manage applications making network requests with some sane whitelists
 
-Nice-to-haves:
+- Use [home-manager](https://github.com/nix-community/home-manager) to manage user configs in a declarative manner.
 
-- Manage many program configurations using home manager and Nix; this will require a time investment on my part to figure out how to gradually do so
+Nice-to-haves:
 
 - Automate secure boot setup
 
 Most of these will be my personal preferences
 
-It also houses my NeoVim and Helix configs, as well as any non-sensitive configs I deem good enough to post online
+It also houses any non-sensitive configs I deem good enough to post online
 
 ## Usage
 
