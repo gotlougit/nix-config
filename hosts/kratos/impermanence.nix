@@ -23,7 +23,7 @@
       "/home/gotlou/.config/gomuks"
       "/home/gotlou/.config/gh"
       "/home/gotlou/.config/hut"
-      "/home/gotlou/.config/nvim"
+      # "/home/gotlou/.config/nvim"
       "/home/gotlou/.config/neofetch"
       "/home/gotlou/.config/syncthing"
       "/home/gotlou/.config/rpcs3"
