@@ -7,7 +7,7 @@
   users.users.gotlou = {
     isNormalUser = true;
     hashedPassword = "$y$j9T$rw1wMForHIg1XuK9HWnCD0$j.19g/PKjzKFPgEF/X2.lMOLIrXLfgGAQ9m9zz85Bc5";
-    extraGroups = [ "wheel" "networkmanager" config.users.groups.keys.name ];
+    extraGroups = [ "wheel" "wireshark" "networkmanager" config.users.groups.keys.name ];
     # TODO: make this even more comprehensive
     # Add whatever you want
     # I mainly add GUI programs in here
