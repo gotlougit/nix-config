@@ -2,27 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
-  imports = with inputs; [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    # Impermanence
-    ./impermanence.nix
-    # User specific config
-    ./user.nix
-    # Basic services
-    ./services.nix
-    # OpenSnitch
-    ./opensnitch.nix
-    # Networking
-    ./networking.nix
-    # System programs
-    ./systemprograms.nix
-    # Shell settings
-    ./shell.nix
-  ];
-
   # kratos-specific rules for networking
   networking.hostName = "kratos";
   # Enable networkmanager

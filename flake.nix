@@ -34,9 +34,9 @@
             ./hosts/kratos/user.nix
             ./hosts/kratos/services.nix
             ./hosts/kratos/opensnitch.nix
-            ./hosts/kratos/networking.nix
+            ./hosts/shared/networking.nix
             ./hosts/kratos/systemprograms.nix
-            ./hosts/kratos/shell.nix
+            ./hosts/shared/shell.nix
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
@@ -46,8 +46,8 @@
             ./hosts/mimir/base.nix
             ./hosts/mimir/configuration.nix
             ./hosts/mimir/systemprograms.nix
-            ./hosts/kratos/shell.nix
-            ./hosts/kratos/networking.nix
+            ./hosts/shared/shell.nix
+            ./hosts/shared/networking.nix
           ];
         };
       };
