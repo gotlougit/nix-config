@@ -36,6 +36,12 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable earlyoom to manage memory better and prevent freezes
+  services.earlyoom = {
+    enable = true;
+    freeMemThreshold = 15;
+  };
+
   # Enable sound.
   sound.enable = true;
   security.rtkit.enable = true;
