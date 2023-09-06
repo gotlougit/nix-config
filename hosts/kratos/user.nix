@@ -1,8 +1,5 @@
 { config, inputs, pkgs, ...}:
 {
-  imports = [
-  ];
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
 
