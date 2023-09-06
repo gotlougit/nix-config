@@ -50,12 +50,6 @@
           size = { Percent = 50 },
         },
       },
-      -- {
-      --   -- Cycle through tabs
-      --   key = 'N',
-      --   mods = 'Tab',
-      --   action = wezterm.action.ActivateTabRelative(1),
-      -- },
       {
         -- Cycle through panes
         key = 'Tab',
