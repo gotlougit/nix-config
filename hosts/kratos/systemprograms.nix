@@ -25,7 +25,6 @@
     gocryptfs # For plasma-vault
     gh # Github CLI
     gdb # Underrated development tool
-    gitFull # For git-send-email
     gnupg # Manage PGP keys
     htop # Classic system monitoring tool
     hut # Sourcehut CLI
