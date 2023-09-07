@@ -1,0 +1,3 @@
+[submodule "dotfiles/plasma-applet-eventcalendar"]
+	path = dotfiles/plasma-applet-eventcalendar
+	url = https://github.com/Zren/plasma-applet-eventcalendar
