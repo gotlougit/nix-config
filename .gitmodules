@@ -1,3 +1,6 @@
 [submodule "dotfiles/plasma-applet-eventcalendar"]
 	path = dotfiles/plasma-applet-eventcalendar
 	url = https://github.com/Zren/plasma-applet-eventcalendar
+[submodule "dotfiles/dynamic_workspaces"]
+	path = dotfiles/dynamic_workspaces
+	url = https://github.com/d86leader/dynamic_workspaces
