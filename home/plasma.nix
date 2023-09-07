@@ -2,17 +2,20 @@
 
 {
 
+  # Stores dolphin preferences
   home.file.".local/share/dolphin/dolphinstaterc".text = ''
     [State]
     1920x1080 screen: Window-Maximized=true
     State=AAAA/wAAAAD9AAAAAwAAAAAAAAEEAAAD8vwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAuAAAB5wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAuAAAD8gAAAF0BAAADAAAAAQAAALgAAAPy/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAC4AAAPyAAAACgEAAAMAAAADAAAHgAAAAL78AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAAAAAHgAAAAAoBAAADAAAGXQAAA/IAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
   '';
 
+  # Selects holiday region for calendar
   xdg.configFile."plasma_calendar_holiday_regions".text = ''
     [General]
     selectedRegions=in_en-gb
   '';
 
+  # Panel config
   xdg.configFile."plasma-org.kde.plasma.desktop-appletsrc".text = ''
     [ActionPlugins][0]
     RightButton;NoModifier=org.kde.contextmenu
