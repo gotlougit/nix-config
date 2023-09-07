@@ -55,10 +55,11 @@
             ./hosts/kratos/boot.nix
             ./hosts/kratos/configuration.nix
             ./hosts/kratos/user.nix
-            ./hosts/kratos/desktop.nix
-            ./hosts/kratos/sound.nix
+            ./hosts/kratos/services/desktop.nix
+            ./hosts/kratos/services/sound.nix
             ./hosts/shared/nix.nix
             ./hosts/shared/services/standard-services.nix
+            ./hosts/kratos/services/tailscale.nix
             ./hosts/shared/services/bluetooth.nix
             ./hosts/shared/services/opensnitch.nix
             ./hosts/shared/services/warp.nix
