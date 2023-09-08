@@ -54,6 +54,9 @@
       # User = "tailscaled";
       Group = "tailscaled";
 
+      # Prevent leakage via Impermanence
+      InaccessiblePaths = [ "/persist" ];
+
       DeviceAllow = [ "/dev/tun" "/dev/net/tun" ];
       AmbientCapabilities = [ "CAP_NET_RAW" "CAP_NET_ADMIN" "CAP_SYS_MODULE" ];
       ProtectKernelModules = false;
