@@ -33,7 +33,7 @@
       RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" "AF_NETLINK" ];
       ProtectHome = true;
       SystemCallArchitectures = "native";
-      SystemCallFilter = [ "@known" "~@clock" "@cpu-emulation" "@raw-io" "@reboot" "@mount" "@obsolete" "@swap" "@debug" "@keyring" "@mount" "@pkey" ];
+      SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" ];
     };
   };
 }

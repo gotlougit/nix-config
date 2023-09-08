@@ -75,7 +75,7 @@
       ProtectSystem = true;
       ProtectProc = "noaccess";
       SystemCallArchitectures = "native";
-      SystemCallFilter = [ "@known" "~@clock" "@cpu-emulation" "@raw-io" "@reboot" "@mount" "@obsolete" "@swap" "@debug" "@keyring" "@mount" "@pkey" ];
+      SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" ];
     };
   };
 }
