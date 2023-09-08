@@ -59,7 +59,7 @@
             ./hosts/kratos/services/sound.nix
             ./hosts/shared/nix.nix
             ./hosts/shared/services/standard-services.nix
-            ./hosts/kratos/services/tailscale.nix
+            ./hosts/kratos/services/tailscale-custom.nix
             ./hosts/shared/services/bluetooth.nix
             ./hosts/shared/services/opensnitch.nix
             ./hosts/shared/services/warp.nix
