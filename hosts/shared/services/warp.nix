@@ -12,7 +12,7 @@
       # User = "warp";
       UMask = "0077";
       # Hardening
-      NoNewPrevilleges = true;
+      NoNewPrivileges = true;
       LockPersonality = true;
       PrivateMounts = true;
       PrivateTmp = true;
@@ -21,13 +21,19 @@
       ProtectKernelLogs = true;
       ProtectKernelModules = true;
       ProtectKernelTunables = true;
-      ProtectProc = "invisible";
-      # ProtectSystem = "full";
+      ProtectProc = "noaccess";
+      ProtectSystem = true;
       RestrictNamespaces = true;
       RestrictRealtime = true;
+      RestrictSUIDSGID = true;
+      MemoryDenyWriteExecute = true;
       CapabilityBoundingSet = "~CAP_SYS_PTRACE";
-      # ProcSubset = "pid";
-      # InaccessiblePaths = "/data";
+      InaccessiblePaths = "/persist";
+      AmbientCapabilities = [ "CAP_NET_RAW" "CAP_NET_ADMIN" "CAP_SYS_MODULE" ];
+      RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" "AF_NETLINK" ];
+      ProtectHome = true;
+      SystemCallArchitectures = "native";
+      SystemCallFilter = [ "@known" "~@clock" "@cpu-emulation" "@raw-io" "@reboot" "@mount" "@obsolete" "@swap" "@debug" "@keyring" "@mount" "@pkey" ];
     };
   };
 }
