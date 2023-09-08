@@ -11,7 +11,7 @@
     cat = "bat";
     diff = "difft";
     fzf = "sk";
-    ls = "exa";
+    ls = "eza";
     grep = "rg";
     cloc = "loc";
   };

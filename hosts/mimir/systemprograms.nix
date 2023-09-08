@@ -30,7 +30,7 @@
     difftastic # diff
     skim # fzf
     hexyl # hexdump
-    exa # ls
+    eza # ls
     ripgrep # grep
     rm-improved # rm
   ];

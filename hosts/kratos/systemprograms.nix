@@ -79,7 +79,7 @@
     difftastic # diff
     skim # fzf
     hexyl # hexdump
-    exa # ls
+    eza # ls
     ripgrep # grep
     loc # cloc
     rm-improved # rm
