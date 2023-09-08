@@ -79,6 +79,7 @@
             ./hosts/mimir/base.nix
             ./hosts/mimir/configuration.nix
             ./hosts/mimir/systemprograms.nix
+            ./hosts/mimir/services/tailscale.nix
             ./hosts/shared/shell.nix
             ./hosts/shared/networking.nix
             ./hosts/shared/services/dns-resolver.nix
