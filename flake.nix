@@ -58,6 +58,7 @@
             ./hosts/kratos/services/desktop.nix
             ./hosts/kratos/services/sound.nix
             ./hosts/shared/nix.nix
+            ./hosts/shared/zram.nix
             ./hosts/shared/services/standard-services.nix
             ./hosts/kratos/services/tailscale.nix
             ./hosts/shared/services/bluetooth.nix
@@ -82,6 +83,7 @@
             ./hosts/mimir/services/tailscale.nix
             ./hosts/shared/shell.nix
             ./hosts/shared/networking.nix
+            ./hosts/shared/zram.nix
             ./hosts/shared/services/dns-resolver.nix
             ./hosts/shared/services/oom.nix
             ./hosts/shared/services/standard-services.nix
