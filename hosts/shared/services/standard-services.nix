@@ -5,7 +5,10 @@
   services.syncthing = {
     enable = true;
     user = "gotlou";
+    group = "users";
     configDir = "/persist/sensitive/syncthing";
+    dataDir = "/home/gotlou";
+    openDefaultPorts = true;
   };
   # Enable vnstatd to monitor total net usage
   services.vnstat.enable = true;
