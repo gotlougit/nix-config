@@ -13,8 +13,7 @@
       "/var/log/private"
       "/var/lib"
     ];
-    files = [
-    ];
+    files = [ ];
   };
   environment.persistence."/persist/dotfiles" = {
     directories = [
@@ -23,9 +22,6 @@
       "/home/gotlou/.config/gomuks"
       "/home/gotlou/.config/gh"
       "/home/gotlou/.config/hut"
-      # "/home/gotlou/.config/nvim"
-      # "/home/gotlou/.config/neofetch"
-      # "/home/gotlou/.config/syncthing"
       "/home/gotlou/.config/rpcs3"
       "/home/gotlou/.config/PCSX2"
       "/home/gotlou/.config/sshield"
@@ -36,20 +32,14 @@
       "/home/gotlou/.local/share/kwalletd"
       "/home/gotlou/.local/share/gomuks"
       "/home/gotlou/.local/share/tor-browser/TorBrowser"
-      # "/home/gotlou/.local/share/dolphin"
       "/home/gotlou/.local/share/rhythmbox"
       "/home/gotlou/.local/share/plasma-vault"
       "/home/gotlou/.mullvad"
       "/home/gotlou/.mozilla"
       "/home/gotlou/.thunderbird"
       "/home/gotlou/.config/Signal"
-      # "/home/gotlou/.config/helix"
-      # "/home/gotlou/.config/lazygit"
     ];
-    files = [
-      # "/home/gotlou/.gitconfig" 
-      # "/home/gotlou/.globalgitignore"
-    ];
+    files = [ ];
   };
 
 }
