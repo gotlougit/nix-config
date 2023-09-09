@@ -22,11 +22,8 @@
       "/home/gotlou/.config/gomuks"
       "/home/gotlou/.config/gh"
       "/home/gotlou/.config/hut"
-      "/home/gotlou/.config/rpcs3"
-      "/home/gotlou/.config/PCSX2"
       "/home/gotlou/.config/sshield"
       "/home/gotlou/.config/kdeconnect"
-      "/home/gotlou/.config/duckstation"
       "/home/gotlou/.ssh"
       "/home/gotlou/.leetcode"
       "/home/gotlou/.local/share/kwalletd"
@@ -38,6 +35,14 @@
       "/home/gotlou/.mozilla"
       "/home/gotlou/.thunderbird"
       "/home/gotlou/.config/Signal"
+    ];
+    files = [ ];
+  };
+  environment.persistence."/persist/gaming" = {
+    directories = [
+      "/home/gotlou/.config/rpcs3"
+      "/home/gotlou/.config/PCSX2"
+      "/home/gotlou/.config/duckstation"
     ];
     files = [ ];
   };
