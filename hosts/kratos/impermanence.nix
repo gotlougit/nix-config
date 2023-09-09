@@ -17,32 +17,47 @@
   };
   environment.persistence."/persist/dotfiles" = {
     directories = [
-      "/home/gotlou/.cache/gomuks"
-      "/home/gotlou/.config/Chiaki"
-      "/home/gotlou/.config/gomuks"
-      "/home/gotlou/.config/gh"
-      "/home/gotlou/.config/hut"
-      "/home/gotlou/.config/sshield"
-      "/home/gotlou/.config/kdeconnect"
-      "/home/gotlou/.ssh"
-      "/home/gotlou/.leetcode"
-      "/home/gotlou/.local/share/kwalletd"
-      "/home/gotlou/.local/share/gomuks"
       "/home/gotlou/.local/share/tor-browser/TorBrowser"
       "/home/gotlou/.local/share/rhythmbox"
-      "/home/gotlou/.local/share/plasma-vault"
       "/home/gotlou/.mullvad"
-      "/home/gotlou/.mozilla"
-      "/home/gotlou/.thunderbird"
-      "/home/gotlou/.config/Signal"
     ];
     files = [ ];
   };
+
+  # Games
   environment.persistence."/persist/gaming" = {
     directories = [
       "/home/gotlou/.config/rpcs3"
       "/home/gotlou/.config/PCSX2"
       "/home/gotlou/.config/duckstation"
+      "/home/gotlou/.config/Chiaki"
+    ];
+    files = [ ];
+  };
+
+  # Data directories for communication live here
+  environment.persistence."/persist/communication" = {
+    directories = [
+      "/home/gotlou/.thunderbird"
+      "/home/gotlou/.config/gomuks"
+      "/home/gotlou/.local/share/gomuks"
+      "/home/gotlou/.config/Signal"
+    ];
+    files = [ ];
+  };
+
+  # Any passwords or key data goes here  
+  environment.persistence."/persist/sensitive" = {
+    directories = [
+      "/home/gotlou/.config/gh"
+      "/home/gotlou/.config/hut"
+      "/home/gotlou/.config/sshield"
+      "/home/gotlou/.ssh"
+      "/home/gotlou/.config/kdeconnect"
+      "/home/gotlou/.local/share/kwalletd"
+      "/home/gotlou/.local/share/plasma-vault"
+      "/home/gotlou/.leetcode"
+      "/home/gotlou/.mozilla"
     ];
     files = [ ];
   };
