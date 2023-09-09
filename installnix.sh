@@ -65,4 +65,8 @@ mount $BOOTPART /mnt/boot/efi
 # Generate a basic NixOS configuration
 echo "Generating config..."
 nixos-generate-config --root /mnt
+
+# Create the necessary subdirs in /persist
+echo "Creating /persist subdirectories..."
+mkdir -p /mnt/persist/communication /mnt/persist/gaming /mnt/persist/sensitive /mnt/persist/system
 echo "Done, paste in configuration"
