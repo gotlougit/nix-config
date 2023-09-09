@@ -25,7 +25,7 @@
       "/home/gotlou/.config/hut"
       # "/home/gotlou/.config/nvim"
       # "/home/gotlou/.config/neofetch"
-      "/home/gotlou/.config/syncthing"
+      # "/home/gotlou/.config/syncthing"
       "/home/gotlou/.config/rpcs3"
       "/home/gotlou/.config/PCSX2"
       "/home/gotlou/.config/sshield"
