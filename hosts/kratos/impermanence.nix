@@ -47,7 +47,7 @@
   # Data directories for communication live here
   environment.persistence."/persist/communication" = {
     directories = [
-       # Email
+      # Email
       "/home/gotlou/.thunderbird"
       # Matrix
       "/home/gotlou/.config/gomuks"
