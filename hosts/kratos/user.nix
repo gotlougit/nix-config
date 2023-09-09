@@ -34,7 +34,6 @@
       inkscape # Vector images
       krita # Raster image editor
       keepassxc # Password manager
-      legendary-gl # Epic Games Store client
       libreoffice-qt # Document editor
       libsForQt5.ksshaskpass # Ask password in GUI from CLI
       magit # Advanced git UI using emacs
