@@ -48,7 +48,7 @@
     ];
     files = [
       # "/home/gotlou/.gitconfig" 
-      "/home/gotlou/.globalgitignore"
+      # "/home/gotlou/.globalgitignore"
     ];
   };
 
