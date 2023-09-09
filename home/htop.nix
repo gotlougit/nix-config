@@ -38,8 +38,8 @@
     delay=15
     hide_function_bar=0
     header_layout=two_50_50
-    column_meters_0=CPU LeftCPUs2 Memory DiskIO NetworkIO
-    column_meter_modes_0=1 1 1 2 2
+    column_meters_0=CPU LeftCPUs2 Memory Swap DiskIO NetworkIO
+    column_meter_modes_0=1 1 1 1 2 2
     column_meters_1=Blank RightCPUs2 Tasks LoadAverage Battery Uptime
     column_meter_modes_1=2 1 2 2 2 2
     tree_view=1
