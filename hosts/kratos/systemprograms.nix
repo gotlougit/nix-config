@@ -81,6 +81,7 @@
     hexyl # hexdump
     eza # ls
     ripgrep # grep
+    ripgrep-all # grep but for binary files too
     loc # cloc
     rm-improved # rm
   ];
