@@ -15,7 +15,9 @@
   # For rr to work nicely
   boot.kernel.sysctl."kernel.perf_event_paranoid" = 1;
   # Use latest Linux Kernel
-  boot.kernelPackages = pkgs.linuxPackages_6_4;
+  boot.kernelPackages = pkgs.linuxPackages_hardened;
+  # Allow normal users to use unprivileged namespaces
+  boot.kernel.sysctl."kernel.unprivileged_userns_clone" = 1;
   # Use pstate to lower idle clocks even lower
   boot.kernelParams = [ "amd_pstate=active" ];
   # Add more filesystems here as and when needed
