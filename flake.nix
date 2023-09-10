@@ -2,14 +2,19 @@
   description = "NixOS configuration";
 
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
+
   inputs.home-manager.url = "github:nix-community/home-manager";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
   inputs.plasma-manager.url = "github:pjones/plasma-manager";
   inputs.plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
   inputs.plasma-manager.inputs.home-manager.follows = "home-manager";
+
   inputs.impermanence.url = "github:nix-community/impermanence";
+
   inputs.code-sandbox.url = "sourcehut:~gotlou/code-sandbox";
   inputs.code-sandbox.inputs.nixpkgs.follows = "nixpkgs";
+
   inputs.archiver.url = "sourcehut:~gotlou/archiveurl";
   inputs.archiver.inputs.nixpkgs.follows = "nixpkgs";
 
