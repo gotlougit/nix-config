@@ -83,7 +83,6 @@
     ripgrep # grep
     ripgrep-all # grep but for binary files too
     loc # cloc
-    rm-improved # rm
   ];
 
   # Additional config for direnv to use nix-direnv and allow caching
