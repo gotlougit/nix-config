@@ -14,6 +14,7 @@
     packages = with pkgs; [
       inputs.code-sandbox.packages.x86_64-linux.default # Installs sandboxes
       inputs.archiver.packages.x86_64-linux.default # Installs archiving script
+      inputs.sshield.packages.x86_64-linux.default # Installs sshield
       firefox # Just plain Firefox
       thunderbird # Email client
       ark # KDE archiving program

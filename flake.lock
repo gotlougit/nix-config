@@ -120,7 +120,28 @@
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs",
-        "plasma-manager": "plasma-manager"
+        "plasma-manager": "plasma-manager",
+        "sshield": "sshield"
+      }
+    },
+    "sshield": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1694330933,
+        "narHash": "sha256-yDAgty1BUBs3/mqaBFzhMZ9cRs/j+/MKS8e3Xn+W+8Y=",
+        "owner": "gotlougit",
+        "repo": "sshield",
+        "rev": "eba73edc23f654ed091391b08467f833cb98ea3a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gotlougit",
+        "repo": "sshield",
+        "type": "github"
       }
     }
   },

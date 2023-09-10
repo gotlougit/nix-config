@@ -18,7 +18,10 @@
   inputs.archiver.url = "sourcehut:~gotlou/archiveurl";
   inputs.archiver.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager }:
+  inputs.sshield.url = "github:gotlougit/sshield";
+  inputs.sshield.inputs.nixpkgs.follows = "nixpkgs";
+
+  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager, sshield }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
@@ -32,6 +35,8 @@
         (inputs.code-sandbox)
         import
         (inputs.archiver)
+        import
+        (inputs.sshield)
       ];
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
