@@ -50,9 +50,7 @@
       # Email
       "/home/gotlou/.thunderbird"
       # Matrix
-      "/home/gotlou/.cache/gomuks"
       "/home/gotlou/.config/gomuks"
-      "/home/gotlou/.local/share/gomuks"
       # Signal
       "/home/gotlou/.config/Signal"
       # nchat (WhatsApp TUI client)
