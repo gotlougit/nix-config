@@ -303,7 +303,7 @@
         launchers=
 
         [ScreenMapping]
-    itemsOnDisabledScreens=
+        itemsOnDisabledScreens=
 
   '';
 
