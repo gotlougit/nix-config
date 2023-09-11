@@ -6,7 +6,7 @@
     ./helix.nix
     ./htop.nix
     ./macchina.nix
-    ./plasma.nix
+    ./plasma/plasma.nix
     ./scli.nix
     ./wezterm.nix
   ];
