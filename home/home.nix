@@ -5,6 +5,7 @@
     ./git.nix
     ./helix.nix
     ./htop.nix
+    ./keepassxc.nix
     ./macchina.nix
     ./plasma/plasma.nix
     ./scli.nix
