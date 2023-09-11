@@ -7,7 +7,6 @@
     ./htop.nix
     ./macchina.nix
     ./plasma.nix
-    ./river.nix
     ./scli.nix
     ./wezterm.nix
   ];
