@@ -14,6 +14,7 @@
     (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
     # Import overlays
     (import ../../overlays/overlay.nix)
+    (import ../../overlays/keepassxc.nix)
   ];
 
   programs.dconf.enable = true;
