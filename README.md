@@ -8,17 +8,21 @@ It will:
 
 - Configure DNS resolving using dnscrypt-proxy2
 
+- Configure secure NTP using chrony
+
+- Use Linux Hardened kernel to reduce attack surface for certain capabilities in the kernel
+
 - Add various packages that will be useful for the user
 
 - Add a user to the system
 
-- Erase root partition and reconstruct system from first boot based on the data of a few persistent directories (a-la [erase your darlings](https://grahamc.com/blog/erase-your-darlings))
+- Use [home-manager](https://github.com/nix-community/home-manager) to manage user configs in a declarative manner.
+
+- Mount root partition on tmpfs
+
+- Use [code-sandbox](https://git.sr.ht/~gotlou/code-sandbox) to create sandboxes for certain programs that prevent sensitive file access
 
 - Set up a dev shell which severely restricts personal files and private SSH/GPG keys from any processes running under the ~/Code directory
-
-- Add [OpenSnitch](https://github.com/evilsocket/opensnitch) to manage applications making network requests with some sane whitelists
-
-- Use [home-manager](https://github.com/nix-community/home-manager) to manage user configs in a declarative manner.
 
 Nice-to-haves:
 
