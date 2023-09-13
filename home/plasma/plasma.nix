@@ -371,6 +371,7 @@
       "kdeglobals"."General"."BrowserApplication" = "mullvadbrowser-sandbox.desktop";
       "kdeglobals"."General"."TerminalApplication" = "wezterm start --cwd .";
       "kdeglobals"."General"."TerminalService" = "org.wezfurlong.wezterm.desktop";
+      "kdeglobals"."KDE"."LookAndFeelPackage" = "com.github.varlesh.arc-dark";
       "kdeglobals"."KDE"."SingleClick" = false;
       "kdeglobals"."KDE"."widgetStyle" = "Breeze";
       "kdeglobals"."KFileDialog Settings"."Allow Expansion" = false;
