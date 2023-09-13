@@ -17,8 +17,6 @@
     (import ../../overlays/keepassxc.nix)
   ];
 
-  programs.dconf.enable = true;
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_IN";
   console = {
