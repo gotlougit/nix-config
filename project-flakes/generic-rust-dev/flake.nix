@@ -8,6 +8,9 @@
     {
       devShells.${system}.default = mkShell {
         name = "rustdev";
+        shellHook = ''
+          export CARGO_HOME="$(realpath ./.cargo)"
+        '';
         buildInputs = [
           pkgs.pkgconfig
           pkgs.openssl.dev
