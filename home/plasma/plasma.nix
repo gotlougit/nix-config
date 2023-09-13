@@ -13,6 +13,13 @@
     recursive = true;
   };
 
+  # Import the dynamic workspaces plugin used for kwin
+  # TODO: make this more declarative and less dependent on my specific path
+  home.file.".local/share/kwin/scripts/dynamic_workspaces" = {
+    source = config.lib.file.mkOutOfStoreSymlink /home/gotlou/nixos/dotfiles/dynamic_workspaces;
+    recursive = true;
+  };
+
   # Stores dolphin preferences
   home.file.".local/share/dolphin/dolphinstaterc".text = ''
     [State]
