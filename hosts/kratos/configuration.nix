@@ -17,6 +17,14 @@
     (import ../../overlays/keepassxc.nix)
   ];
 
+  # following configuration is added only when building VM with build-vm
+  virtualisation.vmVariant = {
+    virtualisation = {
+      memorySize =  4096;
+      cores = 4;
+    };
+  };
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_IN";
   console = {
