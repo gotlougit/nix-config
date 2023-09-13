@@ -14,6 +14,8 @@ It will:
 
 - Add various packages that will be useful for the user
 
+- Set up certain overlays, such as KeepassXC compiled without X11 and networking code
+
 - Add a user to the system
 
 - Use [home-manager](https://github.com/nix-community/home-manager) to manage user configs in a declarative manner.
