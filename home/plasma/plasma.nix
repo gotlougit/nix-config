@@ -2,6 +2,10 @@
 
 {
 
+  imports = [
+    ./display-scale.nix
+  ];
+
   # Stores dolphin preferences
   home.file.".local/share/dolphin/dolphinstaterc".text = ''
     [State]
