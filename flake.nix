@@ -25,6 +25,7 @@
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
+      pkgs = import nixpkgs { inherit system; };
     in
     {
       nixpkgs.config = {
@@ -42,6 +43,12 @@
         mimir = (self.nixosConfigurations.mimir.extendModules {
           modules = [ "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix" ];
         }).config.system.build.sdImage;
+      };
+      devShells.${system}.default = pkgs.mkShell {
+        name = "nix-dev";
+        buildInputs = with pkgs; [
+          nil
+        ];
       };
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
