@@ -26,7 +26,7 @@
     gocryptfs # For plasma-vault
     gh # Github CLI
     # gdb # Underrated development tool
-    gnupg # Manage PGP keys
+    # gnupg # Manage PGP keys
     htop # Classic system monitoring tool
     hut # Sourcehut CLI
     helix # New Rust-based modal editor
