@@ -11,6 +11,8 @@
   services.xserver.displayManager.defaultSession = "plasmawayland";
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
+  # Disable touchpad while typing
+  services.xserver.libinput.touchpad.disableWhileTyping = true;
 
   # Remove some KDE defaults that are never needed
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
