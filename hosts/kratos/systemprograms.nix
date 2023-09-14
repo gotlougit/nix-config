@@ -21,6 +21,7 @@
     direnv # Effortless dev environment setup
     cloudflare-warp # A good quality VPN
     file # To show type of file
+    fd # Fast `file` replacement
     ffmpeg # Multimedia Swiss Army Knife
     gocryptfs # For plasma-vault
     gh # Github CLI
