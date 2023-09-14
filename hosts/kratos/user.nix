@@ -57,45 +57,45 @@
       wezterm # GPU accelerated terminal emulator written in Rust
       wl-clipboard # CLI util for copying and pasting in Wayland
 
-      # Development Stuff
-      pkgconfig
-      openssl.dev
-      sqlite.dev
-      leetcode-cli
-      shellcheck
-      gcc
-      gcc-unwrapped.lib
-      pkg-config
-      gnumake
-      glibc
-      glibc_multi
-      binutils
-      libgccjit
-      libstdcxx5
-      llvmPackages_15.libclang
-      lua-language-server
-      zig
-      rustc
-      rust-analyzer
-      cargo
-      clippy
-      rustfmt
-      go
-      nodejs
-      nil
-      tree-sitter
-      nodePackages_latest.pyright
-      python310Packages.python-lsp-server
-      nodePackages.bash-language-server
-      nodePackages.vscode-html-languageserver-bin
-      nodePackages_latest.vscode-css-languageserver-bin
-      nodePackages.typescript-language-server
-      gopls
-      nodePackages_latest.coc-tsserver
-      python310Full
-      tk
-      python310Packages.tkinter
-      python310Packages.pip
+      # # Development Stuff
+      # pkgconfig
+      # openssl.dev
+      # sqlite.dev
+      # leetcode-cli
+      # shellcheck
+      # gcc
+      # gcc-unwrapped.lib
+      # pkg-config
+      # gnumake
+      # glibc
+      # glibc_multi
+      # binutils
+      # libgccjit
+      # libstdcxx5
+      # llvmPackages_15.libclang
+      # lua-language-server
+      # zig
+      # rustc
+      # rust-analyzer
+      # cargo
+      # clippy
+      # rustfmt
+      # go
+      # nodejs
+      # nil
+      # tree-sitter
+      # nodePackages_latest.pyright
+      # python310Packages.python-lsp-server
+      # nodePackages.bash-language-server
+      # nodePackages.vscode-html-languageserver-bin
+      # nodePackages_latest.vscode-css-languageserver-bin
+      # nodePackages.typescript-language-server
+      # gopls
+      # nodePackages_latest.coc-tsserver
+      # python310Full
+      # tk
+      # python310Packages.tkinter
+      # python310Packages.pip
     ];
   };
   programs.steam.enable = true;
