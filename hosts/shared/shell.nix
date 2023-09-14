@@ -18,6 +18,7 @@
   programs.bash.interactiveShellInit = ''
     macchina
     source $(blesh-share)/ble.sh
+    set -o vi
     eval "$(direnv hook bash)"
     eval "$(starship init bash)"
   '';
