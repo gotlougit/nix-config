@@ -19,6 +19,7 @@
     macchina
     source $(blesh-share)/ble.sh
     eval "$(direnv hook bash)"
+    eval "$(starship init bash)"
   '';
 
   # Set session variables
