@@ -83,4 +83,7 @@
   # Force radv
   environment.variables.AMD_VULKAN_ICD = "RADV";
 
+  # Enable power profiles daemon
+  services.power-profiles-daemon.enable = true;
+
 }
