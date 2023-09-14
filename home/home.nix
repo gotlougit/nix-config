@@ -10,6 +10,7 @@
     ./otpclient.nix
     ./plasma/plasma.nix
     ./scli.nix
+    ./shell.nix
     ./starship.nix
     ./wezterm.nix
   ];

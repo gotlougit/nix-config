@@ -88,7 +88,7 @@
             ./hosts/shared/services/oom.nix
             ./hosts/shared/networking.nix
             ./hosts/kratos/systemprograms.nix
-            ./hosts/shared/shell.nix
+            # ./hosts/shared/shell.nix
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
