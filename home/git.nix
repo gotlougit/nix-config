@@ -22,6 +22,10 @@
       # Push current branch if nothing is specified
       push.default = "current";
     };
+    # Ignore certain paths globally
+    ignores = [
+      "*.cargo"
+    ];
     # Enable syntax highlight in diffs
     delta.enable = true;
   };
