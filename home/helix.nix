@@ -29,6 +29,7 @@
     keys.normal.H = [ "goto_line_start" ];
     keys.normal.L = [ "goto_line_end" ];
     keys.normal.G = [ "goto_last_line" ];
+    keys.normal.y = [ "yank" ":clipboard-yank"];
   };
 
   programs.helix.themes.vantablack = {
