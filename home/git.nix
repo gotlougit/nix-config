@@ -24,7 +24,7 @@
     };
     # Ignore certain paths globally
     ignores = [
-      "*.cargo"
+      "*.localcargo"
     ];
     # Enable syntax highlight in diffs
     delta.enable = true;
