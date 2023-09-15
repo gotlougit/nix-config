@@ -37,6 +37,10 @@ in
       ls = "eza";
       grep = "rg";
       cloc = "loc";
+      enter-rust-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-rust-dev/";
+      import-rust-dev = "cp /home/gotlou/nixos/project-flakes/generic-rust-dev/flake.nix .";
+      enter-cpp-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/";
+      import-cpp-dev = "cp /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/flake.nix .";
     };
     initExtra = ''
       macchina
