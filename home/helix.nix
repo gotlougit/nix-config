@@ -17,8 +17,8 @@
     editor.cursor-shape.insert = "bar";
 
     editor.statusline = {
-      left = [ "mode" "spinner" ];
-      center = [ "file-name" ];
+      left = [ "mode" "spinner" "version-control" ];
+      center = [ "file-name" "file-modification-indicator" ];
       right = [ "diagnostics" "selections" "position" "file-encoding" "file-line-ending" "file-type" ];
       separator = "│";
       mode.normal = "NORMAL";
