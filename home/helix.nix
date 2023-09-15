@@ -8,7 +8,8 @@
     editor.color-modes = true;
     editor.rulers = [ 80 ];
     editor.auto-save = true;
-
+    editor.auto-format = true;
+    
     editor.lsp.enable = true;
     editor.lsp.display-messages = true;
     editor.lsp.display-inlay-hints = false;
