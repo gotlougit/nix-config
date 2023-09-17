@@ -72,7 +72,6 @@
       # SourceHut
       "/home/gotlou/.config/hut"
       # SSH
-      "/home/gotlou/.config/sshield"
       "/home/gotlou/.ssh"
       # KDE Connect
       "/home/gotlou/.config/kdeconnect"

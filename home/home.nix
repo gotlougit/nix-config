@@ -12,6 +12,7 @@
     ./plasma/plasma.nix
     ./scli.nix
     ./shell.nix
+    ./sshield.nix
     ./wezterm.nix
   ];
   home.stateVersion = "22.11";
