@@ -89,7 +89,7 @@
   programs.direnv = {
     package = pkgs.direnv;
     silent = false;
-    persistDerivations = true;
+    # persistDerivations = true;
     loadInNixShell = true;
     nix-direnv = {
       enable = true;
