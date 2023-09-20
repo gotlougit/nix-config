@@ -9,7 +9,7 @@
       devShells.${system}.default = mkShell {
         name = "c_cpp_dev";
         buildInputs = [
-          pkgs.pkgconfig
+          pkgs.pkg-config
           pkgs.openssl.dev
           pkgs.sqlite.dev
           pkgs.gcc
