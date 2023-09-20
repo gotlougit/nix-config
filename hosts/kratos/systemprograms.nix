@@ -100,7 +100,5 @@
   # Allow KDE connect through firewall
   networking.firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
   networking.firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
-  # Allow Syncthing through firewall
-  networking.firewall.allowedUDPPorts = [ 22000 ];
 
 }
