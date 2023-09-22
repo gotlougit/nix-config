@@ -80,6 +80,7 @@
             ./hosts/kratos/services/tailscale.nix
             ./hosts/shared/services/bluetooth.nix
             # ./hosts/shared/services/opensnitch.nix
+            ./hosts/shared/keyd.nix
             ./hosts/shared/services/time.nix
             ./hosts/shared/services/warp.nix
             ./hosts/shared/services/waydroid.nix
