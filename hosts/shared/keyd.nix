@@ -2,8 +2,17 @@
 let
   cfg = {
     main = {
-      "capslock" = "overload(control, esc)";
+      "capslock" = "overload(custom, esc)";
       "esc" = "capslock";
+    };
+    custom = {
+      "j" = "down";
+      "k" = "up";
+      "l" = "right";
+      "h" = "left";
+      ";" = "backspace";
+      "b" = "(";
+      "c" = ":";
     };
   };
 in
