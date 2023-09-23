@@ -10,7 +10,6 @@ let
       "k" = "up";
       "l" = "right";
       "h" = "left";
-      ";" = "backspace";
       "b" = "(";
       "c" = ":";
     };
