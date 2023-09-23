@@ -2,7 +2,7 @@
 let
   cfg = {
     main = {
-      "capslock" = "esc";
+      "capslock" = "overload(control, esc)";
       "esc" = "capslock";
     };
   };
