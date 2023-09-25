@@ -56,6 +56,7 @@ in
       "@system-service"
       "~@privileged"
     ];
+    InaccessiblePaths = "/persist";
     RestrictAddressFamilies = [ "AF_UNIX" ];
     RestrictSUIDSGID = true;
     IPAddressDeny = [ "any" ];
