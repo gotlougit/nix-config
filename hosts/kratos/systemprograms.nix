@@ -85,6 +85,12 @@
     loc # cloc
   ];
 
+  # Additional config for skim
+  programs.skim = {
+    keybindings = true;
+    fuzzyCompletion = true;
+  };
+
   # Additional config for direnv to use nix-direnv and allow caching
   programs.direnv = {
     package = pkgs.direnv;
