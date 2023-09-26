@@ -25,6 +25,7 @@
     # Ignore certain paths globally
     ignores = [
       "*.localcargo"
+      "*.direnv"
     ];
     # Enable syntax highlight in diffs
     delta.enable = true;
