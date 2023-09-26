@@ -3,8 +3,11 @@
 
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
 
-  inputs.home-manager.url = "github:nix-community/home-manager";
+  inputs.home-manager.url = "github:gotlougit/home-manager";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+  inputs.ff-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+  inputs.ff-addons.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.plasma-manager.url = "github:pjones/plasma-manager";
   inputs.plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +24,7 @@
   inputs.sshield.url = "github:gotlougit/sshield";
   inputs.sshield.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager, sshield }:
+  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager, sshield, ff-addons }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";

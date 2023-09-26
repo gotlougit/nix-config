@@ -13,6 +13,7 @@
     ./scli.nix
     ./shell.nix
     ./sshield.nix
+    # ./tor-browser/default.nix
     ./wezterm.nix
   ];
   home.stateVersion = "22.11";

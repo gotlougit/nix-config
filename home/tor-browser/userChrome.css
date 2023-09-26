@@ -1,0 +1,33 @@
+/* disable default tabs since we have Sideberry */
+#TabsToolbar{ visibility: collapse !important }
+
+/* no sidebar extra ui */
+#sidebar-header, #sidebar-splitter { display: none }
+
+/* hide sidebar when full screen */
+#main-window[sizemode="fullscreen"] #sidebar-box{ --uc-sidebar-width: 1px; }
+
+/* somehow related to expansion */
+#sidebar-box[positionend]{ direction: rtl }
+#sidebar-box[positionend] > *{ direction: ltr }
+
+#sidebar-box{
+  --uc-sidebar-width: 32px;
+  --uc-sidebar-hover-width: 180px;
+  position: relative;
+  min-width: var(--uc-sidebar-width) !important;
+  max-width: var(--uc-sidebar-width) !important;
+}
+
+#sidebar{
+  transition: min-width 200ms linear !important;
+  transition-delay: 100ms !important; /* 100ms before hide */
+  min-width: var(--uc-sidebar-width) !important;
+  will-change: min-width;
+}
+
+/* sidebar box hover */
+#sidebar-box:hover > #sidebar, #sidebar-box.sidebar-selected > #sidebar { 
+  min-width: var(--uc-sidebar-hover-width) !important; 
+  transition-delay: 200ms !important; /* 200ms before show */
+}

@@ -40,6 +40,44 @@
         "type": "sourcehut"
       }
     },
+    "ff-addons": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1695710989,
+        "narHash": "sha256-SuwFAtcLl+S9Rq07NbpXtvWCJTJWoEoS7Lrn08koWUI=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "ef84c6e0e0f1ef349734ebfbe8f3fbcc472d65d0",
+        "type": "gitlab"
+      },
+      "original": {
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1629284811,
+        "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c5d161cc0af116a2e17f54316f0bf43f0819785c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -47,15 +85,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1695550077,
-        "narHash": "sha256-xoxR/iY69/3lTnnZDP6gf3J46DUKPcf+Y1jH03tfZXE=",
-        "owner": "nix-community",
+        "lastModified": 1695723253,
+        "narHash": "sha256-Yc1Il0uppuPnCW+OAKrKZagqTAdAQQZniqF8FKMrYKw=",
+        "owner": "gotlougit",
         "repo": "home-manager",
-        "rev": "a88df2fb101778bfd98a17556b3a2618c6c66091",
+        "rev": "669f6cb912748f9f9a49c42747fc12afbe48fe5b",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "gotlougit",
         "repo": "home-manager",
         "type": "github"
       }
@@ -117,6 +155,7 @@
       "inputs": {
         "archiver": "archiver",
         "code-sandbox": "code-sandbox",
+        "ff-addons": "ff-addons",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs",
