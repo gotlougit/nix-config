@@ -20,6 +20,7 @@
       ark # KDE archiving program
       arc-theme # Preferred theme for KDE
       arc-kde-theme # Preferred theme for KDE
+      papirus-icon-theme # Preferred icon theme for KDE
       gnome.adwaita-icon-theme # GTK apps default icons
       bottles # Easily manage Wine prefixes
       cemu # Wii U emulator
