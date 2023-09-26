@@ -40,7 +40,6 @@
       magit # Advanced git UI using emacs
       mangohud # Overlay while playing games
       mullvad-browser # Browser for private browsing
-      nixpkgs-fmt # Format nix code effectively
       otpclient # TOTP client
       duckstation # PS1 emulator
       pcsx2 # PS2 emulator
@@ -83,6 +82,7 @@
       # go
       # nodejs
       # nil
+      # nixpkgs-fmt # Format nix code effectively
       # tree-sitter
       # nodePackages_latest.pyright
       # python310Packages.python-lsp-server

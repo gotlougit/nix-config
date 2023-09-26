@@ -51,6 +51,7 @@
         name = "nix-dev";
         buildInputs = with pkgs; [
           nil
+          nixpkgs-fmt
         ];
       };
       nixosConfigurations = {
