@@ -3,7 +3,7 @@
 
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
 
-  inputs.home-manager.url = "github:gotlougit/home-manager";
+  inputs.home-manager.url = "github:nix-community/home-manager";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.ff-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";

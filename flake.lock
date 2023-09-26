@@ -85,15 +85,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1695723253,
-        "narHash": "sha256-Yc1Il0uppuPnCW+OAKrKZagqTAdAQQZniqF8FKMrYKw=",
-        "owner": "gotlougit",
+        "lastModified": 1695708052,
+        "narHash": "sha256-QiWOrZcCmY+zH2NVM6/opZaMRMgam9u+qVYycKLqL10=",
+        "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "669f6cb912748f9f9a49c42747fc12afbe48fe5b",
+        "rev": "dd88dbc69438384bd94f8282584a86798750028c",
         "type": "github"
       },
       "original": {
-        "owner": "gotlougit",
+        "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
       }
