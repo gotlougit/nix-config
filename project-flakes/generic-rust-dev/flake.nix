@@ -12,7 +12,7 @@
           export CARGO_HOME="$(realpath ./.localcargo)"
         '';
         buildInputs = [
-          pkgs.pkgconfig
+          pkgs.pkg-config
           pkgs.openssl.dev
           pkgs.sqlite.dev
           pkgs.rustc
