@@ -7,36 +7,36 @@
     force = true;
     engines.brave = {
       urls = [
-        {template = "https://search.brave.com/search?q={searchTerms}";}
+        { template = "https://search.brave.com/search?q={searchTerms}"; }
       ];
     };
     engines.nix = {
       urls = [
-        {template = "https://search.nixos.org/packages?query={searchTerms}";}
+        { template = "https://search.nixos.org/packages?query={searchTerms}"; }
       ];
       metadata.alias = "@nix";
     };
     engines.hm = {
       urls = [
-        {template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";}
+        { template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}"; }
       ];
       metadata.alias = "@hm";
     };
     engines.aw = {
       urls = [
-        {template = "https://wiki.archlinux.org/index.php?title=Special:Search&search={searchTerms}";}
+        { template = "https://wiki.archlinux.org/index.php?title=Special:Search&search={searchTerms}"; }
       ];
       metadata.alias = "@aw";
     };
     engines.source = {
       urls = [
-        {template = "https://sourcegraph.com/search?q={searchTerms}";}
+        { template = "https://sourcegraph.com/search?q={searchTerms}"; }
       ];
       metadata.alias = "@source";
     };
     engines.github = {
       urls = [
-        {template = "https://github.com/search?q={searchTerms}&ref=opensearch";}
+        { template = "https://github.com/search?q={searchTerms}&ref=opensearch"; }
       ];
       metadata.alias = "@gh";
     };
@@ -94,6 +94,6 @@
 
     # Sort tabs by recently used
     "browser.ctrlTab.sortByRecentlyUsed" = true;
-    
+
   };
 }

@@ -3,17 +3,17 @@
 
   # Favorite programs in the application launcher
   xdg.configFile."kactivitymanagerd-statsrc".text = ''
-  [Favorites-org.kde.plasma.kickoff.favorites.instance-25-a90bd124-d21f-41ff-b3f8-64d92ce5f9e9]
-  ordering=applications:org.wezfurlong.wezterm.desktop,applications:torbrowser-sandbox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.kde.dolphin.desktop,applications:firefox.desktop,applications:signal-desktop.desktop,applications:thunderbird.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:duckstation-qt.desktop,applications:PCSX2.desktop,applications:virt-manager.desktop,applications:com.usebottles.bottles.desktop,applications:org.telegram.desktop.desktop,applications:steam.desktop
+    [Favorites-org.kde.plasma.kickoff.favorites.instance-25-a90bd124-d21f-41ff-b3f8-64d92ce5f9e9]
+    ordering=applications:org.wezfurlong.wezterm.desktop,applications:torbrowser-sandbox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.kde.dolphin.desktop,applications:firefox.desktop,applications:signal-desktop.desktop,applications:thunderbird.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:duckstation-qt.desktop,applications:PCSX2.desktop,applications:virt-manager.desktop,applications:com.usebottles.bottles.desktop,applications:org.telegram.desktop.desktop,applications:steam.desktop
 
-  [Favorites-org.kde.plasma.kickoff.favorites.instance-25-global]
-  ordering=applications:org.wezfurlong.wezterm.desktop,applications:torbrowser-sandbox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.kde.dolphin.desktop,applications:firefox.desktop,applications:signal-desktop.desktop,applications:thunderbird.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:duckstation-qt.desktop,applications:PCSX2.desktop,applications:virt-manager.desktop,applications:com.usebottles.bottles.desktop,applications:org.telegram.desktop.desktop,applications:steam.desktop
+    [Favorites-org.kde.plasma.kickoff.favorites.instance-25-global]
+    ordering=applications:org.wezfurlong.wezterm.desktop,applications:torbrowser-sandbox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.kde.dolphin.desktop,applications:firefox.desktop,applications:signal-desktop.desktop,applications:thunderbird.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:duckstation-qt.desktop,applications:PCSX2.desktop,applications:virt-manager.desktop,applications:com.usebottles.bottles.desktop,applications:org.telegram.desktop.desktop,applications:steam.desktop
 
-  [Favorites-org.kde.plasma.kickoff.favorites.instance-3-a90bd124-d21f-41ff-b3f8-64d92ce5f9e9]
-  ordering=applications:org.kde.dolphin.desktop,applications:PCSX2.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:com.usebottles.bottles.desktop,applications:duckstation-qt.desktop,applications:firefox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:org.telegram.desktop.desktop,applications:org.wezfurlong.wezterm.desktop,applications:signal-desktop.desktop,applications:steam.desktop,applications:thunderbird.desktop,applications:virt-manager.desktop,applications:torbrowser-sandbox.desktop
+    [Favorites-org.kde.plasma.kickoff.favorites.instance-3-a90bd124-d21f-41ff-b3f8-64d92ce5f9e9]
+    ordering=applications:org.kde.dolphin.desktop,applications:PCSX2.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:com.usebottles.bottles.desktop,applications:duckstation-qt.desktop,applications:firefox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:org.telegram.desktop.desktop,applications:org.wezfurlong.wezterm.desktop,applications:signal-desktop.desktop,applications:steam.desktop,applications:thunderbird.desktop,applications:virt-manager.desktop,applications:torbrowser-sandbox.desktop
 
-  [Favorites-org.kde.plasma.kickoff.favorites.instance-3-global]
-  ordering=applications:org.kde.dolphin.desktop,applications:PCSX2.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:com.usebottles.bottles.desktop,applications:duckstation-qt.desktop,applications:firefox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:org.telegram.desktop.desktop,applications:org.wezfurlong.wezterm.desktop,applications:signal-desktop.desktop,applications:steam.desktop,applications:thunderbird.desktop,applications:virt-manager.desktop,applications:torbrowser-sandbox.desktop
+    [Favorites-org.kde.plasma.kickoff.favorites.instance-3-global]
+    ordering=applications:org.kde.dolphin.desktop,applications:PCSX2.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:com.usebottles.bottles.desktop,applications:duckstation-qt.desktop,applications:firefox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:org.telegram.desktop.desktop,applications:org.wezfurlong.wezterm.desktop,applications:signal-desktop.desktop,applications:steam.desktop,applications:thunderbird.desktop,applications:virt-manager.desktop,applications:torbrowser-sandbox.desktop
   '';
 
   # Selects holiday region for calendar
@@ -320,5 +320,5 @@
     itemsOnDisabledScreens=
 
   '';
-  
+
 }
