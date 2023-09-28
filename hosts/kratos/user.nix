@@ -39,6 +39,7 @@
       libsForQt5.ksshaskpass # Ask password in GUI from CLI
       magit # Advanced git UI using emacs
       mangohud # Overlay while playing games
+      minetest # Open source Minecraft-like game
       mullvad-browser # Browser for private browsing
       otpclient # TOTP client
       duckstation # PS1 emulator
