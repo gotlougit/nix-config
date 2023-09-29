@@ -112,6 +112,16 @@
       "kdeglobals"."WM"."inactiveBlend" = "47,52,63";
       "kdeglobals"."WM"."inactiveForeground" = "102,106,115";
       "kglobalshortcutsrc"."ksmserver"."_k_friendly_name" = "Session Management";
+      "kglobalshortcutsrc"."kwin"."Switch One Desktop to the Left" = "Meta+Ctrl+Left,Meta+Ctrl+Left,Switch One Desktop to the Left";
+      "kglobalshortcutsrc"."kwin"."Switch One Desktop to the Right" = "Meta+Ctrl+Right,Meta+Ctrl+Right,Switch One Desktop to the Right";
+      "kglobalshortcutsrc"."kwin"."Switch to Desktop 1" = "Ctrl+F1,Ctrl+F1,Switch to Desktop 1";
+      "kglobalshortcutsrc"."kwin"."Switch to Desktop 2" = "Ctrl+F2,Ctrl+F2,Switch to Desktop 2";
+      "kglobalshortcutsrc"."kwin"."Switch to Desktop 3" = "Ctrl+F3,Ctrl+F3,Switch to Desktop 3";
+      "kglobalshortcutsrc"."kwin"."Switch to Desktop 4" = "Ctrl+F4,Ctrl+F4,Switch to Desktop 4";
+      "kglobalshortcutsrc"."kwin"."Switch to Desktop 5" = "Ctrl+F5,Ctrl+F5,Switch to Desktop 5";
+      "kglobalshortcutsrc"."kwin"."Switch to Desktop 6" = "Ctrl+F6,Ctrl+F6,Switch to Desktop 6";
+      "kglobalshortcutsrc"."kwin"."Switch to Desktop 7" = "Ctrl+F7,Ctrl+F7,Switch to Desktop 7";
+      "kglobalshortcutsrc"."kwin"."Switch to Desktop 8" = "Ctrl+F8,Ctrl+F8,Switch to Desktop 8";
       "kglobalshortcutsrc"."mediacontrol"."_k_friendly_name" = "Media Controller";
       "kglobalshortcutsrc"."org.wezfurlong.wezterm.desktop"."_k_friendly_name" = "WezTerm";
       "khotkeysrc"."Data_1_1Triggers0"."Uuid" = "{d03619b6-9b3c-48cc-9d9c-a2aadb485550}";
