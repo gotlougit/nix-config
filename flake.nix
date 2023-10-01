@@ -52,6 +52,7 @@
         buildInputs = with pkgs; [
           nil
           nixpkgs-fmt
+          nodePackages.bash-language-server
         ];
       };
       nixosConfigurations = {
