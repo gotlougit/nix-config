@@ -13,7 +13,13 @@
   services.xserver.libinput.enable = true;
   # Disable touchpad while typing
   services.xserver.libinput.touchpad.disableWhileTyping = true;
-
+  # Extra SDDM config
+  services.xserver.displayManager.sddm.settings = {
+    Theme = {
+      FacesDir = "/persist/system/icons";
+    };
+  };
+  
   # Remove some KDE defaults that are never needed
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
     oxygen
