@@ -11,7 +11,14 @@
       "/var/log/cloudflare-warp"
       "/var/log/libvirt"
       "/var/log/private"
-      "/var/lib"
+      "/var/lib/tailscale"
+      "/var/lib/cloudflare-warp"
+      "/var/lib/NetworkManager"
+      "/var/lib/nixos"
+      "/var/lib/systemd"
+      "/var/lib/waydroid"
+      "/var/lib/vnstat"
+      "/var/lib/lxd"
     ];
     files = [ ];
   };
