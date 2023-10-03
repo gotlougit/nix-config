@@ -67,7 +67,8 @@ in
       EDITOR = "hx";
       PAGER = "bat";
       GDK_SCALE = "1";
-
+      # Stores timestamp for each command executed 
+      HISTTIMEFORMAT = "%d/%m/%y %T ";
       # TODO: fix setting GTK_USE_PORTAL
       #GTK_USE_PORTAL = 1;
     };
