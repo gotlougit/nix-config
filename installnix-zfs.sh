@@ -24,6 +24,10 @@ parted -s $DISK mklabel gpt
 parted -s $DISK mkpart primary fat32 1MiB 1024MiB
 parted -s $DISK set 1 esp on
 
+# Create the boot partition
+echo "Formatting boot partition..."
+mkfs.fat -F 32 -n boot $BOOTPART
+
 # Create the ZFS pool
 echo "Creating ZFS pool with native encryption..."
 echo $PASSPHRASE | zfs create -o mountpoint=none -o encryption=aes-256-gcm -o keyformat=passphrase -o keylocation=prompt $ZFS_POOL
