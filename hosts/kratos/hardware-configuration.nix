@@ -15,7 +15,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/1046-8921";
+    device = "/dev/disk/by-uuid/2C6B-55D8";
     fsType = "vfat";
   };
 
@@ -33,27 +33,22 @@
       options = [ "defaults" "size=8G" "mode=755" ];
     };
 
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/434e510a-b269-4f83-a0b6-0a8532a8ff07";
-
   fileSystems."/home" =
     {
-      device = "/dev/mapper/cryptroot";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "noatime" "subvol=home" ];
+      device = "nixos_pool/home";
+      fsType = "zfs";
     };
 
   fileSystems."/nix" =
     {
-      device = "/dev/mapper/cryptroot";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "noatime" "subvol=nix" ];
+      device = "nixos_pool/nix";
+      fsType = "zfs";
     };
 
   fileSystems."/persist" =
     {
-      device = "/dev/mapper/cryptroot";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "noatime" "subvol=persist" ];
+      device = "nixos_pool/persist";
+      fsType = "zfs";
       neededForBoot = true;
     };
 

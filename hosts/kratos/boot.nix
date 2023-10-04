@@ -22,4 +22,9 @@
   boot.kernelParams = [ "amd_pstate=active" ];
   # Add more filesystems here as and when needed
   boot.supportedFilesystems = [ "btrfs" "ntfs" "zfs" ];
+  boot.zfs = {
+    forceImportRoot = false;
+    extraPools = [ "nixos_pool" ];
+    requestEncryptionCredentials = true;
+  };
 }
