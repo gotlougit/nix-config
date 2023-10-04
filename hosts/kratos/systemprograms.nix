@@ -14,7 +14,6 @@
     bandwhich # view what programs are making network requests
     bear # Generate autocomplete for large projects
     blesh # Bash made smarter
-    # cargo-rr # rr + cargo
     compsize # View btrfs compression info
     curl # no intro needed
     dig # for DNS testing
@@ -25,8 +24,6 @@
     ffmpeg # Multimedia Swiss Army Knife
     gocryptfs # For plasma-vault
     gh # Github CLI
-    # gdb # Underrated development tool
-    # gnupg # Manage PGP keys
     htop # Classic system monitoring tool
     hut # Sourcehut CLI
     helix # New Rust-based modal editor
@@ -50,8 +47,6 @@
     poppler_utils # PDF conversion and misc utils
     plasma-vault # Encrypted folders in KDE
     pinentry # Enter gpg password securely
-    # postgresql_15 # Database
-    # rr # Record and replay while debugging
     radeontop # AMD GPU monitoring
     syncthing # Sync all files
     snowflake # Pluggable transport for tor
