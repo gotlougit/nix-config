@@ -77,24 +77,22 @@
             ./hosts/kratos/boot.nix
             ./hosts/kratos/configuration.nix
             ./hosts/kratos/user.nix
+            ./hosts/kratos/systemprograms.nix
             ./hosts/kratos/services/desktop.nix
             ./hosts/kratos/services/sound.nix
-            ./hosts/shared/nix.nix
-            ./hosts/shared/zram.nix
-            ./hosts/shared/services/standard-services.nix
             ./hosts/kratos/services/tailscale.nix
-            ./hosts/shared/services/bluetooth.nix
-            # ./hosts/shared/services/opensnitch.nix
-            ./hosts/shared/keyd.nix
-            ./hosts/shared/services/time.nix
-            ./hosts/shared/services/warp.nix
-            ./hosts/shared/services/waydroid.nix
-            ./hosts/shared/services/virt.nix
-            ./hosts/shared/services/dns-resolver.nix
-            ./hosts/shared/services/oom.nix
-            ./hosts/shared/networking.nix
-            ./hosts/kratos/systemprograms.nix
-            # ./hosts/shared/shell.nix
+            ./system/bluetooth.nix
+            ./system/nix.nix
+            ./system/zram.nix
+            ./system/standard-services.nix
+            ./system/keyd.nix
+            ./system/time.nix
+            ./system/warp.nix
+            ./system/waydroid.nix
+            ./system/virt.nix
+            ./system/dns-resolver.nix
+            ./system/oom.nix
+            ./system/networking.nix
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
@@ -105,12 +103,12 @@
             ./hosts/mimir/configuration.nix
             ./hosts/mimir/systemprograms.nix
             ./hosts/mimir/services/tailscale.nix
-            ./hosts/shared/networking.nix
-            ./hosts/shared/zram.nix
-            ./hosts/shared/services/dns-resolver.nix
-            ./hosts/shared/services/oom.nix
-            ./hosts/shared/services/standard-services.nix
-            ./hosts/shared/nix.nix
+            ./system/networking.nix
+            ./system/zram.nix
+            ./system/dns-resolver.nix
+            ./system/oom.nix
+            ./system/standard-services.nix
+            ./system/nix.nix
           ];
         };
       };
