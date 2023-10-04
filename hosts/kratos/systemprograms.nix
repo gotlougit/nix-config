@@ -14,7 +14,6 @@
     bandwhich # view what programs are making network requests
     bear # Generate autocomplete for large projects
     blesh # Bash made smarter
-    compsize # View btrfs compression info
     curl # no intro needed
     dig # for DNS testing
     direnv # Effortless dev environment setup
@@ -51,7 +50,6 @@
     syncthing # Sync all files
     snowflake # Pluggable transport for tor
     socat # Socket cat
-    sops # Manage secrets
     sqlite # No intro needed
     sequoia-sq # Rust reimplementation of OpenPGP
     sequoia-sqv # Rust reimplementation to verify OpenPGP signatures
