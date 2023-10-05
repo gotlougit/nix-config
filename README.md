@@ -10,7 +10,7 @@ It will:
 
 - Configure secure NTP using chrony
 
-- Use Linux Hardened kernel to reduce attack surface for certain capabilities in the kernel
+- Use Linux Xanmod kernel to improve latency and use certain new patches for various subsystems
 
 - Add various packages that will be useful for the user
 
@@ -40,15 +40,17 @@ Since it is a bit difficult to find a comprehensive NixOS tutorial, I'll give yo
 
 - Download NixOS from [the official website](https://nixos.org)
 
-- Install it as usual (but take care to setup btrfs file system with encryption)
+- Use the `installnix.sh` script: it WILL erase your entire partition table, so BEWARE!!!
 
-Optionally, use the `installnix.sh` script: it WILL erase your entire partition table, so BEWARE!!!
+It will also set up ZFS native encryption, so double check the disk it will install NixOS on,
+as well as set up the password you will use to decrypt the drive.
 
-- Reboot into your shiny, new NixOS install
+- Merge the NixOS-generated `hardware-configuration.nix` (we really need the UUID of the boot partition)
+with the `hardware-configuration.nix` contained in this repo
 
 - Run
 
-`sudo nixos-rebuild switch --flake github:gotlougit/nix-config#kratos`
+`sudo nixos-install --flake github:gotlougit/nix-config#kratos`
 
 This will automatically get the latest configuration from this repo, apply it and build the system. This will take some time to get the packages from the NixOS cache, so feel free to get a coffee break!
 
