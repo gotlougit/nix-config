@@ -9,7 +9,7 @@ DATAPART=${DISK}p2
 PASSPHRASE="secret"
 
 # Set ZFS pool and datasets
-ZFS_POOL="nixos_pool/enc"
+ZFS_POOL="nixos_pool"
 ZFS_HOME_DATASET="$ZFS_POOL/home"
 ZFS_NIX_DATASET="$ZFS_POOL/nix"
 ZFS_PERSIST_DATASET="$ZFS_POOL/persist"
@@ -30,16 +30,16 @@ mkfs.fat -F 32 -n boot $BOOTPART
 
 # Create the ZFS pool
 echo "Creating ZFS pool with native encryption..."
-echo $PASSPHRASE | zfs create -o mountpoint=none -o encryption=aes-256-gcm -o keyformat=passphrase -o keylocation=prompt $ZFS_POOL
+echo $PASSPHRASE | zpool create -O mountpoint=none -O encryption=aes-256-gcm -O keyformat=passphrase -O keylocation=prompt $ZFS_POOL $DATAPART
 
 # Create ZFS datasets
 echo "Creating ZFS datasets..."
 # Stores persistent data
-zfs create $ZFS_POOL/persist -o atime=off -o compression=zstd
+zfs create $ZFS_PERSIST_DATASET -o atime=off -o compression=zstd
 # Stores required packages etc
-zfs create $ZFS_POOL/nix -o atime=off -o compression=zstd
+zfs create $ZFS_NIX_DATASET-o atime=off -o compression=zstd
 # Home directory for system
-zfs create $ZFS_POOL/home -o atime=off -o compression=zstd
+zfs create $ZFS_HOME_DATASET -o atime=off -o compression=zstd
 
 mkdir -p /mnt
 
