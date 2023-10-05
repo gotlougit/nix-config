@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# This is a script to automate the nixos manual installation with a fully disk encrypted btrfs root file system setup
-
 # Set the device name of the disk to install on
 DISK=/dev/nvme0n1
 BOOTPART=${DISK}p1
@@ -9,6 +7,12 @@ DATAPART=${DISK}p2
 
 # Set the passphrase for the encryption
 PASSPHRASE="secret"
+
+# Set ZFS pool and datasets
+ZFS_POOL="nixos_pool"
+ZFS_HOME_DATASET="$ZFS_POOL/home"
+ZFS_NIX_DATASET="$ZFS_POOL/nix"
+ZFS_PERSIST_DATASET="$ZFS_POOL/persist"
 
 # Wipe anything that was left behind
 echo "WARNING: wiping ${DISK}"
@@ -20,44 +24,36 @@ parted -s $DISK mklabel gpt
 parted -s $DISK mkpart primary fat32 1MiB 1024MiB
 parted -s $DISK set 1 esp on
 
-# Create the Btrfs partition with Zstd compression enabled
-echo "Creating btrfs partition..."
-parted -s $DISK mkpart primary 1GB 100%
-
-echo "Encrypting root partition..."
-# Encrypt the root partition using LUKS
-echo -n "$PASSPHRASE" | cryptsetup luksFormat $DATAPART
-echo -n "$PASSPHRASE" | cryptsetup luksOpen $DATAPART cryptroot
-
-# Format the partitions
-echo "Formatting encrypted / as btrfs..."
-mkfs.btrfs -L nixos /dev/mapper/cryptroot
+# Create the boot partition
 echo "Formatting boot partition..."
 mkfs.fat -F 32 -n boot $BOOTPART
 
-# Create subvolumes for nixos and home
-echo "Creating btrfs subvolumes..."
-mount -t btrfs /dev/mapper/cryptroot /mnt
-btrfs subvolume create /mnt/root
-btrfs subvolume create /mnt/home
-btrfs subvolume create /mnt/nix
-btrfs subvolume create /mnt/persist
-umount /mnt
+# Create the ZFS pool
+echo "Creating ZFS pool with native encryption..."
+echo $PASSPHRASE | zpool create -O mountpoint=none -O encryption=aes-256-gcm -O keyformat=passphrase -O keylocation=prompt $ZFS_POOL $DATAPART
 
-echo "Mounting the filesystem to /mnt..."
-# Mount the subvolumes with appropriate options
-mount -o subvol=root,compress=zstd,noatime /dev/mapper/cryptroot /mnt
+# Create ZFS datasets
+echo "Creating ZFS datasets..."
+# Stores persistent data
+zfs create $ZFS_PERSIST_DATASET -o atime=off -o compression=zstd
+# Stores required packages etc
+zfs create $ZFS_NIX_DATASET-o atime=off -o compression=zstd
+# Home directory for system
+zfs create $ZFS_HOME_DATASET -o atime=off -o compression=zstd
 
+mkdir -p /mnt
+
+# Mount datasets
 mkdir /mnt/home
-mount -o subvol=home,compress=zstd,noatime /dev/mapper/cryptroot /mnt/home
+mount -t zfs $ZFS_HOME_DATASET /mnt/home
 
 mkdir /mnt/nix
-mount -o subvol=nix,compress=zstd,noatime /dev/mapper/cryptroot /mnt/nix
+mount -t zfs $ZFS_NIX_DATASET /mnt/nix
 
 mkdir /mnt/persist
-mount -o subvol=persist,compress=zstd,noatime /dev/mapper/cryptroot /mnt/persist
+mount -t zfs $ZFS_PERSIST_DATASET /mnt/persist
 
-# don't forget this!
+# Mount the EFI partition
 echo "Mounting /boot..."
 mkdir -p /mnt/boot/efi
 mount $BOOTPART /mnt/boot/efi
@@ -68,5 +64,5 @@ nixos-generate-config --root /mnt
 
 # Create the necessary subdirs in /persist
 echo "Creating /persist subdirectories..."
-mkdir -p /mnt/persist/communication /mnt/persist/gaming /mnt/persist/sensitive /mnt/persist/system
+mkdir -p /mnt/persist/communication /mnt/persist/gaming /mnt/persist/sensitive /mnt/persist/system /mnt/persist/dotfiles
 echo "Done, paste in configuration"
