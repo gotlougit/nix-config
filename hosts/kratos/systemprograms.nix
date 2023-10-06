@@ -34,6 +34,7 @@
     man-pages-posix # Provide more man docs for syscalls etc
     meek # Pluggable transport for tor
     macchina # Nice startup screen for terminal
+    mullvad-vpn # VPN
     nftables # Modern firewall program
     nix-direnv # Direnv + Nix
     nmap # Classic network exploration utility
