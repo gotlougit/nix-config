@@ -98,6 +98,12 @@
     };
   };
 
+  # Enable Mullvad VPN
+  services.mullvad-vpn = {
+    enable = true;
+    enableExcludeWrapper = true;
+  };
+  
   # Allow KDE connect through firewall
   networking.firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
   networking.firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
