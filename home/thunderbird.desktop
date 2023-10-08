@@ -1,0 +1,19 @@
+[Desktop Entry]
+Actions=profile-manager-window
+Categories=Network;Chat;Email;Feed;GTK;News
+Comment=Read and write e-mails or RSS feeds, or manage tasks on calendars.
+Exec=mullvad-exclude thunderbird --name thunderbird %U
+GenericName=Email Client
+Icon=thunderbird
+Keywords=mail;email;e-mail;messages;rss;calendar;address book;addressbook;chat
+MimeType=message/rfc822;x-scheme-handler/mailto;text/calendar;text/x-vcard
+Name=Thunderbird
+StartupNotify=true
+StartupWMClass=thunderbird
+Terminal=false
+Type=Application
+Version=1.4
+
+[Desktop Action profile-manager-window]
+Exec=thunderbird --ProfileManager
+Name=Profile Manager
