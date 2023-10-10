@@ -2,7 +2,6 @@
 {
   imports = [
     ./direnv.nix
-    ./firefox.nix
     ./git.nix
     ./helix.nix
     ./htop.nix
