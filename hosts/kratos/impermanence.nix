@@ -8,7 +8,6 @@
   environment.persistence."/persist/system" = {
     directories = [
       "/etc/NetworkManager"
-      "/etc/mullvad-vpn"
       "/var/log/cloudflare-warp"
       "/var/log/libvirt"
       "/var/log/private"

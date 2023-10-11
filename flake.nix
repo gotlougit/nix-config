@@ -88,7 +88,6 @@
             ./system/keyd.nix
             ./system/time.nix
             ./system/warp.nix
-            ./system/mullvad.nix
             # ./system/waydroid.nix
             ./system/virt.nix
             ./system/dns-resolver.nix

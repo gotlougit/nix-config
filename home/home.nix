@@ -12,7 +12,6 @@
     ./scli.nix
     ./shell.nix
     ./sshield.nix
-    ./thunderbird.nix
     # ./tor-browser/default.nix
     ./wezterm.nix
   ];
