@@ -14,6 +14,7 @@
       "/var/lib/tailscale"
       "/var/lib/cloudflare-warp"
       "/var/lib/NetworkManager"
+      "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd"
       "/var/lib/waydroid"
