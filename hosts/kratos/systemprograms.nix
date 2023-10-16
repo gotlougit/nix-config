@@ -15,6 +15,9 @@
     bear # Generate autocomplete for large projects
     blesh # Bash made smarter
     curl # no intro needed
+    colord # ICC color profiles management
+    libsForQt5.colord-kde
+    libsForQt5.kirigami-addons
     dig # for DNS testing
     direnv # Effortless dev environment setup
     cloudflare-warp # A good quality VPN

@@ -82,6 +82,7 @@
             ./hosts/kratos/services/sound.nix
             ./hosts/kratos/services/tailscale.nix
             ./system/bluetooth.nix
+            ./system/colord.nix
             ./system/nix.nix
             ./system/zram.nix
             ./system/standard-services.nix

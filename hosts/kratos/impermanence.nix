@@ -20,6 +20,7 @@
       "/var/lib/waydroid"
       "/var/lib/vnstat"
       "/var/lib/lxd"
+      "/usr/share/color/icc/colord"
     ];
     files = [ ];
   };
