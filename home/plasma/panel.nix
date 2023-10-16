@@ -156,6 +156,7 @@
     [Containments][2][Applets][5][Configuration][General]
     groupingStrategy=0
     launchers=
+    showOnlyCurrentScreen=true
 
     [Containments][2][Applets][6]
     immutability=1
