@@ -6,9 +6,6 @@
   inputs.home-manager.url = "github:nix-community/home-manager";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.ff-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-  inputs.ff-addons.inputs.nixpkgs.follows = "nixpkgs";
-
   inputs.plasma-manager.url = "github:pjones/plasma-manager";
   inputs.plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
   inputs.plasma-manager.inputs.home-manager.follows = "home-manager";
@@ -24,7 +21,7 @@
   inputs.sshield.url = "github:gotlougit/sshield";
   inputs.sshield.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager, sshield, ff-addons }:
+  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager, sshield }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
