@@ -49,6 +49,8 @@
       "kwin"."Move Tablet to Next Output" = [ ];
       "kwin"."Window to Next Desktop" = "Ctrl+Alt+Right";
       "kwin"."Window to Previous Desktop" = "Ctrl+Alt+Left";
+      "kwin"."Window One Screen to the Left" = "Ctrl+Shift+Left";
+      "kwin"."Window One Screen to the Right" = "Ctrl+Shift+Right";
       "mediacontrol"."mediavolumedown" = [ ];
       "mediacontrol"."mediavolumeup" = [ ];
       "mediacontrol"."nextmedia" = "Media Next";
