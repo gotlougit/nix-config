@@ -5,7 +5,7 @@
     enable = true;
     # Set name and email to use when creating commits
     userName = "Saksham Mittal";
-    userEmail = "gotlouemail@gmail.com";
+    userEmail = "git@gotlou.com";
     extraConfig = {
       # Signing config
       gpg.format = "ssh";
