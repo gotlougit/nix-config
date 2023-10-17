@@ -51,6 +51,7 @@
     pinentry # Enter gpg password securely
     radeontop # AMD GPU monitoring
     syncthing # Sync all files
+    scc # loc replacement written in go
     snowflake # Pluggable transport for tor
     socat # Socket cat
     sqlite # No intro needed
@@ -79,7 +80,6 @@
     hexyl # hexdump
     eza # ls
     ripgrep # grep
-    loc # cloc
   ];
 
   # Additional config for skim
