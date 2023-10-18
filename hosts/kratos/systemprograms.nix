@@ -76,6 +76,7 @@
     # Rust replacements
     bat # cat
     difftastic # diff
+    du-dust # du
     skim # fzf
     hexyl # hexdump
     eza # ls

@@ -33,6 +33,7 @@ in
       switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/nixos#${hostname}";
       cat = "bat";
       diff = "difft";
+      du = "dust";
       fzf = "sk";
       ls = "eza";
       grep = "rg";
