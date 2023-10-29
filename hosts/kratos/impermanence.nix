@@ -49,6 +49,8 @@
       "/home/gotlou/.config/duckstation"
       # PS4 remote play client
       "/home/gotlou/.config/Chiaki"
+      # Original Xbox emulator
+      "/home/gotlou/.local/share/xemu"
     ];
     files = [ ];
   };

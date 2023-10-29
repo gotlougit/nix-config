@@ -57,6 +57,7 @@
       vlc # Easiest media player
       wezterm # GPU accelerated terminal emulator written in Rust
       wl-clipboard # CLI util for copying and pasting in Wayland
+      xemu # Original Xbox emulator
     ];
   };
   programs.steam.enable = true;
