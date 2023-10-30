@@ -33,6 +33,7 @@
     jq # JSON manipulator
     libsForQt5.kdeconnect-kde # KDE Connect
     lm_sensors # For temperatures and fan speeds
+    magic-wormhole-rs # Direct file transfers
     man-pages # Add more man pages
     man-pages-posix # Provide more man docs for syscalls etc
     meek # Pluggable transport for tor
