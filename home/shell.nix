@@ -34,10 +34,7 @@ in
       cat = "bat";
       diff = "difft";
       du = "dust";
-      fzf = "sk";
       ls = "eza";
-      grep = "rg";
-      loc = "scc";
       "." = "hx .";
       sudo = "doas";
       enter-rust-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-rust-dev/";
