@@ -32,7 +32,7 @@ in
       update-config = "sudo nix flake update /home/gotlou/nixos && sudo nixos-rebuild switch --flake /home/gotlou/nixos#${hostname}";
       switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/nixos#${hostname}";
       cat = "bat";
-      diff = "difft";
+      diff = "delta";
       du = "dust";
       ls = "eza";
       "." = "hx .";
