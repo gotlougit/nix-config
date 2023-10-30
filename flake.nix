@@ -80,6 +80,7 @@
             ./hosts/kratos/services/tailscale.nix
             ./system/bluetooth.nix
             ./system/colord.nix
+            ./system/doas.nix
             ./system/nix.nix
             ./system/zram.nix
             ./system/standard-services.nix

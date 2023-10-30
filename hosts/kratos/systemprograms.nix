@@ -25,6 +25,7 @@
     fd # Fast `file` replacement
     ffmpeg # Multimedia Swiss Army Knife
     gocryptfs # For plasma-vault
+    git
     gh # Github CLI
     htop # Classic system monitoring tool
     hut # Sourcehut CLI
