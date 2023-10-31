@@ -84,6 +84,8 @@
             ./system/nix.nix
             ./system/zram.nix
             ./system/standard-services.nix
+            ./system/syncthing.nix
+            ./system/openssh.nix
             ./system/keyd.nix
             ./system/time.nix
             ./system/warp.nix
