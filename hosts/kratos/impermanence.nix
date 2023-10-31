@@ -12,6 +12,7 @@
       "/var/log/libvirt"
       "/var/log/private"
       "/var/lib/tailscale"
+      "/var/lib/libvirt"
       "/var/lib/cloudflare-warp"
       "/var/lib/NetworkManager"
       "/var/lib/bluetooth"
