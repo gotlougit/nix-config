@@ -5,4 +5,5 @@
     enable = true;
     freeMemThreshold = 15;
   };
+  systemd.oomd.enable = false;
 }
