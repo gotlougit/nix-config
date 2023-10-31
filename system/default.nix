@@ -1,0 +1,19 @@
+{
+  imports = [
+    ./bluetooth.nix
+    ./colord.nix
+    ./doas.nix
+    ./nix.nix
+    ./zram.nix
+    ./standard-services.nix
+    ./syncthing.nix
+    ./openssh.nix
+    ./keyd.nix
+    ./time.nix
+    ./warp.nix
+    ./virt.nix
+    ./dns-resolver.nix
+    ./oom.nix
+    ./networking.nix
+  ];
+}

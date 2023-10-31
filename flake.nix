@@ -69,31 +69,8 @@
               home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
               home-manager.users.gotlou = import ./home/home.nix;
             }
-            ./hosts/kratos/impermanence.nix
-            ./hosts/kratos/hardware-configuration.nix
-            ./hosts/kratos/boot.nix
-            ./hosts/kratos/configuration.nix
-            ./hosts/kratos/user.nix
-            ./hosts/kratos/systemprograms.nix
-            ./hosts/kratos/services/desktop.nix
-            ./hosts/kratos/services/sound.nix
-            ./hosts/kratos/services/tailscale.nix
-            ./system/bluetooth.nix
-            ./system/colord.nix
-            ./system/doas.nix
-            ./system/nix.nix
-            ./system/zram.nix
-            ./system/standard-services.nix
-            ./system/syncthing.nix
-            ./system/openssh.nix
-            ./system/keyd.nix
-            ./system/time.nix
-            ./system/warp.nix
-            # ./system/waydroid.nix
-            ./system/virt.nix
-            ./system/dns-resolver.nix
-            ./system/oom.nix
-            ./system/networking.nix
+            ./hosts/kratos
+            ./system
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
