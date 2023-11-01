@@ -26,4 +26,10 @@
       ];
     };
   };
+  systemd.services.dnscrypt-proxy2 = {
+    enable = true;
+    serviceConfig = {
+      InaccessiblePaths = [ "/persist" ];
+    };
+  };
 }
