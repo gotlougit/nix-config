@@ -94,7 +94,7 @@
       # LeetCode Cookies
       "/home/gotlou/.leetcode"
       # Firefox
-      "/home/gotlou/.mozilla"
+      # "/home/gotlou/.mozilla"
     ];
     files = [ ];
   };
