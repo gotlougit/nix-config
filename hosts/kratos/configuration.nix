@@ -40,7 +40,7 @@
 
   # Required for ZFS
   networking.hostId = "ffbe00b9";
-  
+
   # Just don't touch this except for a very good, no bad reason
   system.stateVersion = "22.11";
 

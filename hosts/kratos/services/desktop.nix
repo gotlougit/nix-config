@@ -19,7 +19,7 @@
       FacesDir = "/persist/system/icons";
     };
   };
-  
+
   # Remove some KDE defaults that are never needed
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
     oxygen
