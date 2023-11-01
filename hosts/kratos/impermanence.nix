@@ -60,7 +60,7 @@
   environment.persistence."/persist/communication" = {
     directories = [
       # Email
-      "/home/gotlou/.thunderbird"
+      # "/home/gotlou/.thunderbird"
       # Matrix
       "/home/gotlou/.config/gomuks"
       # Signal

@@ -14,6 +14,7 @@
     ./shell.nix
     ./sshield.nix
     # ./tor-browser/default.nix
+    ./thunderbird.nix
     ./wezterm.nix
   ];
   home.stateVersion = "22.11";
