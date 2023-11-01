@@ -7,9 +7,6 @@
   boot.loader.systemd-boot.configurationLimit = 20;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Enable systemd in initrd
-  boot.initrd.systemd.enable = true;
-  boot.initrd.systemd.emergencyAccess = true;
   # Allow emulation of aarch64 for building mimir images
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   # For rr to work nicely
