@@ -4,9 +4,6 @@ let
     main = {
       "capslock" = "overload(custom, esc)";
       "esc" = "capslock";
-      "f9" = "previoussong";
-      "f10" = "playpause";
-      "f11" = "nextsong";
     };
     custom = {
       "j" = "down";
