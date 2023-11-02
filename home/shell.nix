@@ -41,7 +41,7 @@ in
       import-rust-dev = "cp /home/gotlou/nixos/project-flakes/generic-rust-dev/flake.nix .";
       enter-cpp-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/";
       import-cpp-dev = "cp /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/flake.nix .";
-      scanfor = "hx $(rg . | sk | cut -d ':' -f 1)";
+      scanfor = "RES=$(rg -n . | sk); hx +$(echo $RES | cut -d ':' -f 2) $(echo $RES | cut -d ':' -f 1)";
     };
     initExtra = ''
       macchina
