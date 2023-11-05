@@ -12,7 +12,7 @@
   # For rr to work nicely
   boot.kernel.sysctl."kernel.perf_event_paranoid" = 1;
   # Use latest Linux Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_5;
   # Allow normal users to use unprivileged namespaces
   boot.kernel.sysctl."kernel.unprivileged_userns_clone" = 1;
   # Also limit ZFS ARC to 512MB
