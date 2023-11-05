@@ -65,7 +65,7 @@ in
       GIT_ASKPASS = "/usr/bin/ksshaskpass";
       GTK_THEME = "Arc:dark";
       EDITOR = "hx";
-      PAGER = "bat";
+      PAGER = "bat --style plain";
       GDK_SCALE = "1";
       # Stores timestamp for each command executed 
       HISTTIMEFORMAT = "%d/%m/%y %T ";
