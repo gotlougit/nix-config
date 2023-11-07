@@ -17,6 +17,7 @@
       inputs.sshield.packages.x86_64-linux.default # Installs sshield
       firefox # Just plain Firefox
       thunderbird # Email client
+      android-studio
       ark # KDE archiving program
       arc-theme # Preferred theme for KDE
       arc-kde-theme # Preferred theme for KDE
