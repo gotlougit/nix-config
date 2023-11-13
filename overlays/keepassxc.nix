@@ -6,5 +6,7 @@ final: prev: {
     withKeePassX11 = false;
     # Skip running tests, we will trust upstream
     # doCheck = false;
+    withKeePassKeeShare = false;
+    withKeePassFDOSecrets = false;
   };
 }
