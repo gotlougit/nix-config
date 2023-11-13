@@ -19,5 +19,16 @@
     # if they are enabled, so we don't need to declare that here
     firewall.enable = true;
   };
-
+  systemd.services.NetworkManager = {
+    enable = true;
+    serviceConfig = (import ./hardening-base.nix);
+  };
+  systemd.services.NetworkManager-dispatcher = {
+    enable = true;
+    serviceConfig = (import ./hardening-base.nix);
+  };
+  systemd.services.ModemManager = {
+    enable = true;
+    serviceConfig = (import ./hardening-base.nix);
+  };
 }

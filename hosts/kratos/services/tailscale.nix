@@ -58,7 +58,7 @@
       InaccessiblePaths = [ "/persist" ];
 
       DeviceAllow = [ "/dev/tun" "/dev/net/tun" ];
-      AmbientCapabilities = [ "CAP_NET_RAW" "CAP_NET_ADMIN" "CAP_SYS_MODULE" ];
+      CapabilityBoundingSet = [ "" "CAP_NET_RAW" "CAP_NET_ADMIN" "CAP_SYS_MODULE" ];
       ProtectKernelModules = false;
       RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" "AF_NETLINK" ];
       NoNewPrivileges = true;

@@ -27,9 +27,8 @@
       RestrictRealtime = true;
       RestrictSUIDSGID = true;
       MemoryDenyWriteExecute = true;
-      CapabilityBoundingSet = "~CAP_SYS_PTRACE";
       InaccessiblePaths = "/persist";
-      AmbientCapabilities = [ "CAP_NET_RAW" "CAP_NET_ADMIN" "CAP_SYS_MODULE" ];
+      CapabilityBoundingSet = [ "" "CAP_NET_BIND_SERVICE" "CAP_NET_ADMIN" ];
       RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" "AF_NETLINK" ];
       ProtectHome = true;
       SystemCallArchitectures = "native";

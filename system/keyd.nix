@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
   cfg = {
     main = {
@@ -56,6 +56,7 @@ in
       "@system-service"
       "~@privileged"
     ];
+    CapabilityBoundingSet = lib.mkForce [ "CAP_SYS_NICE" "CAP_SYS_RESOURCE" ];
     InaccessiblePaths = "/persist";
     RestrictAddressFamilies = [ "AF_UNIX" ];
     RestrictSUIDSGID = true;
