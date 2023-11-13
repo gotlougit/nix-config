@@ -2,6 +2,7 @@
 {
   imports = [
     ./direnv.nix
+    ./easyeffects.nix
     ./firefox.nix
     ./git.nix
     ./helix.nix
