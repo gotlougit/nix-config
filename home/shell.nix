@@ -9,7 +9,7 @@ in
     enable = true;
     enableBashIntegration = true;
     settings = {
-      format = "$directory$git_branch$git_commit\$character";
+      format = "$directory$git_branch$git_commit\${custom.sandbox}$character";
       git_branch.format = "[\\($branch\\)](purple) ";
       git_commit.format = "[\\($hash\\)](purple) ";
       character = {
@@ -18,6 +18,11 @@ in
       };
       directory.style = "cyan";
       nix_shell.format = "[$symbol](blue)";
+      custom.sandbox = {
+        when = "grep 'systemd' /proc/1/cmdline";
+        command = "echo -n '⚠️'";
+        shell = "sh";
+      };
     };
   };
 
