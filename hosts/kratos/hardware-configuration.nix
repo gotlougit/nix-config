@@ -12,6 +12,35 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" "rr-zen_workaround" ];
+  boot.blacklistedKernelModules = [
+    # Obscure network protocols
+    "ax25"
+    "netrom"
+    "rose"
+
+    # Old or rare or insufficiently audited filesystems
+    "adfs"
+    "affs"
+    "bfs"
+    "befs"
+    "cramfs"
+    "efs"
+    "erofs"
+    "exofs"
+    "freevxfs"
+    "f2fs"
+    "hfs"
+    "hpfs"
+    "jfs"
+    "minix"
+    "nilfs2"
+    "ntfs"
+    "omfs"
+    "qnx4"
+    "qnx6"
+    "sysv"
+    "ufs"
+  ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/boot/efi" = {
