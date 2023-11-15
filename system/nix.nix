@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   nix = {
     settings = {
@@ -6,6 +6,8 @@
       keep-derivations = true;
       # Enable flakes
       experimental-features = [ "nix-command" "flakes" ];
+      # Restrict nix usage to real users
+      allowed-users = lib.mkDefault [ "@users" ];
     };
     # Garbage collect generations older than 7 days
     gc = {
