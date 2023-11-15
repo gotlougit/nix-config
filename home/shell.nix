@@ -42,9 +42,9 @@ in
       ls = "eza";
       "." = "hx .";
       sudo = "doas";
-      enter-rust-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-rust-dev/";
+      enter-rust-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-rust-dev/ --command code-sandbox" ;
       import-rust-dev = "cp /home/gotlou/nixos/project-flakes/generic-rust-dev/flake.nix .";
-      enter-cpp-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/";
+      enter-cpp-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/ --command code-sandbox";
       import-cpp-dev = "cp /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/flake.nix .";
       scanfor = "RES=$(rg -n . | sk); hx +$(echo $RES | cut -d ':' -f 2) $(echo $RES | cut -d ':' -f 1)";
     };
