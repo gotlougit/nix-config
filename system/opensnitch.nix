@@ -80,6 +80,18 @@
           data = "${pkgs.syncthing}/bin/syncthing";
         };
       };
+      tailscale = {
+        name = "tailscale";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${lib.getBin pkgs.tailscale}/bin/.tailscaled-wrapped";
+        };
+      };
     };
   };
 
