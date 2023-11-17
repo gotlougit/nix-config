@@ -20,8 +20,8 @@
   services.opensnitch = {
     enable = true;
     rules = {
-      systemd-timesyncd = {
-        name = "systemd-timesyncd";
+      chronyd = {
+        name = "chronyd";
         enabled = true;
         action = "allow";
         duration = "always";
@@ -29,7 +29,7 @@
           type = "simple";
           sensitive = false;
           operand = "process.path";
-          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
+          data = "${lib.getBin pkgs.chrony}/bin/chronyd";
         };
       };
       dnscrypt-proxy2 = {
