@@ -41,10 +41,6 @@
   services.xserver.layout = "us";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
-  systemd.services.cups = {
-    enable = true;
-    serviceConfig = (import ../../../system/hardening-base.nix);
-  };
+  services.printing.enable = false;
   
 }
