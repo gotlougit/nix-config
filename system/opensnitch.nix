@@ -92,6 +92,18 @@
           data = "${lib.getBin pkgs.tailscale}/bin/.tailscaled-wrapped";
         };
       };
+      kdeconnect = {
+        name = "kdeconnect";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${lib.getBin pkgs.kdeconnect}/libexec/.kdeconnectd-wrapped";
+        };
+      };
     };
   };
 
