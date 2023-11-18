@@ -28,6 +28,7 @@
       "*.direnv"
     ];
     # Enable syntax highlight in diffs
-    delta.enable = true;
+    difftastic.enable = true;
+    difftastic.display = "inline";
   };
 }
