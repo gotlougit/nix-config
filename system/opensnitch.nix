@@ -104,6 +104,32 @@
           data = "${lib.getBin pkgs.kdeconnect}/libexec/.kdeconnectd-wrapped";
         };
       };
+      signal-allow = {
+        name = "signal-only-allow-signal.org";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "list";
+          sensitive = false;
+          operand = "list";
+          data = "[{\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"${lib.getBin pkgs.signal-desktop}/lib/Signal/signal-desktop\", \"sensitive\": true}, {\"type\": \"regexp\", \"operand\": \"dest.host\", \"data\": \".*\\\\.signal.org\", \"sensitive\": false}]";
+          list = [
+            {
+              type = "simple";
+              operand = "process.path";
+              data = "${lib.getBin pkgs.signal-desktop}/lib/Signal/signal-desktop";
+              sensitive = true;
+            }
+            {
+              type= "regexp";
+              operand= "dest.host";
+              data= ".*\\.signal.org";
+              sensitive= false;
+            }
+          ];
+        };
+      };
     };
   };
 
