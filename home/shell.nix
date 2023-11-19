@@ -35,6 +35,7 @@ in
       open = "xdg-open";
       rollback-config = "sudo nixos-rebuild switch --rollback";
       switch-config = "sudo nixos-rebuild switch --flake /home/gotlou/nixos#${hostname}";
+      quick-switch-config = "switch-config --option substitute false";
       update-config = "sudo nix flake update /home/gotlou/nixos && sudo nixos-rebuild switch --flake /home/gotlou/nixos#${hostname}";
       switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/nixos#${hostname}";
       cat = "bat";
