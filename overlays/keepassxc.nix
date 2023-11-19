@@ -9,5 +9,6 @@ final: prev: {
     withKeePassKeeShare = false;
     withKeePassFDOSecrets = false;
     withKeePassSSHAgent = false;
+    withKeePassYubiKey = false;
   };
 }
