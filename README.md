@@ -22,9 +22,12 @@ It will:
 
 - Mount root partition on tmpfs
 
-- Use [code-sandbox](https://git.sr.ht/~gotlou/code-sandbox) to create sandboxes for certain programs that prevent sensitive file access
+- Use [code-sandbox](https://git.sr.ht/~gotlou/code-sandbox) to create sandboxes for certain programs that prevent sensitive file access or Internet access
 
-- Set up a dev shell which severely restricts personal files and private SSH/GPG keys from any processes running under the ~/Code directory
+- Set up a dev shell which severely restricts personal files and private SSH/GPG keys from any processes running under the present working directory
+
+- Use [OpenSnitch](https://github.com/evilsocket/opensnitch) in order to only allow certain programs to be marked as trusted in order for them to get Internet access.
+Everything else has to go through OpenSnitch to get permission.
 
 Nice-to-haves:
 
