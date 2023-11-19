@@ -8,5 +8,6 @@ final: prev: {
     # doCheck = false;
     withKeePassKeeShare = false;
     withKeePassFDOSecrets = false;
+    withKeePassSSHAgent = false;
   };
 }
