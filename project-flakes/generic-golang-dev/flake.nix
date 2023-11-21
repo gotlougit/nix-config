@@ -8,6 +8,12 @@
     {
       devShells.${system}.default = mkShell {
         name = "go_dev";
+        shellHook = ''
+          export GOHOME="$(realpath ./.localgohome)"
+          export GOMODCACHE="$(realpath ./.localgomod)"
+          export GOCACHE="$(realpath ./.localgocache)"
+          export _ZO_DATA_DIR="$(realpath ./.localzoxide)"
+        '';
         buildInputs = [
           pkgs.pkg-config
           pkgs.go
