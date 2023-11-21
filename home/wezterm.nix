@@ -14,6 +14,9 @@
       config = wezterm.config_builder()
     end
 
+    -- Use alternate SSH backend to get around reported timeout issues
+    config.ssh_backend = "Ssh2"
+
     -- Use WebGPU
     config.front_end = "WebGpu";
 
