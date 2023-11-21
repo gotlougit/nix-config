@@ -26,6 +26,10 @@
     ignores = [
       "*.localcargo"
       "*.direnv"
+      "*.localzoxide"
+      "*.localgomod"
+      "*.localgocache"
+      "*.localgohome"
     ];
     # Enable syntax highlight in diffs
     difftastic.enable = true;
