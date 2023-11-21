@@ -8,6 +8,9 @@
     {
       devShells.${system}.default = mkShell {
         name = "c_cpp_dev";
+        shellHook = ''
+          export _ZO_DATA_DIR="$(realpath ./.localzoxide)"
+        '';
         buildInputs = [
           pkgs.pkg-config
           pkgs.openssl.dev
