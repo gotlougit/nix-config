@@ -26,6 +26,13 @@ in
     };
   };
 
+  # Enable zoxide
+  programs.zoxide = {
+    enable = true;
+    options = [ "--cmd cd" ];
+    enableBashIntegration = true;
+  };
+
   # Add shell with custom config
   programs.bash = {
     enable = true;
