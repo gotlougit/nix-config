@@ -20,8 +20,20 @@
   services.opensnitch = {
     enable = true;
     rules = {
-      deny-insecure-dirs = {
-        name = "deny-insecure-dirs";
+      allow-localhost = {
+        name = "allow-localhost";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "regexp";
+          operand = "dest.ip";
+          data = "^(127\\.0\\.0\\.1|::1)$";
+          list = [];
+        };
+      };
+      deny-all-localhost = {
+        name = "";
         enabled = true;
         action = "deny";
         duration = "always";
