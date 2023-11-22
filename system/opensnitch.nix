@@ -20,6 +20,17 @@
   services.opensnitch = {
     enable = true;
     rules = {
+      deny-insecure-dirs = {
+        name = "deny-insecure-dirs";
+        enabled = true;
+        action = "deny";
+        duration = "always";
+        operator = {
+            type = "regexp";
+            operand = "process.path";
+            data = "^(/tmp/|/var/tmp/|/dev/shm/|/var/run|/var/lock).*";
+        };
+      };
       chronyd = {
         name = "chronyd";
         enabled = true;
