@@ -26,9 +26,9 @@
         action = "deny";
         duration = "always";
         operator = {
-            type = "regexp";
-            operand = "process.path";
-            data = "^(/tmp/|/var/tmp/|/dev/shm/|/var/run|/var/lock).*";
+          type = "regexp";
+          operand = "process.path";
+          data = "^(/tmp/|/var/tmp/|/dev/shm/|/var/run|/var/lock).*";
         };
       };
       chronyd = {
@@ -133,10 +133,10 @@
               sensitive = true;
             }
             {
-              type= "regexp";
-              operand= "dest.host";
-              data= ".*\\.signal.org";
-              sensitive= false;
+              type = "regexp";
+              operand = "dest.host";
+              data = ".*\\.signal.org";
+              sensitive = false;
             }
           ];
         };
