@@ -153,6 +153,32 @@
           ];
         };
       };
+      gomuks-allow-matrix = {
+        name = "gomuks-allow-matrix";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "list";
+          sensitive = false;
+          operand = "list";
+          data = "[{\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"${lib.getBin pkgs.gomuks}/bin/.gomuks-wrapped\", \"sensitive\": true}, {\"type\": \"simple\", \"operand\": \"dest.host\", \"data\": \"matrix-client.matrix.org\", \"sensitive\": false}]";
+          list = [
+            {
+              type = "simple";
+              operand = "process.path";
+              data = "${lib.getBin pkgs.gomuks}/bin/.gomuks-wrapped";
+              sensitive = true;
+            }
+            {
+              type = "simple";
+              operand = "dest.host";
+              data = "matrix-client.matrix.org";
+              sensitive = false;
+            }
+          ];
+        };
+      };
     };
   };
 
