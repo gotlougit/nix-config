@@ -10,8 +10,8 @@ let
       "k" = "up";
       "l" = "right";
       "h" = "left";
-      "b" = "(";
-      "c" = ":";
+      "w" = "C-right";
+      "b" = "C-left";
     };
   };
 in
