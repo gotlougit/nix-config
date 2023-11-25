@@ -6,6 +6,10 @@ let
       "esc" = "capslock";
       "leftshift" = "overload(shift, S-9)";
       "rightshift" = "overload(shift, S-0)";
+      "leftalt" = "overload(alt, S-[)";
+      "rightalt" = "overload(alt, S-])";
+      "leftcontrol" = "overload(control, [)";
+      "rightcontrol" = "overload(control, ])";
     };
     nav = {
       "j" = "down";
