@@ -20,6 +20,14 @@ let
       "b" = "C-left";
       ";" = "backspace";
       "d" = "delete";
+      "shift" = "layer(selection)";
+    };
+    selection = {
+      "l" = "S-right";
+      "h" = "S-left";
+      "w" = "C-S-right";
+      "b" = "C-S-left";
+      "x" = "C-a";
     };
   };
 in
