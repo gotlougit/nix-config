@@ -4,6 +4,8 @@ let
     main = {
       "capslock" = "overload(nav, esc)";
       "esc" = "capslock";
+      "leftshift" = "overload(shift, S-9)";
+      "rightshift" = "overload(shift, S-0)";
     };
     nav = {
       "j" = "down";
