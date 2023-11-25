@@ -12,6 +12,8 @@ let
       "h" = "left";
       "w" = "C-right";
       "b" = "C-left";
+      ";" = "backspace";
+      "d" = "delete";
     };
   };
 in
