@@ -2,10 +2,10 @@
 let
   cfg = {
     main = {
-      "capslock" = "overload(custom, esc)";
+      "capslock" = "overload(nav, esc)";
       "esc" = "capslock";
     };
-    custom = {
+    nav = {
       "j" = "down";
       "k" = "up";
       "l" = "right";
