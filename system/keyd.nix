@@ -4,13 +4,20 @@ let
     main = {
       "capslock" = "overload(nav, esc)";
       "esc" = "capslock";
+      # Insert ( when tapped and be shift when held
       "leftshift" = "overload(shift, S-9)";
+      # Insert ) when tapped and be shift when held
       "rightshift" = "overload(shift, S-0)";
+      # Insert { when tapped and be alt when held
       "leftalt" = "overload(alt, S-[)";
+      # Insert } when tapped and be alt when held
       "rightalt" = "overload(alt, S-])";
+      # Insert [ when tapped and be alt when held
       "leftcontrol" = "overload(control, [)";
+      # Insert ] when tapped and be alt when held
       "rightcontrol" = "overload(control, ])";
     };
+    # vi keybindings for navigation
     nav = {
       "j" = "down";
       "k" = "up";
@@ -22,6 +29,7 @@ let
       "d" = "delete";
       "shift" = "layer(selection)";
     };
+    # vi-like key bindings for selection
     selection = {
       "l" = "S-right";
       "h" = "S-left";
