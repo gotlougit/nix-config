@@ -35,7 +35,7 @@ let
       "h" = "left";
       "w" = "C-right";
       "b" = "C-left";
-      ";" = "backspace";
+      "enter" = "backspace";
       "d" = "delete";
       "shift" = "layer(selection)";
     };
