@@ -17,7 +17,7 @@
   boot.kernel.sysctl."kernel.unprivileged_userns_clone" = 1;
   # Use pstate to lower idle clocks even lower
   # Also limit ZFS ARC to 512MB
-  boot.kernelParams = [ "amd_pstate=guided" "zfs.zfs_arc_min=${toString (1024 * 1024 * 100)}" "zfs.zfs_arc_max=${toString (1024 * 1024 * 512)}" ];
+  boot.kernelParams = [ "amd_pstate=guided" "zfs.zfs_arc_min=${toString (1024 * 1024 * 100)}" "zfs.zfs_arc_max=${toString (1024 * 1024 * 512)}" "zfs.zfs_dmu_offset_next_sync=0"];
   # Add more filesystems here as and when needed
   boot.supportedFilesystems = [ "btrfs" "zfs" ];
   boot.zfs = {
