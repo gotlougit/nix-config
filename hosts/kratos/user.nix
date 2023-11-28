@@ -26,7 +26,7 @@
       cemu # Wii U emulator
       chiaki # PS4 Remote Play client
       discordo # CLI Discord client
-      # dolphin-emu # GameCube and Wii emulator
+      dolphin-emu # GameCube and Wii emulator
       filelight # View disk usage in pie chart form
       frida-tools # For Android reverse engineering
       ghidra # Decompiler
