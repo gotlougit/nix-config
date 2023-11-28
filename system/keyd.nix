@@ -18,7 +18,6 @@ let
       "rightcontrol" = "overload(control, ])";
       # FIXME when I don't need these to go cold turkey
       # This is a learning tool
-      "backspace" = "noop";
       "delete" = "noop";
       "S-9" = "noop";
       "S-0" = "noop";
