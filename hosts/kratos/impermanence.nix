@@ -52,6 +52,10 @@
       "/home/gotlou/.config/Chiaki"
       # Original Xbox emulator
       "/home/gotlou/.local/share/xemu"
+      # Wii and GameCube emulator
+      "/home/gotlou/.local/share/dolphin-emu"
+      "/home/gotlou/.cache/dolphin-emu"
+      "/home/gotlou/.config/dolphin-emu"
     ];
     files = [ ];
   };
