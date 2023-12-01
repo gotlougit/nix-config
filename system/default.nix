@@ -2,7 +2,7 @@
   imports = [
     ./bluetooth.nix
     ./colord.nix
-    ./doas.nix
+    ./sudo-rs.nix
     ./nix.nix
     ./zram.nix
     ./standard-services.nix

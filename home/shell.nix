@@ -50,7 +50,6 @@ in
       du = "dust";
       ls = "eza";
       "." = "hx .";
-      sudo = "doas";
       enter-rust-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-rust-dev/ --command code-sandbox";
       import-rust-dev = "cp /home/gotlou/nixos/project-flakes/generic-rust-dev/* .; cp /home/gotlou/nixos/project-flakes/generic-rust-dev/.envrc .";
       enter-golang-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-golang-dev/ --command code-sandbox";
