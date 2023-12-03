@@ -19,7 +19,12 @@ let
       # Use these for home and end for quick navigation 
       "[" = "home";
       "]" = "end";
-    };
+      # FIXME: noop these until I retrain muscle memory
+      "pageup" = "noop";
+      "pagedown" = "noop";
+      "home" = "noop";
+      "end" = "noop";
+   };
     # vi keybindings for navigation
     nav = {
       "j" = "down";
