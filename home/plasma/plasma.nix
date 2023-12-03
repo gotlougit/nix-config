@@ -1,8 +1,6 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
-
-  home.packages = with pkgs; [ nordic papirus-icon-theme gnome.adwaita-icon-theme ];
   
   imports = [
     ./display-scale.nix
@@ -84,7 +82,7 @@
       "kdeglobals"."General"."TerminalApplication" = "wezterm start --cwd .";
       "kdeglobals"."General"."TerminalService" = "org.wezfurlong.wezterm.desktop";
       "kdeglobals"."Icons"."Theme" = "Papirus-Dark";
-      "kdeglobals"."KDE"."LookAndFeelPackage" = "com.github.varlesh.arc-dark";
+      "kdeglobals"."KDE"."LookAndFeelPackage" = "Nordic-darker";
       "kdeglobals"."KDE"."SingleClick" = false;
       "kdeglobals"."KDE"."widgetStyle" = "Breeze";
       "kdeglobals"."KFileDialog Settings"."Allow Expansion" = false;
