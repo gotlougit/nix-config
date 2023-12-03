@@ -78,7 +78,7 @@
         action = wezterm.action.CloseCurrentPane { confirm = false; },
       }
     }
-
+    config.color_scheme = 'nord';
     -- and finally, return the configuration to wezterm
     return config
   '';

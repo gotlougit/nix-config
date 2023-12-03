@@ -1,7 +1,9 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
 
+  home.packages = with pkgs; [ nordic papirus-icon-theme gnome.adwaita-icon-theme ];
+  
   imports = [
     ./display-scale.nix
     ./panel.nix

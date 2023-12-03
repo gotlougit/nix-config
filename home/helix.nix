@@ -3,7 +3,7 @@
 {
   programs.helix.enable = true;
   programs.helix.settings = {
-    theme = "vantablack";
+    theme = "nord";
 
     editor.color-modes = true;
     editor.rulers = [ 80 ];
@@ -30,12 +30,6 @@
     keys.normal.L = [ "goto_line_end" ];
     keys.normal.G = [ "goto_last_line" ];
     keys.normal.y = [ "yank" ":clipboard-yank" ];
-  };
-
-  programs.helix.themes.vantablack = {
-    "inherits" = "onedark";
-    "ui" = { bg = "black"; };
-    palette."black" = "#000000";
   };
 
 }
