@@ -44,6 +44,10 @@ let
       "w" = "C-S-right";
       "b" = "C-S-left";
       "x" = "C-a";
+      # These aren't really selections, but there wasn't a better place to put
+      # them
+      "k" = "pageup";
+      "j" = "pagedown";
     };
   };
 in
