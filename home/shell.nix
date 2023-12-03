@@ -40,6 +40,7 @@ in
     shellAliases = {
       vi = "hx";
       open = "xdg-open";
+      music = "cvlc --random --loop -I ncurses ~/Music";
       rollback-config = "sudo nixos-rebuild switch --rollback";
       switch-config = "sudo nixos-rebuild switch --flake /home/gotlou/nixos#${hostname}";
       quick-switch-config = "switch-config --option substitute false";

@@ -31,8 +31,6 @@
     directories = [
       # Tor Browser config
       "/home/gotlou/.local/share/tor-browser/TorBrowser"
-      # Music info
-      "/home/gotlou/.local/share/rhythmbox"
       # Mullvad Browser config
       "/home/gotlou/.mullvad"
     ];

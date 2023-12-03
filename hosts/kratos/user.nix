@@ -43,7 +43,6 @@
       pcsx2 # PS2 emulator
       qbittorrent # Best torrent client
       rpcs3 # PS3 emulator
-      rhythmbox # Preferred music player
       songrec # Shazam on Linux
       signal-desktop # Secure and easy messaging
       scli # Secure and easy messaging on command line

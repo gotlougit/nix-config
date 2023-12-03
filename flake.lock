@@ -27,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1701288334,
-        "narHash": "sha256-uChpesK8uHh/7dhmKMXrp4yOdWWdFtDXPIJ2vzJz1aE=",
+        "lastModified": 1701626834,
+        "narHash": "sha256-7kAwxSLedoigpU1G1P/spajGYfzq9ZzozsVrRSG+fqE=",
         "owner": "~gotlou",
         "repo": "code-sandbox",
-        "rev": "2819c1367ab5d6f29592f99e972a3edcfca9e15b",
+        "rev": "be16cb341db66f6af76817ee90d1787a6da61df8",
         "type": "sourcehut"
       },
       "original": {
