@@ -6,7 +6,7 @@
     user = "gotlou";
     group = "users";
     configDir = "/persist/sensitive/syncthing";
-    dataDir = "/home/gotlou";
+    dataDir = "/persist/sensitive/syncthing/datadir";
     openDefaultPorts = true;
   };
   systemd.services.syncthing = {
