@@ -1,6 +1,12 @@
 { ... }:
 
 {
+  
+  programs.wezterm = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
   home.file.".wezterm.lua".text = ''
     -- Pull in the wezterm API
     local wezterm = require 'wezterm'

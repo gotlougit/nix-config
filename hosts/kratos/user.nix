@@ -55,7 +55,6 @@
       tdesktop # Telegram desktop client
       tor-browser-bundle-bin # Needs no intro
       vlc # Easiest media player
-      wezterm # GPU accelerated terminal emulator written in Rust
       wl-clipboard # CLI util for copying and pasting in Wayland
       xemu # Original Xbox emulator
     ];
