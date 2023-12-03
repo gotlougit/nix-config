@@ -15,6 +15,7 @@
     ./shell.nix
     ./sshield.nix
     # ./tor-browser/default.nix
+    ./tiny-irc.nix
     ./thunderbird.nix
     ./wezterm.nix
   ];
