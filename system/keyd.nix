@@ -19,11 +19,6 @@ let
       # Use these for home and end for quick navigation 
       "[" = "home";
       "]" = "end";
-      # FIXME when I don't need these to go cold turkey
-      # This is a learning tool
-      "delete" = "noop";
-      "S-9" = "noop";
-      "S-0" = "noop";
     };
     # vi keybindings for navigation
     nav = {
