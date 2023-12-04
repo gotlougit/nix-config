@@ -32,8 +32,8 @@
           list = [];
         };
       };
-      deny-all-localhost = {
-        name = "";
+      deny-from-all-vulnerable-dirs = {
+        name = "deny-from-all-vulnerable-dirs";
         enabled = true;
         action = "deny";
         duration = "always";
