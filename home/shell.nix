@@ -2,6 +2,7 @@
 
 let
   hostname = builtins.getEnv "HOSTNAME";
+  user = "gotlou";
 in
 {
   # Enable starship
@@ -41,21 +42,21 @@ in
       vi = "hx";
       open = "xdg-open";
       rollback-config = "sudo nixos-rebuild switch --rollback";
-      switch-config = "sudo nixos-rebuild switch --flake /home/gotlou/nixos#${hostname}";
+      switch-config = "sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
       quick-switch-config = "switch-config --option substitute false";
-      update-config = "sudo nix flake update /home/gotlou/nixos && sudo nixos-rebuild switch --flake /home/gotlou/nixos#${hostname}";
-      switch-config-boot = "sudo nixos-rebuild boot --flake /home/gotlou/nixos#${hostname}";
+      update-config = "sudo nix flake update /home/${user}/nixos && sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
+      switch-config-boot = "sudo nixos-rebuild boot --flake /home/${user}/nixos#${hostname}";
       cat = "bat";
       diff = "difft";
       du = "dust";
       ls = "eza";
       "." = "hx .";
-      enter-rust-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-rust-dev/ --command code-sandbox";
-      import-rust-dev = "cp /home/gotlou/nixos/project-flakes/generic-rust-dev/* .; cp /home/gotlou/nixos/project-flakes/generic-rust-dev/.envrc .";
-      enter-golang-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-golang-dev/ --command code-sandbox";
-      import-golang-dev = "cp /home/gotlou/nixos/project-flakes/generic-golang-dev/* .; cp /home/gotlou/nixos/project-flakes/generic-golang-dev/.envrc .";
-      enter-cpp-dev = "nix develop /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/ --command code-sandbox";
-      import-cpp-dev = "cp /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/* .; cp /home/gotlou/nixos/project-flakes/generic-c-cpp-dev/.envrc .";
+      enter-rust-dev = "nix develop /home/${user}/nixos/project-flakes/generic-rust-dev/ --command code-sandbox";
+      import-rust-dev = "cp /home/${user}/nixos/project-flakes/generic-rust-dev/* .; cp /home/${user}/nixos/project-flakes/generic-rust-dev/.envrc .";
+      enter-golang-dev = "nix develop /home/${user}/nixos/project-flakes/generic-golang-dev/ --command code-sandbox";
+      import-golang-dev = "cp /home/${user}/nixos/project-flakes/generic-golang-dev/* .; cp /home/${user}/nixos/project-flakes/generic-golang-dev/.envrc .";
+      enter-cpp-dev = "nix develop /home/${user}/nixos/project-flakes/generic-c-cpp-dev/ --command code-sandbox";
+      import-cpp-dev = "cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/* .; cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/.envrc .";
       scanfor = "RES=$(rg -n . | sk); hx +$(echo $RES | cut -d ':' -f 2) $(echo $RES | cut -d ':' -f 1)";
     };
     initExtra = ''
