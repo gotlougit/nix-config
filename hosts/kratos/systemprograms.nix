@@ -39,6 +39,7 @@
     meek # Pluggable transport for tor
     macchina # Nice startup screen for terminal
     nftables # Modern firewall program
+    ntfs3g # NTFS FUSE implementation
     nix-direnv # Direnv + Nix
     nmap # Classic network exploration utility
     opensnitch # Application firewall
