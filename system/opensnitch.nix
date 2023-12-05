@@ -11,6 +11,9 @@
       Restart = "on-failure";
     };
   };
+  systemd.user.tmpfiles.users.gotlou.rules = [
+    "L /home/gotlou/.config/opensnitch/settings.conf - - - - /home/gotlou/nixos/system/opensnitch-ui-settings.conf"
+  ];
   services.opensnitch = {
     enable = true;
     rules = {
