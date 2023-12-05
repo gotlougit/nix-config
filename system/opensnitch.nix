@@ -1,21 +1,15 @@
 { pkgs, lib, ... }:
 {
-  imports = [
-  ];
   # OpenSnitch stuff
   systemd.user.services."opensnitch-ui" = {
     enable = true;
     description = "OpenSnitch UI";
     after = [ "graphical-session-pre.target" ];
     wantedBy = [ "graphical-session.target" ];
-
     serviceConfig = {
-      #Environment = "PATH=${config.home.profileDirectory}/bin";
       ExecStart = "${pkgs.opensnitch-ui}/bin/opensnitch-ui";
       Restart = "on-failure";
     };
-
-    #Install = { WantedBy = [ "graphical-session.target" ]; };
   };
   services.opensnitch = {
     enable = true;
