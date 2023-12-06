@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, inputs, ... }:
 {
   nix = {
     settings = {
@@ -14,6 +14,10 @@
       automatic = true;
       options = "--delete-older-than 7d";
     };
+    # Use repo version of nixpkgs for nix operations
+    # This prevents downloading latest flake every time you want to do something
+    # This also makes non-flake nix commands fail, though
+    registry.nixpkgs.flake = inputs.nixpkgs;
   };
 
   # Allow proprietary software
