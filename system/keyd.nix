@@ -24,7 +24,7 @@ let
       "pagedown" = "noop";
       "home" = "noop";
       "end" = "noop";
-   };
+    };
     # vi keybindings for navigation
     nav = {
       "j" = "down";

@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  
+
   imports = [
     ./display-scale.nix
     ./panel.nix

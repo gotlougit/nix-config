@@ -23,7 +23,7 @@
           type = "regexp";
           operand = "dest.ip";
           data = "^(127\\.0\\.0\\.1|::1)$";
-          list = [];
+          list = [ ];
         };
       };
       deny-from-all-vulnerable-dirs = {
@@ -44,9 +44,9 @@
         action = "deny";
         duration = "always";
         operator = {
-            type = "lists";
-            operand = "lists.domains";
-            data = "/home/gotlou/nixos/system/hosts";
+          type = "lists";
+          operand = "lists.domains";
+          data = "/home/gotlou/nixos/system/hosts";
         };
       };
       chronyd = {
