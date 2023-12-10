@@ -20,6 +20,8 @@
       config = wezterm.config_builder()
     end
 
+    config.enable_wayland = false;
+    
     -- Use alternate SSH backend to get around reported timeout issues
     config.ssh_backend = "Ssh2"
 
