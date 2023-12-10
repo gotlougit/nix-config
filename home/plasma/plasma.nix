@@ -200,7 +200,7 @@
       "kwinrc"."Tiling.bd455426-91b5-5aa4-b78c-9e21c3c810ab"."tiles" = "{\"layoutDirection\":\"floating\",\"tiles\":[]}";
       "kwinrc"."Tiling.cc55641a-b969-52cd-87bf-88d4810033db"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       "kwinrc"."Windows"."SnapOnlyWhenOverlapping" = true;
-      "kwinrc"."Windows"."Placement" = "UnderMouse";
+      "kwinrc"."Windows"."Placement" = "Maximizing";
       "kwinrc"."Windows"."BorderlessMaximizedWindows" = true;
       "kwinrc"."Xwayland"."Scale" = 1;
       "plasma-localerc"."Formats"."LANG" = "en_IN";
