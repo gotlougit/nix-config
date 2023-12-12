@@ -59,7 +59,6 @@
       mangohud # Overlay while playing games
       minetest # Open source Minecraft-like game
       mullvad-browser # Browser for private browsing
-      elisa
       otpclient # TOTP client
       duckstation # PS1 emulator
       pcsx2 # PS2 emulator
