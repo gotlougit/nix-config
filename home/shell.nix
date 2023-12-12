@@ -51,6 +51,7 @@ in
       du = "dust";
       ls = "eza";
       "." = "hx .";
+      less = "bat --style plain";
       enter-rust-dev = "nix develop /home/${user}/nixos/project-flakes/generic-rust-dev/ --command code-sandbox";
       import-rust-dev = "cp /home/${user}/nixos/project-flakes/generic-rust-dev/* .; cp /home/${user}/nixos/project-flakes/generic-rust-dev/.envrc .";
       enter-golang-dev = "nix develop /home/${user}/nixos/project-flakes/generic-golang-dev/ --command code-sandbox";
