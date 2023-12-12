@@ -6,11 +6,13 @@ It will:
 
 - Configure systemd-boot
 
+- Use ZFS, a tried-and-tested and reliable CoW filesystem for storing files.
+NixOS is one of the only Linux distros where ZFS is a first-class citizen, so we
+might as well take advantage of it.
+
 - Configure DNS resolving using dnscrypt-proxy2
 
 - Configure secure NTP using chrony
-
-- Use Linux Xanmod kernel to improve latency and use certain new patches for various subsystems
 
 - Add various packages that will be useful for the user
 
@@ -18,16 +20,24 @@ It will:
 
 - Add a user to the system
 
-- Use [home-manager](https://github.com/nix-community/home-manager) to manage user configs in a declarative manner.
+- Use [plasma-manager](https://github.com/pjones/plasma-manager) to declare a KDE plasma config for a consistent, reproducible look and behaviour, including
+key bindings and extensions.
 
-- Mount root partition on tmpfs
+- Use [home-manager](https://github.com/nix-community/home-manager) to manage user configs in a declarative manner, such as for git, text editors, terminal emulators etc.
+
+- Mount root partition on tmpfs. This means apart from some specified directories bind-mounted by [Impermanence](https://github.com/nix-community/impermanence), your home directory, /nix and /boot,
+the rest of your system is contained in RAM and not saved to disk. This forces you to write a completely declarative NixOS configuration and helps maintain
+reproducibility and allows you to get to a "safe state" or a "clean install" simply by rebooting.
 
 - Use [code-sandbox](https://git.sr.ht/~gotlou/code-sandbox) to create sandboxes for certain programs that prevent sensitive file access or Internet access
+as well as set up a dev shell which severely restricts personal files and private SSH/GPG keys from any processes running under the present working directory
 
-- Set up a dev shell which severely restricts personal files and private SSH/GPG keys from any processes running under the present working directory
+- Sandbox various system services in order to make sure they have the least amount of privileges to do their job effectively.
 
 - Use [OpenSnitch](https://github.com/evilsocket/opensnitch) in order to only allow certain programs to be marked as trusted in order for them to get Internet access.
 Everything else has to go through OpenSnitch to get permission.
+
+- Configure the shell so it is full of useful aliases and capabilities, and use [starship](https://starship.rs/) as a prompt.
 
 Nice-to-haves:
 
