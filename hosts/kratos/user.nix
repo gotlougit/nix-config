@@ -26,7 +26,6 @@
       cemu # Wii U emulator
       chiaki # PS4 Remote Play client
       dolphin-emu # GameCube and Wii emulator
-      frida-tools # For Android reverse engineering
       ghidra # Decompiler
       gImageReader # OCR PDFs and images easily
       guerrilla
