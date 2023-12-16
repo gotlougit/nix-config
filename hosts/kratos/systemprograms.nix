@@ -20,7 +20,7 @@
     libsForQt5.kirigami-addons
     dig # for DNS testing
     direnv # Effortless dev environment setup
-    cloudflare-warp # A good quality VPN
+    # cloudflare-warp # A good quality VPN
     file # To show type of file
     fd # Fast `file` replacement
     ffmpeg # Multimedia Swiss Army Knife

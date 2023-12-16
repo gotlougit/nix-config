@@ -11,7 +11,7 @@
     ./opensnitch.nix
     ./keyd.nix
     ./time.nix
-    ./warp.nix
+    # ./warp.nix
     ./virt.nix
     ./dns-resolver.nix
     ./oom.nix
