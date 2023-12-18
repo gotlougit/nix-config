@@ -69,7 +69,7 @@
               # Ref: https://github.com/pjones/plasma-manager/issues/14
               # This is the way to import "plasma-manager" in home-manager
               # in such a config
-              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager stylix.homeManagerModules.stylix ];
+              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
               home-manager.users.gotlou = import ./home;
             }
             ./hosts/kratos

@@ -10,6 +10,7 @@
     ./openssh.nix
     ./opensnitch.nix
     ./keyd.nix
+    ./style.nix
     ./time.nix
     # ./warp.nix
     ./virt.nix
