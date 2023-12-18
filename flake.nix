@@ -21,7 +21,10 @@
   inputs.sshield.url = "github:gotlougit/sshield";
   inputs.sshield.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager, sshield }:
+  inputs.stylix.url = "github:danth/stylix";
+  inputs.stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager, sshield, stylix }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
@@ -66,7 +69,7 @@
               # Ref: https://github.com/pjones/plasma-manager/issues/14
               # This is the way to import "plasma-manager" in home-manager
               # in such a config
-              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager stylix.homeManagerModules.stylix ];
               home-manager.users.gotlou = import ./home;
             }
             ./hosts/kratos

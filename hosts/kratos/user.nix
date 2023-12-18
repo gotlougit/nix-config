@@ -16,7 +16,7 @@
       inputs.archiver.packages.x86_64-linux.default # Installs archiving script
       inputs.sshield.packages.x86_64-linux.default # Installs sshield
       # Themes and Icon packs
-      nordic
+      # nordic
       papirus-icon-theme
       gnome.adwaita-icon-theme
       firefox # Just plain Firefox

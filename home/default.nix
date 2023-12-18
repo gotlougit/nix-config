@@ -10,10 +10,11 @@
     ./keepassxc.nix
     ./macchina.nix
     ./otpclient.nix
-    ./plasma/plasma.nix
+    ./plasma
     ./scli.nix
     ./shell.nix
     ./sshield.nix
+    ./stylix.nix
     # ./tor-browser/default.nix
     ./tiny-irc.nix
     ./thunderbird.nix

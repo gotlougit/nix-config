@@ -80,7 +80,7 @@ in
       # TODO: maybe figure out if this is required or not
       # LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
       GIT_ASKPASS = "/usr/bin/ksshaskpass";
-      GTK_THEME = "Nordic-darker";
+      # GTK_THEME = "Nordic-darker";
       EDITOR = "hx";
       PAGER = "bat --style plain";
       GDK_SCALE = "1";

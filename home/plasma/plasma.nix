@@ -1,26 +1,4 @@
-{ config, ... }:
-
 {
-
-  imports = [
-    ./display-scale.nix
-    ./panel.nix
-  ];
-
-  # Import the dynamic workspaces plugin used for kwin
-  # TODO: make this more declarative and less dependent on my specific path
-  home.file.".local/share/kwin/scripts/dynamic_workspaces" = {
-    source = config.lib.file.mkOutOfStoreSymlink /home/gotlou/nixos/dotfiles/dynamic_workspaces;
-    recursive = true;
-  };
-
-  # Stores dolphin preferences
-  home.file.".local/share/dolphin/dolphinstaterc".text = ''
-    [State]
-    1920x1080 screen: Window-Maximized=true
-    State=AAAA/wAAAAD9AAAAAwAAAAAAAAEEAAAD8vwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAuAAAB5wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAuAAAD8gAAAF0BAAADAAAAAQAAALgAAAPy/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAC4AAAPyAAAACgEAAAMAAAADAAAHgAAAAL78AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAAAAAHgAAAAAoBAAADAAAGXQAAA/IAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
-  '';
-
   programs.plasma = {
     enable = true;
     shortcuts = {
@@ -117,6 +95,31 @@
       "kwin"."MoveZoomRight" = [ ];
       "kwin"."MoveZoomUp" = [ ];
       "kwin"."Overview" = [ ];
+      "kwin"."PoloniumCycleLayouts" = [ ];
+      "kwin"."PoloniumEngineBTree" = [ ];
+      "kwin"."PoloniumEngineHalf" = [ ];
+      "kwin"."PoloniumEngineKWin" = [ ];
+      "kwin"."PoloniumEngineMonocle" = [ ];
+      "kwin"."PoloniumEngineThreeColumn" = [ ];
+      "kwin"."PoloniumFocusAbove" = [ ];
+      "kwin"."PoloniumFocusBelow" = [ ];
+      "kwin"."PoloniumFocusLeft" = [ ];
+      "kwin"."PoloniumFocusRight" = [ ];
+      "kwin"."PoloniumInsertAbove" = [ ];
+      "kwin"."PoloniumInsertBelow" = [ ];
+      "kwin"."PoloniumInsertLeft" = [ ];
+      "kwin"."PoloniumInsertRight" = [ ];
+      "kwin"."PoloniumRebuildLayout" = [ ];
+      "kwin"."PoloniumResizeTileDown" = [ ];
+      "kwin"."PoloniumResizeTileLeft" = [ ];
+      "kwin"."PoloniumResizeTileRight" = [ ];
+      "kwin"."PoloniumResizeTileUp" = [ ];
+      "kwin"."PoloniumRetileWindow" = [ ];
+      "kwin"."PoloniumShowSettings" = [ ];
+      "kwin"."PoloniumSwapAbove" = [ ];
+      "kwin"."PoloniumSwapBelow" = [ ];
+      "kwin"."PoloniumSwapLeft" = [ ];
+      "kwin"."PoloniumSwapRight" = [ ];
       "kwin"."Setup Window Shortcut" = [ ];
       "kwin"."Show Desktop" = "Meta+D";
       "kwin"."ShowDesktopGrid" = "Meta+F8";
@@ -329,8 +332,10 @@
       "baloofilerc"."General"."exclude folders\x5b$e\x5d" = "$HOME/";
       "baloofilerc"."General"."folders\x5b$e\x5d" = "$HOME/Documents/College/,$HOME/Documents/Documentation/";
       "baloofilerc"."General"."only basic indexing" = true;
-      "dolphinrc"."General"."EditableUrl" = true;
-      "dolphinrc"."General"."RememberOpenedTabs" = false;
+      "dolphinrc"."General.$i"."EditableUrl[$i]" = true;
+      "dolphinrc"."General.$i"."RememberOpenedTabs[$i]" = false;
+      "dolphinrc"."General.$i"."Version[$i]" = 202;
+      "dolphinrc"."General.$i"."ViewPropsTimestamp[$i]" = "2023,10,4,17,14,27.119";
       "dolphinrc"."KFileDialog Settings"."Places Icons Auto-resize" = false;
       "dolphinrc"."KFileDialog Settings"."Places Icons Static Size" = 22;
       "dolphinrc"."PreviewSettings"."Plugins" = "audiothumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,opendocumentthumbnail,svgthumbnail,windowsexethumbnail,windowsimagethumbnail,blenderthumbnail,mobithumbnail,ffmpegthumbs,rawthumbnail,gsthumbnail,directorythumbnail";
@@ -338,6 +343,7 @@
       "kactivitymanagerdrc"."activities"."a90bd124-d21f-41ff-b3f8-64d92ce5f9e9" = "Default";
       "kactivitymanagerdrc"."main"."currentActivity" = "a90bd124-d21f-41ff-b3f8-64d92ce5f9e9";
       "kcminputrc"."Libinput.2.14.ETPS/2 Elantech Touchpad"."TapToClick" = true;
+      "kcminputrc"."Mouse"."cursorTheme" = "macOS-Monterey";
       "kcminputrc"."Tmp"."update_info" = "delete_cursor_old_default_size.upd:DeleteCursorOldDefaultSize";
       "kded5rc"."Module-browserintegrationreminder"."autoload" = false;
       "kded5rc"."Module-device_automounter"."autoload" = false;
@@ -668,7 +674,7 @@
       "khotkeysrc"."Data_3Conditions0"."Type" = "ACTIVE_WINDOW";
       "khotkeysrc"."Data_3Conditions0Window"."Comment" = "Konqueror";
       "khotkeysrc"."Data_3Conditions0Window"."WindowsCount" = 1;
-      "khotkeysrc"."Data_3Conditions0Window0"."Class" = "^konqueror\s";
+      "khotkeysrc"."Data_3Conditions0Window0"."Class" = "^konquerors";
       "khotkeysrc"."Data_3Conditions0Window0"."ClassType" = 3;
       "khotkeysrc"."Data_3Conditions0Window0"."Comment" = "Konqueror";
       "khotkeysrc"."Data_3Conditions0Window0"."Role" = "konqueror-mainwindow#1";
@@ -878,12 +884,18 @@
       "khotkeysrc"."Data_3_9Triggers0"."GesturePointData" = "0,0.0625,-0.5,0.5,1,0.0625,0.0625,-0.5,0.5,0.875,0.125,0.0625,-0.5,0.5,0.75,0.1875,0.0625,-0.5,0.5,0.625,0.25,0.0625,-0.5,0.5,0.5,0.3125,0.0625,-0.5,0.5,0.375,0.375,0.0625,-0.5,0.5,0.25,0.4375,0.0625,-0.5,0.5,0.125,0.5,0.0625,0.5,0.5,0,0.5625,0.0625,0.5,0.5,0.125,0.625,0.0625,0.5,0.5,0.25,0.6875,0.0625,0.5,0.5,0.375,0.75,0.0625,0.5,0.5,0.5,0.8125,0.0625,0.5,0.5,0.625,0.875,0.0625,0.5,0.5,0.75,0.9375,0.0625,0.5,0.5,0.875,1,0,0,0.5,1";
       "khotkeysrc"."Data_3_9Triggers0"."Type" = "GESTURE";
       "khotkeysrc"."DirSelect Dialog"."DirSelectDialog Size[$d]" = "";
-      "khotkeysrc"."General"."AllowKDEAppsToRememberWindowPositions[$d]" = "";
-      "khotkeysrc"."General"."BrowserApplication[$d]" = "";
-      "khotkeysrc"."General"."ColorSchemeHash[$d]" = "";
-      "khotkeysrc"."General"."ColorScheme[$d]" = "";
-      "khotkeysrc"."General"."TerminalApplication[$d]" = "";
-      "khotkeysrc"."General"."TerminalService[$d]" = "";
+      "khotkeysrc"."General.$i"."AllowKDEAppsToRememberWindowPositions[$di]" = "";
+      "khotkeysrc"."General.$i"."AllowKDEAppsToRememberWindowPositions\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."General.$i"."BrowserApplication[$di]" = "";
+      "khotkeysrc"."General.$i"."BrowserApplication\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."General.$i"."ColorSchemeHash[$di]" = "";
+      "khotkeysrc"."General.$i"."ColorSchemeHash\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."General.$i"."ColorScheme[$di]" = "";
+      "khotkeysrc"."General.$i"."ColorScheme\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."General.$i"."TerminalApplication[$di]" = "";
+      "khotkeysrc"."General.$i"."TerminalApplication\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."General.$i"."TerminalService[$di]" = "";
+      "khotkeysrc"."General.$i"."TerminalService\x5b$d\x5d[$i]" = "";
       "khotkeysrc"."Gestures"."Disabled" = true;
       "khotkeysrc"."Gestures"."MouseButton" = 2;
       "khotkeysrc"."Gestures"."Timeout" = 300;
@@ -916,12 +928,18 @@
       "khotkeysrc"."Main"."Disabled" = false;
       "khotkeysrc"."PreviewSettings"."MaximumRemoteSize[$d]" = "";
       "khotkeysrc"."Voice"."Shortcut" = "";
-      "khotkeysrc"."WM"."activeBackground[$d]" = "";
-      "khotkeysrc"."WM"."activeBlend[$d]" = "";
-      "khotkeysrc"."WM"."activeForeground[$d]" = "";
-      "khotkeysrc"."WM"."inactiveBackground[$d]" = "";
-      "khotkeysrc"."WM"."inactiveBlend[$d]" = "";
-      "khotkeysrc"."WM"."inactiveForeground[$d]" = "";
+      "khotkeysrc"."WM.$i"."activeBackground[$di]" = "";
+      "khotkeysrc"."WM.$i"."activeBackground\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."WM.$i"."activeBlend[$di]" = "";
+      "khotkeysrc"."WM.$i"."activeBlend\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."WM.$i"."activeForeground[$di]" = "";
+      "khotkeysrc"."WM.$i"."activeForeground\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."WM.$i"."inactiveBackground[$di]" = "";
+      "khotkeysrc"."WM.$i"."inactiveBackground\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."WM.$i"."inactiveBlend[$di]" = "";
+      "khotkeysrc"."WM.$i"."inactiveBlend\x5b$d\x5d[$i]" = "";
+      "khotkeysrc"."WM.$i"."inactiveForeground[$di]" = "";
+      "khotkeysrc"."WM.$i"."inactiveForeground\x5b$d\x5d[$i]" = "";
       "kiorc"."Confirmations"."ConfirmDelete" = true;
       "kiorc"."Confirmations"."ConfirmEmptyTrash" = true;
       "kiorc"."Confirmations"."ConfirmTrash" = false;
@@ -947,14 +965,11 @@
       "kwalletrc"."org.freedesktop.secrets"."apiEnabled" = false;
       "kwinrc"."Desktops"."Id_1" = "d516980a-fdeb-4550-be70-5fef9371e24c";
       "kwinrc"."Desktops"."Id_2" = "834fd96c-503a-4be4-8d14-d6a5778f142f";
-      "kwinrc"."Desktops"."Id_3" = "402a12b8-e528-4141-a400-de1ed1a982b3";
-      "kwinrc"."Desktops"."Id_4" = "54497708-ec45-4fe3-b6fd-f992745adc93";
-      "kwinrc"."Desktops"."Id_5" = "2c7c63dd-8f0c-4e69-b2cb-127bba4d6fb9";
-      "kwinrc"."Desktops"."Id_6" = "74bac4df-eab8-4bdd-b77c-6569a064dd1c";
-      "kwinrc"."Desktops"."Id_7" = "94ca8981-256c-4d97-8588-4de28727f4c5";
+      "kwinrc"."Desktops"."Id_3" = "0b71d54e-014d-447a-b3c7-2cc7ce83d179";
+      "kwinrc"."Desktops"."Id_4" = "f4ac4f7e-af96-4144-9b8b-e03d4414d939";
       "kwinrc"."Desktops"."Name_1" = "New Desktop";
       "kwinrc"."Desktops"."Name_2" = "New Desktop";
-      "kwinrc"."Desktops"."Number" = 7;
+      "kwinrc"."Desktops"."Number" = 4;
       "kwinrc"."Desktops"."Rows" = 1;
       "kwinrc"."NightColor"."Active" = true;
       "kwinrc"."NightColor"."Mode" = "Constant";
@@ -966,6 +981,8 @@
       "kwinrc"."Plugins"."wobblywindowsEnabled" = true;
       "kwinrc"."Script-autotile"."Borders" = 2;
       "kwinrc"."Script-bismuth"."floatingClass" = "opensnitch";
+      "kwinrc"."Script-bismuth"."ignoreClass" = "yakuake,spectacle,Conky,zoom,klipper";
+      "kwinrc"."Script-bismuth"."ignoreTitle" = "klipper, opensnitch";
       "kwinrc"."Script-bismuth"."maximizeSoleTile" = true;
       "kwinrc"."Script-polonium"."InsertionPoint" = 1;
       "kwinrc"."Script-polonium"."KeepTiledBelow" = false;
