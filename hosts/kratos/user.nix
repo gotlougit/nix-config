@@ -38,7 +38,7 @@
       (libsForQt5.bismuth.overrideAttrs
         (finalAttrs: previousAttrs: {
           patches =
-            (previousAttrs.patches or [])
+            (previousAttrs.patches or [ ])
             ++ [
               (fetchpatch {
                 name = "bismuth-3.1-4-window-id.patch";
