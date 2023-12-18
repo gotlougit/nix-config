@@ -39,6 +39,11 @@ Everything else has to go through OpenSnitch to get permission.
 
 - Configure the shell so it is full of useful aliases and capabilities, and use [starship](https://starship.rs/) as a prompt.
 
+This includes using [zoxide](https://github.com/ajeetdsouza/zoxide) to make `cd` smarter, and other standard tooling aliased to Rust replacements for
+faster runtimes and better defaults.
+
+- Use [stylix](https://danth.github.io/stylix/index.html) to configure the look and feel of all the programs on the system, down to the console output on boot
+
 Nice-to-haves:
 
 - Automate secure boot setup
