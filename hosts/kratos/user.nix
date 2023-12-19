@@ -35,18 +35,7 @@
       keepassxc # Password manager
       libreoffice-qt # Document editor
       libsForQt5.ksshaskpass # Ask password in GUI from CLI
-      (libsForQt5.bismuth.overrideAttrs
-        (finalAttrs: previousAttrs: {
-          patches =
-            (previousAttrs.patches or [ ])
-            ++ [
-              (fetchpatch {
-                name = "bismuth-3.1-4-window-id.patch";
-                url = "https://github.com/jkcdarunday/bismuth/commit/ce377a33232b7eac80e7d99cb795962a057643ae.patch";
-                sha256 = "sha256-15txf7pRhIvqsrBdBQOH1JDQGim2Kh5kifxQzVs5Zm0=";
-              })
-            ];
-        }))
+      libsForQt5.polonium
       magit # Advanced git UI using emacs
       mangohud # Overlay while playing games
       minetest # Open source Minecraft-like game
