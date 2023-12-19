@@ -88,6 +88,7 @@ in
       HISTTIMEFORMAT = "%d/%m/%y %T ";
       # TODO: fix setting GTK_USE_PORTAL
       #GTK_USE_PORTAL = 1;
+      NIXOS_OZONE_WL = "1";
     };
   };
 }
