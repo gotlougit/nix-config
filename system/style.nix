@@ -18,6 +18,7 @@
     sizes.applications = 10;
   };
   stylix.cursor = {
+    size = 8;
     name = "macOS-Monterey";
     package = pkgs.apple-cursor;
   };
