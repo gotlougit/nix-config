@@ -13,6 +13,8 @@
     dhcpcd.extraConfig = "nohook resolv.conf";
     # If using NetworkManager:
     networkmanager.dns = "none";
+    # Use IWD backend
+    networkmanager.wifi.backend = "iwd";
     # Enable firewall by default
 
     # Note that services like tailscale and SSH will have their ports opened

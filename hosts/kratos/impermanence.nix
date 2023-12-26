@@ -21,6 +21,7 @@
       "/var/lib/waydroid"
       "/var/lib/vnstat"
       "/var/lib/lxd"
+      "/var/lib/iwd"
       "/usr/share/color/icc/colord"
     ];
     files = [ ];
