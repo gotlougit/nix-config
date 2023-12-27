@@ -49,6 +49,12 @@
     enable = true;
     serviceConfig = (import ./hardening-base.nix);
   };
+  systemd.services.iwd = {
+    enable = true;
+    serviceConfig = {
+      InaccessiblePaths = "/persist";
+    };
+  };
   systemd.services.ModemManager = {
     enable = true;
     serviceConfig = (import ./hardening-base.nix);
