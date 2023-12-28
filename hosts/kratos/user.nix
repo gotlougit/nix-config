@@ -44,6 +44,7 @@
       duckstation # PS1 emulator
       pcsx2 # PS2 emulator
       qbittorrent # Best torrent client
+      quickemu # Easy and quick way to create VMs
       rpcs3 # PS3 emulator
       songrec # Shazam on Linux
       signal-desktop # Secure and easy messaging
