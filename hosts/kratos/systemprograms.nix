@@ -65,7 +65,6 @@
     tor # The Onion Router
     unrar # Useful for decompressing
     unzip # Useful for decompressing ZIP files
-    virt-manager # Easy KVM based VMs
     vnstat # View total data usage
     vulkan-tools # Manage vulkan
     wget # Another, simpler download manager
