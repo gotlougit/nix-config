@@ -22,4 +22,9 @@
     name = "macOS-Monterey";
     package = pkgs.apple-cursor;
   };
+  environment.systemPackages = with pkgs; [
+    # Icon packs
+    papirus-icon-theme
+    gnome.adwaita-icon-theme
+  ];
 }

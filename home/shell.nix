@@ -1,10 +1,28 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
   hostname = builtins.getEnv "HOSTNAME";
   user = "gotlou";
 in
 {
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv = {
+      enable = true;
+    };
+  };
+
+  programs.skim = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
+  xdg.configFile."macchina/macchina.toml".text = ''
+    show = ["Host", "Machine", "Kernel", "Distribution", "Shell", "Uptime", "Processor", "ProcessorLoad", "Memory", "Battery"]
+  '';
+
   # Enable starship
   programs.starship = {
     enable = true;
@@ -50,7 +68,7 @@ in
       diff = "difft";
       du = "dust";
       ls = "eza";
-      "." = "hx .";
+      # "." = "hx .";
       less = "bat --style plain";
       enter-rust-dev = "nix develop /home/${user}/nixos/project-flakes/generic-rust-dev/ --command code-sandbox";
       import-rust-dev = "cp /home/${user}/nixos/project-flakes/generic-rust-dev/* .; cp /home/${user}/nixos/project-flakes/generic-rust-dev/.envrc .";
@@ -64,8 +82,6 @@ in
       macchina
       source $(blesh-share)/ble.sh
       set -o vi
-      eval "$(direnv hook bash)"
-      eval "$(starship init bash)"
     '';
     sessionVariables = {
       XDG_CACHE_HOME = "$HOME/.cache";
@@ -90,4 +106,49 @@ in
       NIXOS_OZONE_WL = "1";
     };
   };
+
+  home.packages = with pkgs; [
+    # Rust replacements
+    bat # cat
+    difftastic # diff
+    du-dust # du
+    skim # fzf
+    hexyl # hexdump
+    eza # ls
+    ripgrep # grep
+    fd # Fast `find` replacement
+    tealdeer # Rust implementation of tldr
+    scc # loc replacement written in go
+    # Required for above config to work
+    blesh # Bash made smarter
+    macchina # Nice startup screen for terminal
+
+    # Shell utils I like to use
+    file # To show type of file
+    aria # download manager
+    socat # Socket cat
+    sqlite # No intro needed
+    age # A sane encrytion/decryption tool made for mortals
+    bear # Generate autocomplete for large projects
+    dig # for DNS testing
+    ffmpeg # Multimedia Swiss Army Knife
+    gh # Github CLI
+    guerrilla # Generate temp emails for signups
+    hut # Sourcehut CLI
+    img2pdf # Useful utility
+    jq # JSON manipulator
+    magic-wormhole-rs # Direct file transfers
+    magit # Advanced git UI using emacs
+    pandoc # Convert docs
+    picard # Tag music files
+    poppler_utils # PDF conversion and misc utils
+    tetex # LaTEX related tooling
+    unrar # Useful for decompressing
+    unzip # Useful for decompressing ZIP files
+    wget # Another, simpler download manager
+    whois # Useful utility
+    wl-clipboard # CLI util for copying and pasting in Wayland
+    yt-dlp # Useful video download utility
+    zip # Create ZIP files from CLI
+  ];
 }

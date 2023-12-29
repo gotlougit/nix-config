@@ -1,5 +1,8 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    syncthing
+  ];
   # Enable syncthing to sync important files in background
   services.syncthing = {
     enable = true;

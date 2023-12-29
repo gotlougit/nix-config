@@ -1,5 +1,9 @@
 { pkgs, lib, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    opensnitch
+    opensnitch-ui
+  ];
   # OpenSnitch stuff
   systemd.user.services."opensnitch-ui" = {
     enable = true;

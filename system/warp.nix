@@ -35,4 +35,7 @@
       SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" ];
     };
   };
+  environment.systemPackages = with pkgs; [
+    cloudflare-warp
+  ];
 }

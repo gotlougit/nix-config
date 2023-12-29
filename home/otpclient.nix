@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   xdg.configFile."otpclient.cfg".text = lib.generators.toINI { } {
     config = {
@@ -7,4 +7,5 @@
       inactivity_timeout = 120;
     };
   };
+  home.packages = with pkgs; [ otpclient ];
 }

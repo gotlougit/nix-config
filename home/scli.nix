@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   xdg.configFile."sclirc".text = ''
@@ -7,4 +7,5 @@
     partition-contacts = true
     show-names = true
   '';
+  home.packages = with pkgs; [ scli ];
 }

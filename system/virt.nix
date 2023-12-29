@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Enable virtualization
@@ -19,4 +19,7 @@
       dns_enabled = true;
     };
   };
+  environment.systemPackages = with pkgs; [
+    quickemu
+  ];
 }

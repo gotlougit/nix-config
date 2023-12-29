@@ -31,6 +31,23 @@
     baloo
   ];
 
+  # Allow KDE connect through firewall
+  networking.firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+  networking.firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+
+  environment.systemPackages = with pkgs; [
+    ark # KDE archiving program
+    colord # ICC color profiles management
+    libsForQt5.colord-kde
+    libsForQt5.kirigami-addons
+    gocryptfs # For plasma-vault
+    plasma-vault # Encrypted folders in KDE
+    ntfs3g # NTFS FUSE implementation
+    libsForQt5.polonium
+    libsForQt5.ksshaskpass # Ask password in GUI from CLI
+    libsForQt5.kdeconnect-kde # KDE Connect
+  ];
+
   # Disable baloo indexer
   environment.etc."xdg/baloofilerc".source = (pkgs.formats.ini { }).generate "baloorc" {
     "Basic Settings" = {

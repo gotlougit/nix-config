@@ -1,6 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [ htop ];
   xdg.configFile."htop/htoprc".text = ''
     # Beware! This file is rewritten by htop when settings are changed in the interface.
     # The parser is also very primitive, and not human-friendly.

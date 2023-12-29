@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # Enable Tailscale service
   services.tailscale = {
@@ -78,4 +78,8 @@
       SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" ];
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    tailscale
+  ];
 }
