@@ -5,6 +5,11 @@
     prompt = 60
     keyring = true
   '';
+  home.sessionVariablesExtra = ''
+    if [[ -z "$SSH_AUTH_SOCK" ]]; then
+      export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent
+    fi
+  '';
   systemd.user.services.sshield = {
     Unit = {
       Description = "Secure SSH agent written in Rust";
@@ -21,8 +26,6 @@
         #!/run/current-system/sw/bin/bash
         rm "$XDG_RUNTIME_DIR"/ssh-agent
       ''}";
-      User = "gotlou";
-      PrivateUsers = true;
       LockPersonality = true;
       PrivateNetwork = true;
       MemoryDenyWriteExecute = true;
@@ -42,7 +45,7 @@
       RestrictAddressFamilies = [ "AF_UNIX" ];
       SystemCallArchitectures = "native";
       PrivateDevices = true;
-      SystemCallFilter = [ "@system-service" "~@privileged"];
+      SystemCallFilter = [ "@system-service" "~@privileged" ];
     };
   };
 
