@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 {
   # Setup networking
   networking = {
