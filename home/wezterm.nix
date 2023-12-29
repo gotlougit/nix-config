@@ -26,7 +26,7 @@
     config.ssh_backend = "Ssh2"
 
     -- Use WebGPU
-    -- config.front_end = "WebGpu";
+    config.front_end = "WebGpu";
 
     -- Enable scroll bar
     config.enable_scroll_bar = true;
