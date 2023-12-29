@@ -37,18 +37,6 @@
           data = "^(/tmp/|/var/tmp/|/dev/shm/|/var/run|/var/lock).*";
         };
       };
-      block-ads-malware = {
-        name = "block-ads-malware";
-        enabled = true;
-        precedence = true;
-        action = "deny";
-        duration = "always";
-        operator = {
-          type = "lists";
-          operand = "lists.domains";
-          data = "/home/gotlou/nixos/system/hosts";
-        };
-      };
       chronyd = {
         name = "chronyd";
         enabled = true;
