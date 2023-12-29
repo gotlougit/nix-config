@@ -15,6 +15,11 @@
     networkmanager.dns = "none";
     # Use IWD backend
     networkmanager.wifi.backend = "iwd";
+    wireless.iwd.settings = {
+      Settings = {
+        AutoConnect = true;
+      };
+    };
     # Enable firewall by default
 
     # Note that services like tailscale and SSH will have their ports opened
@@ -53,6 +58,22 @@
     enable = true;
     serviceConfig = {
       InaccessiblePaths = "/persist";
+      ProtectClock = true;
+      ProtectKernelLogs = true;
+      LockPersonality = true;
+      MemoryDenyWriteExecute = true;
+      NoNewPrivileges = true;
+      PrivateTmp = true;
+      ProtectControlGroups = true;
+      ProtectHome = true;
+      ProtectHostname = true;
+      ProtectKernelModules = true;
+      ProtectKernelTunables = true;
+      RestrictNamespaces = true;
+      RestrictRealtime = true;
+      RestrictSUIDSGID = true;
+      SystemCallArchitectures = "native";
+      UMask = "0077";
     };
   };
   systemd.services.ModemManager = {
