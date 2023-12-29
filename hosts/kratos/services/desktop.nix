@@ -6,6 +6,7 @@
   services.xserver.autorun = true;
   # Enable use of KDE Plasma and SDDM login manager
   services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.wayland.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   # Set wayland as default
   services.xserver.displayManager.defaultSession = "plasmawayland";
