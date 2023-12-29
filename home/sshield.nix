@@ -45,7 +45,7 @@
       RestrictAddressFamilies = [ "AF_UNIX" ];
       SystemCallArchitectures = "native";
       PrivateDevices = true;
-      SystemCallFilter = [ "@system-service" "~@privileged" ];
+      SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" "~@chown" ];
     };
   };
 
