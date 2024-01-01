@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, pkgs, ... }:
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Change user name according to your preference
