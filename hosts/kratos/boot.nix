@@ -20,11 +20,4 @@
   boot.kernelParams = [ "amd_pstate=active" "zfs.zfs_arc_min=${toString (1024 * 1024 * 100)}" "zfs.zfs_arc_max=${toString (1024 * 1024 * 512)}" ];
   # Add more filesystems here as and when needed
   boot.supportedFilesystems = [ "btrfs" "zfs" ];
-  boot.zfs = {
-    forceImportRoot = false;
-    extraPools = [ "nixos_pool" ];
-    requestEncryptionCredentials = true;
-  };
-  services.zfs.trim.enable = true;
-  services.zfs.autoScrub.enable = true;
 }
