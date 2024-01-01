@@ -4,7 +4,7 @@
   programs.helix.enable = true;
   programs.helix.defaultEditor = true;
   programs.helix.settings = {
-    theme = "nord";
+    # theme = "nord";
 
     editor.color-modes = true;
     editor.rulers = [ 80 ];
