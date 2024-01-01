@@ -89,20 +89,12 @@ in
       XDG_DATA_HOME = "$HOME/.local/share";
       XDG_STATE_HOME = "$HOME/.local/state";
 
-      # Not officially in the specification
-      XDG_BIN_HOME = "$HOME/.local/bin";
-
-      # TODO: maybe figure out if this is required or not
-      # LD_LIBRARY_PATH = "/usr/local/lib:$LD_LIBRARY_PATH";
-      GIT_ASKPASS = "/usr/bin/ksshaskpass";
-      # GTK_THEME = "Nordic-darker";
-      EDITOR = "hx";
       PAGER = "bat --style plain";
       GDK_SCALE = "1";
       # Stores timestamp for each command executed 
       HISTTIMEFORMAT = "%d/%m/%y %T ";
-      # TODO: fix setting GTK_USE_PORTAL
-      #GTK_USE_PORTAL = 1;
+
+      # Force Electron apps to use Wayland
       NIXOS_OZONE_WL = "1";
     };
   };
