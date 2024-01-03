@@ -59,11 +59,11 @@ in
     shellAliases = {
       vi = "hx";
       open = "xdg-open";
-      rollback-config = "nixos-rebuild switch --rollback";
-      switch-config = "nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
+      rollback-config = "sudo nixos-rebuild switch --rollback";
+      switch-config = "sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
       quick-switch-config = "switch-config --offline";
-      update-config = "nix flake update /home/${user}/nixos && nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
-      switch-config-boot = "nixos-rebuild boot --flake /home/${user}/nixos#${hostname}";
+      update-config = "sudo nix flake update /home/${user}/nixos && sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
+      switch-config-boot = "sudo nixos-rebuild boot --flake /home/${user}/nixos#${hostname}";
       cat = "bat";
       diff = "difft";
       du = "dust";
