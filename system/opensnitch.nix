@@ -177,6 +177,32 @@
           ];
         };
       };
+      mpdris2-allow-brok = {
+        name = "mpdris2-allow-brok";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "list";
+          sensitive = false;
+          operand = "list";
+          data = "[{\"type\": \"simple\", \"operand\": \"dest.host\", \"data\": \"brok.tailab925.ts.net\",\"sensitive\": false}, {\"type\": \"simple\", \"operand\": \"process.command\", \"data\": \"${lib.getBin pkgs.python3}/bin/python3 ${lib.getBin pkgs.mpdris2}/bin/..mpDris2-wrapped-wrapped\" \"sensitive\": true }]";
+          list = [
+            {
+              type = "simple";
+              operand = "process.command";
+              data = "${lib.getBin pkgs.python3}/bin/python3 ${lib.getBin pkgs.mpdris2}/bin/..mpDris2-wrapped-wrapped";
+              sensitive = true;
+            }
+            {
+              type = "simple";
+              operand = "dest.host";
+              data = "brok.tailab925.ts.net";
+              sensitive = false;
+            }
+          ];
+        };
+      };
     };
   };
 
