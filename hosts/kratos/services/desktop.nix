@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 # This contains GUI desktop specific services/configs
 {
   # Enable the X11 windowing system.
@@ -22,7 +22,7 @@
   };
 
   # Remove some KDE defaults that are never needed
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; lib.mkForce [
     oxygen
     khelpcenter
     konsole

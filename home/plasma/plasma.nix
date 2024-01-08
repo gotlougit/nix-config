@@ -331,7 +331,7 @@
       "baloofilerc"."General"."exclude filters" = "*~,*.part,*.o,*.la,*.lo,*.loT,*.moc,moc_*.cpp,qrc_*.cpp,ui_*.h,cmake_install.cmake,CMakeCache.txt,CTestTestfile.cmake,libtool,config.status,confdefs.h,autom4te,conftest,confstat,Makefile.am,*.gcode,.ninja_deps,.ninja_log,build.ninja,*.csproj,*.m4,*.rej,*.gmo,*.pc,*.omf,*.aux,*.tmp,*.po,*.vm*,*.nvram,*.rcore,*.swp,*.swap,lzo,litmain.sh,*.orig,.histfile.*,.xsession-errors*,*.map,*.so,*.a,*.db,*.qrc,*.ini,*.init,*.img,*.vdi,*.vbox*,vbox.log,*.qcow2,*.vmdk,*.vhd,*.vhdx,*.sql,*.sql.gz,*.ytdl,*.class,*.pyc,*.pyo,*.elc,*.qmlc,*.jsc,*.fastq,*.fq,*.gb,*.fasta,*.fna,*.gbff,*.faa,po,CVS,.svn,.git,_darcs,.bzr,.hg,CMakeFiles,CMakeTmp,CMakeTmpQmake,.moc,.obj,.pch,.uic,.npm,.yarn,.yarn-cache,__pycache__,node_modules,node_packages,nbproject,core-dumps,lost+found";
       "baloofilerc"."General"."exclude folders\x5b$e\x5d" = "$HOME/";
       "baloofilerc"."General"."folders\x5b$e\x5d" = "$HOME/Documents/College/,$HOME/Documents/Documentation/";
-      "baloofilerc"."General"."only basic indexing" = true;
+      "baloofilerc"."General"."only basic indexing" = false;
       "dolphinrc"."General.$i"."EditableUrl[$i]" = true;
       "dolphinrc"."General.$i"."RememberOpenedTabs[$i]" = false;
       "dolphinrc"."General.$i"."Version[$i]" = 202;
