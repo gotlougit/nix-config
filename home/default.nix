@@ -36,7 +36,6 @@
     signal-desktop # Secure and easy messaging
     tdesktop # Telegram desktop client
     tor-browser-bundle-bin # Needs no intro
-    brave
   ];
 
   manual.manpages.enable = false;
