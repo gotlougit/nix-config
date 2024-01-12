@@ -113,6 +113,18 @@
           data = "${lib.getBin pkgs.tailscale}/bin/.tailscaled-wrapped";
         };
       };
+      thunderbird = {
+        name = "thunderbird";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "simple";
+          sensitive = false;
+          operand = "process.command";
+          data = "${lib.getBin pkgs.thunderbird}/bin/.thunderbird-wrapped --profile /persist/communication/home/gotlou/.thunderbird/hwrrcy4h.default --name thunderbird";
+        };
+      };
       kdeconnect = {
         name = "kdeconnect";
         enabled = true;
