@@ -2,7 +2,7 @@
 
 {
   # Enable virtualization
-  virtualisation.libvirtd.enable = true;
+  # virtualisation.libvirtd.enable = true;
   # Enable dconf for settings
   programs.dconf.enable = true;
   # Enable IPv4 forwarding so networking works right in NATted VMs
