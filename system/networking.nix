@@ -26,6 +26,12 @@
     # if they are enabled, so we don't need to declare that here
     firewall.enable = true;
   };
+
+  # Make boot faster
+  systemd.network.wait-online.enable = false;
+  boot.initrd.systemd.network.wait-online.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   # systemd.services.NetworkManager = {
   #   enable = true;
   #   serviceConfig = {
