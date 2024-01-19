@@ -8,7 +8,6 @@
     ./helix.nix
     ./htop.nix
     ./keepassxc.nix
-    ./mpdris.nix
     ./otpclient.nix
     ./plasma
     ./scli.nix
