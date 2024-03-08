@@ -6,9 +6,7 @@
   # Enable use of KDE Plasma and SDDM login manager
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  # Set wayland as default
-  services.xserver.displayManager.defaultSession = "plasmawayland";
+  services.xserver.desktopManager.plasma6.enable = true;
   # Extra SDDM config
   services.xserver.displayManager.sddm.settings = {
     Theme = {
@@ -17,13 +15,15 @@
   };
 
   # Remove some KDE defaults that are never needed
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; lib.mkForce [
-    oxygen
-    khelpcenter
-    konsole
-    plasma-browser-integration
-    elisa
-    baloo
+  environment.plasma6.excludePackages = lib.mkForce [
+    pkgs.libsForQt5.oxygen
+    pkgs.libsForQt5.khelpcenter
+    pkgs.libsForQt5.konsole
+    pkgs.libsForQt5.plasma-browser-integration
+    pkgs.libsForQt5.elisa
+    pkgs.libsForQt5.baloo
+    pkgs.libsForQt5.kate
+    pkgs.kdePackages.kate
   ];
 
   # Allow KDE connect through firewall
@@ -32,9 +32,6 @@
 
   environment.systemPackages = with pkgs; [
     ark # KDE archiving program
-    colord # ICC color profiles management
-    libsForQt5.colord-kde
-    libsForQt5.kirigami-addons
     gocryptfs # For plasma-vault
     plasma-vault # Encrypted folders in KDE
     ntfs3g # NTFS FUSE implementation

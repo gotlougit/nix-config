@@ -22,12 +22,12 @@
     selectedRegions=in_en-gb
   '';
 
-  # Import the event calendar plugin used for taskbar
-  # TODO: make this more declarative and less dependent on my specific path
-  home.file.".local/share/plasma/plasmoids/org.kde.plasma.eventcalendar" = {
-    source = config.lib.file.mkOutOfStoreSymlink /home/gotlou/nixos/dotfiles/plasma-applet-eventcalendar/package;
-    recursive = true;
-  };
+  # # Import the event calendar plugin used for taskbar
+  # # TODO: make this more declarative and less dependent on my specific path
+  # home.file.".local/share/plasma/plasmoids/org.kde.plasma.eventcalendar" = {
+  #   source = config.lib.file.mkOutOfStoreSymlink /home/gotlou/nixos/dotfiles/plasma-applet-eventcalendar/package;
+  #   recursive = true;
+  # };
 
   # Panel config
   xdg.configFile."plasma-org.kde.plasma.desktop-appletsrc".text = ''
@@ -83,25 +83,14 @@
     [Containments][2][Applets][21][Configuration]
     PreloadWeight=26
 
-    [Containments][2][Applets][27]
-    immutability=1
-    plugin=org.kde.plasma.splitdigitalclock
-
-    [Containments][2][Applets][27][Configuration]
-    PreloadWeight=55
-
-    [Containments][2][Applets][27][Configuration][Appearance]
-    dateFormat=longDate
-    spinboxHorizontalPercentage=30
-    use24hFormat=0
-
-    [Containments][2][Applets][27][Configuration][ConfigDialog]
-    DialogHeight=540
-    DialogWidth=720
+    [Containments][2][Applets][21][Configuration][ConfigDialog]
+    DialogHeight=1080
+    DialogWidth=1882
 
     [Containments][2][Applets][28]
     immutability=1
     plugin=org.kde.plasma.eventcalendar
+    transient=true
 
     [Containments][2][Applets][28][Configuration]
     PreloadWeight=42
@@ -126,14 +115,37 @@
     popupHeight=516
     popupWidth=655
 
+    [Containments][2][Applets][3][Configuration][ConfigDialog]
+    DialogHeight=1080
+    DialogWidth=1882
+
     [Containments][2][Applets][3][Configuration][General]
     favoritesPortedToKAstats=true
+    icon=nix-snowflake-white
+    systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
     [Containments][2][Applets][3][Configuration][Shortcuts]
     global=Alt+F1
 
     [Containments][2][Applets][3][Shortcuts]
     global=Alt+F1
+
+    [Containments][2][Applets][32]
+    immutability=1
+    plugin=org.kde.plasma.digitalclock
+
+    [Containments][2][Applets][32][Configuration][Appearance]
+    autoFontAndSize=false
+    fontFamily=Inter
+    fontSize=12
+    fontStyleName=Regular
+    fontWeight=400
+    showDate=false
+    use24hFormat=2
+
+    [Containments][2][Applets][32][Configuration][ConfigDialog]
+    DialogHeight=1080
+    DialogWidth=1882
 
     [Containments][2][Applets][4]
     immutability=1
@@ -150,8 +162,8 @@
     PreloadWeight=34
 
     [Containments][2][Applets][5][Configuration][ConfigDialog]
-    DialogHeight=540
-    DialogWidth=720
+    DialogHeight=1080
+    DialogWidth=1882
 
     [Containments][2][Applets][5][Configuration][General]
     groupingStrategy=0
@@ -181,7 +193,7 @@
     PreloadWeight=26
 
     [Containments][2][General]
-    AppletOrder=3;4;5;6;7;28;21
+    AppletOrder=3;4;5;6;7;32;21
 
     [Containments][29]
     activityId=a90bd124-d21f-41ff-b3f8-64d92ce5f9e9
@@ -320,10 +332,14 @@
 
     [Containments][8][Applets][30]
     immutability=1
-    plugin=org.kde.plasma.mediacontroller
+    plugin=org.kde.plasma.cameraindicator
 
     [Containments][8][Applets][30][Configuration]
     PreloadWeight=42
+
+    [Containments][8][Applets][31]
+    immutability=1
+    plugin=org.kde.plasma.brightness
 
     [Containments][8][Applets][9]
     immutability=1
@@ -333,15 +349,16 @@
     PreloadWeight=39
 
     [Containments][8][ConfigDialog]
-    DialogHeight=540
-    DialogWidth=720
+    DialogHeight=1080
+    DialogWidth=1882
 
     [Containments][8][Configuration]
     PreloadWeight=34
 
     [Containments][8][General]
-    extraItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.kscreen,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.nightcolorcontrol,org.kde.plasma.printmanager,org.kde.plasma.vault,org.kde.plasma.volume
-    knownItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.kscreen,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.nightcolorcontrol,org.kde.plasma.printmanager,org.kde.plasma.vault,org.kde.plasma.volume
+    extraItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.kscreen,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.volume,org.kde.plasma.cameraindicator,org.kde.plasma.brightness
+    knownItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.kscreen,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.volume,org.kde.plasma.cameraindicator,org.kde.plasma.brightness
+    scaleIconsToFit=true
 
     [Containments2Appletsts][5][Configuration][General]
     groupingStrategy=0
