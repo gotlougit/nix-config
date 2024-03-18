@@ -35,7 +35,7 @@
     gocryptfs # For plasma-vault
     plasma-vault # Encrypted folders in KDE
     ntfs3g # NTFS FUSE implementation
-    libsForQt5.polonium
+    polonium
     libsForQt5.ksshaskpass # Ask password in GUI from CLI
     libsForQt5.kdeconnect-kde # KDE Connect
   ];
