@@ -6,7 +6,7 @@
   # Enable use of KDE Plasma and SDDM login manager
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
   # Extra SDDM config
   services.xserver.displayManager.sddm.settings = {
     Theme = {
