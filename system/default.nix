@@ -12,6 +12,7 @@
     ./keyd.nix
     ./style.nix
     ./time.nix
+    ./udev.nix
     # ./warp.nix
     ./virt.nix
     ./dns-resolver.nix
