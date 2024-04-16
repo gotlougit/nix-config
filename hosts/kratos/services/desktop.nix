@@ -4,15 +4,16 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   # Enable use of KDE Plasma and SDDM login manager
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
   # Extra SDDM config
-  services.xserver.displayManager.sddm.settings = {
+  services.displayManager.sddm.settings = {
     Theme = {
       FacesDir = "/persist/system/icons";
     };
   };
+  security.pam.services.gotlou.kwallet.enable = true;
 
   # Remove some KDE defaults that are never needed
   environment.plasma6.excludePackages = lib.mkForce [
