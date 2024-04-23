@@ -8,9 +8,23 @@
     isNormalUser = true;
     home = "/home/gotlou";
     hashedPassword = "$y$j9T$rw1wMForHIg1XuK9HWnCD0$j.19g/PKjzKFPgEF/X2.lMOLIrXLfgGAQ9m9zz85Bc5";
-    extraGroups = [ "wheel" "wireshark" "networkmanager" config.users.groups.keys.name "libvirtd" ];
+    extraGroups = [ "wheel" "wireshark" "networkmanager" config.users.groups.keys.name "libvirtd" "rtkit" ];
     packages = with pkgs; [
       vlc
     ];
   };
+  security.pam.loginLimits = [
+    {
+      domain = "gotlou";
+      type = "hard";
+      item = "memlock";
+      value = "unlimited";  
+    }
+    {
+      domain = "gotlou";
+      type = "soft";
+      item = "memlock";
+      value = "unlimited";  
+    }
+  ];
 }
