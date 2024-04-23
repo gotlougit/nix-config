@@ -135,7 +135,7 @@ in
     picard # Tag music files
     poppler_utils # PDF conversion and misc utils
     tetex # LaTEX related tooling
-    unrar # Useful for decompressing
+    p7zip # Useful for decompressing
     unzip # Useful for decompressing ZIP files
     wget # Another, simpler download manager
     whois # Useful utility
