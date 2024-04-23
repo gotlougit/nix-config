@@ -31,9 +31,6 @@
       pkgs = import nixpkgs { inherit system; };
     in
     {
-      nixpkgs.config = {
-        allowUnfree = true;
-      };
       nixpkgs.overlays = [
         import
         (inputs.code-sandbox)
