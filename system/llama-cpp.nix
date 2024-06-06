@@ -7,6 +7,8 @@
     extraFlags = [
       "-ngl"
       "20"
+      "--chat-template"
+      "llama3"
     ];
   };
   systemd.services.llama-cpp.serviceConfig = {
