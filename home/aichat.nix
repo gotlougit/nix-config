@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   xdg.configFile."aichat/config.yaml".text = ''
     model: llama-cpp-service
