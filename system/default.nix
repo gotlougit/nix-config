@@ -10,6 +10,7 @@
     ./openssh.nix
     ./opensnitch.nix
     ./keyd.nix
+    ./llama-cpp.nix
     ./style.nix
     ./time.nix
     ./udev.nix

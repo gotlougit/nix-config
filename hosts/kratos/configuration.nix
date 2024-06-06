@@ -13,6 +13,7 @@
     # Import overlays
     (import ../../overlays/overlay.nix)
     (import ../../overlays/keepassxc.nix)
+    (import ../../overlays/llama-cpp.nix)
   ];
 
   # following configuration is added only when building VM with build-vm
