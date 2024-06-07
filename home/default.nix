@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 {
   imports = [
-    ./aichat.nix
+    # ./aichat.nix
     ./easyeffects.nix
     ./firefox.nix
     ./gaming.nix
