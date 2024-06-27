@@ -96,12 +96,11 @@
   powerManagement.cpuFreqGovernor = "performance";
 
   # Enable hardware acceleration
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
-  hardware.opengl.extraPackages = [ pkgs.amdvlk ];
+  hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = [ pkgs.amdvlk ];
 
   # To enable Vulkan support for 32-bit applications, also add:
-  hardware.opengl.extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+  hardware.graphics.extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   hardware.enableAllFirmware = true;
 
   # Force radv
