@@ -3,6 +3,18 @@
 {
   programs.helix.enable = true;
   programs.helix.defaultEditor = true;
+  programs.helix.languages.language = [
+    {
+      name = "typescript";
+      auto-format = true;
+      formatter.command = "prettier --parser typescript";
+    }
+    {
+      name = "nix";
+      auto-format = true;
+      formatter.command = "nixfmt";
+    }
+  ];
   programs.helix.settings = {
     # theme = "nord";
 
