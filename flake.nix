@@ -24,13 +24,13 @@
   inputs.stylix.url = "github:danth/stylix";
   inputs.stylix.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = inputs @ { self, nixpkgs, impermanence, code-sandbox, archiver, home-manager, plasma-manager, sshield, stylix }:
+  outputs = inputs@{ self, nixpkgs, impermanence, code-sandbox, archiver
+    , home-manager, plasma-manager, sshield, stylix }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
       pkgs = import nixpkgs { inherit system; };
-    in
-    {
+    in {
       nixpkgs.overlays = [
         import
         (inputs.code-sandbox)
@@ -41,14 +41,16 @@
       ];
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
-          modules = [ "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix" ];
+          modules = [
+            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix"
+          ];
         }).config.system.build.sdImage;
       };
       devShells.${system}.default = pkgs.mkShell {
         name = "nix-dev";
         buildInputs = with pkgs; [
           nil
-          nixpkgs-fmt
+          nixfmt-classic
           nodePackages.bash-language-server
         ];
       };
@@ -66,7 +68,8 @@
               # Ref: https://github.com/pjones/plasma-manager/issues/14
               # This is the way to import "plasma-manager" in home-manager
               # in such a config
-              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+              home-manager.sharedModules =
+                [ plasma-manager.homeManagerModules.plasma-manager ];
               home-manager.users.gotlou = import ./home;
             }
             ./hosts/kratos
