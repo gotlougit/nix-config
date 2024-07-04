@@ -3,20 +3,16 @@
 let
   hostname = builtins.getEnv "HOSTNAME";
   user = "gotlou";
-in
-{
+in {
 
   programs.direnv = {
     enable = true;
-    enableBashIntegration = true;
-    nix-direnv = {
-      enable = true;
-    };
+    nix-direnv = { enable = true; };
   };
 
   programs.skim = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 
   xdg.configFile."macchina/macchina.toml".text = ''
@@ -26,7 +22,7 @@ in
   # Enable starship
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
     settings = {
       format = "$directory$git_branch$git_commit\${custom.sandbox}$character";
       git_branch.format = "[\\($branch\\)](purple) ";
@@ -49,54 +45,63 @@ in
   programs.zoxide = {
     enable = true;
     options = [ "--cmd cd" ];
-    enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 
   # Add shell with custom config
-  programs.bash = {
+  programs.fish = {
     enable = true;
-    enableCompletion = true;
     shellAliases = {
       vi = "hx";
       open = "xdg-open";
       rollback-config = "sudo nixos-rebuild switch --rollback";
-      switch-config = "sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
+      switch-config =
+        "sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
       quick-switch-config = "switch-config --offline";
-      update-config = "sudo nix flake update /home/${user}/nixos && sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
-      switch-config-boot = "sudo nixos-rebuild boot --flake /home/${user}/nixos#${hostname}";
+      update-config =
+        "sudo nix flake update /home/${user}/nixos && sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
+      switch-config-boot =
+        "sudo nixos-rebuild boot --flake /home/${user}/nixos#${hostname}";
       cat = "bat";
       diff = "difft";
       du = "dust";
       ls = "eza";
       # "." = "hx .";
       less = "bat --style plain";
-      enter-rust-dev = "nix develop /home/${user}/nixos/project-flakes/generic-rust-dev/ --command code-sandbox";
-      import-rust-dev = "cp /home/${user}/nixos/project-flakes/generic-rust-dev/* .; cp /home/${user}/nixos/project-flakes/generic-rust-dev/.envrc .";
-      enter-golang-dev = "nix develop /home/${user}/nixos/project-flakes/generic-golang-dev/ --command code-sandbox";
-      import-golang-dev = "cp /home/${user}/nixos/project-flakes/generic-golang-dev/* .; cp /home/${user}/nixos/project-flakes/generic-golang-dev/.envrc .";
-      enter-cpp-dev = "nix develop /home/${user}/nixos/project-flakes/generic-c-cpp-dev/ --command code-sandbox";
-      import-cpp-dev = "cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/* .; cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/.envrc .";
-      scanfor = "RES=$(rg -n . | sk); hx +$(echo $RES | cut -d ':' -f 2) $(echo $RES | cut -d ':' -f 1)";
+      enter-rust-dev =
+        "nix develop /home/${user}/nixos/project-flakes/generic-rust-dev/ --command code-sandbox";
+      import-rust-dev =
+        "cp /home/${user}/nixos/project-flakes/generic-rust-dev/* .; cp /home/${user}/nixos/project-flakes/generic-rust-dev/.envrc .";
+      enter-golang-dev =
+        "nix develop /home/${user}/nixos/project-flakes/generic-golang-dev/ --command code-sandbox";
+      import-golang-dev =
+        "cp /home/${user}/nixos/project-flakes/generic-golang-dev/* .; cp /home/${user}/nixos/project-flakes/generic-golang-dev/.envrc .";
+      enter-cpp-dev =
+        "nix develop /home/${user}/nixos/project-flakes/generic-c-cpp-dev/ --command code-sandbox";
+      import-cpp-dev =
+        "cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/* .; cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/.envrc .";
+      scanfor =
+        "set RES $(rg -n . | sk); hx +$(echo $RES | cut -d ':' -f 2) $(echo $RES | cut -d ':' -f 1)";
     };
-    initExtra = ''
+    interactiveShellInit = ''
       macchina
-      source $(blesh-share)/ble.sh
-      set -o vi
+      fish_vi_key_bindings
     '';
-    sessionVariables = {
-      XDG_CACHE_HOME = "$HOME/.cache";
-      XDG_CONFIG_HOME = "$HOME/.config";
-      XDG_DATA_HOME = "$HOME/.local/share";
-      XDG_STATE_HOME = "$HOME/.local/state";
+    shellInit = ''
+      set -Ux XDG_CACHE_HOME = "$HOME/.cache"
+      set -Ux XDG_CONFIG_HOME = "$HOME/.config"
+      set -Ux XDG_DATA_HOME = "$HOME/.local/share"
+      set -Ux XDG_STATE_HOME = "$HOME/.local/state"
 
-      PAGER = "bat --style plain";
-      GDK_SCALE = "1";
-      # Stores timestamp for each command executed 
-      HISTTIMEFORMAT = "%d/%m/%y %T ";
+      set -Ux PAGER = "bat --style plain"
+      set -Ux GDK_SCALE = "1"
 
       # Force Electron apps to use Wayland
-      NIXOS_OZONE_WL = "1";
-    };
+      set -Ux NIXOS_OZONE_WL = "1"
+
+      # Disable greeting
+      set -U fish_greeting
+    '';
   };
 
   home.packages = with pkgs; [
@@ -112,12 +117,12 @@ in
     tealdeer # Rust implementation of tldr
     scc # loc replacement written in go
     # Required for above config to work
-    blesh # Bash made smarter
     macchina # Nice startup screen for terminal
 
     # Shell utils I like to use
     file # To show type of file
     aria # download manager
+    bash # Keep around explicitly for legacy purposes
     socat # Socket cat
     sqlite # No intro needed
     age # A sane encrytion/decryption tool made for mortals

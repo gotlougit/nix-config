@@ -1,11 +1,8 @@
-{ ... }:
+{ lib, pkgs, ... }:
 
 {
 
-  programs.wezterm = {
-    enable = true;
-    enableBashIntegration = true;
-  };
+  programs.wezterm = { enable = true; };
 
   home.file.".wezterm.lua".text = ''
     -- Pull in the wezterm API
@@ -21,7 +18,10 @@
     end
 
     config.enable_wayland = false;
-    
+
+    -- Use Fish shell in WezTerm
+    config.default_prog = { '${lib.getBin pkgs.fish}/bin/fish', '-i' };
+
     -- Use alternate SSH backend to get around reported timeout issues
     config.ssh_backend = "Ssh2"
 
