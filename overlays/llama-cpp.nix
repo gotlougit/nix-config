@@ -1,5 +1,1 @@
-final: prev: {
-  llama-cpp = prev.llama-cpp.override {
-    vulkanSupport = true;
-  };
-}
+final: prev: { llama-cpp = prev.llama-cpp.override { vulkanSupport = true; }; }

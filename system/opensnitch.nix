@@ -1,9 +1,5 @@
-{ pkgs, lib, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    opensnitch
-    opensnitch-ui
-  ];
+{ pkgs, lib, ... }: {
+  environment.systemPackages = with pkgs; [ opensnitch opensnitch-ui ];
   # OpenSnitch stuff
   systemd.user.services."opensnitch-ui" = {
     enable = true;
@@ -122,7 +118,9 @@
           type = "simple";
           sensitive = false;
           operand = "process.command";
-          data = "${lib.getBin pkgs.thunderbird}/bin/.thunderbird-wrapped --profile /persist/communication/home/gotlou/.thunderbird/hwrrcy4h.default --name thunderbird";
+          data = "${
+              lib.getBin pkgs.thunderbird
+            }/bin/.thunderbird-wrapped --profile /persist/communication/home/gotlou/.thunderbird/hwrrcy4h.default --name thunderbird";
         };
       };
       kdeconnect = {
@@ -146,12 +144,16 @@
           type = "list";
           sensitive = false;
           operand = "list";
-          data = "[{\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"${lib.getBin pkgs.signal-desktop}/lib/Signal/signal-desktop\", \"sensitive\": true}, {\"type\": \"regexp\", \"operand\": \"dest.host\", \"data\": \".*\\\\.signal.org\", \"sensitive\": false}]";
+          data = ''
+            [{"type": "simple", "operand": "process.path", "data": "${
+              lib.getBin pkgs.signal-desktop
+            }/lib/Signal/signal-desktop", "sensitive": true}, {"type": "regexp", "operand": "dest.host", "data": ".*\\.signal.org", "sensitive": false}]'';
           list = [
             {
               type = "simple";
               operand = "process.path";
-              data = "${lib.getBin pkgs.signal-desktop}/lib/Signal/signal-desktop";
+              data =
+                "${lib.getBin pkgs.signal-desktop}/lib/Signal/signal-desktop";
               sensitive = true;
             }
             {
@@ -172,7 +174,10 @@
           type = "list";
           sensitive = false;
           operand = "list";
-          data = "[{\"type\": \"simple\", \"operand\": \"process.path\", \"data\": \"${lib.getBin pkgs.gomuks}/bin/.gomuks-wrapped\", \"sensitive\": true}, {\"type\": \"simple\", \"operand\": \"dest.host\", \"data\": \"matrix-client.matrix.org\", \"sensitive\": false}]";
+          data = ''
+            [{"type": "simple", "operand": "process.path", "data": "${
+              lib.getBin pkgs.gomuks
+            }/bin/.gomuks-wrapped", "sensitive": true}, {"type": "simple", "operand": "dest.host", "data": "matrix-client.matrix.org", "sensitive": false}]'';
           list = [
             {
               type = "simple";

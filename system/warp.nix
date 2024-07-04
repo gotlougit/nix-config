@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   # Enable warp-svc to allow connections to the Cloudflare VPN
   systemd.packages = [ pkgs.cloudflare-warp ];
   systemd.services.warp-svc = {
@@ -32,10 +31,20 @@
       RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" "AF_NETLINK" ];
       ProtectHome = true;
       SystemCallArchitectures = "native";
-      SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" ];
+      SystemCallFilter = [
+        "@known"
+        "~@clock"
+        "~@cpu-emulation"
+        "~@raw-io"
+        "~@reboot"
+        "~@mount"
+        "~@obsolete"
+        "~@swap"
+        "~@debug"
+        "~@keyring"
+        "~@pkey"
+      ];
     };
   };
-  environment.systemPackages = with pkgs; [
-    cloudflare-warp
-  ];
+  environment.systemPackages = with pkgs; [ cloudflare-warp ];
 }

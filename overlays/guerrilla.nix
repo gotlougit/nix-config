@@ -11,7 +11,8 @@ buildGoModule {
     hash = "sha256-mEXT24qz1CiL3HllUaPtCwGg1g/oBrTbPcq6j82jzRk=";
   };
   meta = with lib; {
-    description = "A command-line tool (and Go module) for https://www.guerrillamail.com/";
+    description =
+      "A command-line tool (and Go module) for https://www.guerrillamail.com/";
     homepage = "https://github.com/liamg/guerrilla";
     license = licenses.mit;
   };

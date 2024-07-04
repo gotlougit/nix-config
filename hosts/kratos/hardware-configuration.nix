@@ -4,12 +4,10 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "uas" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "nvme" "xhci_pci" "usb_storage" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" "rr-zen_workaround" ];
   boot.blacklistedKernelModules = [
@@ -48,38 +46,33 @@
     fsType = "vfat";
   };
 
-  fileSystems."/" =
-    {
-      device = "none";
-      fsType = "tmpfs";
-      options = [ "defaults" "size=1G" "mode=755" ];
-    };
+  fileSystems."/" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "defaults" "size=1G" "mode=755" ];
+  };
 
-  fileSystems."/tmp" =
-    {
-      device = "none";
-      fsType = "tmpfs";
-      options = [ "defaults" "size=8G" "mode=755" ];
-    };
+  fileSystems."/tmp" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "defaults" "size=8G" "mode=755" ];
+  };
 
-  fileSystems."/home" =
-    {
-      device = "nixos_pool/home";
-      fsType = "zfs";
-    };
+  fileSystems."/home" = {
+    device = "nixos_pool/home";
+    fsType = "zfs";
+  };
 
-  fileSystems."/nix" =
-    {
-      device = "nixos_pool/nix";
-      fsType = "zfs";
-    };
+  fileSystems."/nix" = {
+    device = "nixos_pool/nix";
+    fsType = "zfs";
+  };
 
-  fileSystems."/persist" =
-    {
-      device = "nixos_pool/persist";
-      fsType = "zfs";
-      neededForBoot = true;
-    };
+  fileSystems."/persist" = {
+    device = "nixos_pool/persist";
+    fsType = "zfs";
+    neededForBoot = true;
+  };
 
   swapDevices = [ ];
 
@@ -92,7 +85,8 @@
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
   powerManagement.cpuFreqGovernor = "performance";
 
   # Enable hardware acceleration

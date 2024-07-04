@@ -1,10 +1,5 @@
-{ config, ... }:
-{
-  imports = [
-    ./display-scale.nix
-    ./panel.nix
-    ./plasma.nix
-  ];
+{ config, ... }: {
+  imports = [ ./display-scale.nix ./panel.nix ./plasma.nix ];
 
   # # Import the dynamic workspaces plugin used for kwin
   # # TODO: make this more declarative and less dependent on my specific path

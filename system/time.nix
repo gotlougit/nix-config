@@ -8,7 +8,5 @@
     enableNTS = true;
     servers = [ "time.cloudflare.com" "nts.netnod.se" ];
   };
-  systemd.services.chronyd.serviceConfig = {
-    InaccessiblePaths = "/persist";
-  };
+  systemd.services.chronyd.serviceConfig = { InaccessiblePaths = "/persist"; };
 }

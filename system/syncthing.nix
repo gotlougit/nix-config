@@ -1,8 +1,5 @@
-{ lib, pkgs, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    syncthing
-  ];
+{ lib, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ syncthing ];
   # Enable syncthing to sync important files in background
   services.syncthing = {
     enable = true;
@@ -22,7 +19,21 @@
       ProtectControlGroups = true;
       ProtectKernelModules = true;
       ProtectKernelLogs = true;
-      SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" "~@privileged" "~@module" ];
+      SystemCallFilter = [
+        "@known"
+        "~@clock"
+        "~@cpu-emulation"
+        "~@raw-io"
+        "~@reboot"
+        "~@mount"
+        "~@obsolete"
+        "~@swap"
+        "~@debug"
+        "~@keyring"
+        "~@pkey"
+        "~@privileged"
+        "~@module"
+      ];
       RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" "AF_NETLINK" ];
       CapabilityBoundingSet = lib.mkForce [ "" ];
     };

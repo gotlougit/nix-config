@@ -6,8 +6,7 @@ let
     inherit (inputs.ff-addons.lib.${pkgs.system}) buildFirefoxXpiAddon;
   };
   profile = import ./profile.nix { inherit ff-addons pkgs; };
-in
-lib.mkMerge [
+in lib.mkMerge [
   {
     programs.tor-browser = {
       enable = true;
@@ -16,6 +15,9 @@ lib.mkMerge [
     };
   }
   (lib.mkIf (!pkgs.stdenv.isDarwin) {
-    programs.firefox.profiles.new-ff = profile // { isDefault = false; id = 2; };
+    programs.firefox.profiles.new-ff = profile // {
+      isDefault = false;
+      id = 2;
+    };
   })
 ]

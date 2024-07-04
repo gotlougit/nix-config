@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   # Enable Tailscale service
   services.tailscale = {
     enable = true;
@@ -42,11 +41,11 @@
     enable = true;
     serviceConfig = {
       RuntimeDirectory = "tailscale";
-      RuntimeDirectoryMode = 0755;
+      RuntimeDirectoryMode = 755;
       StateDirectory = "tailscale";
-      StateDirectoryMode = 0700;
+      StateDirectoryMode = 700;
       CacheDirectory = "tailscale";
-      CacheDirectoryMode = 0750;
+      CacheDirectoryMode = 750;
       Type = "notify";
 
       # TODO: get Tailscale to run as non-root user
@@ -58,7 +57,8 @@
       InaccessiblePaths = [ "/persist" ];
 
       DeviceAllow = [ "/dev/tun" "/dev/net/tun" ];
-      CapabilityBoundingSet = [ "" "CAP_NET_RAW" "CAP_NET_ADMIN" "CAP_SYS_MODULE" ];
+      CapabilityBoundingSet =
+        [ "" "CAP_NET_RAW" "CAP_NET_ADMIN" "CAP_SYS_MODULE" ];
       ProtectKernelModules = false;
       RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" "AF_NETLINK" ];
       NoNewPrivileges = true;
@@ -75,11 +75,21 @@
       ProtectSystem = true;
       ProtectProc = "noaccess";
       SystemCallArchitectures = "native";
-      SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" ];
+      SystemCallFilter = [
+        "@known"
+        "~@clock"
+        "~@cpu-emulation"
+        "~@raw-io"
+        "~@reboot"
+        "~@mount"
+        "~@obsolete"
+        "~@swap"
+        "~@debug"
+        "~@keyring"
+        "~@pkey"
+      ];
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    tailscale
-  ];
+  environment.systemPackages = with pkgs; [ tailscale ];
 }

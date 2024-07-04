@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   # Enable the OpenSSH daemon to act as SSH server
   services.openssh.enable = true;
   systemd.services.sshd = {

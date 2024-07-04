@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   # Enable sound.
   sound.enable = true;
   security.rtkit.enable = true;

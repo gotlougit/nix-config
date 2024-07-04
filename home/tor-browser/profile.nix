@@ -1,43 +1,41 @@
-{ pkgs, ff-addons }:
-{
+{ pkgs, ff-addons }: {
   isDefault = true;
   userChrome = builtins.readFile ./userChrome.css;
   search = {
     default = "brave";
     force = true;
     engines.brave = {
-      urls = [
-        { template = "https://search.brave.com/search?q={searchTerms}"; }
-      ];
+      urls =
+        [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
     };
     engines.nix = {
-      urls = [
-        { template = "https://search.nixos.org/packages?query={searchTerms}"; }
-      ];
+      urls = [{
+        template = "https://search.nixos.org/packages?query={searchTerms}";
+      }];
       metadata.alias = "@nix";
     };
     engines.hm = {
-      urls = [
-        { template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}"; }
-      ];
+      urls = [{
+        template =
+          "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";
+      }];
       metadata.alias = "@hm";
     };
     engines.aw = {
-      urls = [
-        { template = "https://wiki.archlinux.org/index.php?title=Special:Search&search={searchTerms}"; }
-      ];
+      urls = [{
+        template =
+          "https://wiki.archlinux.org/index.php?title=Special:Search&search={searchTerms}";
+      }];
       metadata.alias = "@aw";
     };
     engines.source = {
-      urls = [
-        { template = "https://sourcegraph.com/search?q={searchTerms}"; }
-      ];
+      urls = [{ template = "https://sourcegraph.com/search?q={searchTerms}"; }];
       metadata.alias = "@source";
     };
     engines.github = {
-      urls = [
-        { template = "https://github.com/search?q={searchTerms}&ref=opensearch"; }
-      ];
+      urls = [{
+        template = "https://github.com/search?q={searchTerms}&ref=opensearch";
+      }];
       metadata.alias = "@gh";
     };
     engines.Google.metadata.hidden = true;
@@ -52,7 +50,8 @@
   ];
   settings = {
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # user chrome
-    "extensions.autoDisableScopes" = 0; # make our addons not disabled by default
+    "extensions.autoDisableScopes" =
+      0; # make our addons not disabled by default
     "extensions.installTrigger.enable" = false; # no bunch of popups
 
     # disable first run page
@@ -67,7 +66,8 @@
 
     "browser.start.page" = 3; # browser restore
 
-    "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org"; # dark theme
+    "extensions.activeThemeID" =
+      "firefox-compact-dark@mozilla.org"; # dark theme
 
     "browser.toolbars.bookmarks.visibility" = "never";
 

@@ -1,8 +1,5 @@
-{ inputs, ... }:
-{
-  imports = [
-    inputs.impermanence.nixosModules.impermanence
-  ];
+{ inputs, ... }: {
+  imports = [ inputs.impermanence.nixosModules.impermanence ];
   # Files and folders that are saved by Impermanence from deletion
   # Symlinks will be created automatically at boot
   environment.persistence."/persist/system" = {

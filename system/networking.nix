@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   # Setup networking
   networking = {
     # Enable networkmanager
@@ -15,11 +14,7 @@
     networkmanager.dns = "none";
     # Use IWD backend
     networkmanager.wifi.backend = "iwd";
-    wireless.iwd.settings = {
-      Settings = {
-        AutoConnect = true;
-      };
-    };
+    wireless.iwd.settings = { Settings = { AutoConnect = true; }; };
     # Enable firewall by default
 
     # Note that services like tailscale and SSH will have their ports opened

@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   time.timeZone = "Asia/Kolkata";
   networking.hostName = "mimir";
   users = {

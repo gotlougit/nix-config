@@ -15,7 +15,20 @@
   RestrictRealtime = true;
   RestrictSUIDSGID = true;
   SystemCallArchitectures = "native";
-  SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" "~@chown" ];
+  SystemCallFilter = [
+    "@known"
+    "~@clock"
+    "~@cpu-emulation"
+    "~@raw-io"
+    "~@reboot"
+    "~@mount"
+    "~@obsolete"
+    "~@swap"
+    "~@debug"
+    "~@keyring"
+    "~@pkey"
+    "~@chown"
+  ];
   UMask = "0077";
   InaccessiblePaths = "/persist";
 }

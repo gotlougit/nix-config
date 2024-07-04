@@ -1,8 +1,4 @@
-{ lib
-, fetchFromGitHub
-, buildNpmPackage
-, kdePackages
-}:
+{ lib, fetchFromGitHub, buildNpmPackage, kdePackages }:
 
 # how to update:
 # 1. check out the tag for the version in question

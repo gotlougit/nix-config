@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.rofi = {
     enable = true;
     theme = ./tokyo.rasi;

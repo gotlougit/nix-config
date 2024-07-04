@@ -9,9 +9,7 @@
   services.desktopManager.plasma6.enable = true;
   # Extra SDDM config
   services.displayManager.sddm.settings = {
-    Theme = {
-      FacesDir = "/persist/system/icons";
-    };
+    Theme = { FacesDir = "/persist/system/icons"; };
   };
   security.pam.services.gotlou.kwallet.enable = true;
 
@@ -28,8 +26,14 @@
   ];
 
   # Allow KDE connect through firewall
-  networking.firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
-  networking.firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+  networking.firewall.allowedTCPPortRanges = [{
+    from = 1714;
+    to = 1764;
+  }];
+  networking.firewall.allowedUDPPortRanges = [{
+    from = 1714;
+    to = 1764;
+  }];
 
   environment.systemPackages = with pkgs; [
     ark # KDE archiving program
@@ -42,11 +46,10 @@
   ];
 
   # Disable baloo indexer
-  environment.etc."xdg/baloofilerc".source = (pkgs.formats.ini { }).generate "baloorc" {
-    "Basic Settings" = {
-      "Indexing-Enabled" = false;
+  environment.etc."xdg/baloofilerc".source =
+    (pkgs.formats.ini { }).generate "baloorc" {
+      "Basic Settings" = { "Indexing-Enabled" = false; };
     };
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = false;

@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{ config, ... }: {
 
   # Favorite programs in the application launcher
   xdg.configFile."kactivitymanagerd-statsrc".text = ''

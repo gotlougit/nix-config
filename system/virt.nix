@@ -12,7 +12,5 @@
     enable = true;
     setSocketVariable = true;
   };
-  environment.systemPackages = with pkgs; [
-    quickemu
-  ];
+  environment.systemPackages = with pkgs; [ quickemu ];
 }
