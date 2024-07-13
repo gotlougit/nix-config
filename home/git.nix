@@ -26,12 +26,12 @@
     };
     # Ignore certain paths globally
     ignores = [
-      "*.localcargo"
-      "*.direnv"
-      "*.localzoxide"
-      "*.localgomod"
-      "*.localgocache"
-      "*.localgohome"
+      "*.localcargo/"
+      "*.direnv/"
+      "*.localzoxide/"
+      "*.localgomod/"
+      "*.localgocache/"
+      "*.localgohome/"
     ];
     # Enable syntax highlight in diffs
     difftastic.enable = true;
