@@ -25,6 +25,6 @@
   environment.systemPackages = with pkgs; [
     # Icon packs
     papirus-icon-theme
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
   ];
 }
