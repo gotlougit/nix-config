@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  hostname = builtins.getEnv "HOSTNAME";
+  hostname = "kratos";
   user = "gotlou";
 in {
 
@@ -88,16 +88,16 @@ in {
       fish_vi_key_bindings
     '';
     shellInit = ''
-      set -Ux XDG_CACHE_HOME = "$HOME/.cache"
-      set -Ux XDG_CONFIG_HOME = "$HOME/.config"
-      set -Ux XDG_DATA_HOME = "$HOME/.local/share"
-      set -Ux XDG_STATE_HOME = "$HOME/.local/state"
+      set -Ux XDG_CACHE_HOME "$HOME/.cache"
+      set -Ux XDG_CONFIG_HOME "$HOME/.config"
+      set -Ux XDG_DATA_HOME "$HOME/.local/share"
+      set -Ux XDG_STATE_HOME "$HOME/.local/state"
 
-      set -Ux PAGER = "bat --style plain"
-      set -Ux GDK_SCALE = "1"
+      set -Ux PAGER "bat --style plain"
+      set -Ux GDK_SCALE "1"
 
       # Force Electron apps to use Wayland
-      set -Ux NIXOS_OZONE_WL = "1"
+      set -Ux NIXOS_OZONE_WL "1"
 
       # Disable greeting
       set -U fish_greeting
@@ -137,7 +137,7 @@ in {
     magic-wormhole-rs # Direct file transfers
     magit # Advanced git UI using emacs
     pandoc # Convert docs
-    picard # Tag music files
+    # picard # Tag music files
     poppler_utils # PDF conversion and misc utils
     tetex # LaTEX related tooling
     p7zip # Useful for decompressing
