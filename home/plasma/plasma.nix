@@ -342,7 +342,8 @@
       "services/org.kde.spectacle.desktop"."RecordRegion" = [ ];
       "services/org.kde.spectacle.desktop"."RecordScreen" = [ ];
       "services/org.kde.spectacle.desktop"."RecordWindow" = [ ];
-      "services/org.kde.spectacle.desktop"."RectangularRegionScreenShot" = [ ];
+      "services/org.kde.spectacle.desktop"."RectangularRegionScreenShot" =
+        "Print";
       "services/org.kde.spectacle.desktop"."WindowUnderCursorScreenShot" = [ ];
       "services/org.kde.spectacle.desktop"."_launch" = [ ];
       "services/org.wezfurlong.wezterm.desktop"."_launch" = "Meta+Return";
