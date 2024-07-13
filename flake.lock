@@ -141,11 +141,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1705241523,
-        "narHash": "sha256-uLffwF4NYmFORZL4bRcsMh9eJpKrzpX1gbQTu3lMI0A=",
+        "lastModified": 1720101917,
+        "narHash": "sha256-vdQSz2+SaR/me8Fkxj930aaVVjXHnWFELYS/03OKUMg=",
         "owner": "~gotlou",
         "repo": "code-sandbox",
-        "rev": "9a9b99ceb98830242c0da99000a5a9ab12043157",
+        "rev": "a33629716b36f0bc757d1fe061f75b74873220b8",
         "type": "sourcehut"
       },
       "original": {
@@ -210,11 +210,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719438532,
-        "narHash": "sha256-/Vmso2ZMoFE3M7d1MRsQ2K5sR8CVKnrM6t1ys9Xjpz4=",
+        "lastModified": 1720734513,
+        "narHash": "sha256-neWQ8eNtLTd+YMesb7WjKl1SVCbDyCm46LUgP/g/hdo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1a4f12ae0bda877ec4099b429cf439aad897d7e9",
+        "rev": "90ae324e2c56af10f20549ab72014804a3064c7f",
         "type": "github"
       },
       "original": {
@@ -261,11 +261,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1719254875,
-        "narHash": "sha256-ECni+IkwXjusHsm9Sexdtq8weAq/yUyt1TWIemXt3Ko=",
+        "lastModified": 1720542800,
+        "narHash": "sha256-ZgnNHuKV6h2+fQ5LuqnUaqZey1Lqqt5dTUAiAnqH0QQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2893f56de08021cffd9b6b6dfc70fd9ccd51eb60",
+        "rev": "feb2849fdeb70028c70d73b848214b00d324a497",
         "type": "github"
       },
       "original": {
@@ -284,11 +284,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719340029,
-        "narHash": "sha256-j++6RRMNvw+aYwI9qC2svfRwNj/2EEnaty552VIAFX0=",
+        "lastModified": 1720863765,
+        "narHash": "sha256-Q+LSZm9w1htVrRDY1d+0T8rBdifA/6JnAWuBMneGCCE=",
         "owner": "pjones",
         "repo": "plasma-manager",
-        "rev": "004923027388062be53d5b489be51c59c114d857",
+        "rev": "40fa15eceeda6f3fb539367ccee462fa06a4d760",
         "type": "github"
       },
       "original": {
@@ -316,11 +316,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1711528094,
-        "narHash": "sha256-OYanl6dr/tU9PKaGBMLN8GKMllqv+tMdoCQ2UTLOFzo=",
+        "lastModified": 1720109435,
+        "narHash": "sha256-qOqdgkIvyilFhMiq8IGgnrpqUy3Gu3u0X7JjmFv927w=",
         "owner": "gotlougit",
         "repo": "sshield",
-        "rev": "66b3dad4cbb5069bb58f53551df02e2f987c3640",
+        "rev": "155dbabf531c7b87aa594d5f32233e9ce99d3dff",
         "type": "github"
       },
       "original": {
