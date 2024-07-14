@@ -3,19 +3,27 @@
 {
   programs.helix.enable = true;
   programs.helix.defaultEditor = true;
+  programs.helix.languages.language-server.gpt = {
+    command = "${lib.getExe pkgs.helix-gpt}";
+    args = [ "--handler" "codeium" ];
+  };
   programs.helix.languages.language = [
     {
       name = "typescript";
-      auto-format = true;
-      formatter.command = "prettier --parser typescript";
-      formatter.binary =
-        "${lib.getBin pkgs.nodePackages.prettier}/bin/prettier";
+      language-servers = [ "typescript-language-server" "gpt" ];
+      formatter.command = "prettier";
+      formatter.args = [ "--parser" "typescript" ];
+      formatter.binary = "${lib.getExe pkgs.nodePackages.prettier}";
     }
     {
       name = "nix";
-      auto-format = true;
+      language-servers = [ "nil" "gpt" ];
+      formatter.binary = "${lib.getExe pkgs.nixfmt-classic}";
       formatter.command = "nixfmt";
-      formatter.binary = "${lib.getBin pkgs.nixfmt-classic}/bin/nixfmt";
+    }
+    {
+      name = "cpp";
+      language-servers = [ "clangd" "gpt" ];
     }
   ];
   programs.helix.settings = {
@@ -76,6 +84,9 @@
     # Nix
     nixfmt-classic
     nil
+
+    # GPT in helix
+    helix-gpt
   ];
 
 }
