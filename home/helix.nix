@@ -7,6 +7,9 @@
     command = "${lib.getExe pkgs.helix-gpt}";
     args = [ "--handler" "codeium" ];
   };
+  programs.helix.languages.language-server.nixd = {
+    command = "${lib.getExe pkgs.nixd}";
+  };
   programs.helix.languages.language = [
     {
       name = "typescript";
@@ -17,7 +20,7 @@
     }
     {
       name = "nix";
-      language-servers = [ "nil" "gpt" ];
+      language-servers = [ "nixd" "gpt" ];
       formatter.binary = "${lib.getExe pkgs.nixfmt-classic}";
       formatter.command = "nixfmt";
     }
@@ -83,7 +86,7 @@
 
     # Nix
     nixfmt-classic
-    nil
+    nixd
 
     # GPT in helix
     helix-gpt
