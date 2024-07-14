@@ -15,6 +15,13 @@
 
   # Remove some KDE defaults that are never needed
   environment.plasma6.excludePackages = lib.mkForce [
+    pkgs.kdePackages.oxygen
+    pkgs.kdePackages.khelpcenter
+    pkgs.kdePackages.konsole
+    pkgs.kdePackages.plasma-browser-integration
+    pkgs.kdePackages.elisa
+    pkgs.kdePackages.baloo
+    pkgs.kdePackages.kate
     pkgs.libsForQt5.oxygen
     pkgs.libsForQt5.khelpcenter
     pkgs.libsForQt5.konsole
@@ -22,7 +29,6 @@
     pkgs.libsForQt5.elisa
     pkgs.libsForQt5.baloo
     pkgs.libsForQt5.kate
-    pkgs.kdePackages.kate
   ];
 
   # Allow KDE connect through firewall
@@ -41,7 +47,7 @@
     kdePackages.plasma-vault # Encrypted folders in KDE
     ntfs3g # NTFS FUSE implementation
     polonium
-    libsForQt5.ksshaskpass # Ask password in GUI from CLI
+    kdePackages.ksshaskpass # Ask password in GUI from CLI
     kdePackages.kdeconnect-kde # KDE Connect
   ];
 
