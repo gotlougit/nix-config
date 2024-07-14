@@ -20,7 +20,7 @@
     config.enable_wayland = false;
 
     -- Use Fish shell in WezTerm
-    config.default_prog = { '${lib.getBin pkgs.fish}/bin/fish', '-i' };
+    config.default_prog = { '${lib.getExe pkgs.fish}', '-i' };
 
     -- Use alternate SSH backend to get around reported timeout issues
     config.ssh_backend = "Ssh2"
