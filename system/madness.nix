@@ -1,0 +1,5 @@
+{ ... }:
+
+{
+  madness.enable = true;  
+}

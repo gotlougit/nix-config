@@ -11,6 +11,7 @@
     ./opensnitch.nix
     ./keyd.nix
     # ./llama-cpp.nix
+    ./madness.nix
     ./style.nix
     ./time.nix
     ./udev.nix
