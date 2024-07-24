@@ -46,7 +46,6 @@
     gocryptfs # For plasma-vault
     kdePackages.plasma-vault # Encrypted folders in KDE
     ntfs3g # NTFS FUSE implementation
-    krohnkite
     kdePackages.ksshaskpass # Ask password in GUI from CLI
     kdePackages.kdeconnect-kde # KDE Connect
   ];
