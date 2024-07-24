@@ -28,6 +28,8 @@
       "/home/gotlou/.local/share/tor-browser/TorBrowser"
       # Mullvad Browser config
       "/home/gotlou/.mullvad"
+      # Music info
+      "/home/gotlou/.local/share/rhythmbox"
     ];
     files = [ ];
   };

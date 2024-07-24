@@ -31,6 +31,7 @@
     libreoffice-qt # Document editor
     mullvad-browser # Browser for private browsing
     qbittorrent # Best torrent client
+    rhythmbox # Music player
     songrec # Shazam on Linux
     signal-desktop # Secure and easy messaging
     tdesktop # Telegram desktop client
