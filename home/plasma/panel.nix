@@ -1,20 +1,5 @@
 { config, ... }: {
 
-  # Favorite programs in the application launcher
-  xdg.configFile."kactivitymanagerd-statsrc".text = ''
-    [Favorites-org.kde.plasma.kickoff.favorites.instance-25-a90bd124-d21f-41ff-b3f8-64d92ce5f9e9]
-    ordering=applications:org.wezfurlong.wezterm.desktop,applications:torbrowser-sandbox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.kde.dolphin.desktop,applications:firefox.desktop,applications:signal-desktop.desktop,applications:thunderbird.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:duckstation-qt.desktop,applications:PCSX2.desktop,applications:virt-manager.desktop,applications:com.usebottles.bottles.desktop,applications:org.telegram.desktop.desktop,applications:steam.desktop
-
-    [Favorites-org.kde.plasma.kickoff.favorites.instance-25-global]
-    ordering=applications:org.wezfurlong.wezterm.desktop,applications:torbrowser-sandbox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.kde.dolphin.desktop,applications:firefox.desktop,applications:signal-desktop.desktop,applications:thunderbird.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:duckstation-qt.desktop,applications:PCSX2.desktop,applications:virt-manager.desktop,applications:com.usebottles.bottles.desktop,applications:org.telegram.desktop.desktop,applications:steam.desktop
-
-    [Favorites-org.kde.plasma.kickoff.favorites.instance-3-a90bd124-d21f-41ff-b3f8-64d92ce5f9e9]
-    ordering=applications:org.kde.dolphin.desktop,applications:PCSX2.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:com.usebottles.bottles.desktop,applications:duckstation-qt.desktop,applications:firefox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:org.telegram.desktop.desktop,applications:org.wezfurlong.wezterm.desktop,applications:signal-desktop.desktop,applications:steam.desktop,applications:thunderbird.desktop,applications:virt-manager.desktop,applications:torbrowser-sandbox.desktop
-
-    [Favorites-org.kde.plasma.kickoff.favorites.instance-3-global]
-    ordering=applications:org.kde.dolphin.desktop,applications:PCSX2.desktop,applications:com.github.paolostivanin.OTPClient.desktop,applications:com.usebottles.bottles.desktop,applications:duckstation-qt.desktop,applications:firefox.desktop,applications:mullvadbrowser-sandbox.desktop,applications:org.gnome.Rhythmbox3.desktop,applications:org.keepassxc.KeePassXC.desktop,applications:org.telegram.desktop.desktop,applications:org.wezfurlong.wezterm.desktop,applications:signal-desktop.desktop,applications:steam.desktop,applications:thunderbird.desktop,applications:virt-manager.desktop,applications:torbrowser-sandbox.desktop
-  '';
-
   # Selects holiday region for calendar
   xdg.configFile."plasma_calendar_holiday_regions".text = ''
     [General]
@@ -86,25 +71,6 @@
     DialogHeight=1080
     DialogWidth=1882
 
-    [Containments][2][Applets][28]
-    immutability=1
-    plugin=org.kde.plasma.eventcalendar
-    transient=true
-
-    [Containments][2][Applets][28][Configuration]
-    PreloadWeight=42
-
-    [Containments][2][Applets][28][Configuration][ConfigDialog]
-    DialogHeight=540
-    DialogWidth=720
-
-    [Containments][2][Applets][28][Configuration][General]
-    clockShowLine2=true
-    clockTimeFormat1=h
-    clockTimeFormat2=mm
-    v71Migration=true
-    v72Migration=true
-
     [Containments][2][Applets][3]
     immutability=1
     plugin=org.kde.plasma.kickoff
@@ -133,8 +99,14 @@
     immutability=1
     plugin=org.kde.plasma.digitalclock
 
+    [Containments][2][Applets][32][Configuration]
+    PreloadWeight=55
+    popupHeight=450
+    popupWidth=525
+
     [Containments][2][Applets][32][Configuration][Appearance]
     autoFontAndSize=false
+    enabledCalendarPlugins=holidaysevents
     fontFamily=Inter
     fontSize=12
     fontStyleName=Regular
@@ -144,7 +116,7 @@
 
     [Containments][2][Applets][32][Configuration][ConfigDialog]
     DialogHeight=1080
-    DialogWidth=1882
+    DialogWidth=1879
 
     [Containments][2][Applets][4]
     immutability=1
@@ -181,7 +153,7 @@
     plugin=org.kde.plasma.systemtray
 
     [Containments][2][Applets][7][Configuration]
-    PreloadWeight=44
+    PreloadWeight=49
     SystrayContainmentId=8
 
     [Containments][2][ConfigDialog]
@@ -247,14 +219,14 @@
     plugin=org.kde.plasma.notifications
 
     [Containments][8][Applets][12][Configuration]
-    PreloadWeight=34
+    PreloadWeight=39
 
     [Containments][8][Applets][13]
     immutability=1
     plugin=org.kde.kdeconnect
 
     [Containments][8][Applets][13][Configuration]
-    PreloadWeight=34
+    PreloadWeight=39
 
     [Containments][8][Applets][14]
     immutability=1
@@ -289,7 +261,7 @@
     plugin=org.kde.plasma.vault
 
     [Containments][8][Applets][18][Configuration]
-    PreloadWeight=34
+    PreloadWeight=39
 
     [Containments][8][Applets][19]
     immutability=1
@@ -349,14 +321,14 @@
 
     [Containments][8][ConfigDialog]
     DialogHeight=1080
-    DialogWidth=1882
+    DialogWidth=1879
 
     [Containments][8][Configuration]
     PreloadWeight=34
 
     [Containments][8][General]
-    extraItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.kscreen,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.volume,org.kde.plasma.cameraindicator,org.kde.plasma.brightness
-    knownItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.kscreen,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.volume,org.kde.plasma.cameraindicator,org.kde.plasma.brightness
+    extraItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.kscreen,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.cameraindicator,org.kde.plasma.brightness,org.kde.kdeconnect,org.kde.plasma.vault
+    knownItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.kscreen,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.cameraindicator,org.kde.plasma.brightness,org.kde.kdeconnect,org.kde.plasma.vault
     scaleIconsToFit=true
 
     [Containments2Appletsts][5][Configuration][General]
