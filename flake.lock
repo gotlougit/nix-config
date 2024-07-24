@@ -332,11 +332,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720109435,
-        "narHash": "sha256-qOqdgkIvyilFhMiq8IGgnrpqUy3Gu3u0X7JjmFv927w=",
+        "lastModified": 1721839299,
+        "narHash": "sha256-9bTUYmSRq2JJFnmqfUxyj+Ae1YVO7v9NLh1r77Tl0Ow=",
         "owner": "gotlougit",
         "repo": "sshield",
-        "rev": "155dbabf531c7b87aa594d5f32233e9ce99d3dff",
+        "rev": "770a4a799f1a6d2fa6a29e6934d70e57f5606eb0",
         "type": "github"
       },
       "original": {
