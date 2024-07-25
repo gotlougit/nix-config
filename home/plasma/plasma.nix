@@ -6,7 +6,6 @@
         "Meta+Alt+L";
       "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" =
         "Meta+Alt+K";
-      "kaccess"."Toggle Screen Reader On and Off" = "Meta+Alt+S,none";
       "kcm_touchpad"."Disable Touchpad" = "Touchpad Off";
       "kcm_touchpad"."Enable Touchpad" = "Touchpad On";
       "kcm_touchpad"."Toggle Touchpad" = [
@@ -14,37 +13,20 @@
         "Meta+Ctrl+Zenkaku Hankaku,Touchpad Toggle"
         "Meta+Ctrl+Zenkaku Hankaku"
       ];
-      "kmix"."decrease_microphone_volume" =
-        "Microphone Volume Down,none,Decrease Microphone Volume";
-      "kmix"."decrease_volume" = "Volume Down,none,Decrease Volume";
-      "kmix"."decrease_volume_small" =
-        "Shift+Volume Down,none,Decrease Volume by 1%";
-      "kmix"."increase_microphone_volume" =
-        "Microphone Volume Up,none,Increase Microphone Volume";
-      "kmix"."increase_volume" = "Volume Up,none,Increase Volume";
-      "kmix"."increase_volume_small" =
-        "Shift+Volume Up,none,Increase Volume by 1%";
-      "kmix"."mic_mute" =
-        [ "Microphone Mute" "Meta+Volume Mute,none,Mute Microphone" ];
-      "kmix"."mute" = "Volume Mute,none,Mute";
-      "ksmserver"."Lock Session" = [ "none,Meta+L" "Screensaver,Lock Session" ];
+      "kmix"."decrease_microphone_volume" = "Microphone Volume Down";
+      "kmix"."decrease_volume" = "Volume Down";
+      "kmix"."decrease_volume_small" = "Shift+Volume Down";
+      "kmix"."increase_microphone_volume" = "Microphone Volume Up";
+      "kmix"."increase_volume" = "Volume Up";
+      "kmix"."increase_volume_small" = "Shift+Volume Up";
+      "kmix"."mic_mute" = [ "Microphone Mute" ];
+      "kmix"."mute" = "Volume Mute";
       "kwin"."Activate Window Demanding Attention" = "Meta+Ctrl+A";
-      "kwin"."Decrease Opacity" =
-        "none,,Decrease Opacity of Active Window by 5%";
       "kwin"."Edit Tiles" = "Meta+T";
       "kwin"."Expose" =
         "Meta+Shift+W,Ctrl+F9,Toggle Present Windows (Current desktop)";
-      "kwin"."ExposeAll" = [
-        "Meta+W,Ctrl+F10"
-        "Launch (C),Toggle Present Windows (All desktops)"
-      ];
-      "kwin"."ExposeClass" =
-        "none,Ctrl+F7,Toggle Present Windows (Window class)";
-      "kwin"."FlexGridNextLayout" = "Meta+Ctrl+Right,none";
-      "kwin"."FlexGridPreviousLayout" = "Meta+Ctrl+Left,none";
+      "kwin"."ExposeAll" = [ "Meta+W" ];
       "kwin"."Grid View" = "Meta+G";
-      "kwin"."Increase Opacity" =
-        "none,,Increase Opacity of Active Window by 5%";
       "kwin"."Kill Window" = "Meta+Ctrl+Esc";
       "kwin"."KrohnkiteFloatAll" = "Meta+Shift+F";
       "kwin"."KrohnkiteFocusDown" = "Meta+Down";
@@ -59,8 +41,6 @@
       "kwin"."MoveMouseToCenter" = "Meta+F6";
       "kwin"."MoveMouseToFocus" = "Meta+F5";
       "kwin"."Overview" = "Meta+W";
-      "kwin"."PoloniumSwapAbove" = "Meta+Shift+K,none";
-      "kwin"."PoloniumSwapBelow" = "Meta+Shift+J,none";
       "kwin"."Show Desktop" = "Meta+D";
       "kwin"."ShowDesktopGrid" = "Meta+F8";
       "kwin"."Switch to Desktop 1" = "Meta+1";
@@ -81,53 +61,47 @@
       "kwin"."Window One Desktop to the Left" = "Meta+Ctrl+Shift+Left";
       "kwin"."Window One Desktop to the Right" = "Meta+Ctrl+Shift+Right";
       "kwin"."Window Operations Menu" = "Alt+F3";
-      "kwin"."Window to Desktop 1" = "Meta+!,,Window to Desktop 1";
-      "kwin"."Window to Desktop 2" = "Meta+@,,Window to Desktop 2";
-      "kwin"."Window to Desktop 3" = "Meta+#,,Window to Desktop 3";
-      "kwin"."Window to Desktop 4" = "Meta+$,,Window to Desktop 4";
-      "kwin"."Window to Desktop 5" = "Meta+%,,Window to Desktop 5";
-      "kwin"."Window to Desktop 6" = "Meta+^,,Window to Desktop 6";
-      "kwin"."Window to Desktop 7" = "Meta+&,,Window to Desktop 7";
-      "kwin"."Window to Desktop 8" = "Meta+*,,Window to Desktop 8";
-      "kwin"."Window to Desktop 9" = "Meta+(,,Window to Desktop 9";
-      "kwin"."Window to Next Desktop" =
-        "Ctrl+Alt+Right";
+      "kwin"."Window to Desktop 1" = "Meta+!";
+      "kwin"."Window to Desktop 2" = "Meta+@";
+      "kwin"."Window to Desktop 3" = "Meta+#";
+      "kwin"."Window to Desktop 4" = "Meta+$";
+      "kwin"."Window to Desktop 5" = "Meta+%";
+      "kwin"."Window to Desktop 6" = "Meta+^";
+      "kwin"."Window to Desktop 7" = "Meta+&";
+      "kwin"."Window to Desktop 8" = "Meta+*";
+      "kwin"."Window to Desktop 9" = "Meta+(";
+      "kwin"."Window to Next Desktop" = "Ctrl+Alt+Right";
       "kwin"."Window to Next Screen" = "Meta+Shift+Right";
-      "kwin"."Window to Previous Desktop" =
-        "Ctrl+Alt+Left";
+      "kwin"."Window to Previous Desktop" = "Ctrl+Alt+Left";
       "kwin"."Window to Previous Screen" = "Meta+Shift+Left";
       "kwin"."view_actual_size" = "Meta+0";
       "kwin"."view_zoom_in" = [ "Meta++,Meta++" "Meta+=,Zoom In" ];
       "kwin"."view_zoom_out" = "Meta+-";
-      "mediacontrol"."nextmedia" = "Media Next,none,Media playback next";
-      "mediacontrol"."pausemedia" = "Media Pause,none,Pause media playback";
-      "mediacontrol"."playpausemedia" =
-        "Media Play,none,Play/Pause media playback";
-      "mediacontrol"."previousmedia" =
-        "Media Previous,none,Media playback previous";
-      "mediacontrol"."stopmedia" = "Media Stop,none,Stop media playback";
+      "mediacontrol"."nextmedia" = "Media Next";
+      "mediacontrol"."pausemedia" = "Media Pause";
+      "mediacontrol"."playpausemedia" = "Media Play";
+      "mediacontrol"."previousmedia" = "Media Previous";
+      "mediacontrol"."stopmedia" = "Media Stop";
       "org_kde_powerdevil"."Decrease Keyboard Brightness" =
-        "Keyboard Brightness Down,none,Decrease Keyboard Brightness";
+        "Keyboard Brightness Down";
       "org_kde_powerdevil"."Decrease Screen Brightness" =
-        "Monitor Brightness Down,none,Decrease Screen Brightness";
+        "Monitor Brightness Down";
       "org_kde_powerdevil"."Decrease Screen Brightness Small" =
-        "Shift+Monitor Brightness Down,none,Decrease Screen Brightness by 1%";
-      "org_kde_powerdevil"."Hibernate" = "Hibernate,none,Hibernate";
+        "Shift+Monitor Brightness Down";
+      "org_kde_powerdevil"."Hibernate" = "Hibernate";
       "org_kde_powerdevil"."Increase Keyboard Brightness" =
-        "Keyboard Brightness Up,none,Increase Keyboard Brightness";
+        "Keyboard Brightness Up";
       "org_kde_powerdevil"."Increase Screen Brightness" =
-        "Monitor Brightness Up,none,Increase Screen Brightness";
+        "Monitor Brightness Up";
       "org_kde_powerdevil"."Increase Screen Brightness Small" =
-        "Shift+Monitor Brightness Up,none,Increase Screen Brightness by 1%";
-      "org_kde_powerdevil"."PowerDown" = "Power Down,none,Power Down";
-      "org_kde_powerdevil"."PowerOff" = "Power Off,none,Power Off";
-      "org_kde_powerdevil"."Sleep" = "Sleep,none,Suspend";
+        "Shift+Monitor Brightness Up";
+      "org_kde_powerdevil"."PowerDown" = "Power Down";
+      "org_kde_powerdevil"."PowerOff" = "Power Off";
+      "org_kde_powerdevil"."Sleep" = "Sleep";
       "org_kde_powerdevil"."Toggle Keyboard Backlight" =
-        "Keyboard Light On/Off,none,Toggle Keyboard Backlight";
-      "org_kde_powerdevil"."powerProfile" =
-        [ "Battery" "Meta+B,none,Switch Power Profile" ];
-      "plasmashell"."activate application launcher" =
-        [ "Meta,Meta" "Alt+F1,Activate Application Launcher" ];
+        "Keyboard Light On/Off";
+      "org_kde_powerdevil"."powerProfile" = [ "Battery" "Meta+B" ];
+      "plasmashell"."activate application launcher" = [ "Meta" ];
       "services/org.kde.plasma-systemmonitor.desktop"."_launch" = "Ctrl+Esc";
       "services/org.kde.spectacle.desktop"."RectangularRegionScreenShot" =
         "Print";
