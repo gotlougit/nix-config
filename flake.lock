@@ -141,11 +141,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1722007437,
-        "narHash": "sha256-bUjBnMMbCAnGlBMJTbSc2XvKnLiS5O+hr1Rgp8I1Rs4=",
+        "lastModified": 1722343392,
+        "narHash": "sha256-9PzvLK/zNQnTx7gmkrYfFpDAxxvK6sT0pfPrYU2SKNM=",
         "owner": "~gotlou",
         "repo": "code-sandbox",
-        "rev": "f9db8ead4c8f944188985a5cf97df935e43e7042",
+        "rev": "309288e9ae88cd3351aa0f34b0684064e573ee8f",
         "type": "sourcehut"
       },
       "original": {
