@@ -32,6 +32,7 @@
       "*.localgomod/"
       "*.localgocache/"
       "*.localgohome/"
+      "*.aider*"
     ];
     # Enable syntax highlight in diffs
     difftastic.enable = true;

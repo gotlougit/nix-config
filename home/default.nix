@@ -36,6 +36,7 @@
     signal-desktop # Secure and easy messaging
     tdesktop # Telegram desktop client
     tor-browser-bundle-bin # Needs no intro
+    aider # AI helper for coding
   ];
 
   manual.manpages.enable = false;
