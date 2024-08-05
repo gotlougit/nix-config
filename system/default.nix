@@ -14,7 +14,7 @@
     ./style.nix
     ./time.nix
     ./udev.nix
-    # ./warp.nix
+    ./warp.nix
     ./virt.nix
     ./dns-resolver.nix
     ./oom.nix
