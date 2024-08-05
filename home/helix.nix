@@ -3,30 +3,22 @@
 {
   programs.helix.enable = true;
   programs.helix.defaultEditor = true;
-  programs.helix.languages.language-server.gpt = {
-    command = "${lib.getExe pkgs.helix-gpt}";
-    args = [ "--handler" "codeium" ];
-  };
   programs.helix.languages.language-server.nixd = {
     command = "${lib.getExe pkgs.nixd}";
   };
   programs.helix.languages.language = [
     {
       name = "typescript";
-      language-servers = [ "typescript-language-server" "gpt" ];
+      language-servers = [ "typescript-language-server" ];
       formatter.command = "prettier";
       formatter.args = [ "--parser" "typescript" ];
       formatter.binary = "${lib.getExe pkgs.nodePackages.prettier}";
     }
     {
       name = "nix";
-      language-servers = [ "nixd" "gpt" ];
+      language-servers = [ "nixd" ];
       formatter.binary = "${lib.getExe pkgs.nixfmt-classic}";
       formatter.command = "nixfmt";
-    }
-    {
-      name = "cpp";
-      language-servers = [ "clangd" "gpt" ];
     }
   ];
   programs.helix.settings = {
@@ -87,9 +79,6 @@
     # Nix
     nixfmt-classic
     nixd
-
-    # GPT in helix
-    helix-gpt
   ];
 
 }
