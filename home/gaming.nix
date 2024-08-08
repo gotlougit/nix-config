@@ -5,7 +5,7 @@
     # Gaming stuff
     bottles # Easily manage Wine prefixes
     cemu # Wii U emulator
-    chiaki # PS4 Remote Play client
+    chiaki-ng # PS4 Remote Play client
     dolphin-emu # GameCube and Wii emulator
     duckstation # PS1 emulator
     pcsx2 # PS2 emulator
