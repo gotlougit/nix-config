@@ -1,6 +1,5 @@
 self: super: {
   guerrilla = self.callPackage ./guerrilla.nix { };
-  aider = self.callPackage ./aider.nix { };
   llama-cpp = self.callPackage ./llama-cpp.nix { };
   polonium = self.callPackage ./polonium.nix { };
   chiaki-ng = self.kdePackages.callPackage ./chiaki-ng.nix {
