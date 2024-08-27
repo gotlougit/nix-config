@@ -9,8 +9,9 @@
   };
   # Enable firmware updates
   services.fwupd.enable = true;
-  # Enable AppArmor for more security
-  security.apparmor.enable = true;
-  # Use system76-scheduler to improve desktop experience
-  services.system76-scheduler.enable = true;
+  # Use dbus-broker for better performane
+  services.dbus.enable =  true;
+  services.dbus.implementation = "broker";
+  # Use irqbalance to help handle system being laggy during high load
+  services.irqbalance.enable = true;
 }
