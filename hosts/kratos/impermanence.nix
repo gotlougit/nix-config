@@ -95,7 +95,12 @@
       # Firefox
       # "/home/gotlou/.mozilla"
     ];
-    files = [ ];
+    files = [
+      # aider
+      "/home/gotlou/.aider.conf.yml"
+      # docker container registry auth
+      "/home/gotlou/.docker/config.json"
+    ];
   };
 
 }
