@@ -66,6 +66,7 @@ in {
       diff = "difft";
       du = "dust";
       ls = "eza";
+      htop = "btm --battery --tree --basic";
       # "." = "hx .";
       less = "bat --style plain";
       enter-rust-dev =
