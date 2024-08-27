@@ -116,6 +116,7 @@ in {
     fd # Fast `find` replacement
     tealdeer # Rust implementation of tldr
     scc # loc replacement written in go
+    bottom # htop replacement in rust
     # Required for above config to work
     macchina # Nice startup screen for terminal
 

@@ -6,7 +6,7 @@
     ./gaming.nix
     ./git.nix
     ./helix.nix
-    ./htop.nix
+    # ./htop.nix
     ./keepassxc.nix
     ./otpclient.nix
     ./plasma
