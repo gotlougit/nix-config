@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     gparted # *The* GUI for partitioning drives
     steam-run # Create traditional FHS for non-Nix packaged software to run in
+    appimage-run # Run AppImages with simple command
     neovim # Classic editor around as a backup
     helix # New Rust-based modal editor
     android-tools # adb, fastboot etc
