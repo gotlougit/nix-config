@@ -145,6 +145,7 @@ in {
     tetex # LaTEX related tooling
     p7zip # Useful for decompressing
     unzip # Useful for decompressing ZIP files
+    unrar # For .rar files
     wget # Another, simpler download manager
     whois # Useful utility
     wl-clipboard # CLI util for copying and pasting in Wayland
