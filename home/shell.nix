@@ -122,6 +122,7 @@ in {
     macchina # Nice startup screen for terminal
 
     # Shell utils I like to use
+    ast-grep # syntax-powered grep
     file # To show type of file
     aria # download manager
     bash # Keep around explicitly for legacy purposes
@@ -139,7 +140,7 @@ in {
     magic-wormhole-rs # Direct file transfers
     magit # Advanced git UI using emacs
     pandoc # Convert docs
-    # picard # Tag music files
+    picard # Tag music files
     poppler_utils # PDF conversion and misc utils
     tetex # LaTEX related tooling
     p7zip # Useful for decompressing
