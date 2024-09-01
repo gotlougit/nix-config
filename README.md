@@ -18,6 +18,8 @@ might as well take advantage of it.
 
 - Set up certain overlays, such as KeepassXC compiled without X11 and networking code
 
+- Use sudo-rs instead of normal sudo for greater safety
+
 - Add a user to the system
 
 - Use [plasma-manager](https://github.com/pjones/plasma-manager) to declare a KDE plasma config for a consistent, reproducible look and behaviour, including
