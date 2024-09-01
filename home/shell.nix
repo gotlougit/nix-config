@@ -123,6 +123,7 @@ in {
 
     # Shell utils I like to use
     ast-grep # syntax-powered grep
+    ffsend # Send files e2ee
     file # To show type of file
     aria # download manager
     bash # Keep around explicitly for legacy purposes
