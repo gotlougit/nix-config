@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ inputs, pkgs, lib, ... }:
 # This contains GUI desktop specific services/configs
 {
   # Enable the X11 windowing system.
@@ -6,7 +6,10 @@
   # Enable use of KDE Plasma and SDDM login manager
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.desktopManager.plasma6.enable = true;
+  imports = [ inputs.nixos-cosmic.nixosModules.default ];
+  services.desktopManager.cosmic.enable = true;
+
   # Extra SDDM config
   services.displayManager.sddm.settings = {
     Theme = { FacesDir = "/persist/system/icons"; };

@@ -7,6 +7,10 @@
       experimental-features = [ "nix-command" "flakes" ];
       # Restrict nix usage to real users
       allowed-users = lib.mkDefault [ "@users" ];
+      # For COSMIC
+      substituters = [ "https://cosmic.cachix.org/" ];
+      trusted-public-keys =
+        [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
     };
     # Garbage collect generations older than 7 days
     gc = {

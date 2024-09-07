@@ -26,8 +26,13 @@
 
   inputs.madness.url = "github:antithesishq/madness";
 
+  inputs.nixos-cosmic = {
+    url = "github:lilyinstarlight/nixos-cosmic";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   outputs = inputs@{ self, nixpkgs, impermanence, code-sandbox, archiver
-    , home-manager, plasma-manager, sshield, stylix, madness }:
+    , home-manager, plasma-manager, sshield, stylix, madness, nixos-cosmic }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
