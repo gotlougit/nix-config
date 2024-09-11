@@ -1,6 +1,5 @@
 { pkgs, inputs, ... }: {
   imports = [
-    ./easyeffects.nix
     ./firefox.nix
     ./gaming.nix
     ./git.nix
