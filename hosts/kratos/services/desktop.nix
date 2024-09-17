@@ -48,6 +48,7 @@
     ntfs3g # NTFS FUSE implementation
     kdePackages.ksshaskpass # Ask password in GUI from CLI
     kdePackages.kdeconnect-kde # KDE Connect
+    kdePackages.krohnkite # Tiling extension for Plasma 6
   ];
 
   # Disable baloo indexer
