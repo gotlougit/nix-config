@@ -37,12 +37,18 @@
     -- Disable all default keyboard shortcuts to avoid conflict
     config.disable_default_key_bindings = true;
 
+    config.mouse_bindings = {
+      {
+        event = { Up = { streak = 1, button = 'Middle' } },
+        mods = 'NONE',
+        action = wezterm.action.PasteFrom 'PrimarySelection',
+      },
+    }
+
     config.keys = {
       -- paste from the clipboard
       { key = 'V', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
 
-      -- paste from the primary selection
-      { key = 'V', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'PrimarySelection' },
       {
         -- Split vertical
         key = '(',
