@@ -14,6 +14,7 @@
     ./tiny-irc.nix
     ./thunderbird.nix
     ./wezterm.nix
+    ./zed.nix
   ];
 
   home.packages = with pkgs; [
