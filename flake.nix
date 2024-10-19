@@ -24,10 +24,8 @@
   inputs.stylix.url = "github:danth/stylix";
   inputs.stylix.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.madness.url = "github:antithesishq/madness";
-
   outputs = inputs@{ self, nixpkgs, impermanence, code-sandbox, archiver
-    , home-manager, plasma-manager, sshield, stylix, madness }:
+    , home-manager, plasma-manager, sshield, stylix }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
@@ -53,7 +51,6 @@
           specialArgs = { inherit inputs; };
           modules = [
             home-manager.nixosModules.home-manager
-            madness.nixosModules.madness
             {
               # Pass flake input to home-manager
               home-manager.extraSpecialArgs = { inherit inputs; };

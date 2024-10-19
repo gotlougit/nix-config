@@ -10,7 +10,6 @@
     ./openssh.nix
     ./opensnitch.nix
     ./keyd.nix
-    ./madness.nix
     ./style.nix
     ./time.nix
     ./udev.nix

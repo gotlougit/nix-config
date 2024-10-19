@@ -259,21 +259,6 @@
         "type": "github"
       }
     },
-    "madness": {
-      "locked": {
-        "lastModified": 1720637547,
-        "narHash": "sha256-5MGG0iRBvP35VlcHvxVrapuLygZwHwMB3g0M0fWxz58=",
-        "owner": "antithesishq",
-        "repo": "madness",
-        "rev": "c22c9c03579b7175d94f63e44ee0e518bb5ccdba",
-        "type": "github"
-      },
-      "original": {
-        "owner": "antithesishq",
-        "repo": "madness",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1729256560,
@@ -318,7 +303,6 @@
         "code-sandbox": "code-sandbox",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
-        "madness": "madness",
         "nixpkgs": "nixpkgs",
         "plasma-manager": "plasma-manager",
         "sshield": "sshield",
