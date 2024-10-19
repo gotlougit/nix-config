@@ -135,7 +135,6 @@ in {
     dig # for DNS testing
     ffmpeg # Multimedia Swiss Army Knife
     gh # Github CLI
-    guerrilla # Generate temp emails for signups
     hut # Sourcehut CLI
     img2pdf # Useful utility
     jq # JSON manipulator
