@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     # Gaming stuff
-    bottles # Easily manage Wine prefixes
     cemu # Wii U emulator
     chiaki-ng # PS4 Remote Play client
     dolphin-emu # GameCube and Wii emulator
