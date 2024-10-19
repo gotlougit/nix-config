@@ -1,17 +1,10 @@
-{ config, ... }: {
+{ ... }: {
 
   # Selects holiday region for calendar
   xdg.configFile."plasma_calendar_holiday_regions".text = ''
     [General]
     selectedRegions=in_en-gb
   '';
-
-  # # Import the event calendar plugin used for taskbar
-  # # TODO: make this more declarative and less dependent on my specific path
-  # home.file.".local/share/plasma/plasmoids/org.kde.plasma.eventcalendar" = {
-  #   source = config.lib.file.mkOutOfStoreSymlink /home/gotlou/nixos/dotfiles/plasma-applet-eventcalendar/package;
-  #   recursive = true;
-  # };
 
   # Panel config
   xdg.configFile."plasma-org.kde.plasma.desktop-appletsrc".text = ''
