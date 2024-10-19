@@ -7,6 +7,8 @@
       experimental-features = [ "nix-command" "flakes" ];
       # Restrict nix usage to real users
       allowed-users = lib.mkDefault [ "@users" ];
+      # Hard link identical files in the nix store
+      auto-optimise-store = true;
     };
     # Garbage collect generations older than 7 days
     gc = {
