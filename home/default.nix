@@ -34,7 +34,7 @@
     signal-desktop # Secure and easy messaging
     tdesktop # Telegram desktop client
     tor-browser-bundle-bin # Needs no intro
-    aider-chat # AI helper for coding
+    # aider-chat # AI helper for coding
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
   ];
