@@ -132,7 +132,7 @@
           type = "simple";
           sensitive = false;
           operand = "process.path";
-          data = "${lib.getBin pkgs.kdeconnect}/libexec/.kdeconnectd-wrapped";
+          data = "${lib.getBin pkgs.plasma5Packages.kdeconnect-kde}/libexec/.kdeconnectd-wrapped";
         };
       };
       signal-allow = {

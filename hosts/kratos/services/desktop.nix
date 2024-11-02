@@ -47,7 +47,7 @@
     kdePackages.plasma-vault # Encrypted folders in KDE
     ntfs3g # NTFS FUSE implementation
     kdePackages.ksshaskpass # Ask password in GUI from CLI
-    kdePackages.kdeconnect-kde # KDE Connect
+    plasma5Packages.kdeconnect-kde # KDE Connect
     kdePackages.krohnkite # Tiling extension for Plasma 6
   ];
 
