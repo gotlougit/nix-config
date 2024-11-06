@@ -52,9 +52,8 @@
       "kwin"."Switch to Desktop 7" = "Meta+7";
       "kwin"."Switch to Desktop 8" = "Meta+8";
       "kwin"."Switch to Desktop 9" = "Meta+9";
-      "kwin"."Walk Through Windows" = "none,Alt+Tab,Walk Through Windows";
-      "kwin"."Walk Through Windows (Reverse)" =
-        "none,Alt+Shift+Tab,Walk Through Windows (Reverse)";
+      "kwin"."Walk Through Windows" = "Alt+Tab";
+      "kwin"."Walk Through Windows (Reverse)" = "Alt+Shift+Tab";
       "kwin"."Window Close" = "Alt+F4";
       "kwin"."Window Maximize" = "Meta+PgUp";
       "kwin"."Window Minimize" = "Meta+PgDown";
