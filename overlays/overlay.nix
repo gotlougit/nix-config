@@ -1,6 +1,5 @@
 self: super: {
   llama-cpp = self.callPackage ./llama-cpp.nix { };
-  cloudflare-warp-old = self.callPackage ./cloudflare-warp-old.nix { };
   chiaki-ng = self.kdePackages.callPackage ./chiaki-ng.nix {
     libplacebo = super.libplacebo.overrideAttrs (old: {
       src = old.src.override {
