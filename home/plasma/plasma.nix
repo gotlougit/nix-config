@@ -157,7 +157,7 @@
       "kdeglobals"."General"."AllowKDEAppsToRememberWindowPositions" = true;
       "kdeglobals"."General"."BrowserApplication" =
         "mullvadbrowser-sandbox.desktop";
-      "kdeglobals"."General"."TerminalApplication" = "wezterm start --cwd .";
+      "kdeglobals"."General"."TerminalApplication" = "wezterm start --always-new-process --cwd .";
       "kdeglobals"."General"."TerminalService" =
         "org.wezfurlong.wezterm.desktop";
       "kdeglobals"."Icons"."Theme" = "Papirus-Dark";
