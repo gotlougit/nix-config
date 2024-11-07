@@ -64,6 +64,7 @@
     rust-analyzer # Rust
     gopls # Golang
     nodePackages.bash-language-server # Bash
+    python312Packages.python-lsp-server # Python
     dockerfile-language-server-nodejs # Dockerfile
     vscode-langservers-extracted # HTML/CSS/JSON
     texlab # LaTEX
