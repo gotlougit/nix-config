@@ -38,7 +38,7 @@
     ToolBoxButtonX=557
 
     [Containments][1][Wallpaper][org.kde.image][General]
-    Image=/home/gotlou/Pictures/wallpaper/God of War Ragnarök_20221129110216.png
+    Image=/home/gotlou/Pictures/wallpaper/Uncharted 4_ A Thief’s End™_20200113144917.png
     SlidePaths=/nix/store/65csdsq0r66kxv8x0lwp37nm2czddmwv-breeze-qt5-5.27.7-bin/share/wallpapers/,/etc/profiles/per-user/gotlou/share/wallpapers/,/run/current-system/sw/share/wallpapers/
 
     [Containments][2]
