@@ -35,6 +35,7 @@
     tdesktop # Telegram desktop client
     tor-browser-bundle-bin # Needs no intro
     aider-chat # AI helper for coding
+    aichat # Chat with AI from terminal
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
   ];

@@ -92,6 +92,8 @@
       "/home/gotlou/.local/share/plasma-vault"
       # LeetCode Cookies
       "/home/gotlou/.leetcode"
+      # aichat
+      "/home/gotlou/.config/aichat"
       # Firefox
       # "/home/gotlou/.mozilla"
     ];
