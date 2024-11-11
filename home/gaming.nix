@@ -11,6 +11,5 @@
     rpcs3 # PS3 emulator
     xemu # Original Xbox emulator
     minetest # Open source Minecraft-like game
-    mangohud # Overlay while playing games
   ];
 }
