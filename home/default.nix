@@ -23,7 +23,7 @@
     inputs.archiver.packages.x86_64-linux.default # Installs archiving script
     ghidra # Decompiler
     gImageReader # OCR PDFs and images easily
-    gomuks # CLI Matrix client
+    # gomuks # CLI Matrix client
     inkscape # Vector images
     krita # Raster image editor
     libreoffice-qt # Document editor
