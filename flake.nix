@@ -24,8 +24,11 @@
   inputs.stylix.url = "github:danth/stylix";
   inputs.stylix.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.nix-index-database.url = "github:nix-community/nix-index-database";
+  inputs.nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs = inputs@{ self, nixpkgs, impermanence, code-sandbox, archiver
-    , home-manager, plasma-manager, sshield, stylix }:
+    , home-manager, plasma-manager, sshield, stylix, nix-index-database }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
