@@ -51,6 +51,10 @@
       "/home/gotlou/.local/share/dolphin-emu"
       "/home/gotlou/.cache/dolphin-emu"
       "/home/gotlou/.config/dolphin-emu"
+      # Wii U emulator
+      "/home/gotlou/.local/share/Cemu"
+      "/home/gotlou/.cache/Cemu"
+      "/home/gotlou/.config/Cemu"
     ];
     files = [ ];
   };
