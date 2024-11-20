@@ -60,4 +60,8 @@
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
+  # Extra XDG portals
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
 }
