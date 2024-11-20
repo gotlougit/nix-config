@@ -13,7 +13,7 @@
     ./style.nix
     ./time.nix
     ./udev.nix
-    ./warp.nix
+    ./waydroid.nix
     ./virt.nix
     ./dns-resolver.nix
     ./oom.nix
