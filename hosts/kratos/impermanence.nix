@@ -5,6 +5,7 @@
   environment.persistence."/persist/system" = {
     directories = [
       "/etc/NetworkManager"
+      "/etc/opt/ivpn/mutable"
       "/var/log/cloudflare-warp"
       "/var/log/private"
       "/var/lib/tailscale"
