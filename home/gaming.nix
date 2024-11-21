@@ -10,6 +10,7 @@
     pcsx2 # PS2 emulator
     rpcs3 # PS3 emulator
     xemu # Original Xbox emulator
+    sm64ex # Open source Super Mario 64 Decompilation
     minetest # Open source Minecraft-like game
   ];
 }
