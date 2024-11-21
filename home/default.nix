@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }: {
   imports = [
+    ./home-manager-gc.nix
     ./firefox.nix
     ./gaming.nix
     ./git.nix
