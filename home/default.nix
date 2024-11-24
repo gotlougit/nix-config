@@ -41,6 +41,7 @@
     chromium # Keep around as backup browser
   ];
 
+  stylix.enable = true;  
   manual.manpages.enable = false;
   home.stateVersion = "22.11";
 }
