@@ -66,14 +66,14 @@
       # Email
       # "/home/gotlou/.thunderbird"
       # Matrix
-      "/home/gotlou/.config/gomuks"
+      # "/home/gotlou/.config/gomuks"
       # Signal
       "/home/gotlou/.config/Signal"
       # nchat (WhatsApp TUI client)
       "/home/gotlou/.nchat"
       # scli (Signal TUI client)
-      "/home/gotlou/.local/share/scli"
-      "/home/gotlou/.local/share/signal-cli"
+      # "/home/gotlou/.local/share/scli"
+      # "/home/gotlou/.local/share/signal-cli"
       # Telegram
       "/home/gotlou/.local/share/TelegramDesktop"
     ];
