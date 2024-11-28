@@ -8,7 +8,6 @@
     ./standard-services.nix
     ./syncthing.nix
     ./openssh.nix
-    ./opensnitch.nix
     ./keyd.nix
     ./style.nix
     ./time.nix
