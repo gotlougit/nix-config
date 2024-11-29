@@ -70,7 +70,7 @@
       # Signal
       "/home/gotlou/.config/Signal"
       # nchat (WhatsApp TUI client)
-      "/home/gotlou/.nchat"
+      # "/home/gotlou/.nchat"
       # scli (Signal TUI client)
       # "/home/gotlou/.local/share/scli"
       # "/home/gotlou/.local/share/signal-cli"
