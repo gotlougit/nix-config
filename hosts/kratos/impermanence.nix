@@ -56,6 +56,9 @@
       "/home/gotlou/.local/share/Cemu"
       "/home/gotlou/.cache/Cemu"
       "/home/gotlou/.config/Cemu"
+      # Heroic
+      "/home/gotlou/.config/heroic"
+      "/home/gotlou/.heroic"
     ];
     files = [ ];
   };
