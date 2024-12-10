@@ -37,6 +37,7 @@
     aichat # Chat with AI from terminal
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
+    stremio
   ];
 
   stylix.enable = true;  
