@@ -13,5 +13,6 @@
     sm64ex # Open source Super Mario 64 Decompilation
     minetest # Open source Minecraft-like game
     heroic # GOG + Epic + Amazon Game launcher + Proton wrapper to boot
+    mangohud # Overlay for FPS, frametime, CPU, GPU usage etc
   ];
 }
