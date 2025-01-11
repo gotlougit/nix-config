@@ -85,4 +85,6 @@
     serviceConfig = (import ./hardening-base.nix);
   };
 
+  environment.systemPackages = with pkgs; [ linux-wifi-hotspot ];
+
 }
