@@ -84,7 +84,5 @@
     enable = true;
     serviceConfig = (import ./hardening-base.nix);
   };
-  
-  services.ivpn.enable = true;
-  environment.systemPackages = with pkgs; [ ivpn ];
+
 }
