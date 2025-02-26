@@ -15,6 +15,12 @@
       formatter.binary = "${lib.getExe pkgs.nodePackages.prettier}";
     }
     {
+      name = "python";
+      formatter.command = "ruff";
+      formatter.args = [ "format" "--line-length" "88" "-" ];
+      formatter.binary = "${lib.getExe pkgs.ruff}";
+    }
+    {
       name = "nix";
       language-servers = [ "nixd" ];
       formatter.binary = "${lib.getExe pkgs.nixfmt-classic}";
@@ -64,10 +70,13 @@
     rust-analyzer # Rust
     gopls # Golang
     nodePackages.bash-language-server # Bash
-    python312Packages.python-lsp-server # Python
     dockerfile-language-server-nodejs # Dockerfile
     vscode-langservers-extracted # HTML/CSS/JSON
     texlab # LaTEX
+
+    # Python
+    python312Packages.python-lsp-server
+    ruff
 
     # Markdown
     markdown-oxide
