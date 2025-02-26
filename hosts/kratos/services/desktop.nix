@@ -42,12 +42,12 @@
   }];
 
   environment.systemPackages = with pkgs; [
-    ark # KDE archiving program
+    kdePackages.ark # KDE archiving program
     gocryptfs # For plasma-vault
     kdePackages.plasma-vault # Encrypted folders in KDE
     ntfs3g # NTFS FUSE implementation
     kdePackages.ksshaskpass # Ask password in GUI from CLI
-    plasma5Packages.kdeconnect-kde # KDE Connect
+    kdePackages.kdeconnect-kde # KDE Connect
     kdePackages.krohnkite # Tiling extension for Plasma 6
   ];
 
