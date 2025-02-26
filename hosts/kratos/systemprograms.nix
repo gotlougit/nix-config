@@ -24,5 +24,5 @@
     wireshark # View real time network traffic across multiple interfaces
     wireguard-tools # Use kernel Wireguard
   ];
-
+  programs.steam.enable = true;
 }
