@@ -139,7 +139,6 @@ in {
     img2pdf # Useful utility
     jq # JSON manipulator
     magic-wormhole-rs # Direct file transfers
-    magit # Advanced git UI using emacs
     pandoc # Convert docs
     picard # Tag music files
     poppler_utils # PDF conversion and misc utils
