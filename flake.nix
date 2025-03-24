@@ -27,8 +27,11 @@
   inputs.nix-index-database.url = "github:nix-community/nix-index-database";
   inputs.nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+
   outputs = inputs@{ self, nixpkgs, impermanence, code-sandbox, archiver
-    , home-manager, plasma-manager, sshield, stylix, nix-index-database }:
+    , home-manager, plasma-manager, sshield, stylix, nix-index-database
+    , nixos-cosmic }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
