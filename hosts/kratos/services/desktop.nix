@@ -1,17 +1,27 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 # This contains GUI desktop specific services/configs
 {
+  imports = [ inputs.nixos-cosmic.nixosModules.default ];
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   # Enable use of KDE Plasma and SDDM login manager
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.plasma6.enable = true;
   # Extra SDDM config
   services.displayManager.sddm.settings = {
     Theme = { FacesDir = "/persist/system/icons"; };
   };
+  # services.desktopManager.cosmic.enable = true;
   security.pam.services.gotlou.kwallet.enable = true;
+
+  # environment.cosmic.excludePackages = lib.mkForce [
+  #   pkgs.cosmic-edit
+  #   pkgs.cosmic-term
+  #   pkgs.cosmic-player
+  #   pkgs.pop-icon-theme
+  # ];
 
   # Remove some KDE defaults that are never needed
   environment.plasma6.excludePackages = lib.mkForce [
@@ -49,6 +59,9 @@
     kdePackages.ksshaskpass # Ask password in GUI from CLI
     kdePackages.kdeconnect-kde # KDE Connect
     kdePackages.krohnkite # Tiling extension for Plasma 6
+
+    # cosmic-ext-tweaks
+    # cosmic-ext-ctl
   ];
 
   # Disable baloo indexer
