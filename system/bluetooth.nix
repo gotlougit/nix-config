@@ -10,6 +10,8 @@
       ProtectProc = "invisible";
       IPAddressDeny = [ "any" ];
       RestrictAddressFamilies = [ "AF_BLUETOOTH" "AF_UNIX" ];
+      ProtectKernelModules = lib.mkForce true;
+      ProtectKernelTunables = lib.mkForce true;
     }
   ];
 
