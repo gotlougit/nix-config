@@ -1,13 +1,22 @@
-{ ... }: {
-  # imports = [ ./display-scale.nix ./panel.nix ./plasma.nix ];
-  imports = [ ./plasma.nix ];
+{ lib, pkgs, ... }: {
+  imports = [ ./display-scale.nix ./panel.nix ./plasma.nix ];
 
-  # # Import the dynamic workspaces plugin used for kwin
-  # # TODO: make this more declarative and less dependent on my specific path
-  # home.file.".local/share/kwin/scripts/dynamic_workspaces" = {
-  #   source = config.lib.file.mkOutOfStoreSymlink /home/gotlou/nixos/dotfiles/dynamic_workspaces;
-  #   recursive = true;
-  # };
+  # ref: https://github.com/nix-community/home-manager/issues/5098#issuecomment-2352172073
+  xdg.configFile."menus/applications.menu".source =
+    "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+  qt = {
+    enable = true;
+    platformTheme.package = with pkgs.kdePackages; [
+      plasma-integration
+      # I don't remember why I put this is here, maybe it fixes the theme of the system setttings
+      systemsettings
+    ];
+    style = {
+      package = pkgs.nordic;
+      name = lib.mkForce "Nord";
+    };
+  };
+  systemd.user.sessionVariables = { QT_QPA_PLATFORMTHEME = lib.mkForce "kde"; };
 
   # Stores dolphin preferences
   home.file.".local/share/dolphin/dolphinstaterc".text = ''
