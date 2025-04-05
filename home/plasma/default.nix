@@ -13,7 +13,7 @@
     ];
     style = {
       package = pkgs.nordic;
-      name = lib.mkForce "Nord";
+      name = lib.mkForce "Breeze";
     };
   };
   systemd.user.sessionVariables = { QT_QPA_PLATFORMTHEME = lib.mkForce "kde"; };
