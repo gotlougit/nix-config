@@ -19,10 +19,56 @@
   systemd.user.sessionVariables = { QT_QPA_PLATFORMTHEME = lib.mkForce "kde"; };
 
   # Stores dolphin preferences
-  home.file.".local/share/dolphin/dolphinstaterc".text = ''
-    [State]
+  home.file.".config/dolphinrc".text = ''
+    [$Version]
+    update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
+
+    [General][$i]
+    EditableUrl[$i]=true
+    EditableUrl\x5b$i\x5d[$i]=true
+    EditableUrlx5b$ix5d[$i]=true
+    RememberOpenedTabs[$i]=false
+    RememberOpenedTabs\x5b$i\x5d[$i]=false
+    RememberOpenedTabsx5b$ix5d[$i]=false
+    Version[$i]=202
+    Version\x5b$i\x5d[$i]=202
+    Versionx5b$ix5d[$i]=202
+    ViewPropsTimestamp[$i]=2023,10,4,17,14,27.119
+    ViewPropsTimestamp\x5b$i\x5d[$i]=2023,10,4,17,14,27.119
+    ViewPropsTimestampx5b$ix5d[$i]=2023,10,4,17,14,27.119
+
+    [General.$i]
+    EditableUrl[$i]=true
+    EditableUrl\x5b$i\x5d=true
+    EditableUrlx5b$ix5d=true
+    RememberOpenedTabs[$i]=false
+    RememberOpenedTabs\x5b$i\x5d=false
+    RememberOpenedTabsx5b$ix5d=false
+    Version[$i]=202
+    Version\x5b$i\x5d=202
+    Versionx5b$ix5d=202
+    ViewPropsTimestamp[$i]=2023,10,4,17,14,27.119
+    ViewPropsTimestamp\x5b$i\x5d=2023,10,4,17,14,27.119
+    ViewPropsTimestampx5b$ix5d=2023,10,4,17,14,27.119
+
+    [KFileDialog Settings]
+    Places Icons Auto-resize=false
+    Places Icons Static Size=22
+
+    [KPropertiesDialog]
     1920x1080 screen: Window-Maximized=true
-    State=AAAA/wAAAAD9AAAAAwAAAAAAAAEEAAAD8vwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAuAAAB5wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAuAAAD8gAAAF0BAAADAAAAAQAAALgAAAPy/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAC4AAAPyAAAACgEAAAMAAAADAAAHgAAAAL78AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAAAAAHgAAAAAoBAAADAAAGXQAAA/IAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+    2 screens: Height=532
+    2 screens: Width=462
+    2 screens: Window-Maximized=true
+
+    [MainWindow]
+    MenuBar=Disabled
+
+    [PreviewSettings]
+    Plugins=audiothumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,opendocumentthumbnail,svgthumbnail,windowsexethumbnail,windowsimagethumbnail,blenderthumbnail,mobithumbnail,ffmpegthumbs,rawthumbnail,gsthumbnail,directorythumbnail
+
+    [Search]
+    Location=Everywhere
   '';
 
 }
