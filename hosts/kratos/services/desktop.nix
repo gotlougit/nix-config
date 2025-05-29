@@ -15,7 +15,7 @@
   security.pam.services.gotlou.kwallet.enable = true;
 
   # EXPERIMENTAL: enable COSMIC desktop
-  services.desktopManager.cosmic.enable = true;
+  # services.desktopManager.cosmic.enable = true;
   # COSMIC greeter disabled since this isn't my primary desktop
   # services.displayManager.cosmic-greeter.enable = true;
   environment.cosmic.excludePackages = lib.mkForce [
