@@ -28,6 +28,8 @@
     registry.nixpkgs.flake = inputs.nixpkgs;
   };
 
+  systemd.services.nix-daemon.serviceConfig.AllowedCPUs = "2-6";
+
   programs.nix-index.enable = true;
   programs.nix-ld.enable = true;
   programs.command-not-found.enable = false;
@@ -53,6 +55,8 @@
       # Required
       glib
       gtk2
+      gtk3
+      gtk4
       bzip2
 
       # Without these it silently fails
