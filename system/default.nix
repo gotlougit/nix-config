@@ -13,7 +13,6 @@
     ./time.nix
     ./udev.nix
     # ./waydroid.nix
-    ./warp.nix
     ./virt.nix
     ./dns-resolver.nix
     ./oom.nix
