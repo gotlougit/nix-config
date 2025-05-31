@@ -17,6 +17,5 @@
     ./dns-resolver.nix
     ./oom.nix
     ./networking.nix
-    ./zed-vm-wrapper.nix
   ];
 }

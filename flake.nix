@@ -29,14 +29,9 @@
 
   inputs.nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 
-  inputs.microvm = {
-    url = "github:astro/microvm.nix";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
-
   outputs = inputs@{ self, nixpkgs, impermanence, code-sandbox, archiver
     , home-manager, plasma-manager, sshield, stylix, nix-index-database
-    , nixos-cosmic, microvm }:
+    , nixos-cosmic }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
@@ -78,13 +73,6 @@
             ./system
           ];
         };
-        zed-vm = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [ 
-            microvm.nixosModules.microvm 
-            ./vm/zed.nix
-          ];
-        };
         mimir = nixpkgs.lib.nixosSystem {
           system = aarch64System;
           specialArgs = { inherit inputs; };
@@ -102,18 +90,6 @@
           ];
         };
       };
-
-      # Define the runner as a package to avoid circular dependency
-      packages.x86_64-linux.zed-vm-runner = nixpkgs.legacyPackages.x86_64-linux.writeShellScriptBin "zed-vm" ''
-        #!/bin/bash
-        echo "Starting Zed VM with access to /home/gotlou/Code"
-        
-        if systemctl --user is-active --quiet microvm@zed-vm 2>/dev/null; then
-          echo "Zed VM is already running"
-          exit 0
-        fi
-        nix run "${self}#nixosConfigurations.zed-vm.config.microvm.declaredRunner"
-      '';
     };
 }
 
