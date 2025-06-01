@@ -38,6 +38,13 @@
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
     stremio # Streaming app
+    (sommelier.overrideAttrs (old: {
+      doCheck = false;
+      doInstallCheck = false;
+      buildInputs = (old.buildInputs or []) ++ [ pkgs.gtest ];
+    }))
+    muvm
+    appvm
   ];
 
   stylix.enable = true;
