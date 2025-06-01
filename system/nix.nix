@@ -24,9 +24,16 @@
     };
     # Use repo version of nixpkgs for nix operations
     # This prevents downloading latest flake every time you want to do something
-    # This also makes non-flake nix commands fail, though
     registry.nixpkgs.flake = inputs.nixpkgs;
+    nixPath = [
+      "nixpkgs=/etc/channels/nixpkgs"
+      "nixos-config=/etc/nixos/configuration.nix"
+      "/nix/var/nix/profiles/per-user/root/channels"
+    ];
   };
+
+  # Channel points to pinned flake
+  environment.etc."channels/nixpkgs".source = inputs.nixpkgs.outPath;
 
   systemd.services.nix-daemon.serviceConfig.AllowedCPUs = "2-6";
 
