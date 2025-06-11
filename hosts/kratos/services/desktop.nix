@@ -14,6 +14,11 @@
   };
   security.pam.services.gotlou.kwallet.enable = true;
 
+  # Disable baloo service completely
+  systemd.user.services.plasma-baloorunner = {
+    enable = lib.mkForce false;
+  };
+
   # EXPERIMENTAL: enable COSMIC desktop
   # services.desktopManager.cosmic.enable = true;
   # COSMIC greeter disabled since this isn't my primary desktop
