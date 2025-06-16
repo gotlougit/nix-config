@@ -8,6 +8,7 @@ with pkgs; [
   dockerfile-language-server-nodejs # Dockerfile
   vscode-langservers-extracted # HTML/CSS/JSON
   texlab # LaTEX
+  protols # protobuf
 
   # Python
   python312Packages.python-lsp-server
