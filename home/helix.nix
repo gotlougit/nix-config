@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
-
-{
+let lspPackages = import ./lsp-list.nix { inherit pkgs; };
+in {
   programs.helix.enable = true;
   programs.helix.defaultEditor = true;
   programs.helix.languages.language-server.nixd = {
@@ -65,30 +65,6 @@
   };
 
   # LSPs and formatters installed globally for convenience
-  programs.helix.extraPackages = with pkgs; [
-    llvmPackages_18.clang-tools # C/C++
-    rust-analyzer # Rust
-    gopls # Golang
-    nodePackages.bash-language-server # Bash
-    dockerfile-language-server-nodejs # Dockerfile
-    vscode-langservers-extracted # HTML/CSS/JSON
-    texlab # LaTEX
-
-    # Python
-    python312Packages.python-lsp-server
-    ruff
-
-    # Markdown
-    markdown-oxide
-    marksman
-
-    # TS/JS
-    nodePackages.typescript-language-server
-    nodePackages.prettier
-
-    # Nix
-    nixfmt-classic
-    nixd
-  ];
+  programs.helix.extraPackages = lspPackages;
 
 }

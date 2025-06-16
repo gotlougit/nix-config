@@ -1,32 +1,10 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }:
+let lspPackages = import ./lsp-list.nix { inherit pkgs; };
+in {
   programs.zed-editor = {
     enable = true;
     package = pkgs.zed-editor-new;
-    extraPackages = with pkgs; [
-      llvmPackages_18.clang-tools # C/C++
-      rust-analyzer # Rust
-      gopls # Golang
-      nodePackages.bash-language-server # Bash
-      dockerfile-language-server-nodejs # Dockerfile
-      vscode-langservers-extracted # HTML/CSS/JSON
-      texlab # LaTEX
-
-      # Python
-      python312Packages.python-lsp-server
-      ruff
-
-      # Markdown
-      markdown-oxide
-      marksman
-
-      # TS/JS
-      nodePackages.typescript-language-server
-      nodePackages.prettier
-
-      # Nix
-      nixfmt-classic
-      nixd
-    ];
+    extraPackages = lspPackages;
     userSettings = {
       telemetry.diagnostics = false;
       telemetry.metrics = false;
