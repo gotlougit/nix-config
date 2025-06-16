@@ -49,7 +49,6 @@
 
       assistant.button = false;
       collaboration_panel.button = false;
-      chat_panel.button = false;
       notification_panel.button = false;
       project_panel.button = false;
       outline_panel.button = false;
@@ -58,21 +57,7 @@
       terminal.shell.program = "fish";
       features.inline_completion_provider = "none";
       use_system_path_prompts = false;
-      assistant = {
-        version = "1";
-        provider = {
-          default_model = "claude-3-5-sonnet";
-          name = "anthropic";
-          low_speed_timeout_in_seconds = 60;
-        };
-      };
       slash_commands.docs.enabled = true;
-      theme = lib.mkForce {
-        mode = "system";
-        dark = "Nord";
-      };
-      ui_font_size = lib.mkForce 16;
-      buffer_font_size = lib.mkForce 16;
     };
   };
 }
