@@ -5,10 +5,9 @@
   environment.persistence."/persist/system" = {
     directories = [
       "/etc/NetworkManager"
-      "/var/log/cloudflare-warp"
       "/var/log/private"
+      "/var/lib/private"
       "/var/lib/tailscale"
-      "/var/lib/cloudflare-warp"
       "/var/lib/NetworkManager"
       "/var/lib/bluetooth"
       "/var/lib/nixos"

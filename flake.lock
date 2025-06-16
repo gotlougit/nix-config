@@ -87,6 +87,26 @@
         "type": "github"
       }
     },
+    "claus": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749722839,
+        "narHash": "sha256-ym+2LjdafOc+Ouk9Jg1EPZ2qKjzA/HMZoEn5ldlFhlM=",
+        "owner": "~maan2003",
+        "repo": "claus",
+        "rev": "29c61cbd75ef4b81002847303781541b0a7c39c4",
+        "type": "sourcehut"
+      },
+      "original": {
+        "owner": "~maan2003",
+        "repo": "claus",
+        "type": "sourcehut"
+      }
+    },
     "code-sandbox": {
       "inputs": {
         "nixpkgs": [
@@ -452,6 +472,7 @@
     "root": {
       "inputs": {
         "archiver": "archiver",
+        "claus": "claus",
         "code-sandbox": "code-sandbox",
         "home-manager": "home-manager",
         "impermanence": "impermanence",

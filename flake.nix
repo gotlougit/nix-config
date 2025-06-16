@@ -29,21 +29,21 @@
 
   inputs.nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 
+  inputs.claus.url = "sourcehut:~maan2003/claus";
+  inputs.claus.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs = inputs@{ self, nixpkgs, impermanence, code-sandbox, archiver
     , home-manager, plasma-manager, sshield, stylix, nix-index-database
-    , nixos-cosmic }:
+    , nixos-cosmic, claus }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
     in {
-      nixpkgs.overlays = [
-        import
-        (inputs.code-sandbox)
-        import
-        (inputs.archiver)
-        import
-        (inputs.sshield)
-      ];
+      overlays.default = final: prev: 
+        (import ./overlays/overlay.nix final prev) // {
+          claus = inputs.claus.packages.${final.system}.default.overrideAttrs
+            (prevAttrs: { doCheck = false; });
+        };
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
           modules = [
@@ -56,6 +56,7 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
+            { nixpkgs.overlays = [ self.overlays.default ]; }
             home-manager.nixosModules.home-manager
             {
               # Pass flake input to home-manager
