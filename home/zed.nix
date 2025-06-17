@@ -132,7 +132,7 @@ in {
       assistant = {
         version = "2";
         default_model = {
-          model = "claude-opus-4-20250514";
+          model = "claude-sonnet-4-latest-thinking";
           provider = "anthropic";
         };
         show_hints = false;
@@ -156,37 +156,10 @@ in {
             budget_tokens = 32000;
           };
         };
-        normal_model = {
-          max_output_tokens = 32000;
-          cache_configuration = {
-            min_total_token = 2048;
-            should_speculate = true;
-            max_cache_anchors = 4;
-          };
-          max_tokens = 200000;
-          supports_thinking = false;
-        };
       in [
-        # NOTE: this is for Max plans only
-        # (ultra_think // {
-        #   name = "claude-opus-4-20250514";
-        #   display_name = "Magnus";
-        # })
         (ultra_think // {
-          name = "claude-sonnet-4-20250514";
-          display_name = "Claude Sonnet 4 (Thinking)";
-        })
-        (normal_model // {
-          name = "claude-sonnet-4-20250514";
-          display_name = "Claude Sonnet 4 (Normal)";
-        })
-        (normal_model // {
-          name = "claude-3-7-sonnet-20250219";
-          display_name = "Claude Sonnet 3.7 (Normal)";
-        })
-        (normal_model // {
-          name = "claude-3-5-haiku-20241022";
-          display_name = "Claude Haiku 3.5 (Normal)";
+          name = "claude-sonnet-4-latest-thinking";
+          display_name = "Claude Sonnet 4 (Ultrathink)";
         })
       ];
     };
