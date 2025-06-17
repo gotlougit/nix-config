@@ -23,6 +23,7 @@ with pkgs; [
   nodePackages.prettier
 
   # Nix
+  nil
   nixfmt-classic
   nixd
 ]
