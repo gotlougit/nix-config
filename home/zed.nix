@@ -5,6 +5,96 @@ in {
     enable = true;
     package = pkgs.zed-editor-new;
     extraPackages = lspPackages;
+    userKeymaps = [
+      # Main helix normal mode bindings
+      {
+        context = "vim_mode == helix_normal && !menu";
+        bindings = {
+          # Selection-first word movement (helix style)
+          "w" = "vim::NextWordStart";
+          "shift-w" = [ "vim::NextWordStart" { ignore_punctuation = true; } ];
+          "b" = "vim::PreviousWordStart";
+          "shift-b" =
+            [ "vim::PreviousWordStart" { ignore_punctuation = true; } ];
+          "e" = "vim::NextWordEnd";
+          "shift-e" = [ "vim::NextWordEnd" { ignore_punctuation = true; } ];
+          "shift-h" = "vim::StartOfLine";
+          "shift-l" = "vim::EndOfLine";
+          # Line selection
+          "x" = "editor::SelectLine";
+          # Helix-style matching bracket
+          "m" = "vim::Matching";
+          # Space leader key mappings
+          "space f" = "file_finder::Toggle";
+          "space b" = "pane::ActivateNextItem";
+          "space w" = "workspace::Save";
+          "space q" = "pane::CloseActiveItem";
+          "space space" = "file_finder::Toggle";
+          "/" = "pane::DeploySearch";
+          # Delete and change (helix-style)
+          "d" = [ "workspace::SendKeystrokes" "y d" ];
+          "c" = [ "workspace::SendKeystrokes" "d i" ];
+          # Motion repeats
+          ";" = "vim::RepeatFind";
+          "," = "vim::RepeatFindReversed";
+          # LSP selection
+          "alt-o" = "editor::SelectLargerSyntaxNode";
+          # Stay in Helix Normal mode
+          "escape" = "vim::SwitchToHelixNormalMode";
+          "g g" = "vim::StartOfDocument";
+          "g e" = "vim::EndOfDocument";
+          "g h" = "vim::StartOfLine";
+          "g l" = "vim::EndOfLine";
+          "g s" = "vim::FirstNonWhitespace";
+          "g d" = "editor::GoToDefinition";
+          "g shift-d" = "editor::GoToDeclaration";
+          "g y" = "editor::GoToTypeDefinition";
+          "g r" = "editor::FindAllReferences";
+          "g i" = "editor::GoToImplementation";
+          "g t" = "vim::WindowTop";
+          "g c" = "vim::WindowMiddle";
+          "g b" = "vim::WindowBottom";
+          "g a" = "pane::AlternateFile";
+          "g n" = "pane::ActivateNextItem";
+          "g p" = "pane::ActivatePreviousItem";
+          "g k" = "editor::SelectUp";
+          "g j" = "editor::SelectDown";
+          "g ." = "vim::ChangeListNewer";
+        };
+      }
+      # Visual mode specific bindings
+      {
+        context =
+          "Editor && VimControl && vim_mode == visual && !VimWaiting && !menu";
+        bindings = {
+          "b" = [ "workspace::SendKeystrokes" "v v ctrl-shift-alt-b" ];
+          "w" = [ "workspace::SendKeystrokes" "v v ctrl-shift-alt-w" ];
+          "e" = [ "workspace::SendKeystrokes" "v v ctrl-shift-alt-e" ];
+          "x" = [ "workspace::SendKeystrokes" "j g l" ];
+          "g g" = "vim::StartOfDocument";
+          "g e" = "vim::EndOfDocument";
+          "g h" = "vim::StartOfLine";
+          "g l" = "vim::EndOfLine";
+          "g s" = "vim::FirstNonWhitespace";
+          "g k" = "editor::SelectUp";
+          "g j" = "editor::SelectDown";
+        };
+      }
+      # Escape to helix normal mode
+      {
+        context = "Editor && vim_mode != helix_normal && !VimWaiting";
+        bindings = { "escape" = "vim::SwitchToHelixNormalMode"; };
+      }
+      {
+        context =
+          "Editor && vim_mode == visual || vim_mode == helix_normal && !VimWaiting && !VimObject";
+        bindings = { "x" = "editor::SelectLine"; };
+      }
+      {
+        context = "Editor && !VimControl";
+        bindings = { "escape" = "vim::SwitchToHelixNormalMode"; };
+      }
+    ];
     userSettings = {
       telemetry.diagnostics = false;
       telemetry.metrics = false;
@@ -15,7 +105,8 @@ in {
       git.inline_blame.enabled = false;
       indent_guides.enabled = true;
 
-      vim_mode = false;
+      vim_mode = true;
+      vim.default_mode = "helix_normal";
 
       projects_online_by_default = false;
       toolbar.quick_actions = false;
@@ -85,15 +176,15 @@ in {
           name = "claude-sonnet-4-20250514";
           display_name = "Claude Sonnet 4 (Thinking)";
         })
-       (normal_model // {
+        (normal_model // {
           name = "claude-sonnet-4-20250514";
           display_name = "Claude Sonnet 4 (Normal)";
         })
-       (normal_model // {
+        (normal_model // {
           name = "claude-3-7-sonnet-20250219";
           display_name = "Claude Sonnet 3.7 (Normal)";
         })
-       (normal_model // {
+        (normal_model // {
           name = "claude-3-5-haiku-20241022";
           display_name = "Claude Haiku 3.5 (Normal)";
         })
