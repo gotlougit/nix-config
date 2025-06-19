@@ -3,12 +3,12 @@
 
 stdenv.mkDerivation rec {
   pname = "zed-editor";
-  version = "0.190.6";
+  version = "0.191.5";
 
   src = fetchurl {
     url =
       "https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-x86_64.tar.gz";
-    hash = "sha256-2cZOGgFk/GVJksidk1MsiS0tyvelhB9ZUCVKzabFACc=";
+    hash = "sha256-aWSUB8oAISxtYT6no8VZXAl2aoarGS76xtILF1CM+P4=";
   };
 
   nativeBuildInputs = [ autoPatchelfHook ];
