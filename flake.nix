@@ -18,7 +18,7 @@
   inputs.archiver.url = "sourcehut:~gotlou/archiveurl";
   inputs.archiver.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.sshield.url = "github:gotlougit/sshield";
+  inputs.sshield.url = "sourcehut:~gotlou/sshield";
   inputs.sshield.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.stylix.url = "github:danth/stylix";
