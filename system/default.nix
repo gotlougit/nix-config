@@ -10,6 +10,7 @@
     ./syncthing.nix
     ./openssh.nix
     ./keyd.nix
+    ./radicale.nix
     ./style.nix
     ./time.nix
     ./udev.nix
