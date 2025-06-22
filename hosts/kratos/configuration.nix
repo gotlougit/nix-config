@@ -14,7 +14,6 @@
     (import ../../overlays/keepassxc.nix)
     (import ../../overlays/appvm.nix)
     (import ../../overlays/llama-cpp.nix)
-    (import ../../overlays/radicale-decsync/default.nix)
   ];
 
   # following configuration is added only when building VM with build-vm
