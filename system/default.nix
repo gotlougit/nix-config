@@ -11,6 +11,7 @@
     ./openssh.nix
     ./keyd.nix
     ./radicale.nix
+    ./tokidoki.nix
     ./style.nix
     ./time.nix
     ./udev.nix
