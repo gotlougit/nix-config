@@ -20,6 +20,7 @@
     # Garbage collect generations older than 7 days
     gc = {
       automatic = true;
+      dates = "Mon 10:00";
       options = "--delete-older-than 7d";
     };
     # Use repo version of nixpkgs for nix operations
