@@ -30,30 +30,29 @@
   boot.initrd.systemd.network.wait-online.enable = false;
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  # systemd.services.NetworkManager = {
-  #   enable = true;
-  #   serviceConfig = {
-  #     ProtectProc = false;
-  #     LockPersonality = true;
-  #     MemoryDenyWriteExecute = true;
-  #     NoNewPrivileges = true;
-  #     PrivateMounts = true;
-  #     PrivateTmp = true;
-  #     ProtectClock = true;
-  #     ProtectControlGroups = true;
-  #     ProtectHome = true;
-  #     ProtectHostname = true;
-  #     ProtectKernelLogs = true;
-  #     ProtectKernelModules = true;
-  #     ProtectKernelTunables = true;
-  #     RestrictRealtime = true;
-  #     RestrictSUIDSGID = true;
-  #     SystemCallArchitectures = "native";
-  #     # SystemCallFilter = [ "@known" "~@clock" "~@cpu-emulation" "~@raw-io" "~@reboot" "~@mount" "~@obsolete" "~@swap" "~@debug" "~@keyring" "~@pkey" "~@chown" ];
-  #     UMask = "0077";
-  #     InaccessiblePaths = "/persist";
-  #   };
-  # };
+  systemd.services.NetworkManager = {
+    enable = true;
+    serviceConfig = {
+      ProtectProc = false;
+      LockPersonality = true;
+      MemoryDenyWriteExecute = true;
+      NoNewPrivileges = false;
+      PrivateMounts = false;
+      PrivateTmp = true;
+      ProtectClock = true;
+      ProtectControlGroups = false;
+      ProtectHome = true;
+      ProtectHostname = false;
+      ProtectKernelLogs = true;
+      ProtectKernelModules = false;
+      ProtectKernelTunables = false;
+      RestrictRealtime = true;
+      RestrictSUIDSGID = false;
+      SystemCallArchitectures = "native";
+      UMask = "0077";
+      InaccessiblePaths = "/persist";
+    };
+  };
   systemd.services.NetworkManager-dispatcher = {
     enable = true;
     serviceConfig = (import ./hardening-base.nix);
