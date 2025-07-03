@@ -3,7 +3,7 @@
     ./home-manager-gc.nix
     ./firefox.nix
     ./gaming.nix
-    ./conty
+    # ./conty
     ./git.nix
     ./helix.nix
     ./keepassxc.nix
@@ -48,13 +48,13 @@
     appvm
   ];
 
-  programs.conty = {
-    enable = true;
-    autoSetup = true;
-    # aliases = {
-    #   conty-firefox = "conty firefox";
-    # };
-  };
+  # programs.conty = {
+  #   enable = true;
+  #   autoSetup = true;
+  #   # aliases = {
+  #   #   conty-firefox = "conty firefox";
+  #   # };
+  # };
 
   stylix.enable = true;
   manual.manpages.enable = false;
