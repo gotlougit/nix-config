@@ -144,5 +144,4 @@
 
   # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [ "SDL_ttf-2.0.11" ];
 }
