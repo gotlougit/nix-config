@@ -1,6 +1,8 @@
 { pkgs, ... }: {
   # Enable warp-svc to allow connections to the Cloudflare VPN
-  systemd.packages = [ pkgs.cloudflare-warp-old ];
+  systemd.packages = [ pkgs.cloudflare-warp ];
+  services.cloudflare-warp.enable = true;
+  services.cloudflare-warp.openFirewall = true;
   systemd.services.warp-svc = {
     enable = true;
     after = [ ];
@@ -46,5 +48,5 @@
       ];
     };
   };
-  environment.systemPackages = with pkgs; [ cloudflare-warp-old ];
+  environment.systemPackages = with pkgs; [ cloudflare-warp ];
 }
