@@ -39,6 +39,7 @@
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
     stremio # Streaming app
+    nicotine-plus # Soulseek client
     (sommelier.overrideAttrs (old: {
       doCheck = false;
       doInstallCheck = false;
