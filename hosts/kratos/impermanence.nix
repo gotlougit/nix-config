@@ -41,7 +41,7 @@
       # PS2 Emulator
       "/home/gotlou/.config/PCSX2"
       # PS1 Emulator
-      "/home/gotlou/.config/duckstation"
+      # "/home/gotlou/.config/duckstation"
       # PS4 remote play client
       "/home/gotlou/.config/Chiaki"
       # Original Xbox emulator
