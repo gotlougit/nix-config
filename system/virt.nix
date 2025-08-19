@@ -3,6 +3,7 @@
 {
   # Enable virtualization
   virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
   programs.virt-manager.enable = true;
   # Enable dconf for settings
   programs.dconf.enable = true;
