@@ -36,6 +36,7 @@
     tor-browser-bundle-bin # Needs no intro
     aider-chat # AI helper for coding
     aichat # Chat with AI from terminal
+    gemini-cli # Gemini in the terminal
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
     stremio # Streaming app
