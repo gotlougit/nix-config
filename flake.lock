@@ -87,26 +87,6 @@
         "type": "github"
       }
     },
-    "claus": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1754415382,
-        "narHash": "sha256-Fz65/lW8++mrXz1OY1pwgdwM5FLMdw1P2UZ5VHiBaC8=",
-        "owner": "~maan2003",
-        "repo": "claus",
-        "rev": "696a8ce6cd7a966a95cd4a3e64525c509da6b176",
-        "type": "sourcehut"
-      },
-      "original": {
-        "owner": "~maan2003",
-        "repo": "claus",
-        "type": "sourcehut"
-      }
-    },
     "code-sandbox": {
       "inputs": {
         "nixpkgs": [
@@ -283,11 +263,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755914636,
-        "narHash": "sha256-VJ+Gm6YsHlPfUCpmRQxvdiZW7H3YPSrdVOewQHAhZN8=",
+        "lastModified": 1757075491,
+        "narHash": "sha256-a+NMGl5tcvm+hyfSG2DlVPa8nZLpsumuRj1FfcKb2mQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "8b55a6ac58b678199e5bba701aaff69e2b3281c0",
+        "rev": "f56bf065f9abedc7bc15e1f2454aa5c8edabaacf",
         "type": "github"
       },
       "original": {
@@ -318,11 +298,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755404379,
-        "narHash": "sha256-Q6ZxZDBmD/B988Jjbx7/NchxOKIpOKBBrx9Yb0zMzpQ=",
+        "lastModified": 1757218147,
+        "narHash": "sha256-IwOwN70HvoBNB2ckaROxcaCvj5NudNc52taPsv5wtLk=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "ebbc1c05f786ae39bb5e04e57bf2c10c44a649e3",
+        "rev": "9b144dc3ef6e42b888c4190e02746aab13b0e97f",
         "type": "github"
       },
       "original": {
@@ -386,11 +366,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1755615617,
-        "narHash": "sha256-HMwfAJBdrr8wXAkbGhtcby1zGFvs+StOp19xNsbqdOg=",
+        "lastModified": 1757068644,
+        "narHash": "sha256-NOrUtIhTkIIumj1E/Rsv1J37Yi3xGStISEo8tZm3KW4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "20075955deac2583bb12f07151c2df830ef346b4",
+        "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
         "type": "github"
       },
       "original": {
@@ -451,7 +431,6 @@
     "root": {
       "inputs": {
         "archiver": "archiver",
-        "claus": "claus",
         "code-sandbox": "code-sandbox",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
@@ -491,11 +470,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1750439267,
-        "narHash": "sha256-ZWrogf24oQMWRrLXVRbUQbyB6FVCATB8WD1ykKmrfb0=",
+        "lastModified": 1756663701,
+        "narHash": "sha256-9vUYB0FhXaCU2Hk4uvfp0fswzSe55ODl5AMeYTxSU/c=",
         "owner": "~gotlou",
         "repo": "sshield",
-        "rev": "55efc19c0ed5728c6d49c4607d68a70b83cae1ff",
+        "rev": "b2c9a9652fe6ff470669768e3c57acb0aed74fb8",
         "type": "sourcehut"
       },
       "original": {
