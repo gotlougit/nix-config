@@ -1,7 +1,8 @@
-{ pkgs, lib, inputs, ... }:
+# { pkgs, lib, inputs, ... }:
+{ pkgs, lib, ... }:
 # This contains GUI desktop specific services/configs
 {
-  imports = [ inputs.nixos-cosmic.nixosModules.default ];
+  # imports = [ inputs.nixos-cosmic.nixosModules.default ];
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   # Enable use of KDE Plasma and SDDM login manager
@@ -23,12 +24,12 @@
   # services.desktopManager.cosmic.enable = true;
   # COSMIC greeter disabled since this isn't my primary desktop
   # services.displayManager.cosmic-greeter.enable = true;
-  environment.cosmic.excludePackages = lib.mkForce [
-    pkgs.cosmic-edit
-    pkgs.cosmic-term
-    pkgs.cosmic-player
-    pkgs.pop-icon-theme
-  ];
+  # environment.cosmic.excludePackages = lib.mkForce [
+  #   pkgs.cosmic-edit
+  #   pkgs.cosmic-term
+  #   pkgs.cosmic-player
+  #   pkgs.pop-icon-theme
+  # ];
 
   # Remove some KDE defaults that are never needed
   environment.plasma6.excludePackages = lib.mkForce [
@@ -39,13 +40,13 @@
     pkgs.kdePackages.elisa
     pkgs.kdePackages.baloo
     pkgs.kdePackages.kate
-    pkgs.libsForQt5.oxygen
-    pkgs.libsForQt5.khelpcenter
-    pkgs.libsForQt5.konsole
-    pkgs.libsForQt5.plasma-browser-integration
-    pkgs.libsForQt5.elisa
-    pkgs.libsForQt5.baloo
-    pkgs.libsForQt5.kate
+    # pkgs.libsForQt5.oxygen
+    # pkgs.libsForQt5.khelpcenter
+    # pkgs.libsForQt5.konsole
+    # pkgs.libsForQt5.plasma-browser-integration
+    # pkgs.libsForQt5.elisa
+    # pkgs.libsForQt5.baloo
+    # pkgs.libsForQt5.kate
   ];
 
   # Allow KDE connect through firewall
@@ -67,8 +68,8 @@
     kdePackages.kdeconnect-kde # KDE Connect
     kdePackages.krohnkite # Tiling extension for Plasma 6
 
-    cosmic-ext-tweaks # Tweak COSMIC even more
-    cosmic-ext-ctl # CLI for COSMIC config
+    # cosmic-ext-tweaks # Tweak COSMIC even more
+    # cosmic-ext-ctl # CLI for COSMIC config
   ];
 
   # Disable baloo indexer
