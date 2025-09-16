@@ -2,7 +2,7 @@
   # Disable resolved, we won't be using it
   services.resolved.enable = false;
   # dnscrypt-proxy2 specific config
-  services.dnscrypt-proxy2 = {
+  services.dnscrypt-proxy = {
     enable = true;
     settings = {
       ipv6_servers = true;
