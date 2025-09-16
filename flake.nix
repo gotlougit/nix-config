@@ -62,6 +62,7 @@
               home-manager.sharedModules =
                 [ plasma-manager.homeManagerModules.plasma-manager ];
               home-manager.users.gotlou = import ./home;
+              home-manager.users.ishmael = import ./home/ishmael.nix;
             }
             ./hosts/kratos
             ./system

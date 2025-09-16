@@ -19,6 +19,21 @@
     packages = with pkgs; [ vlc ];
     shell = pkgs.fish;
   };
+
+  users.groups.ishmael = { gid = 1001; };
+  users.users.ishmael = {
+    isNormalUser = true;
+    home = "/home/ishmael";
+    uid = 1001;
+    group = "ishmael";
+    extraGroups = [ "gotlou" ];
+    shell = pkgs.fish;
+  };
+  systemd.tmpfiles.rules = [
+    "d /persist/dotfiles/dev/ishmael 0700 ishmael ishmael -"
+    "L+ /home/ishmael - - - - /persist/dotfiles/dev/ishmael"
+  ];
+
   programs.fish.enable = true;
 
   security.pam.loginLimits = [
