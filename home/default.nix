@@ -39,7 +39,7 @@
     gemini-cli # Gemini in the terminal
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
-    stremio # Streaming app
+    stremio-new # Streaming app
     nicotine-plus # Soulseek client
     (sommelier.overrideAttrs (old: {
       doCheck = false;
