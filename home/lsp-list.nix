@@ -5,7 +5,7 @@ with pkgs; [
   rust-analyzer # Rust
   gopls # Golang
   nodePackages.bash-language-server # Bash
-  dockerfile-language-server-nodejs # Dockerfile
+  dockerfile-language-server # Dockerfile
   vscode-langservers-extracted # HTML/CSS/JSON
   texlab # LaTEX
   protols # protobuf
