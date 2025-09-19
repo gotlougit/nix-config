@@ -20,18 +20,15 @@
     shell = pkgs.fish;
   };
 
-  users.groups.ishmael = { gid = 1001; };
   users.users.ishmael = {
     isNormalUser = true;
-    home = "/home/ishmael";
+    home = "/persist/dev/ishmael";
     uid = 1001;
-    group = "ishmael";
-    extraGroups = [ "gotlou" ];
+    password = "";
     shell = pkgs.fish;
   };
   systemd.tmpfiles.rules = [
-    "d /persist/dotfiles/dev/ishmael 0700 ishmael ishmael -"
-    "L+ /home/ishmael - - - - /persist/dotfiles/dev/ishmael"
+    "L+ /home/ishmael - - - - /persist/dev/ishmael"
   ];
 
   programs.fish.enable = true;

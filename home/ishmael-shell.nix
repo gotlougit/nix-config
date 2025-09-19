@@ -32,8 +32,8 @@
       directory.style = "cyan";
       nix_shell.format = "[$symbol](blue)";
       custom.sandbox = {
-        when = "grep 'systemd' /proc/1/cmdline";
-        command = "echo -n '⚠️'";
+        when = "whoami | grep ishmael";
+        command = "echo -n '🏜️'";
         shell = "sh";
       };
     };
