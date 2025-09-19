@@ -1,6 +1,6 @@
 { lib, stdenv, rustPlatform, fetchFromGitHub, openssl, pkg-config, gtk3, mpv
-, libappindicator, libcef, makeWrapper, nodejs, libxkbcommon,
-# fetchurl,
+, libappindicator, libcef, makeWrapper, nodejs, libxkbcommon, libGL, libdrm
+, xorg, # fetchurl,
 ... }:
 let
   # cef-rs expects a specific directory layout
@@ -51,7 +51,7 @@ in rustPlatform.buildRustPackage (finalAttrs: {
   # Probably overkill since setting CEF_PATH should skip downloading binaries.
   buildFeatures = [ "offline-build" ];
 
-  buildInputs = [ openssl gtk3 mpv libcef ];
+  buildInputs = [ openssl gtk3 mpv libcef libGL libdrm xorg.libX11 ];
 
   nativeBuildInputs = [ makeWrapper pkg-config ];
 
@@ -77,9 +77,19 @@ in rustPlatform.buildRustPackage (finalAttrs: {
 
 
     wrapProgram $out/bin/stremio \
+       --set LC_NUMERIC C \
+       --set-default XCOMPOSEFILE ${xorg.libX11}/share/X11/locale/en_US.UTF-8/Compose \
        --prefix LD_LIBRARY_PATH : ${
-         lib.makeLibraryPath [ libappindicator libxkbcommon ]
+         lib.makeLibraryPath [
+           libappindicator
+           libxkbcommon
+           libGL
+           libdrm
+           xorg.libX11
+         ]
        } \
+      --suffix LD_LIBRARY_PATH : /run/opengl-driver/lib \
+      --suffix LD_LIBRARY_PATH : /run/opengl-driver-32/lib \
        --prefix PATH : ${lib.makeBinPath [ nodejs ]}'';
 
   env.CEF_PATH = cef-path;
@@ -99,4 +109,3 @@ in rustPlatform.buildRustPackage (finalAttrs: {
     platforms = lib.platforms.linux;
   };
 })
-
