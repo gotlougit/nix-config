@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }: {
   imports = [
+    inputs.stylix.homeModules.stylix
     ./home-manager-gc.nix
     ./firefox.nix
     ./gaming.nix
@@ -59,6 +60,7 @@
   # };
 
   stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
   manual.manpages.enable = false;
   home.stateVersion = "22.11";
 }

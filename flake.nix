@@ -23,7 +23,6 @@
 
   inputs.stylix.url = "github:danth/stylix";
   inputs.stylix.inputs.nixpkgs.follows = "nixpkgs";
-  inputs.stylix.inputs.home-manager.follows = "home-manager";
 
   inputs.nix-index-database.url = "github:nix-community/nix-index-database";
   inputs.nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
@@ -56,11 +55,8 @@
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              # Ref: https://github.com/pjones/plasma-manager/issues/14
-              # This is the way to import "plasma-manager" in home-manager
-              # in such a config
               home-manager.sharedModules =
-                [ plasma-manager.homeManagerModules.plasma-manager ];
+                [ plasma-manager.homeModules.plasma-manager ];
               home-manager.users.gotlou = import ./home;
               home-manager.users.ishmael = import ./home/ishmael.nix;
             }
