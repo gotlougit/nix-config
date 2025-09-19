@@ -35,9 +35,8 @@
     signal-desktop # Secure and easy messaging
     tdesktop # Telegram desktop client
     tor-browser-bundle-bin # Needs no intro
-    aider-chat # AI helper for coding
-    aichat # Chat with AI from terminal
     gemini-cli # Gemini in the terminal
+    codex # ChatGPT in the terminal
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
     stremio-new # Streaming app
@@ -45,7 +44,7 @@
     (sommelier.overrideAttrs (old: {
       doCheck = false;
       doInstallCheck = false;
-      buildInputs = (old.buildInputs or []) ++ [ pkgs.gtest ];
+      buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.gtest ];
     }))
     muvm
     appvm
