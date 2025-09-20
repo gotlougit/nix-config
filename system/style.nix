@@ -11,8 +11,8 @@
       package = pkgs.jetbrains-mono;
     };
     sansSerif = {
-      name = "Inter";
-      package = pkgs.inter;
+      name = "Noto";
+      package = pkgs.noto-fonts;
     };
     serif = sansSerif;
     sizes.applications = 10;
