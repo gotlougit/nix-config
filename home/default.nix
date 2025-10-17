@@ -39,7 +39,7 @@
     codex # ChatGPT in the terminal
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
-    stremio-new # Streaming app
+    # stremio-new # Streaming app
     nicotine-plus # Soulseek client
     (sommelier.overrideAttrs (old: {
       doCheck = false;
@@ -60,6 +60,19 @@
 
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+  stylix.fonts = rec {
+    monospace = {
+      name = "JetBrains Mono";
+      package = pkgs.jetbrains-mono;
+    };
+    sansSerif = {
+      name = "Noto";
+      package = pkgs.noto-fonts;
+    };
+    serif = sansSerif;
+    sizes.applications = 10;
+  };
+
   manual.manpages.enable = false;
   home.stateVersion = "22.11";
 }
