@@ -29,6 +29,8 @@
 
   inputs.nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 
+  inputs.nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
   outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, ... }:
     let
       system = "x86_64-linux";

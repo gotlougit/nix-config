@@ -2,6 +2,7 @@
   imports = [
     ./bluetooth.nix
     ./colord.nix
+    ./flatpak.nix
     ./sudo-rs.nix
     ./nix.nix
     ./zram.nix

@@ -9,6 +9,8 @@
       "/var/lib/private"
       "/var/lib/tailscale"
       "/var/lib/NetworkManager"
+      "/var/lib/flatpak"
+      "/var/tmp/"
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd"
