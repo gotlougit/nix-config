@@ -14,7 +14,7 @@
     man-pages-posix # Provide more man docs for syscalls etc
     nmap # Classic network exploration utility
     parallel # Parallelize many shell commands
-    pinentry # Enter gpg password securely
+    pinentry-qt # Enter gpg password securely
     radeontop # AMD GPU monitoring
     # sequoia-sq # Rust reimplementation of OpenPGP
     # sequoia-sqv # Rust reimplementation to verify OpenPGP signatures

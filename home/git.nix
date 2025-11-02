@@ -4,9 +4,9 @@
   programs.git = {
     enable = true;
     # Set name and email to use when creating commits
-    userName = "Saksham Mittal";
-    userEmail = "git@gotlou.com";
-    extraConfig = {
+    settings = {
+      user.name = "Saksham Mittal";
+      user.email = "git@gotlou.com";
       # Signing config
       gpg.format = "ssh";
       user.signingKey =
@@ -24,7 +24,7 @@
       # Push current branch if nothing is specified
       push.default = "current";
     };
-    # Ignore certain paths globally
+      # Ignore certain paths globally
     ignores = [
       "*.localcargo/"
       "*.direnv/"
@@ -34,8 +34,8 @@
       "*.localgohome/"
       "*.aider*"
     ];
-    # Enable syntax highlight in diffs
-    difftastic.enable = true;
-    difftastic.display = "inline";
   };
+  # Enable syntax highlight in diffs
+  programs.difftastic.enable = true;
+  programs.difftastic.options.display = "inline";
 }

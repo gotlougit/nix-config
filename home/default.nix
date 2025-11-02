@@ -33,8 +33,9 @@
     rhythmbox # Music player
     songrec # Shazam on Linux
     signal-desktop # Secure and easy messaging
-    tdesktop # Telegram desktop client
-    tor-browser-bundle-bin # Needs no intro
+    telegram-desktop # Telegram desktop client
+    tor-browser # Needs no intro
+    claude-code # Claude in the terminal
     gemini-cli # Gemini in the terminal
     codex # ChatGPT in the terminal
     # llama-cpp # Run local LLMs efficiently on CPU/GPU

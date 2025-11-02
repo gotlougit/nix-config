@@ -87,7 +87,7 @@
     # Rust replacements
     bat # cat
     difftastic # diff
-    du-dust # du
+    dust # du
     skim # fzf
     hexyl # hexdump
     eza # ls
@@ -103,7 +103,7 @@
     ast-grep # syntax-powered grep
     ffsend # Send files e2ee
     file # To show type of file
-    aria # download manager
+    aria2 # download manager
     bash # Keep around explicitly for legacy purposes
     socat # Socket cat
     sqlite # No intro needed
@@ -118,7 +118,7 @@
     magic-wormhole-rs # Direct file transfers
     pandoc # Convert docs
     picard # Tag music files
-    poppler_utils # PDF conversion and misc utils
+    poppler-utils # PDF conversion and misc utils
     tetex # LaTEX related tooling
     p7zip # Useful for decompressing
     unzip # Useful for decompressing ZIP files
