@@ -59,6 +59,8 @@
       # Heroic
       "/home/gotlou/.config/heroic"
       "/home/gotlou/.heroic"
+      # Ryujinx
+      "/home/gotlou/.config/Ryujinx"
     ];
     files = [ ];
   };

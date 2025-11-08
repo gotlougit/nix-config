@@ -42,22 +42,7 @@
     chromium # Keep around as backup browser
     stremio-new # Streaming app
     nicotine-plus # Soulseek client
-    (sommelier.overrideAttrs (old: {
-      doCheck = false;
-      doInstallCheck = false;
-      buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.gtest ];
-    }))
-    muvm
-    appvm
   ];
-
-  # programs.conty = {
-  #   enable = true;
-  #   autoSetup = true;
-  #   # aliases = {
-  #   #   conty-firefox = "conty firefox";
-  #   # };
-  # };
 
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";

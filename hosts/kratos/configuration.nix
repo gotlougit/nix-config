@@ -12,7 +12,6 @@
     # Import overlays
     (import ../../overlays/overlay.nix)
     (import ../../overlays/keepassxc.nix)
-    (import ../../overlays/appvm.nix)
     (import ../../overlays/llama-cpp.nix)
   ];
 
