@@ -33,6 +33,7 @@
       "*.localgocache/"
       "*.localgohome/"
       "*.aider*"
+      "*.claude/"
     ];
   };
   # Enable syntax highlight in diffs
