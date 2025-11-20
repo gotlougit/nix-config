@@ -31,13 +31,19 @@
 
   inputs.nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
+  inputs.claus.url = "sourcehut:~maan2003/claus";
+  inputs.claus.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, ... }:
     let
       system = "x86_64-linux";
       aarch64System = "aarch64-linux";
     in {
       overlays.default = final: prev:
-        (import ./overlays/overlay.nix final prev);
+        (import ./overlays/overlay.nix final prev) // {
+          claus = inputs.claus.packages.${final.system}.default.overrideAttrs
+            (prevAttrs: { doCheck = false; });
+        };
       images = {
         mimir = (self.nixosConfigurations.mimir.extendModules {
           modules = [
