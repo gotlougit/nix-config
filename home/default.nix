@@ -23,7 +23,6 @@
     # Miscellaneous programs I use
     inputs.code-sandbox.packages.x86_64-linux.default # Installs sandboxes
     inputs.archiver.packages.x86_64-linux.default # Installs archiving script
-    antigravity # Google VSCode Agent
     # ghidra # Decompiler
     gImageReader # OCR PDFs and images easily
     inkscape # Vector images
