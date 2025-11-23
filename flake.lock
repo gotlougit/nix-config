@@ -88,6 +88,26 @@
         "type": "github"
       }
     },
+    "claus": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763649858,
+        "narHash": "sha256-M5cdWf6KL6bbcoAVjyIohZZDHNxVFt7FeW2AKkquonE=",
+        "owner": "~gotlou",
+        "repo": "claus",
+        "rev": "12c6617f4e1bce1e4bbb883d259c23519d4ad410",
+        "type": "sourcehut"
+      },
+      "original": {
+        "owner": "~gotlou",
+        "repo": "claus",
+        "type": "sourcehut"
+      }
+    },
     "code-sandbox": {
       "inputs": {
         "nixpkgs": [
@@ -384,6 +404,7 @@
     "root": {
       "inputs": {
         "archiver": "archiver",
+        "claus": "claus",
         "code-sandbox": "code-sandbox",
         "home-manager": "home-manager",
         "impermanence": "impermanence",

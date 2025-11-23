@@ -31,7 +31,7 @@
 
   inputs.nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
-  inputs.claus.url = "sourcehut:~maan2003/claus";
+  inputs.claus.url = "sourcehut:~gotlou/claus";
   inputs.claus.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, ... }:
