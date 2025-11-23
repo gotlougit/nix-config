@@ -42,6 +42,7 @@
     chromium # Keep around as backup browser
     stremio-new # Streaming app
     nicotine-plus # Soulseek client
+    amp-cli
   ];
 
   stylix.enable = true;
