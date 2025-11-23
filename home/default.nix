@@ -35,18 +35,13 @@
     signal-desktop # Secure and easy messaging
     telegram-desktop # Telegram desktop client
     tor-browser # Needs no intro
-    chromium # Keep around as backup browser
-    stremio-new # Streaming app
-    nicotine-plus # Soulseek client
-
-    # LLM software
-  
-    # llama-cpp # Run local LLMs efficiently on CPU/GPU
-    opencode # Open source model agnostic CLI agent
-    vamp-cli # Sourcegraph's CLI coding agent (local server)
     claude-code # Claude in the terminal
     gemini-cli # Gemini in the terminal
     codex # ChatGPT in the terminal
+    # llama-cpp # Run local LLMs efficiently on CPU/GPU
+    chromium # Keep around as backup browser
+    stremio-new # Streaming app
+    nicotine-plus # Soulseek client
   ];
 
   stylix.enable = true;
