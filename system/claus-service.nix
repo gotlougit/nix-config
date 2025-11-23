@@ -1,11 +1,12 @@
 { pkgs, ... }: {
   environment.sessionVariables = { ANTHROPIC_API_KEY = "BOOO"; };
-  systemd.sockets.cloxy = {
-    listenStreams = [ "127.0.0.1:25784" "127.0.0.1:25799" ];
+  systemd.sockets.vamp = {
+    listenStreams = [ "127.0.0.1:25799" ];
     wantedBy = [ "sockets.target" ];
   };
   systemd.services.vamp = {
-    environment.VAMP_DB = "%S/vamp/db.sqlite";
+    environment.VAMP_DB = "%S/vamp/cloxy-db.sqlite";
+    environment.GEMEC_DB = "%S/vamp/gemec-db.sqlite";
     environment.RUST_LOG = "info";
     serviceConfig = {
       ExecStart = "${pkgs.claus}/bin/vamp";
@@ -38,6 +39,10 @@
       UMask = "0077";
       InaccessiblePaths = "/persist";
     };
+  };
+  systemd.sockets.cloxy = {
+    listenStreams = [ "127.0.0.1:25784" ];
+    wantedBy = [ "sockets.target" ];
   };
   systemd.services.cloxy = {
     environment.CLOXY_DB = "%S/cloxy/db.sqlite";
