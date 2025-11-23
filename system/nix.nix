@@ -145,4 +145,6 @@
   nixpkgs.config.permittedInsecurePackages = [ "qtwebengine-5.15.19" ];
   # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = [ pkgs.nix-update ];
 }
