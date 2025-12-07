@@ -20,17 +20,6 @@
     shell = pkgs.fish;
   };
 
-  users.users.ishmael = {
-    isNormalUser = true;
-    home = "/persist/dev/ishmael";
-    uid = 1001;
-    password = "";
-    shell = pkgs.fish;
-  };
-  systemd.tmpfiles.rules = [
-    "L+ /home/ishmael - - - - /persist/dev/ishmael"
-  ];
-
   programs.fish.enable = true;
 
   security.pam.loginLimits = [

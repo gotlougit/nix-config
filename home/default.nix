@@ -40,7 +40,6 @@
     codex # ChatGPT in the terminal
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
-    stremio-new # Streaming app
     nicotine-plus # Soulseek client
     amp-cli
   ];

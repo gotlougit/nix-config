@@ -55,7 +55,6 @@ in {
     shellAliases = {
       vi = "hx";
       open = "xdg-open";
-      ishmael = "cd /persist/dev/ishmael && sudo -u ishmael fish";
       rollback-config = "sudo nixos-rebuild switch --rollback";
       switch-config =
         "sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
