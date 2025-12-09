@@ -95,11 +95,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763883538,
-        "narHash": "sha256-60MB/YtKuDUHq4EUa+kidJk16cFqyxaKi+bDvC9isgE=",
+        "lastModified": 1765110413,
+        "narHash": "sha256-eKDYDSEsrnffWEBjrBfmTZdPb/SSUSevzM04xNAorSo=",
         "owner": "~maan2003",
         "repo": "claus",
-        "rev": "8cca48cb286b9b906e8a2c9ce68d75a7870aa105",
+        "rev": "e0f02682b87ebd00cf7915f0c6b0bb533d8b2625",
         "type": "sourcehut"
       },
       "original": {
