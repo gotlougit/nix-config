@@ -36,8 +36,7 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, ... }:
     let
-      system = "x86_64-linux";
-      aarch64System = "aarch64-linux";
+      # Systems are defined in the host configurations
     in {
       overlays.default = final: prev:
         (import ./overlays/overlay.nix final prev) // {
@@ -53,7 +52,7 @@
       };
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
-          inherit system;
+          system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
             { nixpkgs.overlays = [ self.overlays.default ]; }
@@ -72,7 +71,7 @@
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
-          system = aarch64System;
+          system = "aarch64-linux";
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/mimir/base.nix

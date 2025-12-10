@@ -21,8 +21,8 @@
 
   home.packages = with pkgs; [
     # Miscellaneous programs I use
-    inputs.code-sandbox.packages.x86_64-linux.default # Installs sandboxes
-    inputs.archiver.packages.x86_64-linux.default # Installs archiving script
+    inputs.code-sandbox.packages.${pkgs.system}.default # Installs sandboxes
+    inputs.archiver.packages.${pkgs.system}.default # Installs archiving script
     # ghidra # Decompiler
     gImageReader # OCR PDFs and images easily
     inkscape # Vector images
