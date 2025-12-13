@@ -2,6 +2,7 @@
   imports = [
     inputs.stylix.homeModules.stylix
     ./home-manager-gc.nix
+    ./dev.nix
     ./firefox.nix
     ./gaming.nix
     # ./conty
@@ -23,7 +24,6 @@
     # Miscellaneous programs I use
     inputs.code-sandbox.packages.${pkgs.system}.default # Installs sandboxes
     inputs.archiver.packages.${pkgs.system}.default # Installs archiving script
-    # ghidra # Decompiler
     gImageReader # OCR PDFs and images easily
     inkscape # Vector images
     krita # Raster image editor
@@ -35,14 +35,9 @@
     signal-desktop # Secure and easy messaging
     telegram-desktop # Telegram desktop client
     tor-browser # Needs no intro
-    claude-code # Claude in the terminal
-    gemini-cli # Gemini in the terminal
-    codex # ChatGPT in the terminal
-    # llama-cpp # Run local LLMs efficiently on CPU/GPU
     chromium # Keep around as backup browser
     nicotine-plus # Soulseek client
-    amp-cli
-    stremio-new
+    # stremio-new
   ];
 
   stylix.enable = true;
