@@ -1,29 +1,13 @@
-{
-  lib,
-  symlinkJoin,
-  rustPlatform,
-  fetchFromGitHub,
-  versionCheckHook,
-  gitUpdater,
+{ lib, symlinkJoin, rustPlatform, fetchFromGitHub, versionCheckHook, gitUpdater,
 
-  # buildInputs
-  atk,
-  cef-binary,
-  gtk3,
-  libayatana-appindicator,
-  libxkbcommon,
-  mpv,
-  openssl,
+# buildInputs
+atk, cef-binary, gtk3, libayatana-appindicator, libxkbcommon, mpv, openssl,
 
-  # nativeBuildInputs
-  wrapGAppsHook4,
-  makeBinaryWrapper,
-  pkg-config,
+# nativeBuildInputs
+wrapGAppsHook4, makeBinaryWrapper, pkg-config,
 
-  # Wrapper
-  libGL,
-  nodejs,
-}:
+# Wrapper
+libGL, nodejs, }:
 
 let
   # Follow upstream
@@ -42,13 +26,9 @@ let
   # Stremio expects CEF files in a specific layout
   cefPath = symlinkJoin {
     name = "stremio-cef-target";
-    paths = [
-      "${cefPinned}/Resources"
-      "${cefPinned}/Release"
-    ];
+    paths = [ "${cefPinned}/Resources" "${cefPinned}/Release" ];
   };
-in
-rustPlatform.buildRustPackage (finalAttrs: {
+in rustPlatform.buildRustPackage (finalAttrs: {
   pname = "stremio-linux-shell";
   version = "1.0.0-beta.12";
 
@@ -69,21 +49,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
   # Don't download CEF during build
   buildFeatures = [ "offline-build" ];
 
-  buildInputs = [
-    atk
-    cefPath
-    gtk3
-    libayatana-appindicator
-    libxkbcommon
-    mpv
-    openssl
-  ];
+  buildInputs =
+    [ atk cefPath gtk3 libayatana-appindicator libxkbcommon mpv openssl ];
 
-  nativeBuildInputs = [
-    wrapGAppsHook4
-    makeBinaryWrapper
-    pkg-config
-  ];
+  nativeBuildInputs = [ wrapGAppsHook4 makeBinaryWrapper pkg-config ];
 
   env.CEF_PATH = "${cefPath}";
 
@@ -101,21 +70,22 @@ rustPlatform.buildRustPackage (finalAttrs: {
   preFixup = ''
     gappsWrapperArgs+=(
       --prefix LD_LIBRARY_PATH : "/run/opengl-driver/lib" \
-      --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [ libGL libxkbcommon ]}" \
+      --prefix LD_LIBRARY_PATH : "${
+        lib.makeLibraryPath [ libGL libxkbcommon ]
+      }" \
       --prefix PATH : "${lib.makeBinPath [ nodejs ]}"
     )
   '';
 
-  nativeInstallCheckInputs = [
-    versionCheckHook
-  ];
+  nativeInstallCheckInputs = [ versionCheckHook ];
   versionCheckProgramArg = "--version";
   doInstallCheck = true;
 
   passthru.updateScript = gitUpdater { rev-prefix = "v"; };
 
   meta = {
-    description = "Modern media center that gives you the freedom to watch everything you want";
+    description =
+      "Modern media center that gives you the freedom to watch everything you want";
     homepage = "https://www.stremio.com/";
     license = with lib.licenses; [
       gpl3Only

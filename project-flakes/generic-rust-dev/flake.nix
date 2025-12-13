@@ -5,19 +5,21 @@
 
   outputs = { self, nixpkgs }:
     let
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      supportedSystems =
+        [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
       nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
-    in
-    {
+    in {
       devShells = forAllSystems (system:
         let
           pkgs = nixpkgsFor.${system};
           mkShell = pkgs.mkShell.override {
-            stdenv = if pkgs.stdenv.isLinux then pkgs.stdenvAdapters.useMoldLinker pkgs.stdenv else pkgs.stdenv;
+            stdenv = if pkgs.stdenv.isLinux then
+              pkgs.stdenvAdapters.useMoldLinker pkgs.stdenv
+            else
+              pkgs.stdenv;
           };
-        in
-        {
+        in {
           default = mkShell {
             name = "rustdev";
             shellHook = ''
@@ -35,9 +37,8 @@
               pkgs.rust-analyzer
               pkgs.tree-sitter
               pkgs.gdb
-            ] ++ pkgs.lib.optionals (pkgs.stdenv.isLinux && pkgs.stdenv.isx86_64) [
-              pkgs.cargo-rr
-            ];
+            ] ++ pkgs.lib.optionals
+              (pkgs.stdenv.isLinux && pkgs.stdenv.isx86_64) [ pkgs.cargo-rr ];
           };
         });
     };

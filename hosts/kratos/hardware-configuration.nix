@@ -93,7 +93,7 @@
   hardware.graphics.enable = true;
 
   # To enable Vulkan support for 32-bit applications, also add:
-  hardware.graphics.enable32Bit =  true;
+  hardware.graphics.enable32Bit = true;
   hardware.enableAllFirmware = true;
 
   # Force radv

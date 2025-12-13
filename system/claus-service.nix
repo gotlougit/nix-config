@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 
   users.groups.vamp-api.members = [ "gotlou" ];
-  
+
   systemd.sockets.vamp-api = {
     description = "Vamp API Socket";
     wantedBy = [ "sockets.target" ];

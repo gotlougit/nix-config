@@ -1,18 +1,12 @@
-{
-  lib,
-  buildNpmPackage,
-  fetchzip,
-  ripgrep,
-  makeWrapper,
-  testers,
-}:
+{ lib, buildNpmPackage, fetchzip, ripgrep, makeWrapper, testers, }:
 
 buildNpmPackage (finalAttrs: {
   pname = "amp-cli";
   version = "0.0.1763812881-gc5f191";
 
   src = fetchzip {
-    url = "https://registry.npmjs.org/@sourcegraph/amp/-/amp-${finalAttrs.version}.tgz";
+    url =
+      "https://registry.npmjs.org/@sourcegraph/amp/-/amp-${finalAttrs.version}.tgz";
     hash = "sha256-lsRQZM5OdQUnGAEn70k/IRgu0BcyAppgDCFvYkfbsmw=";
   };
 
@@ -47,19 +41,11 @@ buildNpmPackage (finalAttrs: {
 
   npmDepsHash = "sha256-5FpZX1citPeT4nqORqxkPFWQUwtSwXBmrGXN8oyexy8=";
 
-  propagatedBuildInputs = [
-    ripgrep
-  ];
+  propagatedBuildInputs = [ ripgrep ];
 
-  nativeBuildInputs = [
-    makeWrapper
-  ];
+  nativeBuildInputs = [ makeWrapper ];
 
-  npmFlags = [
-    "--no-audit"
-    "--no-fund"
-    "--ignore-scripts"
-  ];
+  npmFlags = [ "--no-audit" "--no-fund" "--ignore-scripts" ];
 
   # Disable build and prune steps
   dontNpmBuild = true;
@@ -76,14 +62,12 @@ buildNpmPackage (finalAttrs: {
   };
 
   meta = {
-    description = "CLI for Amp, an agentic coding agent in research preview from Sourcegraph";
+    description =
+      "CLI for Amp, an agentic coding agent in research preview from Sourcegraph";
     homepage = "https://ampcode.com/";
     downloadPage = "https://www.npmjs.com/package/@sourcegraph/amp";
     license = lib.licenses.unfree;
-    maintainers = with lib.maintainers; [
-      keegancsmith
-      burmudar
-    ];
+    maintainers = with lib.maintainers; [ keegancsmith burmudar ];
     mainProgram = "amp";
   };
 })

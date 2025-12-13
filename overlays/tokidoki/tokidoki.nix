@@ -19,10 +19,7 @@ buildGoModule {
 
   tags = [ "pam" "nullauth" ];
 
-  ldflags = [
-    "-s"
-    "-w"
-  ];
+  ldflags = [ "-s" "-w" ];
 
   # Ensure PAM is available during build
   env.CGO_ENABLED = "1";

@@ -24,7 +24,7 @@
       # Push current branch if nothing is specified
       push.default = "current";
     };
-      # Ignore certain paths globally
+    # Ignore certain paths globally
     ignores = [
       "*.localcargo/"
       "*.direnv/"
