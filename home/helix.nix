@@ -66,5 +66,6 @@ in {
 
   # LSPs and formatters installed globally for convenience
   programs.helix.extraPackages = lspPackages;
+  home.packages = lspPackages;
 
 }
