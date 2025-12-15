@@ -4,7 +4,7 @@
     # ./claus-service.nix
     ./colord.nix
     ./flatpak.nix
-    ./sudo-rs.nix
+    ./sudo.nix
     ./nix.nix
     ./zram.nix
     ./standard-services.nix
