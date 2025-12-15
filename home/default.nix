@@ -24,6 +24,7 @@
     # Miscellaneous programs I use
     inputs.code-sandbox.packages.${pkgs.system}.default # Installs sandboxes
     inputs.archiver.packages.${pkgs.system}.default # Installs archiving script
+    # island # Sandboxing tool using Landlock
     gImageReader # OCR PDFs and images easily
     inkscape # Vector images
     krita # Raster image editor
