@@ -11,7 +11,7 @@ buildGoModule {
     sha256 = "sha256-3A4kyB2o+PdRcJYtU5k3miE45sEpp8XXwfYfmr+CA+c=";
   };
 
-  vendorHash = "sha256-pODLTMRHmMN7JYS8dbRLV8ltQnNrtKn88tKdRwxjH2o=";
+  vendorHash = "sha256-/Oj2wKqvaogS8cwXU+gY8eRwl6GHZIM6eLyy7fA0ZEg=";
 
   subPackages = [ "cmd/tokidoki" ];
 
