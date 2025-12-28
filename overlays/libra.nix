@@ -8,11 +8,11 @@ buildNpmPackage (finalAttrs: {
   src = fetchFromSourcehut {
     owner = "~gotlou";
     repo = "antigravity-cli";
-    rev = "39b63c5a5facb3bb259c41bba1a6caa08eac399d";
-    hash = "sha256-0CIYyarEYkwxFhbCE6sPejPJpDekUuGkn+ldekMl94c=";
+    rev = "6416e24fb299ae48fd5a6b8492e62020914c2a20";
+    hash = "sha256-AGoHgPZSbEuMT0hU5pddQHOu2DihI26DTX1iU2SS7Vs=";
   };
 
-  npmDepsHash = "sha256-Isa4N5tFhtEiCJbkJ7je56/1lK3sF0AEqNFStDJJwvg=";
+  npmDepsHash = "sha256-GVWd+1uxAbsXztuqsOq/Ic9hn/iNm00JiZcCIf6tQcg=";
 
   nativeBuildInputs = [ jq pkg-config ] ++ lib.optionals stdenv.isDarwin
     [ clang_20 ]; # clang_21 breaks @vscode/vsce's optionalDependencies keytar
