@@ -146,5 +146,5 @@
   # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = [ pkgs.nix-update ];
+  environment.systemPackages = [ pkgs.nix-update pkgs.nixos-rebuild-ng ];
 }
