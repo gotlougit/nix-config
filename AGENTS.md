@@ -20,6 +20,13 @@ so that the build will find them
 new packages created in overlays rather than just simply running switch-config to generate
 the hashes via build failure
 
+- If nix-prefetch commands are unavailable, you can get hashes by using placeholder values
+and letting nix build fail with the correct hash. Use this technique:
+  1. Set hash/cargoHash to a dummy value: "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  2. Run: nix build --impure --expr '(import <nixpkgs> { overlays = [ (import ./overlays/overlay.nix) ]; }).PACKAGE_NAME' 2>&1 | grep -E 'got:|specified:|hash mismatch'
+  3. Extract the correct hash from the "got:" line in the error output
+  4. Repeat for each hash (source hash first, then cargoHash for Rust packages)
+
 - Whenever you create an overlay, ideally you should create it in a subdirectory
 inside of overlays/, and this should comprise of a default.nix and an update.sh script.
 The update.sh script helps update the hashes and commit revision/tag based on the
