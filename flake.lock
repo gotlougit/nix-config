@@ -447,11 +447,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1756663701,
-        "narHash": "sha256-9vUYB0FhXaCU2Hk4uvfp0fswzSe55ODl5AMeYTxSU/c=",
+        "lastModified": 1767012662,
+        "narHash": "sha256-hP5dAC2bD3vcTYXhprYELfQEZYohejD4SUbCthI0jWE=",
         "owner": "~gotlou",
         "repo": "sshield",
-        "rev": "b2c9a9652fe6ff470669768e3c57acb0aed74fb8",
+        "rev": "cd42f1ead41391282a30c265fa1ea31c4937b8a6",
         "type": "sourcehut"
       },
       "original": {
