@@ -38,6 +38,7 @@
     pkgs.kdePackages.elisa
     pkgs.kdePackages.baloo
     pkgs.kdePackages.kate
+    pkgs.kdePackages.discover
     # pkgs.libsForQt5.oxygen
     # pkgs.libsForQt5.khelpcenter
     # pkgs.libsForQt5.konsole
