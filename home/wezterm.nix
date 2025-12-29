@@ -17,7 +17,7 @@
       config = wezterm.config_builder()
     end
 
-    config.enable_wayland = false;
+    config.enable_wayland = true;
 
     -- Use Fish shell in WezTerm
     config.default_prog = { '${lib.getExe pkgs.fish}', '-i' };
