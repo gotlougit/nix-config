@@ -24,6 +24,6 @@ with pkgs; [
 
   # Nix
   nil
-  nixfmt-classic
+  nixfmt
   nixd
 ]
