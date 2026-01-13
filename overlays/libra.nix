@@ -1,5 +1,16 @@
-{ lib, stdenv, buildNpmPackage, fetchFromSourcehut, jq, pkg-config, clang_20
-, libsecret, ripgrep, nix-update-script, }:
+{
+  lib,
+  stdenv,
+  buildNpmPackage,
+  fetchFromSourcehut,
+  jq,
+  pkg-config,
+  clang_20,
+  libsecret,
+  ripgrep,
+  nodejs_22,
+  nix-update-script,
+}:
 
 buildNpmPackage (finalAttrs: {
   pname = "libra-cli";
@@ -8,16 +19,24 @@ buildNpmPackage (finalAttrs: {
   src = fetchFromSourcehut {
     owner = "~gotlou";
     repo = "antigravity-cli";
-    rev = "6416e24fb299ae48fd5a6b8492e62020914c2a20";
-    hash = "sha256-AGoHgPZSbEuMT0hU5pddQHOu2DihI26DTX1iU2SS7Vs=";
+    rev = "11c896de525dad5fc1fb4c00bef41b3f02e5768e";
+    hash = "sha256-Ppbcyl39y58pT2W4vw6d1THnUti/wfm6whHggLu8OBk=";
   };
 
-  npmDepsHash = "sha256-GVWd+1uxAbsXztuqsOq/Ic9hn/iNm00JiZcCIf6tQcg=";
+  nodejs = nodejs_22;
 
-  nativeBuildInputs = [ jq pkg-config ] ++ lib.optionals stdenv.isDarwin
-    [ clang_20 ]; # clang_21 breaks @vscode/vsce's optionalDependencies keytar
+  npmDepsHash = "sha256-6PnZlhHk70aPmhIdRIt75rDIQrvZ7aSu6lGJXM6lRjU=";
 
-  buildInputs = [ ripgrep libsecret ];
+  nativeBuildInputs = [
+    jq
+    pkg-config
+  ]
+  ++ lib.optionals stdenv.isDarwin [ clang_20 ]; # clang_21 breaks @vscode/vsce's optionalDependencies keytar
+
+  buildInputs = [
+    ripgrep
+    libsecret
+  ];
 
   preConfigure = ''
     mkdir -p packages/generated
@@ -31,6 +50,10 @@ buildNpmPackage (finalAttrs: {
     # Remove node-pty dependency from packages/core/package.json
     ${jq}/bin/jq 'del(.optionalDependencies."node-pty")' packages/core/package.json > packages/core/package.json.tmp && mv packages/core/package.json.tmp packages/core/package.json
 
+    # Fix ripgrep path for SearchText; ensureRgPath() on its own may return the path to a dynamically-linked ripgrep binary without required libraries
+    substituteInPlace packages/core/src/tools/ripGrep.ts \
+      --replace-fail "await ensureRgPath();" "'${lib.getExe ripgrep}';"
+
     # Ideal method to disable auto-update
     sed -i '/disableAutoUpdate: {/,/}/ s/default: false/default: true/' packages/cli/src/config/settingsSchema.ts
 
@@ -43,14 +66,18 @@ buildNpmPackage (finalAttrs: {
       --replace-fail "settings.merged.general?.disableUpdateNag" "(settings.merged.general?.disableUpdateNag ?? true)"
   '';
 
-  # Prevent npmDeps from getting into the closure
-  disallowedReferences = [ finalAttrs.npmDeps ];
+  # Prevent npmDeps and python from getting into the closure
+  # disallowedReferences = [
+  #   finalAttrs.npmDeps
+  #   nodejs_22.python
+  # ];
 
   installPhase = ''
     runHook preInstall
     mkdir -p $out/{bin,share/gemini-cli}
 
     npm prune --omit=dev
+    rm node_modules/shell-quote/print.py # remove python demo to prevent python from getting into the closure
     cp -r node_modules $out/share/gemini-cli/
 
     rm -f $out/share/gemini-cli/node_modules/@google/gemini-cli
@@ -62,6 +89,8 @@ buildNpmPackage (finalAttrs: {
     cp -r packages/core $out/share/gemini-cli/node_modules/@google/gemini-cli-core
     cp -r packages/a2a-server $out/share/gemini-cli/node_modules/@google/gemini-cli-a2a-server
 
+    rm -f $out/share/gemini-cli/node_modules/@google/gemini-cli-core/dist/docs/CONTRIBUTING.md
+
     ln -s $out/share/gemini-cli/node_modules/@google/gemini-cli/dist/index.js $out/bin/libra
     chmod +x "$out/bin/libra"
 
@@ -71,13 +100,15 @@ buildNpmPackage (finalAttrs: {
   passthru.updateScript = nix-update-script { };
 
   meta = {
-    description =
-      "AI agent that brings the power of Gemini directly into your terminal";
+    description = "AI agent that brings the power of Gemini directly into your terminal";
     license = lib.licenses.asl20;
     sourceProvenance = with lib.sourceTypes; [ fromSource ];
-    maintainers = with lib.maintainers; [ xiaoxiangmoe FlameFlag taranarmo ];
+    maintainers = with lib.maintainers; [
+      xiaoxiangmoe
+      FlameFlag
+      taranarmo
+    ];
     platforms = lib.platforms.all;
     mainProgram = "libra";
   };
 })
-
