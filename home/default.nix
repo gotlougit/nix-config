@@ -32,6 +32,7 @@
     mullvad-browser # Browser for private browsing
     qbittorrent # Best torrent client
     rhythmbox # Music player
+    spotiflac
     songrec # Shazam on Linux
     signal-desktop # Secure and easy messaging
     telegram-desktop # Telegram desktop client

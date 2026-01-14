@@ -5,6 +5,7 @@ let
   autodevenv-overlay = import ./autodevenv/default.nix;
 in {
   llama-cpp = self.callPackage ./llama-cpp.nix { };
+  spotiflac = self.callPackage ./spotiflac.nix { };
   cloudflare-warp-old = self.callPackage ./cloudflare-warp-old.nix { };
   stremio-new = self.callPackage ./stremio-new.nix { };
   libra = self.callPackage ./libra.nix { };
