@@ -1,4 +1,5 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [ syncthing ];
   # Enable syncthing to sync important files in background
   services.syncthing = {
@@ -34,7 +35,12 @@
         "~@privileged"
         "~@module"
       ];
-      RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" "AF_NETLINK" ];
+      RestrictAddressFamilies = [
+        "AF_UNIX"
+        "AF_INET"
+        "AF_INET6"
+        "AF_NETLINK"
+      ];
       CapabilityBoundingSet = lib.mkForce [ "" ];
     };
   };

@@ -1,4 +1,9 @@
-{ lib, buildGoModule, fetchFromSourcehut, pam }:
+{
+  lib,
+  buildGoModule,
+  fetchFromSourcehut,
+  pam,
+}:
 
 buildGoModule {
   pname = "tokidoki";
@@ -17,9 +22,15 @@ buildGoModule {
 
   buildInputs = [ pam ];
 
-  tags = [ "pam" "nullauth" ];
+  tags = [
+    "pam"
+    "nullauth"
+  ];
 
-  ldflags = [ "-s" "-w" ];
+  ldflags = [
+    "-s"
+    "-w"
+  ];
 
   # Ensure PAM is available during build
   env.CGO_ENABLED = "1";

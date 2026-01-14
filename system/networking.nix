@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Setup networking
   networking = {
     # Enable networkmanager
@@ -7,7 +8,10 @@
     networkmanager.wifi.macAddress = "stable";
     networkmanager.ethernet.macAddress = "stable";
 
-    nameservers = [ "127.0.0.1" "::1" ];
+    nameservers = [
+      "127.0.0.1"
+      "::1"
+    ];
     # If using dhcpcd:
     dhcpcd.extraConfig = "nohook resolv.conf";
     # If using NetworkManager:
@@ -15,8 +19,12 @@
     # Use IWD backend
     networkmanager.wifi.backend = "iwd";
     wireless.iwd.settings = {
-      General = { EnableNetworkConfiguration = true; };
-      Settings = { AutoConnect = true; };
+      General = {
+        EnableNetworkConfiguration = true;
+      };
+      Settings = {
+        AutoConnect = true;
+      };
     };
     # Enable firewall by default
 

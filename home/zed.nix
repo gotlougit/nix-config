@@ -1,6 +1,8 @@
 { pkgs, ... }:
-let lspPackages = import ./lsp-list.nix { inherit pkgs; };
-in {
+let
+  lspPackages = import ./lsp-list.nix { inherit pkgs; };
+in
+{
   programs.zed-editor = {
     enable = true;
     package = pkgs.zed-editor-new;
@@ -50,28 +52,33 @@ in {
 
       language_models.anthropic.version = "1";
       language_models.anthropic.api_url = "http://127.0.0.1:25784";
-      language_models.anthropic.available_models = let
-        ultra_think = {
-          max_output_tokens = 32000;
-          cache_configuration = {
-            min_total_token = 2048;
-            should_speculate = true;
-            max_cache_anchors = 4;
+      language_models.anthropic.available_models =
+        let
+          ultra_think = {
+            max_output_tokens = 32000;
+            cache_configuration = {
+              min_total_token = 2048;
+              should_speculate = true;
+              max_cache_anchors = 4;
+            };
+            supports_tools = true;
+            supports_thinking = true;
+            max_tokens = 200000;
+            mode = {
+              type = "thinking";
+              budget_tokens = 32000;
+            };
           };
-          supports_tools = true;
-          supports_thinking = true;
-          max_tokens = 200000;
-          mode = {
-            type = "thinking";
-            budget_tokens = 32000;
-          };
-        };
-      in [
-        (ultra_think // {
-          name = "claude-sonnet-4-latest-thinking";
-          display_name = "Claude Sonnet 4 (Ultrathink)";
-        })
-      ];
+        in
+        [
+          (
+            ultra_think
+            // {
+              name = "claude-sonnet-4-latest-thinking";
+              display_name = "Claude Sonnet 4 (Ultrathink)";
+            }
+          )
+        ];
     };
   };
 }

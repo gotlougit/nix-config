@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
 
   # Selects holiday region for calendar
   xdg.configFile."plasma_calendar_holiday_regions".text = ''

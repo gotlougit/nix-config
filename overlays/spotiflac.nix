@@ -11,7 +11,7 @@
   nodejs,
   pnpm,
   webkitgtk_4_1,
-  makeDesktopItem
+  makeDesktopItem,
 }:
 buildGoModule rec {
   pname = "spotiflac";
@@ -46,7 +46,10 @@ buildGoModule rec {
     icon = "audio-x-flac";
     desktopName = "SpotiFLAC";
     comment = "Get Spotify tracks in true FLAC from Tidal, Qobuz & Amazon Music";
-    categories = [ "Audio" "AudioVideo" ];
+    categories = [
+      "Audio"
+      "AudioVideo"
+    ];
     terminal = false;
   };
 

@@ -2,7 +2,9 @@
 
 {
   systemd.user.services.home-manager-gc = {
-    Unit = { Description = "Clean up old home-manager generations"; };
+    Unit = {
+      Description = "Clean up old home-manager generations";
+    };
 
     Service = {
       Type = "oneshot";
@@ -20,7 +22,8 @@
       Persistent = true;
     };
 
-    Install = { WantedBy = [ "timers.target" ]; };
+    Install = {
+      WantedBy = [ "timers.target" ];
+    };
   };
 }
-

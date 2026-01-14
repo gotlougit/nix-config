@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   imports = [ inputs.sshield.hmModule ];
   programs.sshield = {
     enable = true;

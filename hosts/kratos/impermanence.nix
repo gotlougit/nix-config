@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   imports = [ inputs.impermanence.nixosModules.impermanence ];
   # Files and folders that are saved by Impermanence from deletion
   # Symlinks will be created automatically at boot
@@ -85,7 +86,7 @@
     files = [ ];
   };
 
-  # Any passwords or key data goes here  
+  # Any passwords or key data goes here
   environment.persistence."/persist/sensitive" = {
     directories = [
       # GitHub

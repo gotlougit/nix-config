@@ -1,19 +1,27 @@
-{ pkgs, lib, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
   imports = [ inputs.nix-index-database.nixosModules.nix-index ];
   nix = {
     settings = {
       keep-outputs = true;
       keep-derivations = true;
       # Enable flakes
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       # Restrict nix usage to real users
       allowed-users = lib.mkDefault [ "@users" ];
       # Hard link identical files in the nix store
       auto-optimise-store = true;
       # Required for COSMIC via https://github.com/lilyinstarlight/nixos-cosmic
       substituters = [ "https://cosmic.cachix.org/" ];
-      trusted-public-keys =
-        [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+      trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
       cores = 6;
       max-jobs = 6;
     };
@@ -146,5 +154,8 @@
   # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = [ pkgs.nix-update pkgs.nixos-rebuild-ng ];
+  environment.systemPackages = [
+    pkgs.nix-update
+    pkgs.nixos-rebuild-ng
+  ];
 }

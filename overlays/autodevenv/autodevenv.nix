@@ -1,4 +1,10 @@
-{ lib, rustPlatform, fetchFromSourcehut, pkg-config, openssl }:
+{
+  lib,
+  rustPlatform,
+  fetchFromSourcehut,
+  pkg-config,
+  openssl,
+}:
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "autodevenv";

@@ -1,4 +1,8 @@
-{ lib, rustPlatform, fetchFromGitHub }:
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+}:
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "island";
@@ -25,7 +29,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
   meta = {
     description = "A sandboxing tool using Landlock for secure command execution";
     homepage = "https://github.com/landlock-lsm/island";
-    license = with lib.licenses; [ asl20 mit ];
+    license = with lib.licenses; [
+      asl20
+      mit
+    ];
     maintainers = [ ];
     platforms = lib.platforms.linux;
     mainProgram = "island";

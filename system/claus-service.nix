@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   users.groups.vamp-api.members = [ "gotlou" ];
 
@@ -23,8 +24,14 @@
   };
 
   systemd.services.vamp = {
-    requires = [ "vamp-api.socket" "vamp-admin.socket" ];
-    after = [ "vamp-api.socket" "vamp-admin.socket" ];
+    requires = [
+      "vamp-api.socket"
+      "vamp-admin.socket"
+    ];
+    after = [
+      "vamp-api.socket"
+      "vamp-admin.socket"
+    ];
 
     environment.VAMP_DB = "%S/vamp/cloxy-db.sqlite";
     environment.RUST_LOG = "info";
@@ -53,15 +60,21 @@
       ProtectProc = "invisible";
       ProtectSystem = "strict";
       RemoveIPC = true;
-      RestrictAddressFamilies = [ "AF_INET" "AF_INET6" ];
+      RestrictAddressFamilies = [
+        "AF_INET"
+        "AF_INET6"
+      ];
       RestrictNamespaces = true;
       RestrictRealtime = true;
       RestrictSUIDSGID = true;
       SystemCallArchitectures = "native";
-      SystemCallFilter = [ "@system-service" "~@resources" "~@privileged" ];
+      SystemCallFilter = [
+        "@system-service"
+        "~@resources"
+        "~@privileged"
+      ];
       UMask = "0077";
       InaccessiblePaths = "/persist";
     };
   };
 }
-

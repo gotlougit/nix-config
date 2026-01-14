@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # Enable the OpenSSH daemon to act as SSH server
   services.openssh.enable = true;
   systemd.services.sshd = {
@@ -21,7 +22,10 @@
       InaccessiblePaths = [ "/persist" ];
       SystemCallArchitectures = "native";
       NoNewPrivileges = true;
-      SystemCallFilter = [ "@system-service" "~@resources" ];
+      SystemCallFilter = [
+        "@system-service"
+        "~@resources"
+      ];
     };
   };
 }

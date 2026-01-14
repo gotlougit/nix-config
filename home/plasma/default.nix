@@ -1,5 +1,10 @@
-{ lib, pkgs, ... }: {
-  imports = [ ./display-scale.nix ./panel.nix ./plasma.nix ];
+{ lib, pkgs, ... }:
+{
+  imports = [
+    ./display-scale.nix
+    ./panel.nix
+    ./plasma.nix
+  ];
 
   # ref: https://github.com/nix-community/home-manager/issues/5098#issuecomment-2352172073
   xdg.configFile."menus/applications.menu".source =
@@ -16,6 +21,8 @@
       name = lib.mkForce "Breeze";
     };
   };
-  systemd.user.sessionVariables = { QT_QPA_PLATFORMTHEME = lib.mkForce "kde"; };
+  systemd.user.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = lib.mkForce "kde";
+  };
 
 }

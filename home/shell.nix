@@ -3,11 +3,14 @@
 let
   hostname = "kratos";
   user = "gotlou";
-in {
+in
+{
 
   programs.direnv = {
     enable = true;
-    nix-direnv = { enable = true; };
+    nix-direnv = {
+      enable = true;
+    };
   };
   xdg.configFile."direnv/direnvrc".source = ./direnvrc;
 
@@ -56,13 +59,10 @@ in {
       vi = "hx";
       open = "xdg-open";
       rollback-config = "sudo nixos-rebuild switch --rollback";
-      switch-config =
-        "sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
+      switch-config = "sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
       quick-switch-config = "switch-config --offline";
-      update-config =
-        "sudo nix flake update /home/${user}/nixos && sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
-      switch-config-boot =
-        "sudo nixos-rebuild boot --flake /home/${user}/nixos#${hostname}";
+      update-config = "sudo nix flake update /home/${user}/nixos && sudo nixos-rebuild switch --flake /home/${user}/nixos#${hostname}";
+      switch-config-boot = "sudo nixos-rebuild boot --flake /home/${user}/nixos#${hostname}";
       cat = "bat";
       diff = "difft";
       du = "dust";
@@ -70,20 +70,13 @@ in {
       htop = "btm --battery --tree --basic --process_memory_as_value";
       # "." = "hx .";
       less = "bat --style plain";
-      enter-rust-dev =
-        "nix develop /home/${user}/nixos/project-flakes/generic-rust-dev/ --command code-sandbox";
-      import-rust-dev =
-        "cp /home/${user}/nixos/project-flakes/generic-rust-dev/* .; cp /home/${user}/nixos/project-flakes/generic-rust-dev/.envrc .";
-      enter-golang-dev =
-        "nix develop /home/${user}/nixos/project-flakes/generic-golang-dev/ --command code-sandbox";
-      import-golang-dev =
-        "cp /home/${user}/nixos/project-flakes/generic-golang-dev/* .; cp /home/${user}/nixos/project-flakes/generic-golang-dev/.envrc .";
-      enter-cpp-dev =
-        "nix develop /home/${user}/nixos/project-flakes/generic-c-cpp-dev/ --command code-sandbox";
-      import-cpp-dev =
-        "cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/* .; cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/.envrc .";
-      scanfor =
-        "set RES $(rg -n . | sk); hx +$(echo $RES | cut -d ':' -f 2) $(echo $RES | cut -d ':' -f 1)";
+      enter-rust-dev = "nix develop /home/${user}/nixos/project-flakes/generic-rust-dev/ --command code-sandbox";
+      import-rust-dev = "cp /home/${user}/nixos/project-flakes/generic-rust-dev/* .; cp /home/${user}/nixos/project-flakes/generic-rust-dev/.envrc .";
+      enter-golang-dev = "nix develop /home/${user}/nixos/project-flakes/generic-golang-dev/ --command code-sandbox";
+      import-golang-dev = "cp /home/${user}/nixos/project-flakes/generic-golang-dev/* .; cp /home/${user}/nixos/project-flakes/generic-golang-dev/.envrc .";
+      enter-cpp-dev = "nix develop /home/${user}/nixos/project-flakes/generic-c-cpp-dev/ --command code-sandbox";
+      import-cpp-dev = "cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/* .; cp /home/${user}/nixos/project-flakes/generic-c-cpp-dev/.envrc .";
+      scanfor = "set RES $(rg -n . | sk); hx +$(echo $RES | cut -d ':' -f 2) $(echo $RES | cut -d ':' -f 1)";
     };
     interactiveShellInit = ''
       macchina

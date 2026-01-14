@@ -1,6 +1,7 @@
 { pkgs }:
 
-with pkgs; [
+with pkgs;
+[
   llvmPackages_18.clang-tools # C/C++
   rust-analyzer # Rust
   gopls # Golang

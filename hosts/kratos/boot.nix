@@ -21,5 +21,8 @@
     "zfs.zfs_arc_max=${toString (1024 * 1024 * 512)}"
   ];
   # Add more filesystems here as and when needed
-  boot.supportedFilesystems = [ "btrfs" "zfs" ];
+  boot.supportedFilesystems = [
+    "btrfs"
+    "zfs"
+  ];
 }

@@ -2,7 +2,9 @@
 
 {
 
-  programs.wezterm = { enable = true; };
+  programs.wezterm = {
+    enable = true;
+  };
 
   home.file.".wezterm.lua".text = ''
     -- Pull in the wezterm API

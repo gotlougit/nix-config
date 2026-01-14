@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Enable warp-svc to allow connections to the Cloudflare VPN
   systemd.packages = [ pkgs.cloudflare-warp ];
   services.cloudflare-warp.enable = true;
@@ -29,8 +30,17 @@
       RestrictSUIDSGID = true;
       MemoryDenyWriteExecute = true;
       InaccessiblePaths = "/persist";
-      CapabilityBoundingSet = [ "" "CAP_NET_BIND_SERVICE" "CAP_NET_ADMIN" ];
-      RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" "AF_NETLINK" ];
+      CapabilityBoundingSet = [
+        ""
+        "CAP_NET_BIND_SERVICE"
+        "CAP_NET_ADMIN"
+      ];
+      RestrictAddressFamilies = [
+        "AF_UNIX"
+        "AF_INET"
+        "AF_INET6"
+        "AF_NETLINK"
+      ];
       ProtectHome = true;
       SystemCallArchitectures = "native";
       SystemCallFilter = [

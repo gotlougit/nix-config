@@ -1,5 +1,7 @@
-let servicePort = 9686;
-in {
+let
+  servicePort = 9686;
+in
+{
   imports = [ ../overlays/tokidoki/tokidoki-module.nix ];
 
   services.tokidoki = {

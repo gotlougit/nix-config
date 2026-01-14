@@ -34,21 +34,33 @@
   inputs.claus.url = "sourcehut:~maan2003/claus";
   inputs.claus.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      plasma-manager,
+      ...
+    }:
     let
       # Systems are defined in the host configurations
-    in {
-      overlays.default = final: prev:
-        (import ./overlays/overlay.nix final prev) // {
-          claus = inputs.claus.packages.${final.system}.default.overrideAttrs
-            (prevAttrs: { doCheck = false; });
+    in
+    {
+      overlays.default =
+        final: prev:
+        (import ./overlays/overlay.nix final prev)
+        // {
+          claus = inputs.claus.packages.${final.system}.default.overrideAttrs (prevAttrs: {
+            doCheck = false;
+          });
         };
       images = {
-        mimir = (self.nixosConfigurations.mimir.extendModules {
-          modules = [
-            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix"
-          ];
-        }).config.system.build.sdImage;
+        mimir =
+          (self.nixosConfigurations.mimir.extendModules {
+            modules = [
+              "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix"
+            ];
+          }).config.system.build.sdImage;
       };
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
@@ -62,8 +74,7 @@
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.sharedModules =
-                [ plasma-manager.homeModules.plasma-manager ];
+              home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               home-manager.users.gotlou = import ./home;
             }
             ./hosts/kratos

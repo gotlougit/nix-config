@@ -9,10 +9,8 @@
       user.email = "git@gotlou.com";
       # Signing config
       gpg.format = "ssh";
-      user.signingKey =
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINdqk3Yo5e67SNiTiZlIMlDHI5cD9L3hFatrFo+yM7zB signing-key";
-      gpg.ssh.allowedSignersFile =
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINdqk3Yo5e67SNiTiZlIMlDHI5cD9L3hFatrFo+yM7zB signing-key";
+      user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINdqk3Yo5e67SNiTiZlIMlDHI5cD9L3hFatrFo+yM7zB signing-key";
+      gpg.ssh.allowedSignersFile = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINdqk3Yo5e67SNiTiZlIMlDHI5cD9L3hFatrFo+yM7zB signing-key";
       commit.gpgsign = true;
       # Make default branch be named "main"
       init.defaultBranch = "main";

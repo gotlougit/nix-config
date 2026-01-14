@@ -1,6 +1,8 @@
 { pkgs, lib, ... }:
-let lspPackages = import ./lsp-list.nix { inherit pkgs; };
-in {
+let
+  lspPackages = import ./lsp-list.nix { inherit pkgs; };
+in
+{
   programs.helix.enable = true;
   programs.helix.defaultEditor = true;
   programs.helix.languages.language-server.nixd = {
@@ -11,13 +13,21 @@ in {
       name = "typescript";
       language-servers = [ "typescript-language-server" ];
       formatter.command = "prettier";
-      formatter.args = [ "--parser" "typescript" ];
+      formatter.args = [
+        "--parser"
+        "typescript"
+      ];
       formatter.binary = "${lib.getExe pkgs.nodePackages.prettier}";
     }
     {
       name = "python";
       formatter.command = "ruff";
-      formatter.args = [ "format" "--line-length" "88" "-" ];
+      formatter.args = [
+        "format"
+        "--line-length"
+        "88"
+        "-"
+      ];
       formatter.binary = "${lib.getExe pkgs.ruff}";
     }
     {
@@ -42,8 +52,15 @@ in {
     editor.cursor-shape.insert = "bar";
 
     editor.statusline = {
-      left = [ "mode" "spinner" "version-control" ];
-      center = [ "file-name" "file-modification-indicator" ];
+      left = [
+        "mode"
+        "spinner"
+        "version-control"
+      ];
+      center = [
+        "file-name"
+        "file-modification-indicator"
+      ];
       right = [
         "diagnostics"
         "selections"
@@ -61,7 +78,10 @@ in {
     keys.normal.H = [ "goto_line_start" ];
     keys.normal.L = [ "goto_line_end" ];
     keys.normal.G = [ "goto_last_line" ];
-    keys.normal.y = [ "yank" ":clipboard-yank" ];
+    keys.normal.y = [
+      "yank"
+      ":clipboard-yank"
+    ];
   };
 
   # LSPs and formatters installed globally for convenience

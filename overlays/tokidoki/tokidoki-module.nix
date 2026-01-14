@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -6,7 +11,8 @@ let
   cfg = config.services.tokidoki;
   tokidoki = pkgs.callPackage ./tokidoki.nix { };
 
-in {
+in
+{
   options.services.tokidoki = {
     enable = mkEnableOption "tokidoki CalDAV/CardDAV server";
 
@@ -20,8 +26,7 @@ in {
     address = mkOption {
       type = types.str;
       default = "127.0.0.1";
-      description =
-        "Address to bind to. Use 0.0.0.0 to bind to all interfaces.";
+      description = "Address to bind to. Use 0.0.0.0 to bind to all interfaces.";
     };
 
     port = mkOption {
@@ -60,8 +65,7 @@ in {
     storageDir = mkOption {
       type = types.path;
       default = "/var/lib/private/tokidoki/storage";
-      description =
-        "Directory for filesystem storage (when using file:// storage backend).";
+      description = "Directory for filesystem storage (when using file:// storage backend).";
     };
 
     tls = {
@@ -120,22 +124,27 @@ in {
           StateDirectory = "tokidoki";
           UMask = "0077";
 
-          ExecStart = let
-            args = [
-              "-addr"
-              "${cfg.address}:${toString cfg.port}"
-              "-auth.url"
-              cfg.authUrl
-              "-storage.url"
-              cfg.storageUrl
-            ] ++ optionals cfg.tls.enable [
-              "-cert"
-              cfg.tls.certificateFile
-              "-key"
-              cfg.tls.keyFile
-            ] ++ optionals cfg.logging.debug [ "-log.debug" ]
-              ++ optionals cfg.logging.json [ "-log.json" ] ++ cfg.extraArgs;
-          in "${cfg.package}/bin/tokidoki ${escapeShellArgs args}";
+          ExecStart =
+            let
+              args = [
+                "-addr"
+                "${cfg.address}:${toString cfg.port}"
+                "-auth.url"
+                cfg.authUrl
+                "-storage.url"
+                cfg.storageUrl
+              ]
+              ++ optionals cfg.tls.enable [
+                "-cert"
+                cfg.tls.certificateFile
+                "-key"
+                cfg.tls.keyFile
+              ]
+              ++ optionals cfg.logging.debug [ "-log.debug" ]
+              ++ optionals cfg.logging.json [ "-log.json" ]
+              ++ cfg.extraArgs;
+            in
+            "${cfg.package}/bin/tokidoki ${escapeShellArgs args}";
 
           Restart = "always";
           RestartSec = "10s";
@@ -163,7 +172,11 @@ in {
           CapabilityBoundingSet = [ "CAP_NET_BIND_SERVICE" ];
 
           # Network restrictions
-          RestrictAddressFamilies = [ "AF_INET" "AF_INET6" "AF_UNIX" ];
+          RestrictAddressFamilies = [
+            "AF_INET"
+            "AF_INET6"
+            "AF_UNIX"
+          ];
 
           # System call filtering
           SystemCallFilter = [
@@ -177,12 +190,13 @@ in {
           ];
 
           # Additional paths for TLS certificates
-          ReadOnlyPaths =
-            mkIf cfg.tls.enable [ cfg.tls.certificateFile cfg.tls.keyFile ];
+          ReadOnlyPaths = mkIf cfg.tls.enable [
+            cfg.tls.certificateFile
+            cfg.tls.keyFile
+          ];
 
           # PAM access when using PAM authentication
-          SupplementaryGroups =
-            mkIf (hasPrefix "pam://" cfg.authUrl) [ "shadow" ];
+          SupplementaryGroups = mkIf (hasPrefix "pam://" cfg.authUrl) [ "shadow" ];
 
           # Environment
           Environment = [ "TOKIDOKI_STORAGE_DIR=${cfg.storageDir}" ];
@@ -203,16 +217,12 @@ in {
           message = "services.tokidoki.storageUrl must be specified";
         }
         {
-          assertion = cfg.tls.enable
-            -> (cfg.tls.certificateFile != null && cfg.tls.keyFile != null);
-          message =
-            "services.tokidoki.tls.certificateFile and services.tokidoki.tls.keyFile must both be specified when TLS is enabled";
+          assertion = cfg.tls.enable -> (cfg.tls.certificateFile != null && cfg.tls.keyFile != null);
+          message = "services.tokidoki.tls.certificateFile and services.tokidoki.tls.keyFile must both be specified when TLS is enabled";
         }
         {
-          assertion = !cfg.tls.enable
-            -> (cfg.tls.certificateFile == null && cfg.tls.keyFile == null);
-          message =
-            "services.tokidoki.tls.certificateFile and services.tokidoki.tls.keyFile should not be specified when TLS is disabled";
+          assertion = !cfg.tls.enable -> (cfg.tls.certificateFile == null && cfg.tls.keyFile == null);
+          message = "services.tokidoki.tls.certificateFile and services.tokidoki.tls.keyFile should not be specified when TLS is disabled";
         }
       ];
     }

@@ -16,7 +16,7 @@ let
       "leftcontrol" = "overload(control, [)";
       # Insert ] when tapped and be alt when held
       "rightcontrol" = "overload(control, ])";
-      # Use these for home and end for quick navigation 
+      # Use these for home and end for quick navigation
       "[" = "home";
       "]" = "end";
     };
@@ -45,7 +45,8 @@ let
       "j" = "pagedown";
     };
   };
-in {
+in
+{
   services.keyd = {
     enable = true;
     keyboards.default.ids = [ "*" ];
@@ -57,10 +58,15 @@ in {
     # TODO investigate why it doesn't work propeprly with DynamicUser
     # See issue: https://github.com/NixOS/nixpkgs/issues/226346
     # DynamicUser = true;
-    SupplementaryGroups =
-      [ config.users.groups.input.name config.users.groups.uinput.name ];
+    SupplementaryGroups = [
+      config.users.groups.input.name
+      config.users.groups.uinput.name
+    ];
     # CapabilityBoundingSet = "";
-    DeviceAllow = [ "char-input rw" "/dev/uinput rw" ];
+    DeviceAllow = [
+      "char-input rw"
+      "/dev/uinput rw"
+    ];
     ProtectClock = true;
     PrivateNetwork = true;
     ProtectHome = true;
@@ -77,8 +83,14 @@ in {
     RestrictRealtime = true;
     LockPersonality = true;
     ProtectProc = "invisible";
-    SystemCallFilter = [ "@system-service" "~@privileged" ];
-    CapabilityBoundingSet = lib.mkForce [ "CAP_SYS_NICE" "CAP_SYS_RESOURCE" ];
+    SystemCallFilter = [
+      "@system-service"
+      "~@privileged"
+    ];
+    CapabilityBoundingSet = lib.mkForce [
+      "CAP_SYS_NICE"
+      "CAP_SYS_RESOURCE"
+    ];
     InaccessiblePaths = "/persist";
     RestrictAddressFamilies = [ "AF_UNIX" ];
     RestrictSUIDSGID = true;
