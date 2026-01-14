@@ -12,8 +12,9 @@ for source of every single package in nixpkgs and search.nixos.org to find both 
 nixos options are good starts.
 
 - Whenever you need to try building a new overlay you have added to the system,
-it might be helpful to use the "switch-config" alias in fish shell to do so,
-but since this is a flake.nix you will also have to stage the new files you have created
+you should ONLY use the "switch-config" alias in fish shell to do so, and add the
+new package somewhere appropriate so that it is installed to the system.
+Since this is a flake based repo you will also have to stage the new files you have created
 so that the build will find them
 
 - Use nix prefetch github (or suitable equivalent command) to prefetch hashes for
