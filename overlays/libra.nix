@@ -19,8 +19,8 @@ buildNpmPackage (finalAttrs: {
   src = fetchFromSourcehut {
     owner = "~gotlou";
     repo = "antigravity-cli";
-    rev = "11c896de525dad5fc1fb4c00bef41b3f02e5768e";
-    hash = "sha256-Ppbcyl39y58pT2W4vw6d1THnUti/wfm6whHggLu8OBk=";
+    rev = "aff2331ead25d698761234a3b11d7be4942bc284";
+    hash = "sha256-Cq3ovsWiUVnJZUx7kgIxmcUfe8q9rir+eWFI43qiO+g=";
   };
 
   nodejs = nodejs_22;
