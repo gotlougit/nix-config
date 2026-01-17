@@ -37,6 +37,7 @@
     songrec # Shazam on Linux
     signal-desktop # Secure and easy messaging
     telegram-desktop # Telegram desktop client
+    fractal # Matrix client
     tor-browser # Needs no intro
     chromium # Keep around as backup browser
     nicotine-plus # Soulseek client

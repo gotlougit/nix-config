@@ -73,6 +73,7 @@
       # "/home/gotlou/.thunderbird"
       # Matrix
       # "/home/gotlou/.config/gomuks"
+      "/home/gotlou/.local/share/fractal"
       # Signal
       "/home/gotlou/.config/Signal"
       # nchat (WhatsApp TUI client)
