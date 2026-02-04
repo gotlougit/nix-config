@@ -1,7 +1,8 @@
 {
   imports = [
     ./bluetooth.nix
-    ./claus-service.nix
+    ./cliproxyapi.nix
+    # ./claus-service.nix
     ./colord.nix
     ./flatpak.nix
     ./sudo.nix
