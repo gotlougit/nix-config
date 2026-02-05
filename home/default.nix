@@ -1,14 +1,13 @@
 { pkgs, inputs, ... }:
 {
   imports = [
-    inputs.stylix.homeModules.stylix
-    ./home-manager-gc.nix
-    ./dev.nix
+    # Import minimal config (shared between host and microvm)
+    ./minimal.nix
+
     ./firefox.nix
     ./gaming.nix
-    # ./conty
     ./git.nix
-    ./helix.nix
+    # ./conty
     ./keepassxc.nix
     ./otpclient.nix
     ./plasma
@@ -26,6 +25,7 @@
     inputs.code-sandbox.packages.${pkgs.system}.default # Installs sandboxes
     inputs.archiver.packages.${pkgs.system}.default # Installs archiving script
     # island # Sandboxing tool using Landlock
+
     gImageReader # OCR PDFs and images easily
     inkscape # Vector images
     krita # Raster image editor
@@ -46,21 +46,4 @@
     # `NIXPKGS_ALLOW_INSECURE=1 nix run github:nixos/nixpkgs/nixos-20.09#etcher --impure`
   ];
 
-  stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-  stylix.fonts = rec {
-    monospace = {
-      name = "JetBrains Mono";
-      package = pkgs.jetbrains-mono;
-    };
-    sansSerif = {
-      name = "Noto";
-      package = pkgs.noto-fonts;
-    };
-    serif = sansSerif;
-    sizes.applications = 10;
-  };
-
-  manual.manpages.enable = false;
-  home.stateVersion = "22.11";
 }

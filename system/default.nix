@@ -22,5 +22,6 @@
     ./dns-resolver.nix
     ./oom.nix
     ./networking.nix
+    ./microvm-host.nix
   ];
 }

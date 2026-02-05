@@ -37,6 +37,9 @@
   inputs.llm-agents.url = "github:numtide/llm-agents.nix";
   inputs.llm-agents.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.microvm.url = "github:microvm-nix/microvm.nix";
+  inputs.microvm.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     inputs@{
       self,
@@ -88,7 +91,7 @@
             ./hosts/kratos
             ./system
             inputs.microvm.nixosModules.host
-            ./microvm.nix
+            ./microvms/microvm.nix
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
