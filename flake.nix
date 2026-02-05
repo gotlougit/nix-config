@@ -34,6 +34,9 @@
   inputs.claus.url = "sourcehut:~maan2003/claus";
   inputs.claus.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.llm-agents.url = "github:numtide/llm-agents.nix";
+  inputs.llm-agents.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     inputs@{
       self,
@@ -67,7 +70,12 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            { nixpkgs.overlays = [ self.overlays.default ]; }
+            {
+              nixpkgs.overlays = [
+                self.overlays.default
+                inputs.llm-agents.overlays.default
+              ];
+            }
             home-manager.nixosModules.home-manager
             {
               # Pass flake input to home-manager
@@ -79,6 +87,8 @@
             }
             ./hosts/kratos
             ./system
+            inputs.microvm.nixosModules.host
+            ./microvm.nix
           ];
         };
         mimir = nixpkgs.lib.nixosSystem {
