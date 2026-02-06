@@ -83,6 +83,7 @@
   fileSystems."/home" = {
     device = "nixos_pool/home";
     fsType = "zfs";
+    neededForBoot = true;
   };
 
   fileSystems."/nix" = {
