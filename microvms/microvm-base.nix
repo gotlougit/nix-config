@@ -1,13 +1,12 @@
 {
   hostName,
-  ipAddress,
   tapId,
   mac,
-  workspace,
   inputs,
 }:
 {
   pkgs,
+  lib,
   ...
 }:
 
@@ -19,21 +18,21 @@
 
   # Use systemd-networkd for network configuration
   networking.useNetworkd = true;
-  networking.useDHCP = false;
+  networking.useDHCP = true;
   networking.tempAddresses = "disabled";
 
-  # Static IP configuration
+  # DHCP configuration for user-mode networking (slirp)
   systemd.network.enable = true;
-  systemd.network.networks."10-e" = {
-    matchConfig.Name = "e*";
-    addresses = [ { Address = "${ipAddress}/24"; } ];
-    routes = [ { Gateway = "192.168.83.1"; } ];
+  systemd.network.networks."10-eth" = {
+    matchConfig.Type = "ether";
+    networkConfig = {
+      DHCP = "yes";
+    };
+    linkConfig.RequiredForOnline = "routable";
   };
-  networking.nameservers = [
-    "192.168.83.1"
-    "8.8.8.8"
-    "1.1.1.1"
-  ];
+
+  systemd.oomd.enable = false;
+  services.timesyncd.enable = false;
 
   # Disable firewall for faster boot and less hassle;
   # we are behind a layer of NAT anyway.
@@ -59,27 +58,31 @@
     }
   ];
 
-  # User setup
   users.users.gotlou = {
     isNormalUser = true;
     home = "/home/gotlou";
     shell = pkgs.fish;
     extraGroups = [ "wheel" ];
+    initialPassword = "";
+    group = "gotlou";
+  };
+  users.groups.gotlou = {
+    gid = 1000;
   };
 
   # Enable fish
   programs.fish.enable = true;
 
-  # Enable ssh
+  # Enable ssh with permissive auth for isolated VM
   services.openssh.enable = true;
-
-  # Use SSH host keys mounted from outside the VM (remain identical).
-  services.openssh.hostKeys = [
-    {
-      path = "/etc/ssh/host-keys/microvm_ssh_host_ed25519_key";
-      type = "ed25519";
-    }
-  ];
+  services.openssh.settings = {
+    # Allow empty passwords for passwordless login (VM is isolated)
+    PasswordAuthentication = true;
+    PermitEmptyPasswords = true;
+    PubkeyAuthentication = false;
+    PermitRootLogin = "no";
+    AllowUsers = [ "gotlou" ];
+  };
 
   # Sudo without password for wheel
   security.sudo.wheelNeedsPassword = false;
@@ -95,6 +98,17 @@
   # Timezone
   time.timeZone = "Asia/Kolkata";
 
+  # Tmpfs for systemd state (networkd, resolved, etc.)
+  # This avoids disk usage while satisfying systemd's persistent storage requirements
+  fileSystems."/" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [
+      "mode=0755"
+      "size=100M"
+    ];
+  };
+
   # Basic system packages
   environment.systemPackages = with pkgs; [
     curl
@@ -108,7 +122,7 @@
     # This is required for home-manager activation.
     writableStoreOverlay = "/nix/.rw-store";
 
-    hypervisor = "cloud-hypervisor";
+    hypervisor = "qemu";
     vcpu = 8;
     mem = 8192;
     socket = "control.socket";
@@ -129,13 +143,6 @@
         source = "/nix/store";
         mountPoint = "/nix/.ro-store";
         readOnly = true;
-      }
-      {
-        # SSH host keys
-        proto = "virtiofs";
-        tag = "ssh-keys";
-        source = "${workspace}/ssh-host-keys";
-        mountPoint = "/etc/ssh/host-keys";
       }
       {
         # Host's Code directory for development
@@ -169,9 +176,18 @@
 
     interfaces = [
       {
-        type = "tap";
+        type = "user";
         id = tapId;
         mac = mac;
+      }
+    ];
+
+    forwardPorts = [
+      {
+        from = "host";
+        host.address = "127.0.0.1";
+        host.port = 2222;
+        guest.port = 22;
       }
     ];
   };
