@@ -9,7 +9,6 @@ in
   spotiflac = self.callPackage ./spotiflac.nix { };
   cloudflare-warp-old = self.callPackage ./cloudflare-warp-old.nix { };
   stremio-new = self.callPackage ./stremio-new.nix { };
-  libra = self.callPackage ./libra.nix { };
   run0-sudo-shim = self.callPackage ./run0-sudo-shim.nix { };
   cliproxyapi = self.callPackage ./cliproxyapi.nix { };
   # } // (tokidoki-overlay self super) // (conty-overlay self super)
