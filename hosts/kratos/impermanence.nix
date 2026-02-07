@@ -69,18 +69,10 @@
   # Data directories for communication live here
   environment.persistence."/persist/communication" = {
     directories = [
-      # Email
-      # "/home/gotlou/.thunderbird"
       # Matrix
-      # "/home/gotlou/.config/gomuks"
       "/home/gotlou/.local/share/fractal"
       # Signal
       "/home/gotlou/.config/Signal"
-      # nchat (WhatsApp TUI client)
-      # "/home/gotlou/.nchat"
-      # scli (Signal TUI client)
-      # "/home/gotlou/.local/share/scli"
-      # "/home/gotlou/.local/share/signal-cli"
       # Telegram
       "/home/gotlou/.local/share/TelegramDesktop"
     ];
@@ -102,16 +94,10 @@
       "/home/gotlou/.local/share/kwalletd"
       # Plasma Vault
       "/home/gotlou/.local/share/plasma-vault"
-      # LeetCode Cookies
-      "/home/gotlou/.leetcode"
-      # aichat
-      "/home/gotlou/.config/aichat"
       # Firefox
       # "/home/gotlou/.mozilla"
     ];
     files = [
-      # aider
-      "/home/gotlou/.aider.conf.yml"
       # docker container registry auth
       "/home/gotlou/.docker/config.json"
     ];
