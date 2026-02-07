@@ -13,7 +13,5 @@
 
     mitmproxy # Inspect everything
     proxychains-ng # Proxy everything
-
-    autodevenv
   ];
 }
