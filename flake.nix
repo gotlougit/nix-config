@@ -60,14 +60,6 @@
             doCheck = false;
           });
         };
-      images = {
-        mimir =
-          (self.nixosConfigurations.mimir.extendModules {
-            modules = [
-              "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix"
-            ];
-          }).config.system.build.sdImage;
-      };
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -92,22 +84,6 @@
             ./system
             inputs.microvm.nixosModules.host
             ./microvms/microvm.nix
-          ];
-        };
-        mimir = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/mimir/base.nix
-            ./hosts/mimir/configuration.nix
-            ./hosts/mimir/systemprograms.nix
-            ./hosts/mimir/services/tailscale.nix
-            ./system/networking.nix
-            ./system/zram.nix
-            ./system/dns-resolver.nix
-            ./system/oom.nix
-            ./system/standard-services.nix
-            ./system/nix.nix
           ];
         };
       };
