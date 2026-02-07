@@ -14,6 +14,7 @@
       "networkmanager"
       config.users.groups.keys.name
       "libvirtd"
+      "kvm"
       "rtkit"
     ];
     packages = with pkgs; [ vlc ];

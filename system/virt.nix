@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # Enable virtualization
@@ -15,4 +15,19 @@
     setSocketVariable = true;
   };
   environment.systemPackages = with pkgs; [ quickemu ];
+
+  # Allow gotlou to manage microvm@*.service without sudo
+  security.polkit.extraConfig = lib.mkAfter ''
+    polkit.addRule(function(action, subject) {
+        if (subject.user == "gotlou" &&
+            action.id == "org.freedesktop.systemd1.manage-units") {
+            var unit = action.lookup("unit");
+            var verb = action.lookup("verb");
+            if (unit && unit.match(/^microvm@.*\.service$/) &&
+                (verb == "start" || verb == "stop" || verb == "restart")) {
+                return polkit.Result.YES;
+            }
+        }
+    });
+  '';
 }

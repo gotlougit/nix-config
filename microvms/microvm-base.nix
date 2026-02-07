@@ -58,6 +58,7 @@
     extraGroups = [ "wheel" ];
     initialPassword = "";
     group = "gotlou";
+    uid = 1000;
   };
   users.groups.gotlou = {
     gid = 1000;
@@ -120,6 +121,7 @@
   microvm = {
     writableStoreOverlay = "/nix/.rw-store";
     hypervisor = "qemu";
+    user = "gotlou";
     vcpu = 8;
     mem = 8192;
     socket = "control.socket";
@@ -132,6 +134,7 @@
         source = "/nix/store";
         mountPoint = "/nix/.ro-store";
         readOnly = true;
+        securityModel = "none";
       }
       {
         # Host's Code directory for development
@@ -139,6 +142,7 @@
         tag = "code";
         source = "/home/gotlou/Code";
         mountPoint = "/home/gotlou/Code";
+        securityModel = "none";
       }
       {
         # Claude Code config directory
@@ -146,6 +150,7 @@
         tag = "claude-config";
         source = "/home/gotlou/.claude";
         mountPoint = "/home/gotlou/.claude";
+        securityModel = "none";
       }
       {
         # OpenCode config directory
@@ -153,6 +158,7 @@
         tag = "opencode-config";
         source = "/home/gotlou/.config/opencode";
         mountPoint = "/home/gotlou/.config/opencode";
+        securityModel = "none";
       }
       {
         # Amp Code config/state directory
@@ -160,6 +166,7 @@
         tag = "amp-config";
         source = "/home/gotlou/.config/amp";
         mountPoint = "/home/gotlou/.config/amp";
+        securityModel = "none";
       }
     ];
 
