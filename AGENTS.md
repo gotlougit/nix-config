@@ -11,11 +11,13 @@ and linux to figure out what libs packages might require and what might be missi
 for source of every single package in nixpkgs and search.nixos.org to find both packages and
 nixos options are good starts.
 
-- Whenever you need to try building a new overlay you have added to the system,
-you should ONLY use the "switch-config" alias in fish shell to do so, and add the
-new package somewhere appropriate so that it is installed to the system.
+- Whenever you need to check your code is correct, you should ALWAYS run this evaluation-only
+command at the end of your work (instead of using "switch-config"):
+  nix flake check --no-build /home/gotlou/nixos
+and add the new package somewhere appropriate so that it is installed to the system.
 Since this is a flake based repo you will also have to stage the new files you have created
-so that the build will find them
+so that the build will find them. Using other commands to check your work is discouraged
+because of various inconsistencies
 
 - Use nix prefetch github (or suitable equivalent command) to prefetch hashes for
 new packages created in overlays rather than just simply running switch-config to generate
