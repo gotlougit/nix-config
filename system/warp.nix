@@ -4,7 +4,7 @@
   systemd.packages = [ pkgs.cloudflare-warp ];
   services.cloudflare-warp.enable = true;
   services.cloudflare-warp.openFirewall = true;
-  systemd.services.warp-svc = {
+  systemd.services.cloudflare-warp = {
     enable = true;
     after = [ ];
     wantedBy = [ "multi-user.target" ];
