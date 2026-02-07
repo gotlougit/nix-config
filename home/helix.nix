@@ -33,7 +33,7 @@ in
     {
       name = "nix";
       language-servers = [ "nixd" ];
-      formatter.binary = "${lib.getExe pkgs.nixfmt-classic}";
+      formatter.binary = "${lib.getExe pkgs.nixfmt}";
       formatter.command = "nixfmt";
     }
   ];

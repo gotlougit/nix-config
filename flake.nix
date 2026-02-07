@@ -11,6 +11,7 @@
   inputs.plasma-manager.inputs.home-manager.follows = "home-manager";
 
   inputs.impermanence.url = "github:nix-community/impermanence";
+  inputs.impermanence.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.code-sandbox.url = "sourcehut:~gotlou/code-sandbox";
   inputs.code-sandbox.inputs.nixpkgs.follows = "nixpkgs";
@@ -56,9 +57,11 @@
         final: prev:
         (import ./overlays/overlay.nix final prev)
         // {
-          claus = inputs.claus.packages.${final.stdenv.hostPlatform.system}.default.overrideAttrs (prevAttrs: {
-            doCheck = false;
-          });
+          claus =
+            inputs.claus.packages.${final.stdenv.hostPlatform.system}.default.overrideAttrs
+              (prevAttrs: {
+                doCheck = false;
+              });
         };
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
