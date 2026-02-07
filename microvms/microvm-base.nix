@@ -16,20 +16,8 @@
   # Basic system settings
   networking.hostName = hostName;
 
-  # Use systemd-networkd for network configuration
-  networking.useNetworkd = true;
-  networking.useDHCP = true;
-  networking.tempAddresses = "disabled";
-
-  # DHCP configuration for user-mode networking (slirp)
+  # Just use systemd-networkd's built-in 99-ethernet-default-dhcp.network
   systemd.network.enable = true;
-  systemd.network.networks."10-eth" = {
-    matchConfig.Type = "ether";
-    networkConfig = {
-      DHCP = "yes";
-    };
-    linkConfig.RequiredForOnline = "routable";
-  };
 
   systemd.oomd.enable = false;
   services.timesyncd.enable = false;
@@ -40,6 +28,10 @@
 
   # Enable resolved for DNS
   services.resolved.enable = true;
+
+  # D-Bus + dconf for Home Manager (stylix/dconfSettings activation)
+  services.dbus.enable = true;
+  programs.dconf.enable = true;
 
   # Fast shutdowns/reboots
   systemd.settings.Manager = {
@@ -61,6 +53,7 @@
   users.users.gotlou = {
     isNormalUser = true;
     home = "/home/gotlou";
+    createHome = true;
     shell = pkgs.fish;
     extraGroups = [ "wheel" ];
     initialPassword = "";
@@ -95,6 +88,12 @@
     imports = [ ./microvm-home.nix ];
   };
 
+  systemd.tmpfiles.rules = [
+    "d /home/gotlou 0755 gotlou gotlou -"
+    "d /home/gotlou/.config 0755 gotlou gotlou -"
+    "d /home/gotlou/.config/dconf 0755 gotlou gotlou -"
+  ];
+
   # Timezone
   time.timeZone = "Asia/Kolkata";
 
@@ -107,6 +106,7 @@
       "mode=0755"
       "size=100M"
     ];
+    neededForBoot = true;
   };
 
   # Basic system packages
@@ -118,27 +118,16 @@
   system.stateVersion = "24.11";
 
   microvm = {
-    # Enable writable nix store overlay so nix-daemon works.
-    # This is required for home-manager activation.
     writableStoreOverlay = "/nix/.rw-store";
-
     hypervisor = "qemu";
     vcpu = 8;
     mem = 8192;
     socket = "control.socket";
 
-    volumes = [
-      {
-        mountPoint = "/var";
-        image = "var.img";
-        size = 8192;
-      }
-    ];
-
     shares = [
       {
         # Host's nix store for caching (read-only)
-        proto = "virtiofs";
+        proto = "9p";
         tag = "ro-store";
         source = "/nix/store";
         mountPoint = "/nix/.ro-store";
@@ -146,28 +135,28 @@
       }
       {
         # Host's Code directory for development
-        proto = "virtiofs";
+        proto = "9p";
         tag = "code";
         source = "/home/gotlou/Code";
         mountPoint = "/home/gotlou/Code";
       }
       {
         # Claude Code config directory
-        proto = "virtiofs";
+        proto = "9p";
         tag = "claude-config";
         source = "/home/gotlou/.claude";
         mountPoint = "/home/gotlou/.claude";
       }
       {
         # OpenCode config directory
-        proto = "virtiofs";
+        proto = "9p";
         tag = "opencode-config";
         source = "/home/gotlou/.config/opencode";
         mountPoint = "/home/gotlou/.config/opencode";
       }
       {
         # Amp Code config/state directory
-        proto = "virtiofs";
+        proto = "9p";
         tag = "amp-config";
         source = "/home/gotlou/.config/amp";
         mountPoint = "/home/gotlou/.config/amp";
@@ -182,13 +171,5 @@
       }
     ];
 
-    forwardPorts = [
-      {
-        from = "host";
-        host.address = "127.0.0.1";
-        host.port = 2222;
-        guest.port = 22;
-      }
-    ];
   };
 }
