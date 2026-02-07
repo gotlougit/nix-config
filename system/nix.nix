@@ -150,10 +150,19 @@
   #   ])
   # ];
 
-  nixpkgs.config.permittedInsecurePackages = [ "qtwebengine-5.15.19" ];
-  # Allow proprietary software
-  nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "cloudflare-warp"
+      "unrar"
+      "broadcom-bt-firmware"
+      "b43-firmware"
+      "xow_dongle-firmware"
+      "facetimehd-calibration"
+      "facetimehd-firmware"
+      "steam"
+      "steam-unwrapped"
+    ];
   environment.systemPackages = [
     pkgs.nix-update
     pkgs.nixos-rebuild-ng
