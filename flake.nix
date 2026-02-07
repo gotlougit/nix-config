@@ -41,6 +41,9 @@
   inputs.microvm.url = "github:microvm-nix/microvm.nix";
   inputs.microvm.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.kimi.url = "github:MoonshotAI/kimi-cli";
+  inputs.kimi.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     inputs@{
       self,
