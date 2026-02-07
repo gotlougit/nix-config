@@ -56,7 +56,7 @@
         final: prev:
         (import ./overlays/overlay.nix final prev)
         // {
-          claus = inputs.claus.packages.${final.system}.default.overrideAttrs (prevAttrs: {
+          claus = inputs.claus.packages.${final.stdenv.hostPlatform.system}.default.overrideAttrs (prevAttrs: {
             doCheck = false;
           });
         };
