@@ -31,6 +31,7 @@
       "*.localgocache/"
       "*.localgohome/"
       "*.aider*"
+      "*.codex*"
       "*.claude/"
     ];
   };
