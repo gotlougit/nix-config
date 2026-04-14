@@ -28,9 +28,12 @@
   inputs.nix-index-database.url = "github:nix-community/nix-index-database";
   inputs.nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+  # inputs.nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 
   inputs.nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+  inputs.hister.url = "github:asciimoo/hister";
+  inputs.hister.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.claus.url = "sourcehut:~maan2003/claus";
   inputs.claus.inputs.nixpkgs.follows = "nixpkgs";

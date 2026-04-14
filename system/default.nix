@@ -5,6 +5,7 @@
     # ./claus-service.nix
     ./colord.nix
     ./flatpak.nix
+    ./hister.nix
     ./sudo.nix
     ./nix.nix
     ./zram.nix
