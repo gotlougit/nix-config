@@ -20,8 +20,8 @@
       # Hard link identical files in the nix store
       auto-optimise-store = true;
       # Required for COSMIC via https://github.com/lilyinstarlight/nixos-cosmic
-      substituters = [ "https://cosmic.cachix.org/" ];
-      trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+      # substituters = [ "https://cosmic.cachix.org/" ];
+      # trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
       cores = 6;
       max-jobs = 6;
     };
