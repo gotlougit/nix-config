@@ -1,12 +1,13 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 let
-  serviceAddress = "127.0.0.1:4433";
+  serviceAddress = "0.0.0.0:4433";
 in
 {
   imports = [ inputs.hister.nixosModules.default ];
 
   services.hister = {
     enable = true;
+    package = pkgs.hister;
     user = "hister";
     group = "hister";
     config = {
@@ -22,6 +23,8 @@ in
       };
     };
   };
+
+  networking.firewall.allowedTCPPorts = [ 4433 ];
 
   systemd.services.hister.serviceConfig = {
     StateDirectory = "hister";

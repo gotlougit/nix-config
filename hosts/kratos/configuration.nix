@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ ... }:
+{ inputs, ... }:
 {
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -11,7 +11,7 @@
 
   nixpkgs.overlays = [
     # Import overlays
-    (import ../../overlays/overlay.nix)
+    (import ../../overlays/overlay.nix { inherit inputs; })
     (import ../../overlays/keepassxc.nix)
     (import ../../overlays/llama-cpp.nix)
   ];

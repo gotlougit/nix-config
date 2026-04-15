@@ -61,7 +61,7 @@
     {
       overlays.default =
         final: prev:
-        (import ./overlays/overlay.nix final prev)
+        (import ./overlays/overlay.nix { inherit inputs; } final prev)
         // {
           claus =
             inputs.claus.packages.${final.stdenv.hostPlatform.system}.default.overrideAttrs

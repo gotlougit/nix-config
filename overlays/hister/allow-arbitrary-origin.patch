@@ -1,0 +1,17 @@
+diff --git a/server/server.go b/server/server.go
+index 8858a4a..2419d95 100644
+--- a/server/server.go
++++ b/server/server.go
+@@ -612,12 +612,6 @@ func serveConfig(c *webContext) {
+ }
+ 
+ func serveSearch(c *webContext) {
+-	origin := c.Request.Header.Get("Origin")
+-	if !c.Config.IsSameHost(origin) {
+-		serve500(c)
+-		log.Info().Str("Origin", origin).Msg("Invalid origin")
+-		return
+-	}
+ 	urlParams := c.Request.URL.Query()
+ 	query := &indexer.Query{}
+ 	if rawQuery := urlParams.Get("query"); rawQuery != "" {
