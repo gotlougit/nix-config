@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     # Gaming stuff
-    cemu # Wii U emulator
+    # cemu # Wii U emulator
     # chiaki-ng # PS4/5 Remote Play client
     dolphin-emu # GameCube and Wii emulator
     # duckstation # PS1 emulator

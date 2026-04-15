@@ -17,7 +17,7 @@ in
         "--parser"
         "typescript"
       ];
-      formatter.binary = "${lib.getExe pkgs.nodePackages.prettier}";
+      formatter.binary = "${lib.getExe pkgs.prettier}";
     }
     {
       name = "python";
