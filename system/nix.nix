@@ -163,6 +163,7 @@
       "facetimehd-firmware"
       "steam"
       "steam-unwrapped"
+      "stremio-linux-shell"
     ];
   environment.systemPackages = [
     pkgs.nix-update

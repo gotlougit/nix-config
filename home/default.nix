@@ -41,7 +41,7 @@
     tor-browser # Needs no intro
     chromium # Keep around as backup browser
     nicotine-plus # Soulseek client
-    # stremio-new
+    stremio-linux-shell
     # NOTE: etcher is insecure, but if needed can be gotten with:
     # `NIXPKGS_ALLOW_INSECURE=1 nix run github:nixos/nixpkgs/nixos-20.09#etcher --impure`
   ];
