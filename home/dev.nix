@@ -7,6 +7,7 @@
     # claude-code # Claude in the terminal
     # gemini-cli # Gemini in the terminal
     llm-agents.codex # ChatGPT in the terminal
+    codex-auth # Multi-account helper for Codex
     llm-agents.opencode # Open source coding agent
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     llm-agents.amp # Opinionated coding agent with numerous tools
