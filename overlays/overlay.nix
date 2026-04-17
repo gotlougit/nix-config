@@ -5,6 +5,7 @@ let
   island-overlay = import ./island/default.nix;
   hister-overlay = import ./hister/default.nix { inherit inputs; };
   codex-auth-overlay = import ./codex-auth/default.nix;
+  stremio-linux-shell-overlay = import ./stremio-linux-shell/default.nix;
 in
 {
   llama-cpp = self.callPackage ./llama-cpp.nix { };
@@ -18,3 +19,4 @@ in
 // (island-overlay self super)
 // (hister-overlay self super)
 // (codex-auth-overlay self super)
+// (stremio-linux-shell-overlay self super)
