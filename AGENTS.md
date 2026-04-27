@@ -11,6 +11,12 @@ and linux to figure out what libs packages might require and what might be missi
 for source of every single package in nixpkgs and search.nixos.org to find both packages and
 nixos options are good starts.
 
+- In addition, we have the Sourcegraph cli `src` installed as well. You can run searches across
+many repos to find the Nix code that you are looking for in case you need it. For example, before writing
+an overlay yourself you can also use this to see if a particular package exists in nixpkgs
+or if someone else in another repo has created package for it already that we can use.
+The search tool can be used in a variety of ways
+
 - Whenever you need to check your code is correct, you should ALWAYS run this evaluation-only
 command at the end of your work (instead of using "switch-config"):
   nix flake check --no-build /home/gotlou/nixos
