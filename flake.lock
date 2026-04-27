@@ -308,11 +308,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776791501,
-        "narHash": "sha256-CP+Lj8Sj7uJVMynqNCGv0oGPCvBm+tRrnUxVgSFFxAs=",
+        "lastModified": 1776978475,
+        "narHash": "sha256-tS8ODLJCGIBJrwsNbUAL4LoBjQI05VEyRnevwRqefyo=",
         "owner": "asciimoo",
         "repo": "hister",
-        "rev": "ce31f5b7eb545b87c2348edaf092fc6020d7312b",
+        "rev": "9a15fb63322359065838726afbcbeca5e71d0c7d",
         "type": "github"
       },
       "original": {
