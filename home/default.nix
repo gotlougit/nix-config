@@ -7,6 +7,7 @@
     ./firefox.nix
     ./gaming.nix
     ./git.nix
+    ./jj.nix
     # ./conty
     ./keepassxc.nix
     ./otpclient.nix
