@@ -9,10 +9,11 @@
     llm-agents.codex # ChatGPT in the terminal
     codex-auth # Multi-account helper for Codex
     src-cli # Sourcegraph CLI
-    llm-agents.opencode # Open source coding agent
+    # llm-agents.opencode # Open source coding agent
     # llama-cpp # Run local LLMs efficiently on CPU/GPU
     llm-agents.amp # Opinionated coding agent with numerous tools
-    inputs.kimi.packages.${pkgs.stdenv.hostPlatform.system}.default # kimi-cli
+    # inputs.kimi.packages.${pkgs.stdenv.hostPlatform.system}.default # kimi-cli
+    llm-agents.pi
 
     mitmproxy # Inspect everything
     proxychains-ng # Proxy everything
