@@ -6,13 +6,11 @@ final: prev: {
       mpvBinPath = "${prev.lib.makeBinPath [ prev.mpv ]}";
     in
     {
-      preFixup =
-        (old.preFixup or "")
-        + ''
-          gappsWrapperArgs+=(
-            --prefix PATH : "${mpvBinPath}"
-          )
-        '';
+      preFixup = (old.preFixup or "") + ''
+        gappsWrapperArgs+=(
+          --prefix PATH : "${mpvBinPath}"
+        )
+      '';
     }
   );
 }
