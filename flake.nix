@@ -41,9 +41,6 @@
   inputs.llm-agents.url = "github:numtide/llm-agents.nix";
   inputs.llm-agents.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.microvm.url = "github:microvm-nix/microvm.nix";
-  inputs.microvm.inputs.nixpkgs.follows = "nixpkgs";
-
   inputs.kimi.url = "github:MoonshotAI/kimi-cli";
   inputs.kimi.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -91,8 +88,6 @@
             }
             ./hosts/kratos
             ./system
-            inputs.microvm.nixosModules.host
-            ./microvms/microvm.nix
           ];
         };
       };
