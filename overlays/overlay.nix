@@ -12,6 +12,7 @@ in
   cloudflare-warp-old = self.callPackage ./cloudflare-warp-old.nix { };
   run0-sudo-shim = self.callPackage ./run0-sudo-shim.nix { };
   cliproxyapi = self.callPackage ./cliproxyapi.nix { };
+  nsproxy = self.callPackage ./nsproxy.nix { };
 }
 // (tokidoki-overlay self super)
 // (island-overlay self super)

@@ -19,5 +19,6 @@
 
     mitmproxy # Inspect everything
     proxychains-ng # Proxy everything
+    nsproxy
   ];
 }
