@@ -34,7 +34,6 @@
     mullvad-browser # Browser for private browsing
     qbittorrent # Best torrent client
     rhythmbox # Music player
-    spotiflac
     songrec # Shazam on Linux
     signal-desktop # Secure and easy messaging
     telegram-desktop # Telegram desktop client
@@ -42,7 +41,6 @@
     tor-browser # Needs no intro
     chromium # Keep around as backup browser
     nicotine-plus # Soulseek client
-    stremio-linux-shell
     # NOTE: etcher is insecure, but if needed can be gotten with:
     # `NIXPKGS_ALLOW_INSECURE=1 nix run github:nixos/nixpkgs/nixos-20.09#etcher --impure`
   ];

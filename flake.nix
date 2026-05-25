@@ -44,6 +44,9 @@
   inputs.kimi.url = "github:MoonshotAI/kimi-cli";
   inputs.kimi.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.tau.url = "github:maan2003/tau";
+  inputs.tau.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     inputs@{
       self,

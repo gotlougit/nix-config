@@ -164,6 +164,7 @@
       "steam"
       "steam-unwrapped"
       "stremio-linux-shell"
+      "rpcs3"
     ];
   environment.systemPackages = [
     pkgs.nix-update
