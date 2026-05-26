@@ -20,5 +20,9 @@
     mitmproxy # Inspect everything
     proxychains-ng # Proxy everything
     nsproxy
+
+    # Useful for scripting
+    python3
+    uv
   ];
 }
