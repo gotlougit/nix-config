@@ -1065,17 +1065,18 @@
         "selfci": "selfci"
       },
       "locked": {
-        "lastModified": 1779550116,
-        "narHash": "sha256-V1gwQ2ax0N5/FvWZ34naAz8QSvvZuOUczhRMwlRwEbA=",
-        "owner": "maan2003",
+        "lastModified": 1779816736,
+        "narHash": "sha256-OqLQD21ZgiQUi+R4XP2PDCZOjBZ0JPZ1qIdPST67bRM=",
+        "owner": "~maan2003",
         "repo": "tau",
-        "rev": "1b23453c48de2c20ef7e47d8a8210d9eb2a0f7f0",
-        "type": "github"
+        "rev": "286d61a70909434729aebae4eeddac4c3bfcc7e6",
+        "type": "sourcehut"
       },
       "original": {
-        "owner": "maan2003",
+        "owner": "~maan2003",
+        "ref": "ma/nxmxq",
         "repo": "tau",
-        "type": "github"
+        "type": "sourcehut"
       }
     },
     "tinted-kitty": {
