@@ -1065,16 +1065,16 @@
         "selfci": "selfci"
       },
       "locked": {
-        "lastModified": 1779816736,
-        "narHash": "sha256-OqLQD21ZgiQUi+R4XP2PDCZOjBZ0JPZ1qIdPST67bRM=",
-        "owner": "~maan2003",
+        "lastModified": 1779905994,
+        "narHash": "sha256-dItXPW2AAHmvamOEZ75nbgSoBSsZPEStZ1VMi80zNJI=",
+        "owner": "~gotlou",
         "repo": "tau",
-        "rev": "286d61a70909434729aebae4eeddac4c3bfcc7e6",
+        "rev": "0c49e8da51193bf724f60f5ff3b71336621d5b19",
         "type": "sourcehut"
       },
       "original": {
-        "owner": "~maan2003",
-        "ref": "ma/nxmxq",
+        "owner": "~gotlou",
+        "ref": "gtau",
         "repo": "tau",
         "type": "sourcehut"
       }

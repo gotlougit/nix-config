@@ -44,7 +44,7 @@
   inputs.kimi.url = "github:MoonshotAI/kimi-cli";
   inputs.kimi.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.tau.url = "sourcehut:~maan2003/tau/ma/nxmxq";
+  inputs.tau.url = "sourcehut:~gotlou/tau/gtau";
   inputs.tau.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
