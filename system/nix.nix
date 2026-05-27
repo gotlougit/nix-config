@@ -169,5 +169,6 @@
   environment.systemPackages = [
     pkgs.nix-update
     pkgs.nixos-rebuild-ng
+    pkgs.git
   ];
 }
