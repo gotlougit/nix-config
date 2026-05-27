@@ -10,7 +10,7 @@ in
     package = pkgs.hister;
     user = "hister";
     group = "hister";
-    config = {
+    settings = {
       app = {
         directory = "/var/lib/hister";
         search_url = "https://search.brave.com/search?q={query}";
