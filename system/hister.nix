@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  serviceAddress = "0.0.0.0:4433";
+  serviceAddress = "127.0.0.1:4433";
 in
 {
   imports = [ inputs.hister.nixosModules.default ];
