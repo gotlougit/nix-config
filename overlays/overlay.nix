@@ -9,6 +9,7 @@ let
 in
 {
   llama-cpp = self.callPackage ./llama-cpp.nix { };
+  redlib = self.callPackage ./redlib.nix { };
   cloudflare-warp-old = self.callPackage ./cloudflare-warp-old.nix { };
   run0-sudo-shim = self.callPackage ./run0-sudo-shim.nix { };
   cliproxyapi = self.callPackage ./cliproxyapi.nix { };
