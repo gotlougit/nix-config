@@ -17,10 +17,11 @@
       diff.renames = "copy";
       # Some file ending stuff
       core.autocrlf = "input";
-      core.autoclrf = false;
-      core.filemode = false;
+      core.fileMode = false;
       # Push current branch if nothing is specified
       push.default = "current";
+      # Ignore ownership for all repos (useful for impermanence/containers)
+      safe.directory = "*";
     };
     # Ignore certain paths globally
     ignores = [
