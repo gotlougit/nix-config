@@ -18,6 +18,7 @@
     # inputs.kimi.packages.${pkgs.stdenv.hostPlatform.system}.default # kimi-cli
     llm-agents.pi
     inputs.tau.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.ik_llama.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     mitmproxy # Inspect everything
     proxychains-ng # Proxy everything
