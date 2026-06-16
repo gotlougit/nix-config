@@ -41,11 +41,11 @@
   inputs.llm-agents.url = "github:numtide/llm-agents.nix";
   inputs.llm-agents.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.kimi.url = "github:MoonshotAI/kimi-cli";
-  inputs.kimi.inputs.nixpkgs.follows = "nixpkgs";
-
-  inputs.tau.url = "sourcehut:~gotlou/tau/gtau";
+  inputs.tau.url = "sourcehut:~gotlou/tau/master";
   inputs.tau.inputs.nixpkgs.follows = "nixpkgs";
+
+  inputs.ik_llama.url = "github:ikawrakow/ik_llama.cpp";
+  inputs.ik_llama.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
     inputs@{
