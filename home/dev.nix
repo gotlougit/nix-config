@@ -1,8 +1,6 @@
 { pkgs, inputs, ... }:
 
 {
-  imports = [ inputs.tau.homeManagerModules.tau ];
-
   # Misc packages for dev work that come in handy
   home.packages = with pkgs; [
     # ghidra # Decompiler
@@ -17,7 +15,6 @@
     # llm-agents.amp # Opinionated coding agent with numerous tools
     # inputs.kimi.packages.${pkgs.stdenv.hostPlatform.system}.default # kimi-cli
     llm-agents.pi
-    inputs.tau.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.ik_llama.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     mitmproxy # Inspect everything
@@ -28,14 +25,5 @@
     python3
     uv
   ];
-
-  services.tau-overseer = {
-    enable = true;
-    package = inputs.tau.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    allowedRoots = [
-      "/home/gotlou/Code"
-      "/home/gotlou/nixos"
-    ];
-  };
 
 }
