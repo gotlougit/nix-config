@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 let
   serviceAddress = "127.0.0.1:4433";
 in
@@ -7,7 +7,6 @@ in
 
   services.hister = {
     enable = true;
-    package = pkgs.hister;
     user = "hister";
     group = "hister";
     settings = {
