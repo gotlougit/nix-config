@@ -24,5 +24,6 @@
     ./dns-resolver.nix
     ./oom.nix
     ./networking.nix
+    ./mullvad.nix
   ];
 }
