@@ -8,7 +8,6 @@
     {
       SystemCallFilter = [
         "~@privileged"
-        "~@resources"
       ];
       ProtectProc = "invisible";
       IPAddressDeny = [ "any" ];
