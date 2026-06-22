@@ -47,6 +47,14 @@
   inputs.ik_llama.url = "github:ikawrakow/ik_llama.cpp";
   inputs.ik_llama.inputs.nixpkgs.follows = "nixpkgs";
 
+  # NOTE: deliberately NOT following the root nixpkgs here. filnix imports its
+  # own lightly-forked nixpkgs (lessrest/filnixpkgs) that registers the
+  # `gnufilc0` ABI in lib/systems/parse.nix and carries the matching gnu-config
+  # (config.sub/config.guess) awareness patches. Forcing it to follow stock
+  # nixos-unstable would make `pkgsFilc` throw `Unknown ABI: gnufilc0` when
+  # parsing crossSystem.config = "x86_64-unknown-linux-gnufilc0".
+  inputs.filnix.url = "github:mbrock/filnix";
+
   outputs =
     inputs@{
       self,
@@ -69,6 +77,17 @@
                 doCheck = false;
               });
         };
+      # Expose the Fil-C OpenSSH build as a flake output so it can be built
+      # with `nix build .#openssh-filc` and so `nix flake check --no-build`
+      # actually evaluates it. It is deliberately NOT added to the system
+      # closure: it ships the same `bin/ssh`/`bin/sshd` as the regular openssh
+      # (would collide), and per the overlay's goal the point is to be able to
+      # build the Fil-C binary on demand (it needs the Fil-C runtime to run).
+      packages.x86_64-linux.openssh-filc =
+        (import nixpkgs {
+          system = "x86_64-linux";
+          overlays = [ self.overlays.default ];
+        }).openssh-filc;
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
