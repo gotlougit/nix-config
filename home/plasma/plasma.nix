@@ -99,7 +99,7 @@
       "plasmashell"."activate application launcher" = [ "Meta" ];
       "services/org.kde.plasma-systemmonitor.desktop"."_launch" = "Ctrl+Esc";
       "services/org.kde.spectacle.desktop"."RectangularRegionScreenShot" = "Print";
-      "services/org.wezfurlong.wezterm.desktop"."_launch" = "Meta+Return";
+      "services/com.mitchellh.ghostty.desktop"."_launch" = "Meta+Return";
     };
     configFile = {
       "baloofilerc"."Basic Settings"."Indexing-Enabled" = false;
@@ -142,8 +142,8 @@
       "kdeglobals"."DirSelect Dialog"."DirSelectDialog Size" = "1879,1080";
       "kdeglobals"."General"."AllowKDEAppsToRememberWindowPositions" = true;
       "kdeglobals"."General"."BrowserApplication" = "mullvadbrowser-sandbox.desktop";
-      "kdeglobals"."General"."TerminalApplication" = "wezterm start --always-new-process --cwd .";
-      "kdeglobals"."General"."TerminalService" = "org.wezfurlong.wezterm.desktop";
+      "kdeglobals"."General"."TerminalApplication" = "ghostty --working-directory=.";
+      "kdeglobals"."General"."TerminalService" = "com.mitchellh.ghostty.desktop";
       "kdeglobals"."Icons"."Theme" = "Papirus-Dark";
       "kdeglobals"."KDE"."SingleClick" = false;
       "kdeglobals"."KFileDialog Settings"."Allow Expansion" = false;

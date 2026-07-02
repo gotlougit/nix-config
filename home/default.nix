@@ -18,6 +18,7 @@
     ./tiny-irc.nix
     ./thunderbird.nix
     ./wezterm.nix
+    ./ghostty.nix
     # ./zed.nix
   ];
 
