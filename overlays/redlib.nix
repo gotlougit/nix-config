@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "redlib";
-  version = "0.1.0-Silvenga-fork";
+  version = "0.36.0-bleeding";
 
   src = fetchFromGitHub {
-    owner = "Silvenga";
+    owner = "redlib-org";
     repo = "redlib";
-    rev = "72394ed320bd4437bb29e8780af0513b4ff02152";
-    hash = "sha256-jiLjyp6ze3HEsr7F+eRW3DyKJBJl+EoNjQ0wpEB+xlc=";
+    rev = "a4d36e954cf1bd64f209cd8868c5a29edc81b374";
+    hash = "sha256-siyD6A12UALQIV7BMd7zu1TaojleTEYtpxPszuhx1/Y=";
   };
 
   cargoHash = "sha256-eO3c7rlFna3DuO31etJ6S4c7NmcvgvIWZ1KVkNIuUqQ=";
