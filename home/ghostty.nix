@@ -2,11 +2,13 @@
   programs.ghostty = {
     enable = true;
     clearDefaultKeybinds = true;
-    systemd.enable = false;
+    systemd.enable = true;
     enableFishIntegration = true;
     settings = {
       # Enable scroll bar
       scrollbar = "system";
+
+      font-size = "12";
 
       # Middle click pastes from the primary selection
       # mouse-bind = "middle=primary_paste";
