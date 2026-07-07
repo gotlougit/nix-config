@@ -1,7 +1,7 @@
 {
   imports = [
     ./bluetooth.nix
-    ./cliproxyapi.nix
+    # ./cliproxyapi.nix
     # ./claus-service.nix
     ./colord.nix
     ./flatpak.nix
@@ -24,6 +24,6 @@
     ./dns-resolver.nix
     ./oom.nix
     ./networking.nix
-    ./mullvad.nix
+    # ./mullvad.nix
   ];
 }
