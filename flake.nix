@@ -28,24 +28,16 @@
   inputs.nix-index-database.url = "github:nix-community/nix-index-database";
   inputs.nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-  # inputs.nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-
   inputs.nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
   inputs.hister.url = "github:asciimoo/hister";
   inputs.hister.inputs.nixpkgs.follows = "nixpkgs";
-
-  inputs.claus.url = "sourcehut:~maan2003/claus";
-  inputs.claus.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.llm-agents.url = "github:numtide/llm-agents.nix";
   inputs.llm-agents.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.tau.url = "sourcehut:~gotlou/tau/master";
   inputs.tau.inputs.nixpkgs.follows = "nixpkgs";
-
-  inputs.ik_llama.url = "github:ikawrakow/ik_llama.cpp";
-  inputs.ik_llama.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
     inputs@{
@@ -61,14 +53,7 @@
     {
       overlays.default =
         final: prev:
-        (import ./overlays/overlay.nix { inherit inputs; } final prev)
-        // {
-          claus =
-            inputs.claus.packages.${final.stdenv.hostPlatform.system}.default.overrideAttrs
-              (prevAttrs: {
-                doCheck = false;
-              });
-        };
+        (import ./overlays/overlay.nix { inherit inputs; } final prev);
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";

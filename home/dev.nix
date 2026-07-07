@@ -15,7 +15,7 @@
     # llm-agents.amp # Opinionated coding agent with numerous tools
     # inputs.kimi.packages.${pkgs.stdenv.hostPlatform.system}.default # kimi-cli
     llm-agents.pi
-    inputs.ik_llama.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # inputs.ik_llama.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     mitmproxy # Inspect everything
     proxychains-ng # Proxy everything
