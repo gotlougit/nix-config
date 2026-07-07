@@ -6,7 +6,6 @@
     inputs.stylix.homeModules.stylix
     ./home-manager-gc.nix
     ./dev.nix
-    ./tau.nix
     ./shell-shared.nix
   ];
 

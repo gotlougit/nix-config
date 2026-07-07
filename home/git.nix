@@ -34,6 +34,7 @@
       "*.aider*"
       "*.codex*"
       "*.claude/"
+      "*.dirge/"
     ];
   };
   # Enable syntax highlight in diffs

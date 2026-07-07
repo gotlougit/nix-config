@@ -14,7 +14,8 @@
     litert-lm # Google's on-device LLM inference CLI
     # llm-agents.amp # Opinionated coding agent with numerous tools
     # inputs.kimi.packages.${pkgs.stdenv.hostPlatform.system}.default # kimi-cli
-    llm-agents.pi
+    llm-agents.pi # THE original minimal coding agent
+    dirge # minimal coding agent with tool call healing
     # inputs.ik_llama.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     mitmproxy # Inspect everything

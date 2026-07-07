@@ -36,8 +36,8 @@
   inputs.llm-agents.url = "github:numtide/llm-agents.nix";
   inputs.llm-agents.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.tau.url = "sourcehut:~gotlou/tau/master";
-  inputs.tau.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.dirge.url = "github:dirge-code/dirge";
+  inputs.dirge.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
     inputs@{
@@ -63,6 +63,7 @@
               nixpkgs.overlays = [
                 self.overlays.default
                 inputs.llm-agents.overlays.default
+                inputs.dirge.overlays.default
               ];
             }
             home-manager.nixosModules.home-manager
