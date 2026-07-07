@@ -161,8 +161,8 @@
       "xone-dongle-firmware"
       "facetimehd-calibration"
       "facetimehd-firmware"
-      "steam"
-      "steam-unwrapped"
+      # "steam"
+      # "steam-unwrapped"
       "stremio-linux-shell"
       "rpcs3"
     ];
