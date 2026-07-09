@@ -1,29 +1,28 @@
 {
   imports = [
-    ./bluetooth.nix
-    # ./cliproxyapi.nix
-    # ./claus-service.nix
-    ./colord.nix
-    ./flatpak.nix
+    # Self hosted services
     ./hister.nix
-    ./sudo.nix
-    ./nix.nix
-    ./zram.nix
-    ./standard-services.nix
-    ./syncthing.nix
-    ./openssh.nix
-    ./keyd.nix
-    ./tokidoki.nix
     ./redlib.nix
+    ./tokidoki.nix
+
+    # System services
+    ./bluetooth.nix
+    ./colord.nix
+    ./dns-resolver.nix
+    ./flatpak.nix
+    ./keyd.nix
+    ./networking.nix
+    ./nix.nix
+    ./oom.nix
+    ./openssh.nix
+    ./standard-services.nix
     ./style.nix
+    ./sudo.nix
+    ./syncthing.nix
     ./time.nix
     ./udev.nix
-    # ./waydroid.nix
-    ./warp.nix
     ./virt.nix
-    ./dns-resolver.nix
-    ./oom.nix
-    ./networking.nix
-    # ./mullvad.nix
+    ./warp.nix
+    ./zram.nix
   ];
 }
