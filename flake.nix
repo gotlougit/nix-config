@@ -39,6 +39,9 @@
   inputs.dirge.url = "github:dirge-code/dirge";
   inputs.dirge.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.run0-sudo-shim.url = "sourcehut:~gotlou/run0-sudo-shim";
+  inputs.run0-sudo-shim.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     inputs@{
       self,
