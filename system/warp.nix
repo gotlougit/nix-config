@@ -58,5 +58,54 @@
       ];
     };
   };
-  environment.systemPackages = with pkgs; [ cloudflare-warp ];
+  environment.systemPackages = with pkgs; [ cloudflare-warp socat ];
+
+  # Convenience service to start warp in proxy mode and register on boot
+  systemd.services.warp-cli-proxy-setup = {
+    enable = true;
+    after = [
+      "network-online.target"
+      "cloudflare-warp.service"
+    ];
+    wants = [
+      "network-online.target"
+      "cloudflare-warp.service"
+    ];
+    wantedBy = [ "multi-user.target" ];
+    script = ''
+      ${pkgs.cloudflare-warp}/bin/warp-cli --accept-tos registration delete || true
+      ${pkgs.cloudflare-warp}/bin/warp-cli --accept-tos registration new || true
+      ${pkgs.cloudflare-warp}/bin/warp-cli --accept-tos mode proxy
+      ${pkgs.cloudflare-warp}/bin/warp-cli --accept-tos proxy port 6667
+      ${pkgs.cloudflare-warp}/bin/warp-cli --accept-tos connect
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      DynamicUser = true;
+    };
+  };
+
+  networking.firewall.interfaces = {
+    lo.allowedTCPPorts = [ 6666 ];
+    tailscale0.allowedTCPPorts = [ 6666 ];
+  };
+
+  # Relay warp proxy (bound to 127.0.0.1:6667) to all interfaces on port 6666
+  # so it can be reached over Tailscale or LAN
+  systemd.services.warp-socat-relay = {
+    enable = true;
+    after = [ "cloudflare-warp.service" "warp-cli-proxy-setup.service" ];
+    wants = [ "cloudflare-warp.service" "warp-cli-proxy-setup.service" ];
+    wantedBy = [ "multi-user.target" ];
+    script = ''
+      ${pkgs.socat}/bin/socat TCP-LISTEN:6666,reuseaddr,fork TCP:127.0.0.1:6667
+    '';
+    serviceConfig = {
+      Type = "simple";
+      Restart = "on-failure";
+      RestartSec = 5;
+      DynamicUser = true;
+    };
+  };
+
 }
