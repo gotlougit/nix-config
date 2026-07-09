@@ -5,7 +5,6 @@ let
   island-overlay = import ./island/default.nix;
   codex-auth-overlay = import ./codex-auth/default.nix;
   litert-lm-overlay = import ./litert-lm/default.nix;
-  mullvad-tailscale-overlay = import ./mullvad-tailscale/default.nix;
 in
 {
   llama-cpp = self.callPackage ./llama-cpp.nix { };
@@ -19,4 +18,3 @@ in
 // (island-overlay self super)
 // (codex-auth-overlay self super)
 // (litert-lm-overlay self super)
-// (mullvad-tailscale-overlay self super)
