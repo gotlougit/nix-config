@@ -46,6 +46,8 @@ faster runtimes and better defaults.
 
 - Use [stylix](https://danth.github.io/stylix/index.html) to configure the look and feel of all the programs on the system, down to the console output on boot
 
+- Contain age-encrypted profiles for web browsers that were a lot of work to setup the first time around
+
 Nice-to-haves:
 
 - Automate secure boot setup
