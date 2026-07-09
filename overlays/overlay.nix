@@ -14,6 +14,7 @@ in
   run0-sudo-shim = self.callPackage ./run0-sudo-shim.nix { };
   cliproxyapi = self.callPackage ./cliproxyapi.nix { };
   nsproxy = self.callPackage ./nsproxy.nix { };
+  wiiudownloader = self.callPackage ./wiiudownloader { };
 }
 // (tokidoki-overlay self super)
 // (island-overlay self super)
