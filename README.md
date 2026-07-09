@@ -85,6 +85,31 @@ This will automatically get the latest configuration from this repo, apply it an
 
 Note: this is still a WIP and may not prevent all attacks, the profile itself is being worked on a bit to have a decent balance of usability and security, although the current config is more private than no profile at all
 
+## Prerequisites — secret files
+
+Some NixOS modules require values that you must provide yourself.
+Before building, check for any `.secret` files in the repo that don't
+exist yet and create them with the appropriate content.
+
+Currently required:
+
+- `secrets/hister-base-url.secret` — the public-facing URL of your hister
+  instance, e.g. `https://hister.example.com:12345` (w/o trailing slash)
+
+To add a new secret file, do the following:
+
+1. Create it in `secrets/`
+2. Put some dummy data inside it
+3. Commit it
+4. Run `git update-index --assume-unchanged secrets/your-secret.secret`
+5. Add the actual secret into the file
+6. Read its value by doing `lib.removeSuffix "\n" (builtins.readFile ../path/to/your/your-secret.secret)`
+in whatever place you want.
+
+This is NOT intended to protect really sensitive information, but rather stuff
+that, while probably harmless to reveal, is kind of on the border. In some cases,
+security through obscurity is good enough.
+
 ## Raspberry Pi server config
 
 There is also a config for a server running on a Raspberry Pi (nicknamed "mimir")

@@ -1,6 +1,7 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 let
   serviceAddress = "127.0.0.1:4433";
+  base_url = lib.removeSuffix "\n" (builtins.readFile ../secrets/hister-base-url.secret);
 in
 {
   imports = [ inputs.hister.nixosModules.default ];
@@ -17,7 +18,7 @@ in
       };
       server = {
         address = serviceAddress;
-        base_url = "http://${serviceAddress}";
+        base_url = base_url;
         database = "db.sqlite3";
       };
     };
