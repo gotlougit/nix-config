@@ -1,20 +1,25 @@
 { pkgs, inputs, ... }:
 
+let
+  llmPkgs = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   # Misc packages for dev work that come in handy
   home.packages = with pkgs; [
     # ghidra # Decompiler
-    # claude-code # Claude in the terminal
-    # gemini-cli # Gemini in the terminal
-    llm-agents.codex # ChatGPT in the terminal
+
+    # LLM coding agents
+    llmPkgs.codex # ChatGPT in the terminal
+    # llmPkgs.amp # Opinionated coding agent with numerous tools
+    llmPkgs.pi # THE original minimal coding agent
     codex-auth # Multi-account helper for Codex
     src-cli # Sourcegraph CLI
-    # llm-agents.opencode # Open source coding agent
-    # llama-cpp # Run local LLMs efficiently on CPU/GPU
+
+    # Local/on-device LLMs
     litert-lm # Google's on-device LLM inference CLI
-    # llm-agents.amp # Opinionated coding agent with numerous tools
-    # inputs.kimi.packages.${pkgs.stdenv.hostPlatform.system}.default # kimi-cli
-    llm-agents.pi # THE original minimal coding agent
+    # llama-cpp # Run local LLMs efficiently on CPU/GPU -- commented out for now
+
+    # Other coding agents from other flakes
     dirge # minimal coding agent with tool call healing
     # inputs.ik_llama.packages.${pkgs.stdenv.hostPlatform.system}.default
 

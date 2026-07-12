@@ -65,7 +65,6 @@
             {
               nixpkgs.overlays = [
                 self.overlays.default
-                inputs.llm-agents.overlays.default
                 inputs.dirge.overlays.default
               ];
             }
