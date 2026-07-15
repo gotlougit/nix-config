@@ -42,6 +42,9 @@
   inputs.run0-sudo-shim.url = "sourcehut:~gotlou/run0-sudo-shim";
   inputs.run0-sudo-shim.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.lightpanda.url = "github:gotlougit/lightpanda-browser";
+  inputs.lightpanda.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     inputs@{
       self,

@@ -24,5 +24,8 @@
     ./virt.nix
     ./warp.nix
     ./zram.nix
+
+    # Experimental services
+    ./lightpanda.nix
   ];
 }
