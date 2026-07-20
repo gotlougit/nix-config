@@ -1,6 +1,7 @@
 {
   imports = [
     # Self hosted services
+    ./cyberchef.nix
     ./hister.nix
     ./redlib.nix
     ./tokidoki.nix
