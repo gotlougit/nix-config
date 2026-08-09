@@ -14,6 +14,9 @@
       working-directory = "home";
       window-inherit-working-directory = false;
 
+      # fix up unknown terminal type errors
+      shell-integration-features = "ssh-terminfo";
+
       keybind = [
         # Paste from the clipboard
         "ctrl+shift+v=paste_from_clipboard"
