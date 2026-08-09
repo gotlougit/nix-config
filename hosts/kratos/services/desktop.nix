@@ -14,6 +14,9 @@
     Theme = {
       FacesDir = "/persist/system/icons";
     };
+    Users = {
+      HideUsers = "clanker";
+    };
   };
   security.pam.services.gotlou.kwallet.enable = true;
 

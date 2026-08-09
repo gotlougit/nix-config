@@ -28,5 +28,6 @@
 
     # Experimental services
     ./lightpanda.nix
+    ./omega.nix
   ];
 }

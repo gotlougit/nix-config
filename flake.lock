@@ -578,6 +578,26 @@
         "type": "github"
       }
     },
+    "omega": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785442880,
+        "narHash": "sha256-JcZtVoBlbNuU3+MFr+v/tdby9hEXh5kmIkCXGPqbU0o=",
+        "owner": "~gotlou",
+        "repo": "pi-omega",
+        "rev": "561ab2c88e8620e4aeff78d5a3e34d4a900b4e3d",
+        "type": "sourcehut"
+      },
+      "original": {
+        "owner": "~gotlou",
+        "repo": "pi-omega",
+        "type": "sourcehut"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -614,6 +634,7 @@
         "nix-flatpak": "nix-flatpak",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
+        "omega": "omega",
         "plasma-manager": "plasma-manager",
         "run0-sudo-shim": "run0-sudo-shim",
         "sshield": "sshield",

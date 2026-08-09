@@ -45,6 +45,9 @@
   inputs.lightpanda.url = "github:gotlougit/lightpanda-browser";
   inputs.lightpanda.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.omega.url = "sourcehut:~gotlou/pi-omega";
+  inputs.omega.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     inputs@{
       self,
