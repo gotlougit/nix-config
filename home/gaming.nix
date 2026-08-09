@@ -22,5 +22,6 @@
     # rpcs3 # PS3 emulator
     # xemu # Original Xbox emulator
     # ryubing # Switch emulator
+    # eden # Yet another Switch emulator
   ];
 }
