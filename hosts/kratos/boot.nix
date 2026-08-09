@@ -19,6 +19,14 @@
     "amd_pstate=active"
     "zfs.zfs_arc_min=${toString (1024 * 1024 * 100)}"
     "zfs.zfs_arc_max=${toString (1024 * 1024 * 512)}"
+    # AMD iGPU (Vega 8, Ryzen 5700U): pin exposed VRAM to 4GiB.
+    # NOTE: on APUs the actual 4GiB carve-out must also be set in
+    # BIOS/UEFI (UMA Frame Buffer Size >= 4GB); this flag only caps the
+    # driver's reported VRAM and cannot increase the firmware allocation.
+    "amdgpu.vramlimit=4096"
+    # Let the iGPU use ~90% of system RAM via the GTT. Default TTM limit
+    # is 50%; 3,178,000 * 4KiB pages = 12.1GiB of the 13.5GiB the OS sees.
+    "ttm.pages_limit=3178000"
   ];
   # Add more filesystems here as and when needed
   boot.supportedFilesystems = [
