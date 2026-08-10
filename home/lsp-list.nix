@@ -12,7 +12,7 @@ with pkgs;
   protols # protobuf
 
   # Python
-  python312Packages.python-lsp-server
+  python3Packages.python-lsp-server
   ruff
 
   # Markdown

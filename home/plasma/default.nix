@@ -17,7 +17,7 @@
       systemsettings
     ];
     style = {
-      package = pkgs.nordic;
+      # package = pkgs.nordic;
       name = lib.mkForce "Breeze";
     };
   };
