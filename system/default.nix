@@ -7,7 +7,7 @@
     ./tokidoki.nix
 
     # System services
-    ./bluetooth-vm.nix
+    ./bluetooth.nix
     ./colord.nix
     ./dns-resolver.nix
     ./flatpak.nix

@@ -66,7 +66,7 @@
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs self; };
+          specialArgs = { inherit inputs; };
           modules = [
             {
               nixpkgs.overlays = [
@@ -87,16 +87,6 @@
             ./system
           ];
         };
-        # Bluetooth daemon VM: built by the host's bluetooth-vm service.
-        btvm = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = {
-            modulesPath = "${nixpkgs}/nixos/modules";
-          };
-          modules = [ ./hosts/btvm ];
-        };
       };
-      checks.x86_64-linux.btvm =
-        self.nixosConfigurations.btvm.config.system.build.toplevel;
     };
 }
