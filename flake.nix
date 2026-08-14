@@ -47,6 +47,7 @@
 
   inputs.omega.url = "sourcehut:~gotlou/pi-omega";
   inputs.omega.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.omega.inputs.home-manager.follows = "home-manager";
 
   outputs =
     inputs@{

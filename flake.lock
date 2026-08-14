@@ -544,16 +544,19 @@
     },
     "omega": {
       "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1786619372,
-        "narHash": "sha256-OcR5LKK/qyCnHUzsXzAIdcS3zHl2TuUWMXPo9+HE+b4=",
+        "lastModified": 1786727803,
+        "narHash": "sha256-4fFUN2fSSin43Eo9LPNZhH2b5m7Q3XKdwrDrgCKdAQ0=",
         "owner": "~gotlou",
         "repo": "pi-omega",
-        "rev": "d2112c76098bc4da174710dffcd84e8408103869",
+        "rev": "94f69faeb64ef0e1e2fc03d82d472751d674fa0f",
         "type": "sourcehut"
       },
       "original": {

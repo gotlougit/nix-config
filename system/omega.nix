@@ -36,5 +36,42 @@
     # Optional: extra groups for the clanker user (e.g. docker, kvm)
     # extraGroups = [ "docker" ];
     logLevel = "debug";
+    homeManager = {
+      enable = true;
+      config = {
+        programs.git = {
+          enable = true;
+          userName = "clanker";
+          userEmail = "omega@gotlou.com";
+        };
+
+        # Clean up old home-manager generations
+        systemd.user.services.home-manager-gc = {
+          Unit = {
+            Description = "Clean up old home-manager generations";
+          };
+
+          Service = {
+            Type = "oneshot";
+            ExecStart = "${pkgs.bash}/bin/bash ${../home/clean-old-generations.sh}";
+          };
+        };
+
+        systemd.user.timers.home-manager-gc = {
+          Unit = {
+            Description = "Timer for cleaning up old home-manager generations";
+          };
+
+          Timer = {
+            OnCalendar = "weekly";
+            Persistent = true;
+          };
+
+          Install = {
+            WantedBy = [ "timers.target" ];
+          };
+        };
+      };
+    };
   };
 }
