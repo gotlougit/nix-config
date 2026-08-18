@@ -9,7 +9,6 @@ in
 {
   llama-cpp = self.callPackage ./llama-cpp.nix { };
   redlib = self.callPackage ./redlib.nix { };
-  cloudflare-warp-old = self.callPackage ./cloudflare-warp-old.nix { };
   cliproxyapi = self.callPackage ./cliproxyapi.nix { };
   nsproxy = self.callPackage ./nsproxy.nix { };
   wiiudownloader = self.callPackage ./wiiudownloader { };

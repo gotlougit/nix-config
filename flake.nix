@@ -49,6 +49,9 @@
   inputs.omega.inputs.nixpkgs.follows = "nixpkgs";
   inputs.omega.inputs.home-manager.follows = "home-manager";
 
+  inputs.warp-re.url = "github:gotlougit/warp-re";
+  inputs.warp-re.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     inputs@{
       self,
@@ -61,9 +64,7 @@
       # Systems are defined in the host configurations
     in
     {
-      overlays.default =
-        final: prev:
-        (import ./overlays/overlay.nix { inherit inputs; } final prev);
+      overlays.default = final: prev: (import ./overlays/overlay.nix { inherit inputs; } final prev);
       nixosConfigurations = {
         kratos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";

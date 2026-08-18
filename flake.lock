@@ -280,6 +280,24 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_4"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -605,7 +623,8 @@
         "plasma-manager": "plasma-manager",
         "run0-sudo-shim": "run0-sudo-shim",
         "sshield": "sshield",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "warp-re": "warp-re"
       }
     },
     "run0-sudo-shim": {
@@ -746,6 +765,21 @@
         "type": "github"
       }
     },
+    "systems_4": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "tinted-kitty": {
       "flake": false,
       "locked": {
@@ -849,6 +883,27 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "warp-re": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787029503,
+        "narHash": "sha256-I0QrJTasXCiiSSU1ij4YaiQHUZ9Gi8EGgFEvDEOpDgs=",
+        "owner": "gotlougit",
+        "repo": "warp-re",
+        "rev": "fc7d06709c1afc2aea9e6258ce89ff12c110b914",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gotlougit",
+        "repo": "warp-re",
         "type": "github"
       }
     },
