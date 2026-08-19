@@ -570,11 +570,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786727803,
-        "narHash": "sha256-4fFUN2fSSin43Eo9LPNZhH2b5m7Q3XKdwrDrgCKdAQ0=",
+        "lastModified": 1787114951,
+        "narHash": "sha256-avoapsyD5CcYhoOT2/YIRDp8ON8Wn30pWdR4IYVID1I=",
         "owner": "~gotlou",
         "repo": "pi-omega",
-        "rev": "94f69faeb64ef0e1e2fc03d82d472751d674fa0f",
+        "rev": "99e6d9e31bffe93752d5d29b852a45b8d9e802d3",
         "type": "sourcehut"
       },
       "original": {

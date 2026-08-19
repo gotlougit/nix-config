@@ -32,46 +32,20 @@
       Prefer this over curl when you wish to do web searches or interact with websites.
       For calling APIs (eg. to read files from a remote GitHub repo without cloning)
       it is still preferred to use `curl`.
+
+      After I ask you to make a change, just send me the patch of your changes unless
+      I tell you otherwise. Do not send .gitignore with those changes, as I do not really need it.
     '';
     # Optional: extra groups for the clanker user (e.g. docker, kvm)
     # extraGroups = [ "docker" ];
     logLevel = "debug";
-    homeManager = {
+    gitHost = {
       enable = true;
-      config = {
-        programs.git = {
-          enable = true;
-          userName = "clanker";
-          userEmail = "omega@gotlou.com";
-        };
-
-        # Clean up old home-manager generations
-        systemd.user.services.home-manager-gc = {
-          Unit = {
-            Description = "Clean up old home-manager generations";
-          };
-
-          Service = {
-            Type = "oneshot";
-            ExecStart = "${pkgs.bash}/bin/bash ${../home/clean-old-generations.sh}";
-          };
-        };
-
-        systemd.user.timers.home-manager-gc = {
-          Unit = {
-            Description = "Timer for cleaning up old home-manager generations";
-          };
-
-          Timer = {
-            OnCalendar = "weekly";
-            Persistent = true;
-          };
-
-          Install = {
-            WantedBy = [ "timers.target" ];
-          };
-        };
-      };
+      port = 5999;
+      # TODO: gate over tailscale and localhost only
+      listenAddress = "0.0.0.0";
     };
+    gitUserName = "clanker";
+    gitUserEmail = "omega@gotlou.com";
   };
 }
