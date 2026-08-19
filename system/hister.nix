@@ -1,6 +1,6 @@
 { inputs, lib, ... }:
 let
-  serviceAddress = "127.0.0.1:4433";
+  serviceAddress = "0.0.0.0:4433";
   base_url = lib.removeSuffix "\n" (builtins.readFile ../secrets/hister-base-url.secret);
 in
 {
@@ -24,7 +24,13 @@ in
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 4433 ];
+  networking.firewall = {
+    allowedTCPPorts = [ ];
+    interfaces = {
+      lo.allowedTCPPorts = [ 4433 ];
+      tailscale0.allowedTCPPorts = [ 4433 ];
+    };
+  };
 
   systemd.services.hister.serviceConfig = {
     StateDirectory = "hister";
