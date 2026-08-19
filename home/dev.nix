@@ -20,7 +20,7 @@ in
     # llama-cpp # Run local LLMs efficiently on CPU/GPU -- commented out for now
 
     # Other coding agents from other flakes
-    dirge # minimal coding agent with tool call healing
+    # dirge # minimal coding agent with tool call healing
     # inputs.ik_llama.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     mitmproxy # Inspect everything
