@@ -22,6 +22,9 @@
       General = {
         EnableNetworkConfiguration = true;
       };
+      Scan = {
+        DisableRoamingScan = true;
+      };
       Settings = {
         AutoConnect = true;
       };
