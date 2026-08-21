@@ -67,7 +67,6 @@
             {
               nixpkgs.overlays = [
                 self.overlays.default
-                inputs.dirge.overlays.default
               ];
             }
             home-manager.nixosModules.home-manager

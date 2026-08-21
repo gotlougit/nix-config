@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.omega.nixosModules.omega
+    inputs.lightpanda.nixosModules.default
   ];
 
   services.omega = {
