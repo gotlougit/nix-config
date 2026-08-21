@@ -1,15 +1,11 @@
-{ inputs, lib, ... }:
+{ lib, ... }:
 let
   serviceAddress = "0.0.0.0:4433";
   base_url = lib.removeSuffix "\n" (builtins.readFile ../secrets/hister-base-url.secret);
 in
 {
-  imports = [ inputs.hister.nixosModules.default ];
-
   services.hister = {
     enable = true;
-    user = "hister";
-    group = "hister";
     settings = {
       app = {
         directory = "/var/lib/hister";

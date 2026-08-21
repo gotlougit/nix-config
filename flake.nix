@@ -36,9 +36,6 @@
   inputs.llm-agents.url = "github:numtide/llm-agents.nix";
   inputs.llm-agents.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.dirge.url = "github:dirge-code/dirge";
-  inputs.dirge.inputs.nixpkgs.follows = "nixpkgs";
-
   inputs.run0-sudo-shim.url = "sourcehut:~gotlou/run0-sudo-shim";
   inputs.run0-sudo-shim.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -48,9 +45,6 @@
   inputs.omega.url = "sourcehut:~gotlou/pi-omega";
   inputs.omega.inputs.nixpkgs.follows = "nixpkgs";
   inputs.omega.inputs.home-manager.follows = "home-manager";
-
-  inputs.warp-re.url = "github:gotlougit/warp-re";
-  inputs.warp-re.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
     inputs@{
