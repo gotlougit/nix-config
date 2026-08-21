@@ -23,7 +23,6 @@
     ./time.nix
     ./udev.nix
     ./virt.nix
-    ./warp.nix
     ./zram.nix
 
     # Experimental services
