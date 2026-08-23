@@ -46,6 +46,9 @@
   inputs.omega.inputs.nixpkgs.follows = "nixpkgs";
   inputs.omega.inputs.home-manager.follows = "home-manager";
 
+  inputs.epiphany.url = "sourcehut:~gotlou/epiphany";
+  inputs.epiphany.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     inputs@{
       self,
