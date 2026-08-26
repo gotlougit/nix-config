@@ -3,6 +3,7 @@
     # Self hosted services
     ./cyberchef.nix
     ./hister.nix
+    ./nitter.nix
     ./redlib.nix
     ./tokidoki.nix
 
