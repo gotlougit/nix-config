@@ -40,11 +40,11 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "gotlougit";
     repo = "tailscale";
-    rev = "c5c0fa41eb4a69b6cc1955a1067e24db6a9f2218";
-    hash = "sha256-wH+OYPh7hIsMaEna7LHv1VHRiEUJTfkMoSSanW0QxLc=";
+    rev = "f56319d1e4e569cc1178d5df228f1b7dce461af9";
+    hash = "sha256-g8DrjH0nrW3xxIWUDSh7/SH6RH6/93wOYrGjxZcmlLg=";
   };
 
-  vendorHash = "sha256-6NIUdAuPFJFi6eyRuK/6sP0I8AaKVJ2qNPbemTAZS5U=";
+  vendorHash = "sha256-dGhhUiWeJk3k08Xc4Sf1ubfY/4Eytjo+JHVEdHHiu7Q=";
 
   nativeBuildInputs = [
     makeWrapper
