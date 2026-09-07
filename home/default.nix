@@ -4,6 +4,7 @@
     # Import minimal config (shared between host and microvm)
     ./minimal.nix
 
+    ./easyeffects.nix
     ./firefox.nix
     ./gaming.nix
     ./git.nix
