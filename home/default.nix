@@ -45,7 +45,6 @@
     # NOTE: etcher is insecure, but if needed can be gotten with:
     # `NIXPKGS_ALLOW_INSECURE=1 nix run github:nixos/nixpkgs/nixos-20.09#etcher --impure`
 
-    inputs.epiphany.packages.x86_64-linux.epiphany
   ];
 
 }
