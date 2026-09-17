@@ -65,7 +65,7 @@ Since it is a bit difficult to find a comprehensive NixOS tutorial, I'll give yo
 - Use the `installnix.sh` script: it WILL erase your entire partition table, so BEWARE!!!
 
 It will also set up ZFS native encryption, so double check the disk it will install NixOS on,
-as well as set up the password you will use to decrypt the drive.
+as well as set the `PASSPHRASE` in the script to the password you will use to decrypt the drive.
 
 - Merge the NixOS-generated `hardware-configuration.nix` (we really need the UUID of the boot partition)
 with the `hardware-configuration.nix` contained in this repo
