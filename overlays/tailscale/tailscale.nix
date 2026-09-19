@@ -40,8 +40,8 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "gotlougit";
     repo = "tailscale";
-    rev = "c5c0fa41eb4a69b6cc1955a1067e24db6a9f2218";
-    hash = "sha256-wH+OYPh7hIsMaEna7LHv1VHRiEUJTfkMoSSanW0QxLc=";
+    rev = "e8a5b6c14c3d76c1a57dd9e5ecbc8098e464278b";
+    hash = "sha256-ZSudd+lCIWibG4y/6w6sf+Y0y7dV1MYI3tbTJj0zc34=";
   };
 
   vendorHash = "sha256-pxrX8uoudmOEa4v1UfR256z9i+XjuZc9U6CP3pLsAtY=";

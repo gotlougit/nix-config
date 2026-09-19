@@ -3,6 +3,9 @@
 
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
 
+  inputs.flossDesktop.url = "github:gotlougit/floss-desktop";
+  inputs.flossDesktop.inputs.nixpkgs.follows = "nixpkgs";
+
   inputs.home-manager.url = "github:nix-community/home-manager";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -64,6 +67,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
+            inputs.flossDesktop.nixosModules.default
             {
               nixpkgs.overlays = [
                 self.overlays.default
