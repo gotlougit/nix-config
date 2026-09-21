@@ -6,6 +6,7 @@ let
   codex-auth-overlay = import ./codex-auth/default.nix;
   litert-lm-overlay = import ./litert-lm/default.nix;
   tailscale-overlay = import ./tailscale/default.nix;
+  kittygram-overlay = import ./kittygram/default.nix;
 in
 {
   llama-cpp = self.callPackage ./llama-cpp.nix { };
@@ -19,3 +20,4 @@ in
 // (codex-auth-overlay self super)
 // (litert-lm-overlay self super)
 // (tailscale-overlay self super)
+// (kittygram-overlay self super)
