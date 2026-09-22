@@ -268,11 +268,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789823756,
-        "narHash": "sha256-B7XRWOzauEP5nc8b1yrfGGHp9L0h2rBYDGZe2cWtAFE=",
+        "lastModified": 1790086891,
+        "narHash": "sha256-yZtFCOPv4+rP/fuWbJp14UqDCcAGC0m7R4qS+fXbL44=",
         "owner": "gotlougit",
         "repo": "floss-desktop",
-        "rev": "25a3789ed3f2238ca32d1b49c73ecca212c04084",
+        "rev": "23615a9da9a97d9c31e90bebf74ef4fb1d2f0776",
         "type": "github"
       },
       "original": {
