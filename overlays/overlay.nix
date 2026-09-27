@@ -5,7 +5,6 @@ let
   island-overlay = import ./island/default.nix;
   codex-auth-overlay = import ./codex-auth/default.nix;
   litert-lm-overlay = import ./litert-lm/default.nix;
-  tailscale-overlay = import ./tailscale/default.nix;
   kittygram-overlay = import ./kittygram/default.nix;
 in
 {
@@ -19,5 +18,4 @@ in
 // (island-overlay self super)
 // (codex-auth-overlay self super)
 // (litert-lm-overlay self super)
-// (tailscale-overlay self super)
 // (kittygram-overlay self super)
