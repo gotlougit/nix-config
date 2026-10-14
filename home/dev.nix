@@ -9,7 +9,7 @@ in
     # ghidra # Decompiler
 
     # LLM coding agents
-    llmPkgs.codex # ChatGPT in the terminal
+    # llmPkgs.codex # ChatGPT in the terminal
     # llmPkgs.amp # Opinionated coding agent with numerous tools
     llmPkgs.pi # THE original minimal coding agent
     codex-auth # Multi-account helper for Codex
