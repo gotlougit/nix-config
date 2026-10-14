@@ -65,4 +65,19 @@ in
     UMask = "0077";
     InaccessiblePaths = "/persist";
   };
+
+  # Allow gotlou to restart hister without sudo
+  security.polkit.extraConfig = lib.mkAfter ''
+    polkit.addRule(function(action, subject) {
+        if (subject.user == "gotlou" &&
+            action.id == "org.freedesktop.systemd1.manage-units") {
+            var unit = action.lookup("unit");
+            var verb = action.lookup("verb");
+            if (unit == "hister.service" &&
+                (verb == "start" || verb == "stop" || verb == "restart")) {
+                return polkit.Result.YES;
+            }
+        }
+    });
+  '';
 }

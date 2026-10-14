@@ -1,3 +1,4 @@
+{ lib, ... }:
 let
   servicePort = 9686;
 in
@@ -16,4 +17,19 @@ in
     lo.allowedTCPPorts = [ servicePort ];
     tailscale0.allowedTCPPorts = [ servicePort ];
   };
+
+  # Allow gotlou to restart tokidoki without sudo
+  security.polkit.extraConfig = lib.mkAfter ''
+    polkit.addRule(function(action, subject) {
+        if (subject.user == "gotlou" &&
+            action.id == "org.freedesktop.systemd1.manage-units") {
+            var unit = action.lookup("unit");
+            var verb = action.lookup("verb");
+            if (unit == "tokidoki.service" &&
+                (verb == "start" || verb == "stop" || verb == "restart")) {
+                return polkit.Result.YES;
+            }
+        }
+    });
+  '';
 }
