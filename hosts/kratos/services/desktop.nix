@@ -24,6 +24,7 @@
   systemd.user.services.plasma-baloorunner = {
     enable = lib.mkForce false;
   };
+  programs.kde-pim.enable = lib.mkForce false;
 
   # EXPERIMENTAL: enable COSMIC desktop
   # services.desktopManager.cosmic.enable = true;
@@ -46,13 +47,19 @@
     pkgs.kdePackages.baloo
     pkgs.kdePackages.kate
     pkgs.kdePackages.discover
-    # pkgs.libsForQt5.oxygen
-    # pkgs.libsForQt5.khelpcenter
-    # pkgs.libsForQt5.konsole
-    # pkgs.libsForQt5.plasma-browser-integration
-    # pkgs.libsForQt5.elisa
-    # pkgs.libsForQt5.baloo
-    # pkgs.libsForQt5.kate
+    pkgs.kdePackages.kontact
+    pkgs.kdePackages.kontactinterface
+    pkgs.kdePackages.kmail
+    pkgs.kdePackages.kmail-account-wizard
+    pkgs.kdePackages.ktnef
+    pkgs.kdePackages.akonadi
+    pkgs.kdePackages.akonadi-calendar
+    pkgs.kdePackages.akonadi-calendar-tools
+    pkgs.kdePackages.akonadi-search
+    pkgs.kdePackages.akonadi-contacts
+    pkgs.kdePackages.akonadi-mime
+    pkgs.kdePackages.akonadiconsole
+    pkgs.kdePackages.akonadi-import-wizard
   ];
 
   # Allow KDE connect through firewall
