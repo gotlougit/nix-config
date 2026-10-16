@@ -13,7 +13,6 @@
     # Import overlays
     (import ../../overlays/overlay.nix { inherit inputs; })
     (import ../../overlays/keepassxc.nix)
-    (import ../../overlays/ghostty.nix)
     (import ../../overlays/llama-cpp.nix)
   ];
 

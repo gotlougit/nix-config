@@ -1,4 +1,4 @@
-{ inputs }:
+{ ... }:
 self: super:
 let
   tokidoki-overlay = import ./tokidoki/default.nix;
