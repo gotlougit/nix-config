@@ -29,5 +29,6 @@
 
     # Experimental services
     ./omega.nix
+    ./hitman-ps5.nix
   ];
 }
