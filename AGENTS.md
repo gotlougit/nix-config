@@ -40,3 +40,6 @@ and letting nix build fail with the correct hash. Use this technique:
 inside of overlays/, and this should comprise of a default.nix and an update.sh script.
 The update.sh script helps update the hashes and commit revision/tag based on the
 state of the remote repo at that time. For reference, look at how tokidoki does it
+
+- never ever ever run find or some big recursive search in /, home directory, or
+/nix/store as it is very slow and almost never works

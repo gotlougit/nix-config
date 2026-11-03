@@ -15,21 +15,16 @@
 
 rustPlatform.buildRustPackage {
   pname = "redlib";
-  version = "0.36.0-bleeding";
+  version = "0.40.0-bleeding";
 
   src = fetchFromGitHub {
     owner = "redlib-org";
     repo = "redlib";
-    rev = "a4d36e954cf1bd64f209cd8868c5a29edc81b374";
-    hash = "sha256-siyD6A12UALQIV7BMd7zu1TaojleTEYtpxPszuhx1/Y=";
+    rev = "296bfc88e70a9cfd284f6fc2c3d5e360690239fb";
+    hash = "";
   };
 
-  cargoHash = "sha256-eO3c7rlFna3DuO31etJ6S4c7NmcvgvIWZ1KVkNIuUqQ=";
-
-  # https://github.com/redlib-org/redlib/pull/592
-  postPatch = ''
-    patch -p1 < ${./redlib-592.patch}
-  '';
+  cargoHash = "";
 
   postInstall = ''
     install --mode=444 -D contrib/redlib.service $out/lib/systemd/system/redlib.service

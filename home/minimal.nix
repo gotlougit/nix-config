@@ -10,6 +10,10 @@
   ];
 
   stylix.enable = true;
+  # Home Manager uses the global NixOS pkgs (useGlobalPkgs = true), so it
+  # cannot define nixpkgs.overlays. Stylix must not apply its overlays from
+  # the Home Manager side.
+  stylix.overlays.enable = false;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
   stylix.fonts = rec {
     monospace = {
