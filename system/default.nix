@@ -4,7 +4,7 @@
     ./cyberchef.nix
     ./hister.nix
     ./kittygram.nix
-    ./nitter.nix
+    # ./nitter.nix
     ./redlib.nix
     ./tokidoki.nix
 

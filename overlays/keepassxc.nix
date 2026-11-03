@@ -6,9 +6,9 @@ final: prev: {
     withKeePassX11 = false;
     # Skip running tests, we will trust upstream
     # doCheck = false;
-    withKeePassKeeShare = false;
+    # withKeePassKeeShare = false;
     withKeePassFDOSecrets = false;
     withKeePassSSHAgent = false;
-    withKeePassYubiKey = false;
+    # withKeePassYubiKey = false;
   };
 }
