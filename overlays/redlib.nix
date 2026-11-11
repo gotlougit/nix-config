@@ -21,10 +21,10 @@ rustPlatform.buildRustPackage {
     owner = "redlib-org";
     repo = "redlib";
     rev = "296bfc88e70a9cfd284f6fc2c3d5e360690239fb";
-    hash = "";
+    hash = "sha256-9/UthL45lpnzt8h31TeqRiOqlicHXaDuoKeh6U5zvq8=";
   };
 
-  cargoHash = "";
+  cargoHash = "sha256-EhufKJs5jqIogXvbwS2ONljOZVQwfZSylqhtnwLhcuE=";
 
   postInstall = ''
     install --mode=444 -D contrib/redlib.service $out/lib/systemd/system/redlib.service

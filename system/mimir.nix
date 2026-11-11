@@ -1,8 +1,7 @@
-{ ... }:
+{ inputs, ... }:
 {
   nixpkgs.overlays = [
-    (import ../overlays/kittygram/default.nix)
-    (import ../overlays/hitman-ps5/default.nix)
+    (import ../overlays/overlay.nix { inherit inputs; })
   ];
 
   imports = [
