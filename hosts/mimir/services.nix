@@ -1,0 +1,48 @@
+{ lib, ... }:
+{
+  networking = {
+    useNetworkd = true;
+    useDHCP = true;
+    firewall.enable = true;
+
+    # Keep DNSCrypt as the primary resolver, but fall back to public DNS if it
+    # is not ready yet (e.g. during first boot or source-list refresh).
+    nameservers = lib.mkForce [
+      "127.0.0.1"
+      "9.9.9.9"
+      "1.1.1.1"
+    ];
+  };
+
+  services.dnscrypt-proxy.settings = {
+    # The Pi may not have working IPv6 connectivity; avoid selecting IPv6
+    # DNSCrypt upstreams in that case.
+    ipv6_servers = lib.mkForce false;
+  };
+
+  systemd.network.wait-online.enable = false;
+
+  # Root login by password, using the same password as gotlou.
+  users.users.root.hashedPassword = lib.mkForce "$y$j9T$rw1wMForHIg1XuK9HWnCD0$j.19g/PKjzKFPgEF/X2.lMOLIrXLfgGAQ9m9zz85Bc5";
+
+  services.openssh = {
+    # Open SSH on all interfaces. Password authentication is enabled globally
+    # by system/openssh.nix.
+    openFirewall = true;
+    settings.PermitRootLogin = lib.mkForce "yes";
+
+    # Avoid socket activation and the sshd@ sandbox entirely on this host.
+    startWhenNeeded = lib.mkForce false;
+
+    # One modern host key is enough. This avoids slow RSA key generation on
+    # first boot and any dependency on persisted /etc/ssh state.
+    hostKeys = lib.mkForce [
+      {
+        type = "ed25519";
+        path = "/etc/ssh/ssh_host_ed25519_key";
+      }
+    ];
+  };
+
+  services.tailscale.enable = true;
+}

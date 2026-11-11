@@ -1,7 +1,16 @@
 {
   description = "NixOS configuration";
 
+  nixConfig = {
+    extra-substituters = [ "https://nixos-raspberrypi.cachix.org" ];
+    extra-trusted-public-keys = [
+      "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
+    ];
+  };
+
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
+
+  inputs.nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
 
   inputs.flossDesktop.url = "github:gotlougit/floss-desktop";
   inputs.flossDesktop.inputs.nixpkgs.follows = "nixpkgs";
@@ -58,11 +67,24 @@
       ...
     }:
     let
-      # Systems are defined in the host configurations
+      mimir = inputs.nixos-raspberrypi.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/mimir ];
+      };
     in
     {
       overlays.default = final: prev: (import ./overlays/overlay.nix { inherit inputs; } final prev);
+
+      images.mimir =
+        (mimir.extendModules {
+          modules = [
+            inputs.nixos-raspberrypi.nixosModules.sd-image
+            ./hosts/mimir/sd-image.nix
+          ];
+        }).config.system.build.sdImage;
+
       nixosConfigurations = {
+        mimir = mimir;
         kratos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
