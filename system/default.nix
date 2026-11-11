@@ -1,11 +1,7 @@
 {
   imports = [
     # Self hosted services
-    ./cyberchef.nix
     ./hister.nix
-    ./kittygram.nix
-    # ./nitter.nix
-    ./redlib.nix
     ./tokidoki.nix
 
     # System services
@@ -29,6 +25,5 @@
 
     # Experimental services
     ./omega.nix
-    ./hitman-ps5.nix
   ];
 }
