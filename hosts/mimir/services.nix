@@ -5,6 +5,14 @@
     useDHCP = true;
     firewall.enable = true;
 
+    # WiFi is configured imperatively after boot.  The resulting
+    # /etc/wpa_supplicant state is persisted by impermanence.
+    wireless = {
+      enable = true;
+      userControlled = true;
+      allowAuxiliaryImperativeNetworks = true;
+    };
+
     # Keep DNSCrypt as the primary resolver, but fall back to public DNS if it
     # is not ready yet (e.g. during first boot or source-list refresh).
     nameservers = lib.mkForce [

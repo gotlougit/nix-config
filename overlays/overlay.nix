@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 self: super:
 let
   tokidoki-overlay = import ./tokidoki/default.nix;
@@ -10,7 +10,8 @@ let
 in
 {
   llama-cpp = self.callPackage ./llama-cpp.nix { };
-  redlib = self.callPackage ./redlib.nix { };
+  # Redlib needs a newer Rust than the nixos-raspberrypi nixpkgs pin.
+  redlib = inputs.nixpkgs.legacyPackages.${self.stdenv.hostPlatform.system}.callPackage ./redlib.nix { };
   cliproxyapi = self.callPackage ./cliproxyapi.nix { };
   nsproxy = self.callPackage ./nsproxy.nix { };
   wiiudownloader = self.callPackage ./wiiudownloader { };

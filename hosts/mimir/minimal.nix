@@ -68,6 +68,26 @@
 
   services.journald.extraConfig = "SystemMaxUse=50M";
 
+  # nix.gc.automatic requires nix.enable, which is disabled here. Run a
+  # small local store GC directly instead of enabling the Nix daemon.
+  systemd.services.mimir-nix-gc = {
+    description = "Nix garbage collector";
+    environment.NIX_REMOTE = "local";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 14d";
+      Nice = 19;
+    };
+  };
+  systemd.timers.mimir-nix-gc = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "weekly";
+      RandomizedDelaySec = "30m";
+      Persistent = true;
+    };
+  };
+
   # No RTC on the Pi, so sync the clock once at boot and then hourly.
   services.timesyncd.enable = false;
   systemd.services.mimir-ntp = {

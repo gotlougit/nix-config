@@ -1,4 +1,4 @@
-{ nixos-raspberrypi, lib, ... }:
+{ nixos-raspberrypi, lib, pkgs, ... }:
 {
   imports = [ nixos-raspberrypi.nixosModules.raspberry-pi-3.base ];
 
@@ -7,9 +7,11 @@
   # the Raspberry Pi boot firmware is supplied separately by the RPi module.
   hardware.enableAllHardware = lib.mkForce false;
   hardware.enableRedistributableFirmware = lib.mkForce false;
-  hardware.wirelessRegulatoryDatabase = lib.mkForce false;
   hardware.bluetooth.enable = lib.mkForce false;
-  networking.wireless.enable = lib.mkForce false;
+
+  # Keep the wireless firmware available so WiFi can be configured
+  # imperatively after boot.  Bluetooth remains disabled.
+  hardware.firmware = [ pkgs.raspberrypiWirelessFirmware ];
 
   # This is a headless 3B+; don't waste RAM on firmware graphics, audio,
   # Wi-Fi or Bluetooth.
@@ -31,7 +33,6 @@
     };
     dt-overlays = {
       vc4-kms-v3d.enable = lib.mkForce false;
-      disable-wifi.enable = true;
       disable-bt.enable = true;
     };
   };
@@ -53,13 +54,6 @@
       "snd_bcm2835"
       "vc4"
       "v3d"
-      "brcmfmac"
-      "brcmfmac_wcc"
-      "brcmutil"
-      "cfg80211"
-      "mac80211"
-      "lib80211"
-      "rfkill"
       "bluetooth"
       "btusb"
       "btrtl"

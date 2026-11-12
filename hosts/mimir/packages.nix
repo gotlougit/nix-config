@@ -4,6 +4,7 @@
   # over SSH; there is deliberately no nix-daemon.
   environment.systemPackages = with pkgs; [
     curl
+    ghostty.terminfo
     nix
     rsync
     tailscale
