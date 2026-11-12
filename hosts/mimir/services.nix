@@ -30,7 +30,6 @@
 
   systemd.network.wait-online.enable = false;
 
-  # Root login by password, using the same password as gotlou.
   users.users.root.hashedPassword = lib.mkForce "$y$j9T$rw1wMForHIg1XuK9HWnCD0$j.19g/PKjzKFPgEF/X2.lMOLIrXLfgGAQ9m9zz85Bc5";
 
   services.openssh = {
