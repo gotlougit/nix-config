@@ -41,12 +41,12 @@
     # Avoid socket activation and the sshd@ sandbox entirely on this host.
     startWhenNeeded = lib.mkForce false;
 
-    # One modern host key is enough. This avoids slow RSA key generation on
-    # first boot and any dependency on persisted /etc/ssh state.
+    # One modern host key is enough.  Store it on /persist because /etc is
+    # tmpfs; otherwise every reboot looks like a new server to SSH clients.
     hostKeys = lib.mkForce [
       {
         type = "ed25519";
-        path = "/etc/ssh/ssh_host_ed25519_key";
+        path = "/persist/system/etc/ssh/ssh_host_ed25519_key";
       }
     ];
   };
