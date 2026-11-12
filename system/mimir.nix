@@ -10,6 +10,9 @@
     ./openssh.nix
     ./sudo.nix
 
+    ./mitmproxy.nix
+    ./snowflake.nix
+
     ./cyberchef.nix
     ./hitman-ps5.nix
     ./kittygram.nix
