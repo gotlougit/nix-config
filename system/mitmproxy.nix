@@ -24,9 +24,7 @@ in
 
       ExecStart = lib.concatStringsSep " " [
         "${unstable.mitmproxy}/bin/mitmweb"
-        "--emudhra"
-        "--set block_global=false"
-        "--ssl-insecure"
+        "--emudhra-old"
         "--set web_open_browser=false"
         "--set web_password=${webPassword}"
         "--set confdir=%S/mitmproxy"

@@ -16,7 +16,6 @@
     ./mimir-hotspot.nix
 
     ./cyberchef.nix
-    ./hitman-ps5.nix
     ./kittygram.nix
     # ./redlib.nix
   ];
