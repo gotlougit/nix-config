@@ -110,6 +110,12 @@ in
       interface = apInterface;
       bind-dynamic = true;
 
+      # With bind-dynamic dnsmasq binds per-interface addresses, and it always
+      # adds lo to the interface list when `interface` is used. 127.0.0.1:53 is
+      # already taken by dnscrypt-proxy, so dnsmasq fails to start unless lo is
+      # explicitly excluded. `except-interface` overrides `interface`.
+      except-interface = "lo";
+
       dhcp-range = hotspotDhcpRange;
       dhcp-option = [
         "3,${hotspotAddress}"
