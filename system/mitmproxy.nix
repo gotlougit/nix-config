@@ -33,6 +33,7 @@ in
         "--listen-host 0.0.0.0"
         "--mode regular@28081"
         "--mode socks5@28082"
+        "--mode transparent@28083"
         "--web-host 127.0.0.1"
         "--web-port 28089"
       ];

@@ -54,6 +54,9 @@
   inputs.lightpanda.url = "github:gotlougit/lightpanda-browser";
   inputs.lightpanda.inputs.nixpkgs.follows = "nixpkgs";
 
+  inputs.warp-re.url = "github:gotlougit/warp-re";
+  inputs.warp-re.inputs.nixpkgs.follows = "nixpkgs";
+
   inputs.omega.url = "sourcehut:~gotlou/pi-omega";
   inputs.omega.inputs.nixpkgs.follows = "nixpkgs";
   inputs.omega.inputs.home-manager.follows = "home-manager";

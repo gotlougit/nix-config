@@ -12,11 +12,13 @@
 
     ./mitmproxy.nix
     ./snowflake.nix
+    ./warp.nix
+    ./mimir-hotspot.nix
 
     ./cyberchef.nix
     ./hitman-ps5.nix
     ./kittygram.nix
-    ./redlib.nix
+    # ./redlib.nix
   ];
 
   # Same tailscaled sandbox as kratos.
