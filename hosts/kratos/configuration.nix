@@ -42,6 +42,9 @@
   # Required for ZFS
   networking.hostId = "ffbe00b9";
 
+  # Use IPv6-capable DNSCrypt upstreams on this host.
+  services.dnscrypt-proxy.settings.ipv6_servers = true;
+
   # Just don't touch this except for a very good, no bad reason
   system.stateVersion = "22.11";
 

@@ -25,7 +25,7 @@
   services.dnscrypt-proxy.settings = {
     # The Pi may not have working IPv6 connectivity; avoid selecting IPv6
     # DNSCrypt upstreams in that case.
-    ipv6_servers = lib.mkForce false;
+    ipv6_servers = false;
   };
 
   systemd.network.wait-online.enable = false;
