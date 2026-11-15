@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   time.timeZone = "Asia/Kolkata";
   networking.hostName = "mimir";
@@ -14,9 +14,10 @@
 
   users.mutableUsers = false;
 
-  # system/sudo.nix disables sudo/sudo-rs and installs the shim; enable the
-  # shim module so run0/polkit is wired up as well.
-  security.run0-sudo-shim.enable = true;
+  # We are only enabling root user here, no sudo* required
+  security.sudo.enable = lib.mkForce false;
+  security.doas.enable = lib.mkForce false;
+  security.sudo-rs.enable = lib.mkForce false;
 
   system.stateVersion = "26.05";
 }
