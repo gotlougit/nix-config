@@ -75,7 +75,7 @@
     environment.NIX_REMOTE = "local";
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 14d";
+      ExecStart = "${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 1d";
       Nice = 19;
     };
   };
