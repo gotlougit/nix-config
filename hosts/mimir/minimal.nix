@@ -88,23 +88,23 @@
     };
   };
 
-  # No RTC on the Pi, so sync the clock once at boot and then hourly.
-  services.timesyncd.enable = false;
-  systemd.services.mimir-ntp = {
-    description = "One-shot clock sync";
-    after = [ "network-online.target" ];
-    wants = [ "network-online.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      # Use NTP server IPs so clock sync does not depend on DNS being up.
-      ExecStart = "${pkgs.busybox}/bin/ntpd -n -q -p 162.159.200.123 -p 216.239.35.0";
-    };
-  };
-  systemd.timers.mimir-ntp = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "30s";
-      OnCalendar = "*-*-* *:17:00";
-    };
+  # No RTC on the Pi.  Use chrony as a daemon instead of a one-shot boot
+  # command: it starts early, keeps retrying when WiFi is not associated yet,
+  # and steps the clock as soon as it gets a valid NTP reply.
+  services.chrony = {
+    enable = true;
+
+    # Use IPs, not hostnames: DNS may still be down when chrony starts.
+    servers = [
+      "162.159.200.123"
+      "216.239.35.0"
+      "216.239.35.4"
+    ];
+
+    # There is no RTC to trim.
+    enableRTCTrimming = false;
+
+    # The default is already iburst; be explicit about the late-WiFi case.
+    serverOption = "iburst";
   };
 }
