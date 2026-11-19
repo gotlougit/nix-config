@@ -165,6 +165,7 @@
       "steam-unwrapped"
       "stremio-linux-shell"
       "rpcs3"
+      "ps5upload"
     ];
   environment.systemPackages = [
     pkgs.nix-update

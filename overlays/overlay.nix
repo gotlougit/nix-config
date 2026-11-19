@@ -14,6 +14,7 @@ in
   cliproxyapi = self.callPackage ./cliproxyapi.nix { };
   nsproxy = self.callPackage ./nsproxy.nix { };
   wiiudownloader = self.callPackage ./wiiudownloader { };
+  ps5upload = self.callPackage ./ps5upload { };
 }
 // (tokidoki-overlay self super)
 // (island-overlay self super)

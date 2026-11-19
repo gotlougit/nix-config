@@ -5,6 +5,7 @@
 
     # Utils
     chiaki-ng # PS4/5 Remote Play client
+    ps5upload # PS5 file transfer and management
     wiiudownloader # Wii U Downloader
     mangohud # Overlay for FPS, frametime, CPU, GPU usage etc
 
