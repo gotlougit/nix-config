@@ -9,22 +9,24 @@
   pkg-config,
   perl,
   gitMinimal,
+  go,
+  zstd,
   stdenv,
   llvmPackages,
 }:
 
 rustPlatform.buildRustPackage {
   pname = "redlib";
-  version = "0.40.0";
+  version = "0.36.0-unstable-2026-11-21";
 
   src = fetchFromGitHub {
-    owner = "redlib-org";
+    owner = "Nachtalb";
     repo = "redlib";
-    rev = "ba116c1186f6b0f9d45f0ae50c827e13eb2f5ea2";
-    hash = "sha256-qv7vIls9BwgwDQuKEQU72J10MpaMfcLvIGfzl628eNU=";
+    rev = "99fadfd286d3d80692354f598ab0e85fdaece8b5";
+    hash = "sha256-Bw8CKM/mb0Uf3J8bfvp7BygNVmpfL7AcBjMhXAnEK8A=";
   };
 
-  cargoHash = "sha256-XgHXqH4EF8TEOI+cKJ0Z2j6QYRCwGgv8bmY8gZpPN9c=";
+  cargoHash = "sha256-FonBAl9QqAVVxzSDq1OCENnsIkM5j5V3uDU5hr9YEmQ=";
 
   postInstall = ''
     install --mode=444 -D contrib/redlib.service $out/lib/systemd/system/redlib.service
@@ -35,9 +37,12 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [
     cmake
     pkg-config
-    perl # needed by boring-sys/BoringSSL
-    gitMinimal # needed by boring-sys build script
+    perl # needed by btls-sys/BoringSSL
+    gitMinimal # needed by btls-sys build script
+    go # needed by BoringSSL's assembly generation
   ];
+
+  buildInputs = [ zstd ];
 
   LIBCLANG_PATH = "${llvmPackages.libclang.lib}/lib";
 
@@ -62,13 +67,9 @@ rustPlatform.buildRustPackage {
   };
 
   meta = {
-    description = "Private front-end for Reddit (Continued fork of Libreddit)";
-    homepage = "https://github.com/redlib-org/redlib";
+    description = "Private front-end for Reddit (Nachtalb fork)";
+    homepage = "https://github.com/Nachtalb/redlib";
     license = lib.licenses.agpl3Only;
     mainProgram = "redlib";
-    maintainers = with lib.maintainers; [
-      bpeetz
-      Guanran928
-    ];
   };
 }

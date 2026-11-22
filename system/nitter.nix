@@ -1,10 +1,11 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 let
   servicePort = 8090;
 in
 {
   services.nitter = {
     enable = true;
+    package = pkgs.shitter;
 
     server = {
       address = "127.0.0.1";
@@ -23,6 +24,12 @@ in
       infiniteScroll = false;
     };
   };
+
+  # Create the root-only file that systemd loads as a credential at start.
+  # Put the JSONL session tokens in here; they are never exposed via /nix/store.
+  systemd.tmpfiles.rules = [
+    "f /persist/nitter-auth 0600 root root -"
+  ];
 
   systemd.services.nitter.serviceConfig = {
     ProtectSystem = "strict";

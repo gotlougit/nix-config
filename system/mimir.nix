@@ -17,7 +17,8 @@
 
     ./cyberchef.nix
     ./kittygram.nix
-    # ./redlib.nix
+    ./nitter.nix
+    ./redlib.nix
   ];
 
   # Same tailscaled sandbox as kratos.
