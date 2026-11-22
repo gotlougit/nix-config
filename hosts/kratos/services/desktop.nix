@@ -84,7 +84,7 @@
     kdePackages.ksshaskpass # Ask password in GUI from CLI
     kdePackages.kdeconnect-kde # KDE Connect
     kdePackages.krohnkite # Tiling extension for Plasma 6
-
+    kdePackages.kimageformats # Support for more image formats for gwenview etc
     # cosmic-ext-tweaks # Tweak COSMIC even more
     # cosmic-ext-ctl # CLI for COSMIC config
   ];
