@@ -191,13 +191,13 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "kittygram";
-  version = "0-unstable-2026-08-28";
+  version = "0-unstable-2026-11-22";
 
   src = fetchgit {
     url = "https://codeberg.org/irelephant/kittygram";
-    rev = "686fe8934822af0443a00a0e38faa6f3cd383b68";
+    rev = "c0f0ec5620f3f74eaa95059fc2a7f43d6c233079";
     fetchLFS = true;
-    hash = "sha256-ThMyDkkp37AluRZYSR4bplZcpfxZCGNtGq5sk5+QEIE=";
+    hash = "sha256-EeJ1pAILeRf5cjFVmZPLIEIpwYPW8KtrbpZdtWrKW5c=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
