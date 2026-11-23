@@ -666,11 +666,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789826159,
-        "narHash": "sha256-KGs5FeF7Xc4+JVqr+LkzedSDlqjhhaXxSmWNZ+wpWnQ=",
+        "lastModified": 1795350685,
+        "narHash": "sha256-5dg3AgDXqy70TD34upj785jpspP2hgRP3+0pjSSQQdY=",
         "owner": "~gotlou",
         "repo": "pi-omega",
-        "rev": "7caec43fb71e496c9ea711ab1f8827ad9c47c525",
+        "rev": "25a6244effe86488841e14b3f5eedfa017888569",
         "type": "sourcehut"
       },
       "original": {
